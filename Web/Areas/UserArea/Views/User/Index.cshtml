@@ -1,0 +1,417 @@
+﻿@{
+    ViewBag.Title = "Quản lý tài khoản";
+    Layout = "~/Views/Shared/_LayoutAce.cshtml";
+    ViewBag.ModuleName = "Quản lý người dùng";
+    ViewBag.PageName = "Danh sách người dùng";
+    ViewBag.ModuleCode = "QLTaiKhoan";
+}
+@using Model.IdentityEntities;
+@using Newtonsoft.Json;
+@using Service.Common;
+@using Service.AppUserService.Dto;
+@using Web.Areas.UserArea.Models
+@model UserListViewModel
+@{
+    var lstData = Html.Raw(JsonConvert.SerializeObject(Model.ListUser.ListItem));
+}
+@section ActionBarRight{
+
+    <a href="javascript:void(0)" class="btn btn-sm btn-danger btn-delete-multiple hide" id="btn-xoa-nguoidung">
+        <i class="fa fa-times"></i> Xóa người dùng
+    </a>
+
+    <a href="#collapseDiv" class="btn btn-sm btn-primary" aria-controls="collapsePanel" data-toggle="collapse" role="button">
+        <i class="fa fa-search"></i> Tìm kiếm
+    </a>
+    @*<a href="@Url.Action("IndexActive")" class="btn btn-sm btn-primary">
+            <i class="fa fa-user"></i> Danh sách đang hoạt động
+        </a>*@
+
+    <a href="javascript:onGenerateUserByRole()" class="btn btn-sm btn-primary">
+        <i class="fa fa-user-plus"></i>&nbsp;Gen người dùng
+    </a>
+
+    <a href="javascript:onExportDanhSachTaiKhoan()" class="btn btn-labeled btn-success btn-sm">
+        <span class='btn-label'><i class='fa fa-file-excel-o'></i></span> Xuất danh sách tài khoản
+    </a>
+
+    @*<a href="@Url.Action("IndexLogTruyCap")" class="btn btn-sm btn-primary">
+            <i class="fa fa-clock-o"></i> Log truy cập
+        </a>*@
+    <a href="/UserArea/User/ExportExcel" class="btn btn-labeled btn-success btn-sm">
+        <span class='btn-label'><i class='glyphicon glyphicon-download'></i></span> Xuất Excel
+    </a>
+    <a href="javascript:void(0)" onclick="CreateAction('/UserArea/User/Create?vaitroid=@ViewBag.vaitroid')" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Thêm mới</a>
+}
+@Html.Partial("_SearchPartial")
+
+<div id="tbl-user" class="hntbl-cover table-scroll">
+    <div class="table-wrap">
+        <table class="hinet-table table table-striped table-hover fixed-table" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th class="fixed-side">
+                        <input type="checkbox" onchange="onCheckAllUser(this)" />
+                    </th>
+                    <th class="fixed-side">#</th>
+                    <th class="fixed-side">Tác vụ</th>
+                    <th>Họ tên</th>
+                    <th>Tên tài khoản</th>
+                    <th>Đơn vị</th>
+                    <th>Email</th>
+                    <th>Điện thoại</th>
+                    <th>Ngày sinh</th>
+                    <th>Giới tính</th>
+                    <th>Địa chỉ</th>
+                    <th>Hội đồng</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        var lstData = eval(@lstData);
+        var moduleTableSelector="#tbl-user";
+        function pagefunction(){
+            var conf=[
+                {
+                    tdClass:"center fixed-side",
+                    isSort:false,
+                    nameModel: "",
+                    content: function (data) {
+                        if (data.UserName == 'admin') {
+                            return "";
+                        }
+                        return "<input type='checkbox' class='checkbox-row' value='" + data.Id + "' onchange='onChangeCheckboxRow(this)'/>";
+                    }
+                },
+                {
+                    tdClass: "center fixed-side",
+                    isSort: false,
+                    nameModel: "",
+                    isCounter:true,
+                },
+				{ 
+					isSort: false,
+					nameModel: "",
+					tdClass: "center dropdowntt",
+					content: function (data) {
+                        var result = "<div class='btn-group'>";
+                        result += "<button data-toggle='dropdown' class='btn btn-xs btn-primary btn-white dropdown-toggle' aria-expanded='false'>Thao tác<i class='ace-icon fa fa-angle-down icon-on-right'></i>";
+                        result += " </button>";
+                        result += "<ul class='dropdown-menu'>";
+                        result += "<li><a href='javascript:void(0)' onclick='ResetPass(" + data.Id + ")'   title = 'Reset Password'><i class='fa fa-key'> </i> Reset Password</a> </li>";
+                        result += `<li><a href='javascript:void(0)' onclick='EditAction("/UserArea/User/Edit?id=${data.Id}&vaitroid=@ViewBag.vaitroid")'   title = 'Chỉnh sửa'><i class='glyphicon glyphicon-edit'> </i> Sửa thông tin</a> </li>`;
+                        result += "<li><a href='javascript:void(0)' onclick='OpenModalAction(\"/UserArea/User/SetupRole/" + data.Id + "\")'  title = 'Thiết lập vai trò'><i class='fa fa-registered' > </i> Phân vai trò</a> </li>";
+                        result += "<li><a href='/UserArea/User/ConfigureOperation/" + data.Id + "'   title = 'Phân quyền cá nhân'><i class='fa fa-cogs' > </i> Phân quyền cá nhân</a> </li>";
+                        result += "<li><a href='javascript:void(0)' onclick='DeleteAction(\"/UserArea/User/Delete/" + data.Id + "\")'  title = 'Xóa'><i class=' glyphicon glyphicon-remove' style='color:red'> </i> Xóa người dùng</a></li>";
+                        result += "<li><a href='javascript:void(0)' onclick='ConfirmData()'  title = 'Kế thừa quyền từ vai trò'><i class=' glyphicon glyphicon-filter' > </i> Kế thừa quyền từ vai trò</a></li>";
+                        result += "<li><a href='javascript:void(0)' onclick='onEditKhoaTuDong("+data.Id+")'  title = 'Xóa'><i class='fa fa-calendar'> </i> Cấu hình khóa tự động</a></li>";
+                        if (data.IsLock == true) {
+							result += "<li><a href='javascript:void(0)' onclick='LockUser(\"/UserArea/User/LockUser?id=" + data.Id + "&islock=false" + "\",false)'  title = 'Mở khóa tài khoản'><i class='fa fa-unlock-alt' style='color:green;' > </i> Mở khóa tài khoản</a> </li>";
+						} else {
+							result += "<li><a href='javascript:void(0)' onclick='LockUser(\"/UserArea/User/LockUser?id=" + data.Id + "&islock=true" + "\",true)'  title = 'Khóa tài khoản'><i class='fa fa-lock' style='color:red;' > </i> Khóa tài khoản</a> </li>";
+                        }
+                        result += "<li><a href='javascript:void(0)' onclick='onTraCuuLogKhoaTruyCap(" + data.Id + ")'  title = 'Tra cứu log khóa tự động'><i class='fa fa-list'> </i> Tra cứu log khóa tự động</a></li>";
+                        result += "<li><a href='javascript:void(0)' onclick='OpenModalAction(\"/UserArea/User/SetupDonVi/" + data.Id + "\")'   title = 'Gán đơn vị quản lý'><i class='fa fa-list'> </i> Gán đơn vị quản lý</a></li>";
+                        result += "</ul></div>";
+						return result;
+					}
+				},
+                {
+                    isSort:true,
+                    nameModel:'FullName',
+					content: function (data) {
+						var result = "";
+						var str = "";
+						if (data.IsCongTacVien == true) {
+							str += '&nbsp;' + '<i class="fa fa-user" style="color:#3498db;" title="Cộng tác viên"></i>' + '&nbsp;';
+						}
+						for (var i = 0; i < data.ListRoles.length; i++) {
+							result += '<b class="label label-warning">' + data.ListRoles[i].Name + '</b>' + '&nbsp;';
+						}
+						return data.FullName + str + "</br>" + result;
+                    }
+                },
+                 {
+                     isSort:true,
+                     nameModel:'UserName',
+                     content: function (data) {
+						 var str = "";
+						 str += "<a href='/UserArea/User/Detail/" + data.Id + "'> " + data.UserName + "</a><br/>";
+						 if (data.IsLock == true) {
+							 str += '<b class="label label-danger">Bị khóa tài khoản</b>'
+                         }
+                         if (data.IsSendMail) {
+                             str += "<i class='green glyphicon glyphicon-envelope'> </i>";
+                         }
+
+                         if (data.IsSingleSignOn) {
+                             str += "<br/>";
+                             str += "<i class='label label-success'>SSO</i>";
+                         }
+						 return str;
+                     }
+                },
+                {
+                    isSort: false,
+                    nameModel: 'DonViName',
+                    content: function (data) {
+                        return data.DonViName;
+                    }
+                },
+                {
+                    isSort: true,
+                    nameModel: 'Email',
+                    content: function (data) {
+						return ShowMessageIfEmpty(data.Email)
+                    }
+                },
+                {
+                    isSort: true,
+                    nameModel: 'PhoneNumber',
+                    content: function (data) {
+						return ShowMessageIfEmpty(data.PhoneNumber);
+                    }
+                },
+                 {
+                     isSort:true,
+                     nameModel:'BirthDay',
+                     content: function (data) {
+                         return ToDate(data.BirthDay)
+                     }
+                 },
+                 {
+                     isSort:true,
+                     nameModel:'Gender',
+                     content: function (data) {
+
+                         return data.Gender==1?"Nam":"Nữ";
+                     }
+                 },
+                 {
+                      isSort:false,
+                      nameModel:"Address",
+                      content: function (data) {
+                          return ShowMessageIfEmpty(data.Address);
+                      }
+                }, {
+                    isSort: false,
+                    nameModel: 'TypeOrganization',
+                    content: function (data) {
+                        return data.TypeOrganization;
+                    }
+                },
+            ];
+
+
+            var getdatafunc=function(page,sortQuery,pageSize){
+                $.ajax({
+                    url: '/UserArea/User/getData',
+                    type: 'post',
+                    cache: false,
+                    data:{"indexPage":page,"sortQuery":sortQuery,"pageSize":pageSize},
+                    success: function (data) {
+                        $(moduleTableSelector).hinetTable("data",{
+                            pageSize:pageSize!=-1?pageSize:data.Count,
+                            pageIndex:page,
+                            pagecount: data.TotalPage,
+                            recordCount: data.Count,
+                            listItem: data.ListItem,
+                        });
+
+                    },
+                    error: function (err) {
+                        CommonJS.alert(xhr.responseText);
+                    }
+                });
+
+            }
+
+            var tblData=$("#tbl-user").hinetTable("init",{
+                pageSizeList:{size:[20,50,100,-1],label:['20','50','100','Tất cả']},
+                pagecount: @Model.ListUser.TotalPage,
+                recordCount: @Model.ListUser.Count,
+                actionToolBar: '',
+                getData: getdatafunc,
+                listItem:lstData,
+                config:conf
+            });
+
+        }
+
+        function AfterSussessActionAjaxform() {
+            $(moduleTableSelector).hinetTable("reload");
+        }
+        function AjaxSearchSuccess(result) {
+            $(moduleTableSelector).hinetTable("data", {
+                pageIndex: 1,
+                pagecount: result.TotalPage,
+                recordCount: result.Count,
+                listItem: result.ListItem,
+            });
+            }
+            function ResetPass(id) {
+                AjaxCall("/UserArea/user/ResetPassword/" + id, "post", null, function (rs) {
+                    if (rs.Status) {
+                        NotiSuccess("Khôi phục mật khẩu thành công");
+                    } else {
+                        NotiError(rs.Message);
+                    }
+                })
+        }
+        function ConfirmData() {
+           ;
+            $.confirm({
+                title: "Xác nhận thao tác",
+                content: "Bạn chắc chắn muốn kế thừa quyền?",
+                draggable: false,
+                theme: 'material',
+                buttons: {
+                    confirm: {
+                        btnClass: 'btn-primary',
+                        text: "Xác nhận",
+                        action: function () {
+                              NotiSuccess("Thành công","Kế thừa quyền từu vai trò thành công!");
+                              AfterSussessActionAjaxform();
+
+                        }
+                    },
+                    cancel: {
+                        text: "Đóng",
+                        action: function () {
+
+                        }
+                    }
+                }
+            });
+        }
+
+		function LockUser(url, typeLock) {
+			var content = "";
+			var successstring = "";
+			if (typeLock == true) {
+				content = "Bạn chắc chắn muốn khóa tài khoản này?";
+				successstring = "Khóa tào khoản thành công!";
+			} else if (typeLock == false) {
+				content = "Bạn chắc chắn muốn mở khóa tài khoản này?"
+				successstring = "Mở khóa tào khoản thành công!";
+			}
+			$.confirm({
+				title: "Xác nhận thao tác",
+				content: content,
+				draggable: false,
+				theme: 'material',
+				buttons: {
+					confirm: {
+						btnClass: 'btn-primary',
+						text: "Xác nhận",
+						action: function () {
+							AjaxCall(url, 'post', null, function (rs) {
+								if (rs.Status) {
+									NotiSuccess("Thành công", successstring);
+									AfterSussessActionAjaxform();
+								} else {
+									NotiError("Lỗi xử lý", rs.Message);
+								}
+							})
+						}
+					},
+					cancel: {
+						text: "Đóng",
+						action: function () {
+
+						}
+					}
+				}
+			});
+        }
+
+        function onEditKhoaTuDong(idUser) {
+            onOpenEditModal('/UserArea/User/EditThongTinKhoaTuDong', { idUser: idUser }, 'post');
+        }
+
+        function onTraCuuLogKhoaTruyCap(idUser) {
+            onOpenEditModal('/UserArea/User/DanhSachLogKhoaTruyCap', { idUser: idUser }, 'post');
+        }
+
+        function onGenerateUserByRole() {
+            onOpenEditModal('/UserArea/User/GenerateUserByRole', { }, 'post');
+        }
+
+        function onExportDanhSachTaiKhoan() {
+            location.href = '/UserArea/User/ExportDanhSachTaiKhoan';
+        }
+
+        function onCheckAllUser(item) {
+            $('#tbl-user').find('input[type=checkbox]').prop('checked', item.checked);
+            var isShowDeleteButton = $('input.checkbox-row:checked').length > 0;
+            if (isShowDeleteButton) {
+                $('.btn-delete-multiple').removeClass('hide');
+            } else {
+                $('.btn-delete-multiple').addClass('hide');
+            }
+        }
+
+
+        function onChangeCheckboxRow(item) {
+            var checked = item.checked;
+            $('input.checkbox-row[value="' + item.value + '"]').prop('checked', checked);
+
+            var isShowDeleteButton = $('input.checkbox-row:checked').length > 0;
+            if (isShowDeleteButton) {
+                $('.btn-delete-multiple').removeClass('hide');
+            } else {
+                $('.btn-delete-multiple').addClass('hide');
+            }
+        }
+
+        var onDeleteMultipleNguoiDung = function () {
+            $.confirm({
+                title: "Xác nhận xóa người dùng",
+                content: 'Bạn có muốn xóa không?',
+                draggable: false,
+                theme: 'material',
+                buttons: {
+                    confirm: {
+                        btnClass: 'btn-primary',
+                        text: "Xác nhận",
+                        action: function () {
+                            var idsUser = [];
+                            $('#tbl-user tbody').find('input[type=checkbox]:checked').each(function (index, item) {
+                                if (Number.isInteger(parseInt(item.value))) {
+                                    idsUser.push(item.value);
+                                }
+                            });
+                            AjaxCall('/UserArea/User/DeleteMutipleUser', 'post', {idsUser: idsUser}, function (result) {
+                                if (result.Status) {
+                                    NotiSuccess("Thành công", result.Message);
+                                    AfterSussessActionAjaxform();
+                                } else {
+                                    NotiError("Lỗi xử lý", result.Message);
+                                }
+                            })
+                        }
+                    },
+                    cancel: {
+                        text: "Đóng",
+                        action: function () {
+
+                        }
+                    }
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            pagefunction();
+            $('#btn-xoa-nguoidung').on('click', function () {
+                onDeleteMultipleNguoiDung();
+            })
+        })
+
+    </script>
+}

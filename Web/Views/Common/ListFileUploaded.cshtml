@@ -1,0 +1,59 @@
+﻿@using Web.Models;
+@
+@using CommonHelper.String;
+
+@model List<AttachTempFileItem>
+@*<table class="table table-info table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Tên tệp</th>
+                <th>Ghi chú</th>
+                <th>Định dạng</th>
+                <th>Kích thước</th>
+                <th>Trạng thái</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@(Model.IndexOf(item) + 1)</td>
+                        <td>@item.Name</td>
+                        <td>@item.Note</td>
+                        <td>@item.Extension</td>
+                        <td>@item.Size</td>
+                        <td>@(item.Status ? "Đã lưu" : "Chưa lưu")</td>
+                    </tr>
+                }
+
+            }
+            else
+            {
+                <tr><td colspan="6">Không có dữ liệu</td></tr>
+            }
+
+        </tbody>
+    </table>*@
+@if (Model != null && Model.Any())
+{
+    foreach (var item in Model)
+    {
+        <div id="itemUploaded">
+            <div class="itemUploaded-item">
+                <div class="itemUploaded-item-cell itemUploaded-item-icon">
+                    <i class="glyphicon glyphicon-paperclip"></i>
+                </div>
+                <div class="itemUploaded-item-cell itemUploaded-item-name">
+                    <p><a href="/@item.Path" download>@item.Name</a> <i>(@item.Size.ConvertToStringMb())</i></p><p>@item.Note</p>
+                </div>
+                <div class="itemUploaded-item-cell itemUploaded-item-delete">
+                    <button onclick="DeleteDataFileUpload('@item.Path', '@ModuleTypeConstant.HoSoWebsiteCCDV')"><i class="glyphicon glyphicon-remove"></i></button>
+                </div>
+            </div>
+        </div>
+
+    }
+}

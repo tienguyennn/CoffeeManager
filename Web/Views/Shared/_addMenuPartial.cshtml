@@ -1,0 +1,24 @@
+﻿@using Web.Core
+
+<script>
+    if (HasRole("QLButtonAddModule")) {
+        $('.modal.aside').ace_aside();
+        $('#right-menu').on('shown.bs.modal', function (e) {
+            $.ajax({
+                url: '/OperationArea/Operation/AddOperation',
+                type: 'post',
+                data: { 'url': window.location.pathname },
+                success: function (rs) {
+                    $("#AddMenuFormBox").html(rs);
+                },
+                error: function (e) {
+                    console.log("Lỗi xử lý")
+                }
+            })
+        })
+        $('#right-menu').on('hidden.bs.modal', function (e) {
+            $("#AddMenuFormBox").html("");
+        })
+    }
+
+</script>

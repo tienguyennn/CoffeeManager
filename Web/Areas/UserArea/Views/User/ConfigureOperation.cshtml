@@ -1,0 +1,128 @@
+﻿@using Model.IdentityEntities
+@using Service.ModuleService.DTO
+@model List<ModuleDTO>
+@{
+    var userInfo = ViewBag.UserDto as AppUser;
+    ViewBag.Title = "Phân quyền riêng người dùng";
+    Layout = "~/Views/Shared/_LayoutAce.cshtml";
+    ViewBag.ModuleName = "Quản lý người dùng";
+    ViewBag.PageName = "Phân quyền cá nhân " + userInfo.UserName;
+
+}
+@section ActionBarRight{
+    @*<a href="/UserArea/User/Index" class="btn btn-primary btn-sm"><i class="fa fa-reply"></i> Quay lại</a>*@
+}
+<style>
+    .panel-body {
+        padding: 0;
+    }
+
+    .table {
+        margin-bottom: 0;
+    }
+</style>
+<div id="accordion" class="accordion-style1 panel-group">
+    <div class="form-horizontal">
+        @using (Ajax.BeginForm("SaveConfigureOperation", "User", new { @area = "UserArea" }, new AjaxOptions()
+        {
+            HttpMethod = "POST",
+            OnFailure = "AjaxFormError",
+            OnSuccess = "AjaxFormSuccess",
+        }, new { id = "form--config-role" }))
+        {
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="USER_ID" value="@userInfo.Id" />
+            int rowIndex = 0;
+            foreach (var module in Model.OrderBy(x => x.Order).ToList())
+            {
+                int index = 0;
+                <div class="col-sm-3">
+                    <div class="panel panel-default" style="margin: 10px 0">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse-@module.Id">
+                                    <i class="ace-icon fa fa-angle-right bigger-110" data-icon-hide="ace-icon fa fa-angle-down" data-icon-show="ace-icon fa fa-angle-right"></i>
+                                    &nbsp;@module.Name
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div class="panel-collapse collapse" id="collapse-@module.Id">
+                            <div class="panel-body">
+                                <table class="table table-bordered table-condensed">
+                                    @{
+                                        var checkAll = !module.GroupOperations.Any(x => x.IsAccess == false);
+                                    }
+                                    <thead>
+                                        <tr>
+                                            <th>STT</th>
+                                            <th>Thao tác</th>
+                                            <th>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input class="ace checkAll" type="checkbox" @(checkAll ? " checked" : "") />
+                                                        <span class="lbl"></span>
+                                                    </label>
+                                                </div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var operation in module.GroupOperations)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @(++index)
+                                                </td>
+                                                <td>
+                                                    @operation.Name
+                                                </td>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input class="ace checkItem" type="checkbox" name="OPERATION" value="@operation.Id" @(operation.IsAccess == true ? "checked" : "") />
+                                                            <span class="lbl"></span>
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                if ((rowIndex + 1) % 4 == 0)
+                {
+                    <div class="clearfix"></div>
+                }
+                rowIndex++;
+            }
+
+            <div class="clearfix"></div>
+            <center>
+                <button class="btn btn-primary">
+                    <i class="fa fa-save"></i>&nbsp;Lưu lại
+                </button>
+            </center>
+        }
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        function AfterSussessActionAjaxform() {
+
+        }
+
+        $("input.checkAll").change(function () {
+
+            var check = $(this).prop("checked");
+            $(this).parents("table").find("input.checkItem").each(function () {
+                $(this).prop("checked", check);
+            })
+        })
+    </script>
+}

@@ -1,0 +1,186 @@
+﻿@using Web.Areas.UserArea.Models
+@using Newtonsoft.Json;
+@using Service.Common;
+@using Service.DVC_DETAILDICHVUCONGService.Dto
+@model PageListResultBO<DVC_DETAILDICHVUCONGDto>
+@{
+    var lstData = Html.Raw(JsonConvert.SerializeObject(Model.ListItem));
+    var ListDVCCuaChuyenVien = Html.Raw(JsonConvert.SerializeObject(ViewBag.ListDVCCuaChuyenVien));
+    var IdUser = ViewBag.IdUser;
+    var NameUser = ViewBag.NameUser;
+}
+
+<div class="modal-dialog" style="width:50%">
+    @using (Ajax.BeginForm("SaveDichVuCongCuaChuyenVien", "User", new { @area = "UserArea" }, new AjaxOptions()
+    {
+        HttpMethod = "POST",
+        OnFailure = "AjaxFormError",
+        OnSuccess = "AjaxFormSuccess",
+    }, new { id = "form--edit-dichvucong-nhanvien" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <input type="hidden" id="IdUser" name="IdUser" value="@IdUser" />
+        <input type="hidden" id="DichVuCongDaChecked" name="DichVuCongDaChecked" />
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <div class="center">
+                    <h4 class="modal-title">CẬP NHẬT THÔNG TIN PHỤ TRÁCH DỊCH VỤ CÔNG</h4>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <div class="row row-block">
+                            <div class="col-sm-4 txt-label text-left">
+                                <p>Người phụ trách: </p>
+                            </div>
+                            <div class="col-sm-8">
+                                <p>@NameUser</p>
+                            </div>
+                        </div>
+
+                        <div class="row row-block">
+                            <div class="col-md-4 txt-label text-left">Dịch vụ công:</div>
+                            <div class="col-md-8">
+                                <input type="text" id="txtSearchDichVuCong" name="TenDichVuCong" class="width100 form-control" />
+                            </div>
+                        </div>
+
+                        <div class="row row-block center margin-bottom-12">
+                            <button class="btn btn-primary btn-sm" type="button" id="btnSearchDichVuCong" name="btnSearchDichVuCong">
+                                <i class="fa fa-search"></i>&nbsp;Tìm kiếm
+                            </button>
+                        </div>
+
+                        <div id="tbl-dvc" class="hntbl-cover table-scroll">
+                            <div class="table-wrap">
+                                <table class="hinet-table table table-striped table-hover fixed-table">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>#</th>
+                                            <th style="text-align:center">Tên dịch vụ công</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer center">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fa fa-save"></i>&nbsp;Lưu thông tin
+                </button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">
+                    <i class="fa fa-times"></i>&nbsp;Đóng
+                </button>
+            </div>
+        </div>
+
+    }foreach
+</div>
+<script>
+    var lstData = eval(@lstData);
+    var ListDVCCuaChuyenVien = eval(@ListDVCCuaChuyenVien);
+    var moduleTableSelector = "#tbl-dvc";
+    console.log(ListDVCCuaChuyenVien);
+
+    function pagefunction(){
+            var conf=[
+                {
+                    tdClass:"",
+                    isSort:false,
+                    nameModel: "",
+                    content: function (data) {
+                        var strchecked = '';
+                        if (ListDVCCuaChuyenVien.indexOf(data.Id) != -1) {
+                            strchecked = "checked";
+                        }
+                        var html = "<input type='checkbox'name='checkedDichVuCong' onclick='onClickDichVuCong(this, " + data.Id + ")' value='" + data.Id + "' " + strchecked + "/>";;
+                        return html;
+                    }
+                },
+                {
+                    tdClass: "",
+                    isSort: false,
+                    nameModel: "",
+                    isCounter:true,
+                },
+                {
+                    tdClass: "",
+                    isSort: false,
+                    nameModel: "TenDichVuCong",
+                    content: function (data) {
+                        return data.TenDichVuCong;
+                    }
+                },
+            ];
+
+
+            var getdatafunc=function(page,sortQuery,pageSize){
+                $.ajax({
+                    url: '/UserArea/User/getDataDichVuCongCuaCV',
+                    type: 'post',
+                    cache: false,
+                    data:{"indexPage":page,"sortQuery":sortQuery,"pageSize":pageSize},
+                    success: function (data) {
+                        $(moduleTableSelector).hinetTable("data",{
+                            pageSize:pageSize!=-1?pageSize:data.Count,
+                            pageIndex:page,
+                            pagecount: data.TotalPage,
+                            recordCount: data.Count,
+                            listItem: data.ListItem,
+                        });
+
+                    },
+                    error: function (err) {
+                        CommonJS.alert(xhr.responseText);
+                    }
+                });
+
+            }
+
+            var tblData=$("#tbl-dvc").hinetTable("init",{
+                pageSizeList: { size: [5, 10, 15, -1], label: ['5', '10', '15', 'Tất cả'] },
+                pagecount: @Model.TotalPage,
+                recordCount: @Model.Count,
+                actionToolBar: '',
+                getData: getdatafunc,
+                listItem:lstData,
+                config: conf,
+                pageSize: 5
+            });
+
+    }
+    function onClickDichVuCong(element, idDichVuCong) {
+        if (!element.checked) {
+            var index = ListDVCCuaChuyenVien.indexOf(idDichVuCong);
+            ListDVCCuaChuyenVien.splice(index, 1);
+        } else {
+            ListDVCCuaChuyenVien.push(idDichVuCong);
+        }
+        $('#DichVuCongDaChecked').val(ListDVCCuaChuyenVien.join(','));
+    }
+
+    $('#btnSearchDichVuCong').click(function () {
+        var callBack = function (data) {
+            $(moduleTableSelector).hinetTable("reload");
+            $(moduleTableSelector).hinetTable("data", {
+                pageIndex: 1,
+                pagecount: data.TotalPage,
+                recordCount: data.Count,
+                listItem: data.ListItem,
+            });
+        }
+        onCallAjax('/UserArea/User/searchDataDichVuCongCuaChuyenVien', { txtSearchDichVuCong: $('#txtSearchDichVuCong').val() }, 'post', callBack);
+    });
+    $(document).ready(function () {
+        pagefunction();
+        $('#DichVuCongDaChecked').val(ListDVCCuaChuyenVien.join(','));
+    });
+</script>

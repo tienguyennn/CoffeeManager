@@ -1,0 +1,89 @@
+﻿@using Service.AppUserService.Dto
+@{
+    var userInfo = SessionManager.GetUserInfo() as Model.IdentityEntities.AppUser;
+}
+
+<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+    @*<div class="col-sm-12">
+            <select class="form-control">
+                <option>Chuyên viên bộ</option>
+                <option>Trưởng phòng</option>
+            </select>
+        </div>*@
+    <div class="sidebar-shortcuts-large dropdown mega-dropdown" id="sidebar-shortcuts-large">
+
+        <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+            @if (userInfo != null)
+            {
+            }
+        </button>
+
+
+        @if (userInfo != null)
+        {
+            <ul class="dropdown-menu mega-dropdown-menu row">
+                <li class="col-sm-4">
+                    <div>
+                        <div class="dropdown-header">Thông tin cá nhân</div>
+                        <div>
+                            <img src="/@userInfo.Avatar" onerror="this.src = '/assets/images/notfoundimage.png'" class="img-thumbnail avatar" />
+                        </div>
+                        <table class="table-noborder ">
+                            <tr>
+
+                                <td class="labelData " width="100px">Tên tài khoản</td>
+                                <td class="">@userInfo.UserName</td>
+                            </tr>
+                            <tr>
+                                <td class="labelData">Họ tên</td>
+                                <td class="">@userInfo.FullName</td>
+                            </tr>
+                            <tr>
+                                <td class="labelData">Điện thoại</td>
+                                <td class="">@userInfo.PhoneNumber</td>
+                            </tr>
+                            <tr>
+                                <td class="labelData">Email</td>
+                                <td class="">@userInfo.Email</td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </li>
+
+                <li class="col-sm-4">
+                    <div class="dropdown-header">Phòng ban</div>
+                    <ol>
+                        <li>
+
+                        </li>
+                    </ol>
+
+                </li>
+                <li class="col-sm-4">
+                    <div class="dropdown-header">Vai trò</div>
+                    <ol>
+
+                    </ol>
+                </li>
+            </ul>
+        }
+
+
+    </div>
+
+    <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+        <span class="btn btn-success"></span>
+
+        <span class="btn btn-info"></span>
+
+        <span class="btn btn-warning"></span>
+
+        <span class="btn btn-danger"></span>
+    </div>
+</div>
+<script>
+    jQuery(document).on('click', '.mega-dropdown', function (e) {
+        e.stopPropagation()
+    })
+</script>

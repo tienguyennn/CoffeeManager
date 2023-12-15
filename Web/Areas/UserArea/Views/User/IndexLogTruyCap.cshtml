@@ -1,0 +1,135 @@
+﻿@{
+    ViewBag.Title = "Quản lý log truy cập";
+    Layout = "~/Views/Shared/_LayoutAce.cshtml";
+    ViewBag.ModuleName = "Quản lý log truy cập";
+    ViewBag.PageName = "Danh sách log truy cập";
+    ViewBag.ModuleCode = "QLTaiKhoan";
+}
+@using Model.IdentityEntities;
+@using Newtonsoft.Json;
+@using Service.Common;
+@using Service.AppUserService.Dto;
+@using Web.Areas.UserArea.Models
+@model UserListViewModel
+@{
+    var lstData = Html.Raw(JsonConvert.SerializeObject(Model.ListUser.ListItem));
+}
+@section ActionBarRight{
+    <a href="#collapseDiv" class="btn btn-sm btn-primary" aria-controls="collapsePanel" data-toggle="collapse" role="button">
+        <i class="fa fa-search"></i> Tìm kiếm
+    </a>
+    <a href="/UserArea/User/ExportExcelLogTruyCap" class="btn btn-labeled btn-success btn-sm">
+        <span class='btn-label'><i class='glyphicon glyphicon-download'></i></span> Xuất Excel
+    </a>
+}
+@Html.Partial("_SearchUserAccess")
+
+<div id="tbl-user" class="hntbl-cover table-scroll">
+    <div class="table-wrap">
+        <table class="hinet-table table table-striped table-hover fixed-table" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th class="fixed-side">#</th>
+                    <th>Tên tài khoản</th>
+                    <th>Thời gian truy cập</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        var lstData = eval(@lstData);
+        var moduleTableSelector="#tbl-user";
+        function pagefunction(){
+            var conf=[
+                {
+                    tdClass: "center fixed-side",
+                    isSort: false,
+                    nameModel: "",
+                    isCounter:true,
+                },
+                 {
+                     isSort:true,
+                     nameModel:'UserName',
+                     content: function (data) {
+						 var str = "";
+						 str += "<a href='#'> " + data.UserName + "</a><br/>";
+						 return str;
+                     }
+                },
+                {
+                    isSort: true,
+                    nameModel: 'TimeAccessed',
+                    content: function (data) {
+                        return ToDateTime(data.TimeAccessed);
+                    }
+                },
+                {
+                    isSort: false,
+                    nameModel: "",
+                    tdClass: "",
+                    content: function (data) {
+                        var result = "<div class='btn-group' style='display:flex; justify-content:center;'>";
+                        result += "<a style='margin-right:5px;' class='btn btn-danger btn-sm' href='javascript:void(0)' onclick='onDelete(\"/UserArea/User/DeleteLogTruyCap/" + data.AuditID + "\")'  title = 'Xóa'><i class=' glyphicon glyphicon-remove action-icon'> </i>Xoá</a>";
+                        result += "</div>";
+                        return result;
+                    }
+                },
+            ];
+
+
+            var getdatafunc=function(page,sortQuery,pageSize){
+                $.ajax({
+                    url: '/UserArea/User/GetDataAccess',
+                    type: 'post',
+                    cache: false,
+                    data:{"indexPage":page,"sortQuery":sortQuery,"pageSize":pageSize},
+                    success: function (data) {
+                        $(moduleTableSelector).hinetTable("data",{
+                            pageSize:pageSize!=-1?pageSize:data.Count,
+                            pageIndex:page,
+                            pagecount: data.TotalPage,
+                            recordCount: data.Count,
+                            listItem: data.ListItem,
+                        });
+
+                    },
+                    error: function (err) {
+                        CommonJS.alert(xhr.responseText);
+                    }
+                });
+
+            }
+
+            var tblData=$("#tbl-user").hinetTable("init",{
+                pageSizeList:{size:[20,50,100,-1],label:['20','50','100','Tất cả']},
+                pagecount: @Model.ListUser.TotalPage,
+                recordCount: @Model.ListUser.Count,
+                actionToolBar: '',
+                getData: getdatafunc,
+                listItem:lstData,
+                config:conf
+            });
+
+        }
+
+        function AfterSussessActionAjaxform() {
+            $(moduleTableSelector).hinetTable("reload");
+        }
+        function AjaxSearchSuccess(result) {
+            $(moduleTableSelector).hinetTable("data", {
+                pageIndex: 1,
+                pagecount: result.TotalPage,
+                recordCount: result.Count,
+                listItem: result.ListItem,
+            });
+        }
+
+
+        pagefunction();
+    </script>
+}

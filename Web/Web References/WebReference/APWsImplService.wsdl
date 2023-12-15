@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://ws.apservice.viettel.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="APWsImplService" targetNamespace="http://ws.apservice.viettel.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://210.211.98.203:8080/apws.asmx?xsd=1" namespace="http://ws.apservice.viettel.com/" />
+    </xsd:schema>
+  </types>
+  <message name="cancelBatch">
+    <part name="tranInfo" type="tns:transactionInfo" />
+  </message>
+  <message name="cancelBatchResponse">
+    <part name="return" type="tns:transactionInfo" />
+  </message>
+  <message name="certificateQuery">
+    <part name="tranInfo" type="tns:transactionInfo" />
+  </message>
+  <message name="certificateQueryResponse">
+    <part name="return" type="tns:transactionInfo" />
+  </message>
+  <message name="statusQuery">
+    <part name="tranInfo" type="tns:transactionInfo" />
+  </message>
+  <message name="statusQueryResponse">
+    <part name="return" type="tns:transactionInfo" />
+  </message>
+  <message name="receipt">
+    <part name="tranInfo" type="tns:transactionInfo" />
+  </message>
+  <message name="receiptResponse">
+    <part name="return" type="tns:transactionInfo" />
+  </message>
+  <message name="cancelSignature">
+    <part name="tranInfo" type="tns:transactionInfo" />
+  </message>
+  <message name="cancelSignatureResponse">
+    <part name="return" type="tns:transactionInfo" />
+  </message>
+  <message name="batchSignRegistration">
+    <part name="tranInfo" type="tns:transactionInfo" />
+  </message>
+  <message name="batchSignRegistrationResponse">
+    <part name="return" type="tns:transactionInfo" />
+  </message>
+  <message name="notification">
+    <part name="tranInfo" type="tns:transactionInfo" />
+  </message>
+  <message name="notificationResponse">
+    <part name="return" type="tns:transactionInfo" />
+  </message>
+  <message name="signature">
+    <part name="tranInfo" type="tns:transactionInfo" />
+  </message>
+  <message name="signatureResponse">
+    <part name="return" type="tns:transactionInfo" />
+  </message>
+  <message name="connect">
+    <part name="tranInfo" type="tns:transactionInfo" />
+  </message>
+  <message name="connectResponse">
+    <part name="return" type="tns:transactionInfo" />
+  </message>
+  <portType name="APWs">
+    <operation name="cancelBatch">
+      <input wsam:Action="http://ws.apservice.viettel.com/APWs/cancelBatchRequest" message="tns:cancelBatch" />
+      <output wsam:Action="http://ws.apservice.viettel.com/APWs/cancelBatchResponse" message="tns:cancelBatchResponse" />
+    </operation>
+    <operation name="certificateQuery">
+      <input wsam:Action="http://ws.apservice.viettel.com/APWs/certificateQueryRequest" message="tns:certificateQuery" />
+      <output wsam:Action="http://ws.apservice.viettel.com/APWs/certificateQueryResponse" message="tns:certificateQueryResponse" />
+    </operation>
+    <operation name="statusQuery">
+      <input wsam:Action="http://ws.apservice.viettel.com/APWs/statusQueryRequest" message="tns:statusQuery" />
+      <output wsam:Action="http://ws.apservice.viettel.com/APWs/statusQueryResponse" message="tns:statusQueryResponse" />
+    </operation>
+    <operation name="receipt">
+      <input wsam:Action="http://ws.apservice.viettel.com/APWs/receiptRequest" message="tns:receipt" />
+      <output wsam:Action="http://ws.apservice.viettel.com/APWs/receiptResponse" message="tns:receiptResponse" />
+    </operation>
+    <operation name="cancelSignature">
+      <input wsam:Action="http://ws.apservice.viettel.com/APWs/cancelSignatureRequest" message="tns:cancelSignature" />
+      <output wsam:Action="http://ws.apservice.viettel.com/APWs/cancelSignatureResponse" message="tns:cancelSignatureResponse" />
+    </operation>
+    <operation name="batchSignRegistration">
+      <input wsam:Action="http://ws.apservice.viettel.com/APWs/batchSignRegistrationRequest" message="tns:batchSignRegistration" />
+      <output wsam:Action="http://ws.apservice.viettel.com/APWs/batchSignRegistrationResponse" message="tns:batchSignRegistrationResponse" />
+    </operation>
+    <operation name="notification">
+      <input wsam:Action="http://ws.apservice.viettel.com/APWs/notificationRequest" message="tns:notification" />
+      <output wsam:Action="http://ws.apservice.viettel.com/APWs/notificationResponse" message="tns:notificationResponse" />
+    </operation>
+    <operation name="signature">
+      <input wsam:Action="http://ws.apservice.viettel.com/APWs/signatureRequest" message="tns:signature" />
+      <output wsam:Action="http://ws.apservice.viettel.com/APWs/signatureResponse" message="tns:signatureResponse" />
+    </operation>
+    <operation name="connect">
+      <input wsam:Action="http://ws.apservice.viettel.com/APWs/connectRequest" message="tns:connect" />
+      <output wsam:Action="http://ws.apservice.viettel.com/APWs/connectResponse" message="tns:connectResponse" />
+    </operation>
+  </portType>
+  <binding name="APWsImplPortBinding" type="tns:APWs">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <operation name="cancelBatch">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" namespace="http://ws.apservice.viettel.com/" />
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://ws.apservice.viettel.com/" />
+      </output>
+    </operation>
+    <operation name="certificateQuery">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" namespace="http://ws.apservice.viettel.com/" />
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://ws.apservice.viettel.com/" />
+      </output>
+    </operation>
+    <operation name="statusQuery">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" namespace="http://ws.apservice.viettel.com/" />
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://ws.apservice.viettel.com/" />
+      </output>
+    </operation>
+    <operation name="receipt">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" namespace="http://ws.apservice.viettel.com/" />
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://ws.apservice.viettel.com/" />
+      </output>
+    </operation>
+    <operation name="cancelSignature">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" namespace="http://ws.apservice.viettel.com/" />
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://ws.apservice.viettel.com/" />
+      </output>
+    </operation>
+    <operation name="batchSignRegistration">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" namespace="http://ws.apservice.viettel.com/" />
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://ws.apservice.viettel.com/" />
+      </output>
+    </operation>
+    <operation name="notification">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" namespace="http://ws.apservice.viettel.com/" />
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://ws.apservice.viettel.com/" />
+      </output>
+    </operation>
+    <operation name="signature">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" namespace="http://ws.apservice.viettel.com/" />
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://ws.apservice.viettel.com/" />
+      </output>
+    </operation>
+    <operation name="connect">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" namespace="http://ws.apservice.viettel.com/" />
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://ws.apservice.viettel.com/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="APWsImplService">
+    <port name="APWsImplPort" binding="tns:APWsImplPortBinding">
+      <soap:address location="http://210.211.98.203:8080/apws.asmx" />
+    </port>
+  </service>
+</definitions>

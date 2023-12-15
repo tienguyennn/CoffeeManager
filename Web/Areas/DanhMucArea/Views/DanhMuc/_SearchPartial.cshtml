@@ -1,0 +1,61 @@
+<div id="collapseDiv" class="panel-collapse collapse" aria-expanded="false" role="tabpanel">
+    <div class="well SearchBox">
+
+        @using (Ajax.BeginForm("searchData", "DanhMuc", new { Area = "DanhMucArea" },
+            new AjaxOptions()
+            {
+                HttpMethod = "POST",
+                OnFailure = "AjaxFormError",
+                OnSuccess = "AjaxSearchSuccess",
+            }, new { }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="row row-block">
+                <div class="col-md-6 row-block">
+                    <div class="col-md-4 txt-label">Tên danh mục</div>
+                    <div class="col-md-8">
+                        <input class="form-control width100" type="text" name="TenDanhMucFilter" />
+                    </div>
+                </div>
+
+                <div class="col-md-6 row-block">
+                    <div class="col-md-4 txt-label">Mã danh mục</div>
+                    <div class="col-md-8">
+                        <input class="form-control width100" type="text" name="MaDanhMucFilter" />
+                    </div>
+                </div>
+
+                <div class="col-md-6 row-block">
+                    <div class="col-md-4 txt-label">Thứ tự</div>
+                    <div class="col-md-8">
+                        <input type="number" class="form-control width100" name="ThuTuFilter" />
+                    </div>
+                </div>
+
+                <div class="col-md-6 row-block">
+                    <div class="col-md-4 txt-label">Ghi chú</div>
+                    <div class="col-md-8">
+                        <input class="form-control width100" type="text" name="GhiChuFilter" />
+                    </div>
+                </div>
+
+
+                <div class="col-md-12 center" style=" margin-top:20px;">
+                    <button id="btnSearch" type="submit" class="btn btn-labeled btn-primary btn-sm">
+                        <span class="btn-label">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </span>
+                        Tìm kiếm
+                    </button>
+                    <a aria-expanded="false" href="#collapseDiv" data-toggle="collapse" role="button" class="btn btn-labeled btn-danger btn-sm">
+                        <span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span>
+                        Đóng
+                    </a>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>
+
+

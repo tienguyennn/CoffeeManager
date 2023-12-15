@@ -1,0 +1,122 @@
+﻿@using Service.Constant
+@using Web.Models
+@using Service.Common;
+@model RightPatialViewModel
+
+    <div class="Box-board col-sm-4">
+        <div class="padding-left-right-24">
+            <div class="search-wrap">
+                <div class="lightsearch">
+                    <input type="text" class="lightSearchTerm" placeholder="Tìm kiếm...">
+                    <button type="submit" class="searchButton">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="padding-left-right-24">
+            <div class="b-content b-button-no-icon b-btn-simple-info">
+                <div class="">
+                    <p class="text-center-block">Văn bản pháp quy</p>
+                </div>
+            </div>
+        </div>
+        <div class="padding-left-right-24">
+            <div class="b-content b-button-no-icon b-btn-simple-info">
+                <div class="">
+                    <p class="text-center-block">Biểu mẫu</p>
+                </div>
+            </div>
+        </div>
+        <div class="padding-left-right-24">
+            <div class="b-content b-button b-btn-warning">
+                <div class="">
+                    <div class="icon">
+                        <img src="~/Content/EndUser/img/warning.png" />
+                    </div>
+                    <p>Chống hàng giả</p>
+                </div>
+            </div>
+        </div>
+        <div class="padding-left-right-24">
+            <div class="b-content b-button b-btn-info">
+                <div class="">
+                    <div class="icon">
+                        <img src="~/Content/EndUser/img/report.png" />
+                    </div>
+                    <p>Báo cáo TMĐT</p>
+                </div>
+            </div>
+        </div>
+
+        @{ Html.RenderAction("WebsiteSearchInfo", "Common"); }
+        <div class="clearfix"></div>
+        <div class="b-content height440 padding-left-right-24">
+            <div class="b-header b-underline">
+                <p>Thông báo</p>
+                <img src="~/Content/EndUser/img/bell.png" width="28" />
+            </div>
+            <div class="list">
+                <ul>
+                    @for (int i = 1; i < Model.HuongDan.ListItem.Count; i++)
+                    {
+                        <li><a href="#">@Model.HuongDan.ListItem[i].Name</a></li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+@Scripts.Render("~/bundles/jqueryval")
+<script>
+    var currentTab = 0;
+    showTab(currentTab);
+
+    function FixBoxSize() {
+        var newHeight = 520;
+        //if ($('#phanAnh').height() < $(".UngDung1").height()) {
+        //    newHeight = $(".UngDung1").height();
+        //}
+        //else newHeight = "auto";
+        $("#phanAnh").css("min-height", newHeight);
+    }
+
+    function showTab(n) {
+        var x = document.getElementsByClassName("tab");
+        x[n].style.display = "block";
+        FixBoxSize();
+    }
+    function nextPrev(n) {
+        // This function will figure out which tab to display
+        var x = document.getElementsByClassName("tab");
+
+        // Hide the current tab:
+        x[currentTab].style.display = "none";
+
+        currentTab = n;
+
+        //display the correct tab:
+        showTab(currentTab);
+    }
+    //function ValidateForm(n) {
+    //    var x, y, z, valid = true;
+    //    x = document.getElementsByClassName("tab");
+    //    y = x[currentTab].getElementsByClassName("inputField");
+    //    z = x[currentTab].getElementsByClassName("divoutput");
+    //    for (var i = 0; i < y.length; i++) {
+    //        if (y[i].value == "") {
+    //            z[i].innerHTML = '<p class = "text-danger">Vui lòng nhập thông tin này</p>';
+    //            valid = false;
+    //        }
+    //        else {
+    //            if (z[i].innerHTML != "")
+    //                z[i].innerHTML = "";
+    //        }
+    //    }
+    //    if (valid) {
+    //        nextPrev(n);
+    //        return valid;
+    //    }
+    //    else return valid;
+    //}
+
+</script>

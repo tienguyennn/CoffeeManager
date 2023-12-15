@@ -1,0 +1,51 @@
+﻿@using Model.IdentityEntities
+@using Web.Areas.UserArea.Models
+@using Model.Entities;
+@{
+    var userinfo = ViewBag.UserInfo as AppUser;
+    var ListDonVi = ViewBag.ListDonVi as List<CdsQuanLyDonVi>;
+    var UserListDonVi = ViewBag.UserListDonVi as List<UserDonVi>;
+}
+
+<div class="modal-dialog">
+    @using (Ajax.BeginForm("SaveSetupDonVi", "User", new { @area = "UserArea" }, new AjaxOptions()
+    {
+        HttpMethod = "POST",
+        OnFailure = "AjaxFormError",
+        OnSuccess = "AjaxFormSuccess",
+    }, new { id = "setupRoleForm" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.Hidden("userId",userinfo.Id)
+        //HtmlHelper.UnobtrusiveJavaScriptEnabled = false;
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <div class="center">
+                    <h4 class="modal-title">Thiết lập vai trò </h4>
+                </div>
+            </div>
+            <div class="modal-body">
+                <h4 class="headerForm">
+                    Chọn vai trò cho người dùng [@userinfo.UserName]
+                </h4>
+                <div>
+                    @foreach (var item in ListDonVi)
+                    {
+                        <div class="ace-settings-item">
+                            <input name="ListDonViUser" type="checkbox" value="@item.Id" @(UserListDonVi.Any(x => x.DonViId == item.Id) ? "checked" : "") class="ace ace-checkbox-2" id="ace-settings-@item.Id" />
+                            <label class="lbl" for="ace-settings-@item.Id"> @item.TenDonVi</label>
+                        </div>
+                                            }
+                </div>
+            </div>
+            <div class="modal-footer center">
+                <button type="submit" class="btn btn-primary">Hoàn thành</button>
+
+                <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+}
+</div>
+@Scripts.Render("~/bundles/jqueryval")

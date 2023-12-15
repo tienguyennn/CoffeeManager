@@ -1,0 +1,267 @@
+﻿@using Service.AppUserService.Dto;
+@using System.Configuration;
+@{
+    var user = SessionManager.GetUserInfo() as Model.IdentityEntities.AppUser;
+
+
+
+}
+<style>
+    li.active > .submenu li.active {
+        font-weight: bold;
+    }
+
+    .submenu > li.fa {
+        color: #0066cc;
+    }
+
+    .liactive {
+        font-weight: bold;
+    }
+
+    .menu-text {
+        color: #0f1010 !important
+    }
+
+    .liactive:hover {
+        font-weight: bold;
+        color: #0078d4;
+    }
+
+    .liactive.open a .box-all-contentmenu .icon_div,
+    .liactive.open a .box-all-contentmenu .text_div .menu-text,
+    .liactive.open a .box-all-contentmenu .box-icon-action,
+    .liactive a:hover > .text_div > .menu-text,
+    .liactive a:hover > .box-all-contentmenu > .text_div > .menu-text {
+        color: #0066cc !important;
+    }
+
+    .box-all-contentmenu {
+        display: flex;
+    }
+
+        .box-all-contentmenu .box-icon-action {
+            font-size: 12px;
+            color: #0995ed !important;
+        }
+
+        .box-all-contentmenu .text_div {
+            margin-right: auto;
+        }
+
+    .body-miniMenu .admin-menu-left .box-icon-action {
+        display: none;
+    }
+</style>
+<aside id="left-panel">
+    <div class="login-info">
+        <div class="logo">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#button-menu">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="style-mini">
+                <div class="text-pdti">
+                    <a class="logoDesk" href="/DashboardArea/Dashboard">
+                    </a>
+
+                </div>
+                <div class="text-tp">
+                    <a href="/DashboardArea/Dashboard" class="logoMini">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nav nav-list">
+        <div class="collapse navbar-collapse pd0 content-menu-MenuMain " id="button-menu">
+            <div class="lienketnhanh">
+                <h4 style="font-weight:bold;"><span>Chức năng</span></h4>
+            </div>
+            <nav style="width:100%; float:left">
+                <ul class="admin-menu-left">
+                    <li class="trangchu liactive">
+                        <a href="/DashboardArea/Dashboard" title="Trang chủ" class="hvr-icon-wobble-horizontal">
+                            <div class="icon_div">
+                                <span> <i class="menu-icon fa fa-television" aria-hidden="true"></i></span>
+                            </div>
+
+                            <div class="text_div">
+                                <span class="menu-text">
+                                    Trang chủ
+                                </span>
+                            </div>
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </a>
+                    </li>
+
+
+
+                    <li class="liactive @*active open*@" id="chucnang-">
+                        <a href="#" class="dropdown-toggle" style="">
+                            <div class="box-all-contentmenu">
+                                <div class="icon_div">
+                                    <span><i class="menu-icon fa fa-pencil-square-o"></i></span>
+                                </div>
+                                <div class="text_div">
+                                    <span class="menu-text">
+                                        Quản lý sản phẩm
+                                    </span>
+                                </div>
+                                <div class="box-icon-action">
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <b class="arrow"></b>
+                        <ul class="submenu nav-hide" style="display: none">
+                            <li class="" style="font-size:12px">
+                                <i class="fa fa-arrow-right"></i>
+                                <a href="/SanPhamArea/SanPham">
+                                    <i class="menu-icon"></i>
+                                    Danh sách sản phẩm
+                                </a>
+                                <b class="arrow"></b>
+                            </li>
+                            <li class="" style="font-size:12px">
+                                <i class="fa fa-arrow-right"></i>
+                                <a href="/DanhMucArea/DanhMuc">
+                                    <i class="menu-icon"></i>
+                                    Danh mục
+                                </a>
+                                <b class="arrow"></b>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="liactive @*active open*@" id="chucnang-">
+                        <a href="#" class="dropdown-toggle" style="">
+                            <div class="box-all-contentmenu">
+                                <div class="icon_div">
+                                    <span><i class="menu-icon fa fa-pencil-square-o"></i></span>
+                                </div>
+                                <div class="text_div">
+                                    <span class="menu-text">
+                                        Thông tin đặt bàn
+                                    </span>
+                                </div>
+                                <div class="box-icon-action">
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <b class="arrow"></b>
+                        <ul class="submenu nav-hide" style="display: none">
+                            <li class="" style="font-size:12px">
+                                <i class="fa fa-arrow-right"></i>
+                                <a href="/DatBanArea/DatBan">
+                                    <i class="menu-icon"></i>
+                                    Danh sách đặt bàn
+                                </a>
+                                <b class="arrow"></b>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="liactive @*active open*@" id="chucnang-">
+                        <a href="#" class="dropdown-toggle" style="">
+                            <div class="box-all-contentmenu">
+                                <div class="icon_div">
+                                    <span><i class="menu-icon fa fa-pencil-square-o"></i></span>
+                                </div>
+                                <div class="text_div">
+                                    <span class="menu-text">
+                                        Thông tin đặt hàng
+                                    </span>
+                                </div>
+                                <div class="box-icon-action">
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <b class="arrow"></b>
+                        <ul class="submenu nav-hide" style="display: none">
+                            <li class="" style="font-size:12px">
+                                <i class="fa fa-arrow-right"></i>
+                                <a href="/OrderArea/Order">
+                                    <i class="menu-icon"></i>
+                                    Danh sách đặt hàng
+                                </a>
+                                <b class="arrow"></b>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="liactive @*active open*@" id="chucnang-">
+                        <a href="#" class="dropdown-toggle" style="">
+                            <div class="box-all-contentmenu">
+                                <div class="icon_div">
+                                    <span><i class="menu-icon fa fa-pencil-square-o"></i></span>
+                                </div>
+                                <div class="text_div">
+                                    <span class="menu-text">
+                                        Quản lý blog
+                                    </span>
+                                </div>
+                                <div class="box-icon-action">
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <b class="arrow"></b>
+                        <ul class="submenu nav-hide" style="display: none">
+                            <li class="" style="font-size:12px">
+                                <i class="fa fa-arrow-right"></i>
+                                <a href="/BlogArea/Blog">
+                                    <i class="menu-icon"></i>
+                                    Danh sách blog
+                                </a>
+                                <b class="arrow"></b>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="liactive @*active open*@" id="chucnang-">
+                        <a href="#" class="dropdown-toggle" style="">
+                            <div class="box-all-contentmenu">
+                                <div class="icon_div">
+                                    <span><i class="menu-icon fa fa-pencil-square-o"></i></span>
+                                </div>
+                                <div class="text_div">
+                                    <span class="menu-text">
+                                        Thông tin liên hệ
+                                    </span>
+                                </div>
+                                <div class="box-icon-action">
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <b class="arrow"></b>
+                        <ul class="submenu nav-hide" style="display: none">
+                            <li class="" style="font-size:12px">
+                                <i class="fa fa-arrow-right"></i>
+                                <a href="/LienHeArea/LienHe">
+                                    <i class="menu-icon"></i>
+                                    Danh sách liên hệ
+                                </a>
+                                <b class="arrow"></b>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+        </div><!-- /.nav-list -->
+    </div>
+</aside>
+<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+    <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+</div>
+<style>
+    .body-miniMenu .admin-menu-left li:hover ul, .body-miniMenu .admin-menu-left li:hover {
+        display: block;
+    }
+</style>
+<script>
+    $(document).ready(function () {
+    })
+</script>

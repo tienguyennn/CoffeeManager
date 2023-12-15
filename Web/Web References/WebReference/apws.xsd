@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://ws.apservice.viettel.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="transactionInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="additionData" type="xs:string" />
+      <xs:element minOccurs="0" name="apId" type="xs:string" />
+      <xs:element minOccurs="0" name="apURL" type="xs:string" />
+      <xs:element minOccurs="0" name="batchCode" type="xs:string" />
+      <xs:element minOccurs="0" name="batchCount" type="xs:int" />
+      <xs:element minOccurs="0" name="batchExpireDate" type="xs:string" />
+      <xs:element minOccurs="0" name="billCode" type="xs:string" />
+      <xs:element minOccurs="0" name="certId" type="xs:int" />
+      <xs:element minOccurs="0" name="certInfo" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="certList" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="certSerial" type="xs:string" />
+      <xs:element minOccurs="0" name="dataDisplay" type="xs:string" />
+      <xs:element minOccurs="0" name="dataSign" type="xs:string" />
+      <xs:element minOccurs="0" name="errorCode" type="xs:string" />
+      <xs:element minOccurs="0" name="errorDesc" type="xs:string" />
+      <xs:element minOccurs="0" name="forcePIN" type="xs:int" />
+      <xs:element minOccurs="0" name="isBatchSigningSupported" type="xs:int" />
+      <xs:element minOccurs="0" name="isSHA2Supported" type="xs:int" />
+      <xs:element minOccurs="0" name="keyHash" type="xs:string" />
+      <xs:element minOccurs="0" name="keyValue" type="xs:string" />
+      <xs:element minOccurs="0" name="mac" type="xs:string" />
+      <xs:element minOccurs="0" name="manufacturer" type="xs:string" />
+      <xs:element minOccurs="0" name="msgMode" type="xs:string" />
+      <xs:element minOccurs="0" name="msisdn" type="xs:string" />
+      <xs:element minOccurs="0" name="mssFormat" type="xs:string" />
+      <xs:element minOccurs="0" name="msspId" type="xs:string" />
+      <xs:element minOccurs="0" name="orgErrCode" type="xs:string" />
+      <xs:element minOccurs="0" name="orgErrDesc" type="xs:string" />
+      <xs:element minOccurs="0" name="orgRequestApId" type="xs:string" />
+      <xs:element minOccurs="0" name="orgRequestId" type="xs:long" />
+      <xs:element minOccurs="0" name="processCode" type="xs:string" />
+      <xs:element minOccurs="0" name="reqDate" type="xs:string" />
+      <xs:element minOccurs="0" name="requestId" type="xs:long" />
+      <xs:element minOccurs="0" name="resDate" type="xs:string" />
+      <xs:element minOccurs="0" name="runImm" type="xs:int" />
+      <xs:element minOccurs="0" name="sigType" type="xs:int" />
+      <xs:element minOccurs="0" name="signature" type="xs:string" />
+      <xs:element minOccurs="0" name="timeout" type="xs:long" />
+      <xs:element minOccurs="0" name="userId" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

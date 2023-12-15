@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/assets/EndUserCss")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/assets/EndUserjs")
+    @Scripts.Render("~/bundles/datepicker")
+    @Styles.Render("~/Content/datepicker")
+
+</head>
+@using Microsoft.AspNet.Identity
+@using Service.AppUserService.Dto
+@{ 
+    var userInfo = SessionManager.GetUserInfo() as Model.IdentityEntities.AppUser;
+}
+<body>
+    <header id="header" class="">
+        <div class="container">
+            <div class="col-sm-9 pdl0 header__logo">
+                <a href="/"><img src="~/Content/EndUser/img/LOGO.png" max-width="100%" alt=""></a>
+            </div>
+            <div class="col-sm-3  pdr0">
+                @if (userInfo!=null)
+                {
+                    using (Html.BeginForm("LogOff", "Account", FormMethod.Get, new { id = "logoutForm", @class = "navbar-right" }))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                @Html.ActionLink("Xin chào " + userInfo.FullName + "!", "Index", "EndUserInfo", routeValues: null, htmlAttributes: new { title = "Manage" })
+                            </li>
+                            <li><a href="javascript:void" onclick="document.getElementById('logoutForm').submit()">Đăng xuất</a></li>
+                        </ul>
+                    }
+
+                }
+                else
+                {
+                    <div class="register">
+                        <ul>
+                            <li><a href="/account/login">Đăng nhập</a></li>
+                            <li><a href="/Account/RegisterCompany">Đăng ký</a></li>
+                        </ul>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </header><!-- /header -->
+    @Html.Partial("_menuEnduserPartial")
+    <div class="">
+        @RenderBody()
+
+    </div>
+    <div class="scroll" onclick="scrolltop()">
+        <img src="~/Content/EndUser/img/scrollTop.png" alt="">
+    </div>
+    <footer>
+        <div class="container">
+            <h3>Bộ Thông Tin Và Truyền Thông</h3>
+            <p>Đc: 18 Ngô Quyền, Hoàn Kiếm, Hà Nội</p>
+            <p>
+                <span><a href="telto:02422205512"> ĐT: 024 222 05 512</a></span>
+                <span>Fax: 024 222 05 397</span>
+                <span><a href="mailto:qltmdt@moit.gov.vn">Email: cntt@moit.gov.vn</a></span>
+            </p>
+        </div>
+    </footer>
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")*@
+   
+    @RenderSection("scripts", required: false)
+    
+</body>
+</html>

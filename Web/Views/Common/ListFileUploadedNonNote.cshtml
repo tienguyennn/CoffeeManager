@@ -1,0 +1,34 @@
+﻿@using Web.Models;
+@model List<AttachTempFileItem>
+<table class="table table-info table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Tên tệp</th>
+            <th>Định dạng</th>
+            <th>Kích thước</th>
+            <th>Trạng thái</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@(Model.IndexOf(item) + 1)</td>
+                    <td>@item.Name</td>
+                    <td>@item.Extension</td>
+                    <td>@item.Size</td>
+                    <td>@(item.Status ? "Đã lưu" : "Chưa lưu")</td>
+                </tr>
+            }
+
+        }
+        else
+        {
+            <tr><td colspan="6">Không có dữ liệu</td></tr>
+        }
+
+    </tbody>
+</table>

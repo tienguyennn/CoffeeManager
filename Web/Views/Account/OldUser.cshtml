@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Người dùng hệ thống cũ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using BotDetect.Web.Mvc;
+@using Web;
+@using Model.IdentityEntities;
+@model AppUser
+@section HeadIncludes {
+    <link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl"
+          rel="stylesheet" type="text/css" />
+}
+<div class="row">
+    <div class="col-sm-12">
+        <h3 class="text-center text-danger">Tài khoản của quý vị được chuyển đổi từ hệ thống cũ sang hệ thống mới</h3>
+        <h4 class="text-center ">Để đảm bảo an toàn thông tin vui lòng kích nút cập nhật mật khẩu</h4>
+        @using (Html.BeginForm("SaveOldUser", "Account", new { area = "" }, FormMethod.Post, new { id = "updatePassForm" }))
+        {
+            MvcCaptcha registrationCaptcha = CaptchaHelper.UpdatePasswordCaptcha();
+            <input type="hidden" name="Id" value="@Model.Id" />
+            @Html.AntiForgeryToken()
+            <div class="clearBoth"></div>
+            <div class="col-sm-offset-4 col-sm-4">
+                <label class="control-label col-sm-12" for="CaptchaCode">Nhập mã xác nhận <span style="color:red">*</span></label>
+                <div class="col-sm-8">
+                    @Html.TextBox("CaptchaUpdatePass", null, new { @class = "form-control captchaVal required" })
+                    @Html.ValidationMessage("CaptchaUpdatePass", new { @class = "text-danger" })
+                </div>
+                <div class="clearBoth"></div>
+                <div class="form-group col-sm-12" style=" margin-top:15px;">
+                    @Html.Captcha(registrationCaptcha)
+                </div>
+                <div class="clearBoth"></div>
+                <div class="col-sm-12"><button type="submit" class="btn btn-primary">Cập nhật mật khẩu</button></div>
+            </div>
+
+
+        }
+
+
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/captcha.validate.js")
+
+    <script>
+        $("#updatePassForm").submit(function () {
+            $("#CaptchaUpdatePass").Captcha.ReloadImage();
+        })
+    </script>
+}

@@ -1,0 +1,10 @@
+Code : css
+- kh?i gi?a dòng gi?a hàng
+
+ .class {
+ margin: 0;
+ display: flex;
+ align-items: center;
+ justify-con-tent: center;
+ }
+

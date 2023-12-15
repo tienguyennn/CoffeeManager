@@ -1,0 +1,155 @@
+.main-content {
+    width: 100%;
+}
+
+    .main-content .border-bt {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        height: 40px;
+    }
+
+    .main-content .home {
+        margin: auto 0;
+        color: #337ab7;
+        font-weight: 600;
+        cursor: pointer;
+        padding-left: 12px;
+        font-size: 18px;
+    }
+
+.repor-tab {
+    position: absolute;
+    bottom: 1px;
+    left: 150px;
+}
+
+#NotiArea i.fa-bell {
+    margin-top: 10px;
+}
+
+.dangxuat {
+    padding: 0;
+}
+
+#maximize {
+    float: right;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+    #maximize svg {
+        height: 20px;
+    }
+
+.box-baocao {
+    height: 500px;
+    padding: 6px;
+/*    padding-top: 20px;
+    margin-top: -14px;*/
+/*    cursor: move;
+    width: 300px;*/
+    /*padding: 12px;*/
+    /*margin-bottom: 24px;*/
+    /*padding-top: 20px;*/
+    /*cursor: move;*/
+    /*        resize: both;
+        overflow: auto;*/
+}
+
+
+    .box-baocao iframe #chartdiv {
+        height: 90%;
+    }
+
+.box-baocao-count {
+    height: calc(500px/3);
+    padding: 0px;
+/*    padding-top: 20px;
+    margin-top: -14px;
+    cursor: move;*/
+}
+
+    .box-baocao-count body {
+        font-family: "Arial";
+        margin: 0px;
+        box-sizing: border-box;
+    }
+
+.box-baocao.box-baocao-count {
+    height: 190px;
+}
+
+.resize-able {
+    height: 100%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 12px;
+}
+
+.drag {
+    /*background: blue;*/
+    /*cursor: move;*/
+    /*height: 20px;*/
+}
+
+
+.page-header > h1 {
+    display: none;
+}
+
+.page-content {
+    background-color: #f3f3f9;
+    width: 100%;
+    float: left;
+    padding: 0px !important;
+    /*padding-bottom: 60px;*/
+}
+
+.namereport {
+    text-align: center;
+}
+
+.box-counter {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+
+.box-baocao-count .box-counter {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.tab-content {
+    width: 100%;
+    float: left;
+    border: none;
+    padding-top: 0px;
+}
+
+
+.box-baocao-count .box-counter:before {
+    background-color: white;
+}
+
+.namereport {
+    margin-top: -32px;
+}
+
+    .namereport > a {
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+
+.box-counter:before, .box-counter:after {
+    content: none;
+    border: none;
+    background-color: transparent;
+}
+
+.show-table {
+    padding-bottom: 50px;
+    float: left;
+    width: 100%;
+    margin-top: 30px;
+}

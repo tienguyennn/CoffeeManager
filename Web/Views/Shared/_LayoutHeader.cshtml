@@ -1,0 +1,77 @@
+﻿@using Service.DM_DulieuDanhmucService.DTO;
+@model CauHinhHeThong
+<style>
+    .btn-login {
+        background-color: #0062c6;
+        padding: 0px 20px;
+        color: #fff;
+        cursor: pointer;
+        border: none;
+        outline: none;
+    }
+
+        .btn-login:hover {
+            background-color: #c4261d;
+        }
+
+    .pdti {
+        font-size: 72px;
+        font-family: 'RobotoBlack';
+        color: #0062c6;
+        line-height: 56px;
+    }
+</style>
+<div id="header">
+    <div class="container">
+        <div class="box-logo-header">
+            <div class="col-lg-9 col-md-9 logo">
+                <a href="#" title="CHUYENDOISO HOLDINGS">
+                    @*<img src="/content/img/logo.png" alt="" class="wow zoomIn" />*@<div class="pdti">PDTI</div>
+                </a>
+                <div class="box-title">
+                    <a href="/">
+                        <h3 class="wow fadeIn" data-wow-delay="0.4s">
+                            @Model.TenDonVi
+                        </h3>
+                        <h2 class="wow fadeIn" data-wow-delay="0.4s">
+                            Thông tin đánh giá & xếp hạng chuyển đổi số
+                        </h2>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 contact">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="menu">
+    <div class="container">
+        <nav class="navbar navbar-default bgr-menu wf100" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#button-menu">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse wow fadeInUp box-menu wf100" id="button-menu">
+                <ul class="nav navbar-nav list-menu">
+                    <li><a href="/" title="Trang chủ ">TRANG CHỦ</a></li>
+                    <li class="sub-gioithieu">
+                        <a href="/gioi-thieu" title="Giới thiệu">GIỚI THIỆU</a>
+                    </li>
+                    <li class="sub-duan">
+                        <a href="/su-kien" title="Sự kiện">Sự kiện</a>
+                    </li>
+                    <li><a target="_blank" href="https://dx.mic.gov.vn/docs/chuyen-doi-so-la-gi/" title="Hỏi đáp">Hỏi đáp</a></li>
+
+                    <li><a href="javascript:void(0)" data-toggle="modal" data-target="#login" title="Liên hệ">Đăng nhập</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>

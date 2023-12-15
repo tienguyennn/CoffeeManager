@@ -1,0 +1,45 @@
+﻿@-webkit-keyframes Ani {
+        0% {
+            box-shadow: 0 0 0 rgba(255,255,255,0);
+            border: 1px solid rgba(255,255,255,0);
+            -webkit-transform: scale(0);
+            transform: scale(0);
+        }
+
+        70% {
+            box-shadow: 0 0 50px #fff;
+            border: 1px solid #fff;
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+
+        100% {
+            box-shadow: 0 0 60px rgba(255,255,255,0);
+            border: 0 solid rgba(255,255,255,0);
+            -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+        }
+    }
+
+    @keyframes Ani {
+        0% {
+            box-shadow: 0 0 0 rgba(255,255,255,0);
+            border: 1px solid rgba(255,255,255,0);
+            -webkit-transform: scale(0);
+            transform: scale(0);
+        }
+
+        70% {
+            box-shadow: 0 0 50px #fff;
+            border: 1px solid #fff;
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+
+        100% {
+            box-shadow: 0 0 60px rgba(255,255,255,0);
+            border: 0 solid rgba(255,255,255,0);
+            -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+        }
+    }

@@ -1,0 +1,52 @@
+﻿@using Web.Areas.UserArea.Models;
+@model NguoiDungChuyenMucEditViewModel
+@{
+    //var userinfo = ViewBag.UserInfo as AppUser;
+    //var ListRole = ViewBag.ListRole as List<Role>;
+    //var UserListRole = ViewBag.UserListRole as List<UserRole>;
+}
+
+<div class="modal-dialog">
+    @using (Ajax.BeginForm("SaveConfigNguoiDungChuyenMuc", "User", new { @area = "UserArea" }, new AjaxOptions()
+    {
+        HttpMethod = "POST",
+        OnFailure = "AjaxFormError",
+        OnSuccess = "AjaxFormSuccess",
+    }, new { id = "form--save-config" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.Hidden("UserId", Model.EntityUser.Id)
+        //HtmlHelper.UnobtrusiveJavaScriptEnabled = false;
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <div class="center">
+                    <h4 class="modal-title">
+                        THIẾT LẬP CHUYÊN MỤC
+                    </h4>
+                </div>
+            </div>
+            <div class="modal-body">
+                <h4 class="headerForm">
+                    Chọn vai trò cho người dùng [@Model.EntityUser.FullName]
+                </h4>
+                <div>
+                    @foreach (var item in Model.GroupChuyenMuc)
+                    {
+                        <div class="ace-settings-item">
+                            <input name="ChuyenMucId" type="checkbox" value="@item.Value" @(item.Selected ? "checked" : "") class="ace ace-checkbox-2" id="ace-settings-@item.Value" />
+                            <label class="lbl" for="ace-settings-@item.Value"> @item.Text</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="modal-footer center">
+                <button type="submit" class="btn btn-primary">Lưu</button>
+
+                <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    }
+</div>
+

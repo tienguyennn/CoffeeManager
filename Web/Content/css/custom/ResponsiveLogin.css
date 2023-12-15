@@ -1,0 +1,22 @@
+@media screen and (max-width:1370px),screen and (max-height:650px){.form-login{height:410px!important}.login__home{background-size:180%!important}.login-content-right{padding-top:40px!important}}@media all and (max-width:1200px){.login-content-left img{margin-left:0}.form-login{width:100%}}@media screen and (max-width:1023px){.login__home{background-image:url(../../GENCO3/img/bgrLogin.png)!important}.login-content-left{display:none}.login-content-right{width:100%}.form-login{margin:auto;float:unset!important}}@media all and (max-width:767px){.login-content-left{display:none}.form-login{height:420px!important;width:350px!important;margin:auto}.form-login-footer button{margin-top:20px;width:60%}.form-login-footer{text-align:center}.form-login-footer span{float:left}.form-login-footer h3{width:100%}.form-login-title{height:40px;padding-top:10px}.form-login-title h3{font-size:18px!important}.login-head h2{margin-top:15px;font-size:24px!important}.form-login-content{padding-top:0}.login-head h1{margin-top:20px;font-size:22px!important}.form-login-footer h3 a{font-family:arial;font-size:12px}}@media all and (max-width:479px) and (min-width:320px){
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    .form-login{width:305px!important;height:345px}
+.login__home{
+    background-image:url(../../GENCO3/img/bgrMb.png)!important;
+             background-size:cover;background-repeat:no-repeat!important;
+    background-position:center !important;
+}
+    .form-login-content input{
+        padding-left:50px !important;
+    }
+    .form-login-footer{
+        padding:0 !important;
+    }
+        .form-login-footer button{
+            float:unset !important;
+            padding:3px 15px !important;
+            width:150px !important;
+            border-radius:20px !important;
+        }
+        .form-login-title, .login-head h1 {
+            display: none !important
+        }.login-head{padding-top:15vh}.login-head img{width:160px;display:inline-block!important}.login-content-right{padding-top:40px!important}.form-login-content,.form-login-title{border-top:0!important; padding:0 !important}.form-login{background-color:transparent!important;width:90%!important}.form-login-content p{display:none!important}.wf100Login{position:relative;margin-bottom:15px}.grAccount .wf100Login::before{content:"";background-image:url(../../GENCO3/img/user.png);background-size:20px;padding:12px;background-repeat:no-repeat;position:absolute;left:18px;top:9.5px}.grPasss .wf100Login::before{content:"";background-size:20px;padding:12px;background-image:url(../../GENCO3/img/padlock.png);background-repeat:no-repeat;position:absolute;left:18px;top:9.5px}}

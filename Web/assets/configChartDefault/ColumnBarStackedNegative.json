@@ -1,0 +1,194 @@
+{
+  "type": "serial",
+  "categoryField": "category",
+  "columnSpacing": "0",
+  "columnSpacing3D": "0",
+  "columnWidth": 0.8,
+  "autoMarginOffset": 40,
+  "marginRight": 60,
+  "marginTop": 60,
+  "colors": [
+    "#67b7dc",
+    "#8067dc",
+    "#dc67ce",
+    "#dc67ab",
+    "#dc6788"
+  ],
+  "rotate": true,
+  "depth3D": 0,
+  "angle": "0",
+  "plotAreaBorderAlpha": 0,
+  "plotAreaBorderColor": "#000000",
+  "plotAreaFillAlphas": 0,
+  "plotAreaFillColors": "#ffffff",
+  "borderAlpha": 0,
+  "borderColor": "#000000",
+  "backgroundAlpha": 0,
+  "backgroundColor": "#ffffff",
+  "startDuration": "0.5",
+  "startEffect": "easeOutSine",
+  "sequencedAnimation": false,
+  "fontSize": 14,
+  "fontFamily": "Arial",
+  "color": "#000000",
+  "theme": "light",
+  "categoryAxis": {
+    "labelsEnabled": true,
+    "gridPosition": "start",
+    "position": "bottom",
+    "startOnAxis": false,
+    "ignoreAxisWidth": false,
+    "offset": 0,
+    "title": "",
+    "titleBold": false,
+    "titleColor": "#000000",
+    "titleFontSize": 14,
+    "titleRotation": 0,
+    "autoRotateAngle": 0,
+    "autoRotateCount": 1,
+    "autoWrap": false,
+    "boldLabels": false,
+    "centerLabels": false,
+    "centerRotatedLabels": false,
+    "inside": false,
+    "labelFrequency": "1",
+    "labelOffset": 0,
+    "minHorizontalGap": 75,
+    "minVerticalGap": 35
+  },
+  "trendLines": [
+  ],
+  "graphs": [
+    {
+      "balloonText": "[[category]]:[[value]]",
+      "fillAlphas": 0.8,
+      "id": "column-1",
+      "title": "",
+      "type": "column",
+      "valueField": "column-1"
+    },
+    {
+      "balloonText": "[[category]]:[[value]]",
+      "fillAlphas": 0.8,
+      "id": "column-2",
+      "title": "",
+      "type": "column",
+      "valueField": "column-2"
+    },
+    {
+      "balloonText": "[[category]]:[[value]]",
+      "fillAlphas": 0.8,
+      "id": "column-3",
+      "title": "",
+      "type": "column",
+      "valueField": "column-3"
+    }
+  ],
+  "guides": [
+  ],
+  "valueAxes": [
+    {
+      "stackType": "regular",
+      "axisAlpha": 0.3,
+      "gridAlpha": 0
+    }
+  ],
+  "allLabels": [
+  ],
+  "balloon": {
+  },
+  "titles": [
+  ],
+  "dataProvider": [
+    {
+      "age": "85+",
+      "male": -0.1,
+      "female": 0.3
+    },
+    {
+      "age": "80-54",
+      "male": -0.2,
+      "female": 0.3
+    },
+    {
+      "age": "75-79",
+      "male": -0.3,
+      "female": 0.6
+    },
+    {
+      "age": "70-74",
+      "male": -0.5,
+      "female": 0.8
+    },
+    {
+      "age": "65-69",
+      "male": -0.8,
+      "female": 1.0
+    },
+    {
+      "age": "60-64",
+      "male": -1.1,
+      "female": 1.3
+    },
+    {
+      "age": "55-59",
+      "male": -1.7,
+      "female": 1.9
+    },
+    {
+      "age": "50-54",
+      "male": -2.2,
+      "female": 2.5
+    },
+    {
+      "age": "45-49",
+      "male": -2.8,
+      "female": 3.0
+    },
+    {
+      "age": "40-44",
+      "male": -3.4,
+      "female": 3.6
+    },
+    {
+      "age": "35-39",
+      "male": -4.2,
+      "female": 4.1
+    },
+    {
+      "age": "30-34",
+      "male": -5.2,
+      "female": 4.8
+    },
+    {
+      "age": "25-29",
+      "male": -5.6,
+      "female": 5.1
+    },
+    {
+      "age": "20-24",
+      "male": -5.1,
+      "female": 5.1
+    },
+    {
+      "age": "15-19",
+      "male": -3.8,
+      "female": 3.8
+    },
+    {
+      "age": "10-14",
+      "male": -3.2,
+      "female": 3.4
+    },
+    {
+      "age": "5-9",
+      "male": -4.4,
+      "female": 4.1
+    },
+    {
+      "age": "0-4",
+      "male": -5.0,
+      "female": 4.8
+    }
+  ]
+}

@@ -1,0 +1,323 @@
+﻿@using Moit.SingleWindow.ClientLib;
+@using Model.Entities;
+@{
+    var userClient = (MoitUserInfo)SessionManager.GetUserFrontEnd();
+    //var dataUser = SessionManager.GetValue("MoiUserNew") as MoitUserFrontEndInfo;
+    var dataUser = SessionManager.GetUserFrontEnd();
+}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="@ViewBag.Description">
+    @Html.Partial("~/Views/Shared/_SEOPartial.cshtml")
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/assets/css/select2.min.css">
+    <link rel="stylesheet" href="/Content/DVC/css/bootstrap.min.css">
+    <link href="~/Content/fixed-element.css" rel="stylesheet" />
+    <link href="~/Content/font_awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Content/DVC/css/bootstrap-theme.min.css">
+    <link href="~/assets/css/jquery-confirm.css" rel="stylesheet" />
+    <link href="~/Content/DVC/notifit/notifit.css" rel="stylesheet" />
+    <script src="/Content/DVC/js/jquery.min.js"></script>
+    <script src="/Content/DVC/js/bootstrap.min.js"></script>
+    <script src="/Content/DVC/js/wow.min.js"></script>
+    <script src="/Content/DVC/js/scroll-top.js"></script>
+    <link rel="stylesheet" href="/Content/DVC/css/style.css">
+    <link rel="stylesheet" href="/Content/DVC/css/styleRespon.css">
+    <link rel="stylesheet" href="/Content/DVC/css/animate.min.css">
+    <script src="~/Content/DVC/notifit/notifit.min.js"></script>
+    <script src="~/Scripts/Common.js"></script>
+    <script src="~/Scripts/easyNotify.js"></script>
+    <script src="~/assets/js/select2.min.js"></script>
+    <link href="~/Content/DVC/css/jquery.confirm.css" rel="stylesheet" />
+    <script src="~/Content/DVC/js/jquery.confirm.js"></script>
+    <script src="~/Scripts/validateProvider.js"></script>
+    <script src="~/Scripts/jquery.ui.core.js"></script>
+    <script src="~/Scripts/jquery.ui.datepicker.js"></script>
+    <script src="~/Scripts/Jquery-datepicker-VI.js"></script>
+    <script src="~/Scripts/autoNumeric.min.js"></script>
+    <link href="~/Content/DVC/css/themes/base/jquery.ui.all.css" rel="stylesheet" />
+    <link href="~/Content/DVC/css/jquery.ui.datepicker.css" rel="stylesheet" />
+    <style>
+        .client {
+            padding-top: 20px;
+        }
+
+            .client > ul {
+                padding: 0;
+                position: relative;
+                align-items: center;
+                list-style: none;
+            }
+
+                .client > ul > li {
+                    cursor: pointer;
+                    height: 30px;
+                }
+
+            .client ul li.avatar img {
+                border-radius: 50%;
+                margin-left: 10px;
+            }
+
+            .client ul li > ul:before {
+                content: "";
+                border-right: 12px solid transparent;
+                border-left: 12px solid transparent;
+                top: 0;
+                position: absolute;
+                z-index: 9999;
+                right: 25%;
+                border-bottom: 12px solid #2195de;
+                top: -10px;
+            }
+
+            .client ul li > ul {
+                list-style: none;
+                float: left;
+                padding: 0;
+                width: 250px;
+                right: 0px;
+                position: absolute;
+                z-index: 99;
+                top: 30px;
+                display: none;
+                background-color: #fff;
+            }
+
+            .client ul li:hover > ul {
+                display: block !important;
+            }
+
+            .client ul li > ul > li {
+                float: left;
+                width: 100%;
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+            }
+
+                .client ul li > ul > li:first-child {
+                    text-align: center;
+                    padding: 20px 10px;
+                }
+
+                    .client ul li > ul > li:first-child > a {
+                        text-transform: uppercase;
+                        font-weight: bold;
+                    }
+
+                .client ul li > ul > li.avatar {
+                    background: #00a1ff;
+                }
+
+            .client ul li > ul .infoprofile a {
+                color: #fff;
+                text-transform: uppercase;
+                line-height: 1.4;
+            }
+
+                .client ul li > ul .infoprofile a:hover {
+                    color: #dbcc26 !important;
+                }
+
+            .client ul li > ul li:not(:first-child) {
+                width: 50%;
+                text-align: center;
+            }
+
+            .client ul li > ul li:last-child {
+                border-left: 1px solid #eee;
+            }
+
+            .client ul li > ul li:not(:first-child) a {
+                color: #444;
+            }
+
+        .content-menu.col-sm-8 {
+            width: 60%;
+        }
+
+        .infoUser.col-sm-1 {
+            width: 15%;
+        }
+
+        #gritter-notice-wrapper {
+            background-color: #2195de;
+            color: #fff;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="pdtb10">
+        <div class="container">
+            <div class="logo col-sm-3 pd0">
+                <a href="/"><img src="/Content/DVC/img/logo.png" alt="" width=""></a>
+            </div>
+            <div class="navbar-header menu__mobile">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#button-menu">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="col-sm-8 content-menu pdr0">
+
+                <nav class="navbar navbar-default content-menu__navbar" role="navigation">
+
+                    <div class="collapse navbar-collapse wow fadeInUp content-menu-MenuMain " id="button-menu">
+                        <ul class="nav navbar-nav admin-menu-left content-menu-MenuMain__ul">
+                            <li class="content-menu-MenuMain__item">
+                                <a href="/" title="TRANG CHỦ">TRANG CHỦ</a>
+                            </li>
+                            <li class="content-menu-MenuMain__item">
+                                <a href="/danh-sach-dich-vu-cong" title="DANH SÁCH DVC">DANH SÁCH DVC</a>
+                            </li>
+                            @*<li class="content-menu-MenuMain__item">
+                                    <a href="/bao-cao-thong-ke" title="BÁO CÁO THỐNG KÊ">BÁO CÁO THỐNG KÊ</a>
+                                </li>*@
+                            <li class="content-menu-MenuMain__item">
+                                <a href="/tin-tuc" title="TIN TỨC">TIN TỨC</a>
+                            </li>
+                            <li class="content-menu-MenuMain__item">
+                                <a href="/thong-bao" title="THÔNG BÁO">THÔNG BÁO</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="col-sm-1 infoUser pd0">
+                <div class="client" style="float:right;">
+                    @if (userClient != null)
+                    {
+                        <ul>
+                            <!--<li id="NotiArea" class="purple dropdown-modal" style="display:inline;">-->
+                            @*@{Html.RenderAction("ShowNotification", "EndUserNotification");}*@
+                            <!--</li>-->
+                            <li class="avatar">
+                                <div class="imgUser text-right" style="display: flex;align-items: center;">
+                                    <span>Xin chào <span class="caret"></span></span>
+                                    @*<img src="~/@(dataUser != null ? dataUser.Path_Avatar : "/assets/images/avatars/userNew.png")" onerror="this.src = '/assets/images/avatars/userNew.png'" width="28" />*@<span id="NotiCount" class="button__badge" style="font-weight: bolder; background-color: #fa3e3e; border-radius: 50%; color: white; padding: 1px 3px; font-size: 10px; position: absolute; top: -5px; right: -5px;width: 14px;text-align: center;"><i class="fa fa-spinner fa-spin"></i></span>
+                                </div>
+                                <ul>
+                                    <li style="background-color: #2195de">
+                                        <p>@*<img src="~/@(dataUser != null ? dataUser.Path_Avatar : "/assets/images/avatars/userNew.png")" onerror="this.src = '/assets/images/avatars/userNew.png'" width="80" />*@</p>
+                                        <div class="infoprofile">
+                                            <a href="#">@userClient.DisplayName</a>
+                                        </div>
+                                    </li>
+                                    <li><a href="/trang-ca-nhan" title="Profile">Profile</a></li>
+                                    <li><a href="/Home/Logout" title="Đăng xuất">Đăng xuất</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    }
+                    else
+                    {
+                        <a href="/Home/UserFrontEndLogin" class="btn btn-primary btn-sm btnLogin">Đăng nhập</a>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+    <div id="MasterModalFixed" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="static">
+    </div>
+    <div id="MasterModal" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="static">
+    </div>
+    <div id="modal--loading-progress" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="static">
+    </div>
+    <footer>
+        <div class="container">
+            <div class="scroll" onclick="scrolltop()">
+                <img src="/Content/DVC/img/scrollTop.png" alt="">
+            </div>
+            <div class="col-sm-7">
+                <h3>CỤC XUẤT NHẬP KHẨU - BỘ CÔNG THƯƠNG</h3>
+                <p>Đc: 54 Hai Bà Trưng, Trần Hưng Đạo, Hoàn Kiếm, Hà Nội</p>
+                <p>
+                    <span>ĐT: </span><a href="tel:02422205431">024 2220 5431</a>
+                    <span class="spanFt">Email: </span><a href="mailto:hotro@moit.gov.vn">hotro@moit.gov.vn</a>
+                </p>
+            </div>
+            <div class="col-sm-5 copyright">
+                <p>© Bản quyền thuộc về CỤC XUẤT NHẬP KHẨU - BỘ CÔNG THƯƠNG</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+        $(document).ready(function () {
+            $(".txt_picker").datepicker({
+                dateFormat: 'dd/mm/yy',
+                changeMonth: false,
+                changeYear: false, yearRange: "-50:+20",
+                showWeek: false, weekHeader: "Tuần",
+                language: 'vi-VN',
+                prevText: '<i class="fa fa-chevron-left"></i>',
+                nextText: '<i class="fa fa-chevron-right"></i>',
+            });
+
+
+            if (@Html.Raw(Json.Encode(userClient)) != null) {
+                var badge = $("#NotiCount");
+                $.ajax({
+                    url: "/Home/ThongBao",
+                    cache: false,
+                    success: function (data) {
+                        console.log(data);
+                        if (data == 0 || data == null) {
+                            badge.hide();
+                        } else if (data > 99) {
+                            badge.html("99+");
+                        } else {
+                            badge.html(data);
+                        }
+                    },
+                });
+            }
+
+        });
+
+
+        $().ready(function () {
+            $(".dropdown-toggle").mouseenter(function () {
+                console.log("ok");
+                $(this).find(".dropdown-menu").css("display", "block");
+            });
+            $(".dropdown-toggle").mouseleave(function () {
+                $(this).find(".dropdown-menu").css("display", "none");
+            });
+        });
+
+        $().ready(function () {
+            $(".xdl-f-upload-input").on("change", function (e) {
+                var value = $(this).val();
+                $(this).parent().find(".xdl-f-upload-content").html(value);
+            });
+        });
+
+        var full_path = location.href.split("#")[0];
+        $(".admin-menu-left > li > a").each(function () {
+            var $this = $(this);
+            if ($this.prop("href").split("#")[0] == full_path) {
+                $(this).parent().addClass("active_trail");
+            }
+        });
+
+    </script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

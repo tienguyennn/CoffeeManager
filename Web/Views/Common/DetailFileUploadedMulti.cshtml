@@ -1,0 +1,63 @@
+﻿@using Model.IdentityEntities
+@using Model.Entities
+@using Web.Models
+@using Newtonsoft.Json;
+@
+@using Hinet;
+@using CommonHelper.String;
+
+
+@model AttachTempFileItemTinBai
+
+
+<div class="modal-dialog detailNews" style="width:50% !important">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<div class="center">
+				<h4 class="modal-title">Thông tin ảnh tải lên</h4>
+			</div>
+		</div>
+		<div class="modal-body" style="height: 50%;">
+			@if (Model != null)
+			{
+				<div class="col-sm-7">
+					<p style="text-align: center;">
+						<img src="/@Model.Path" style="object-fit: contain;
+														width: 300px;
+														height: 300px;
+														border-radius: 3px;
+														text-align: center;
+														margin: 0 auto;
+														border: 1px solid gray;
+														padding: 5px;" />
+					</p>
+				</div>
+				<div class="col-sm-5">
+					<table class="table-info table100">
+						<tr><td class="labelData">Mô tả ảnh</td><td colspan="3">@Model.Mota_Anh</td></tr>
+						<tr><td class="labelData">Vị trí</td><td colspan="3">@Model.ViTri</td></tr>
+						<tr><td class="labelData">Kiểu</td><td colspan="3">@Model.KieuHienThiName</td></tr>
+						<tr>
+							<td class="labelData">Bút danh</td>
+							<td colspan="3">
+								@if (Model.ButDanhInfo != null)
+								{
+									<span>@Model.ButDanhInfo.ButDanh</span>
+								}
+								else
+								{
+									<span>Không có bút danh</span>
+								}
+							</td>
+						</tr>
+						<tr><td class="labelData">Kích cỡ</td><td colspan="3">@Model.Size.ConvertToStringMb()</td></tr>
+					</table>
+				</div>
+			}
+		</div>
+		<div class="modal-footer center">
+			<button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Đóng</button>
+		</div>
+	</div>
+</div>

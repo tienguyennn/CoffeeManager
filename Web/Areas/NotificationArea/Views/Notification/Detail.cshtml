@@ -1,0 +1,40 @@
+@{
+    ViewBag.Title = "Thông báo hệ thống";
+    Layout = "~/Views/Shared/_LayoutAce.cshtml";
+    ViewBag.ModuleName = "Quản lý Thông báo hệ thống";
+    ViewBag.PageName = "Thông tin Thông báo hệ thống";
+    ViewBag.ModuleCode = "Notification_detail";
+}
+@using Model.IdentityEntities
+@using Model.Entities
+@using Web.Areas.NotificationArea.Models
+
+@model DetailVM
+@section ActionBarRight{
+<a href="/NotificationArea/Notification/Index" class="btn btn-primary btn-sm"><i class="fa fa-reply"></i> Quay lại</a>
+}
+
+<div class="row">
+     <div class="col-sm-12">
+           <table class="table-info">
+           	
+<tr><td>Ngày tạo</td><td>@Model.objInfo.CreatedDate</td></tr>
+<tr><td>Ngày sử</td><td>@Model.objInfo.UpdatedDate</td></tr>
+<tr><td>Đã đọc</td><td>@Model.objInfo.IsRead</td></tr>
+<tr><td>Người gửi</td><td>@Model.objInfo.FromUser</td></tr>
+<tr><td>Người nhận</td><td>@Model.objInfo.ToUser</td></tr>
+<tr><td>Nội dung</td><td>@Model.objInfo.Message</td></tr>
+<tr><td>Liên kết</td><td>@Model.objInfo.Link</td></tr>
+<tr><td>Loại</td><td>@Model.objInfo.Type</td></tr>
+<tr><td>Người tạo</td><td>@Model.objInfo.CreatedBy</td></tr>
+<tr><td>Người sửa</td><td>@Model.objInfo.UpdatedBy</td></tr>
+
+           </table>
+     </div>
+    
+</div>
+
+<script>
+
+</script>
+@Scripts.Render("~/bundles/jqueryval")

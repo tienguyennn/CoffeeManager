@@ -1,0 +1,71 @@
+﻿@using Model.IdentityEntities
+@using Web.Areas.UserArea.Models
+@using Newtonsoft.Json;
+
+@model UpdateEnduserPasswordVM
+@{
+    var userData = ViewBag.userData as AppUser;
+}
+
+<div class="modal-dialog">
+    @using (Ajax.BeginForm("UpdatePassEnduser", "User", new { @area = "UserArea" }, new AjaxOptions()
+    {
+        HttpMethod = "POST",
+        OnFailure = "AjaxFormError",
+        OnSuccess = "AjaxFormSuccess",
+    }, new { id = "editPassForm" }))
+    {
+        @Html.AntiForgeryToken()
+        //HtmlHelper.UnobtrusiveJavaScriptEnabled = false;
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <div class="center">
+                    <h4 class="modal-title">Cập nhật mật khẩu người dùng</h4>
+                </div>
+            </div>
+            <div class="modal-body">
+                @if (userData != null)
+                {
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-sm-4"></label>
+                        <div class="col-sm-8">
+                            <input type='hidden' name='Id' value='@Model.Id' />
+                            <div><strong>Tài khoản:</strong> @userData.UserName</div>
+                            <div><strong>Họ tên:</strong> @userData.FullName</div>
+                        </div>
+                    </div>
+                   
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">Mật khẩu mới<span class="red">*</span></label>
+                        <div class="col-sm-8">
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">Nhập lại mật khẩu mới<span class="red">*</span></label>
+                        <div class="col-sm-8">
+                            @Html.PasswordFor(m => m.RePassword, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.RePassword, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                }
+
+            </div>
+            <div class="modal-footer center">
+                @if (userData != null)
+                {
+                    <button type="submit" class="btn btn-primary">Cập nhật</button>
+                }
+                <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    }
+</div>
+
+@Scripts.Render("~/bundles/jqueryval")
+

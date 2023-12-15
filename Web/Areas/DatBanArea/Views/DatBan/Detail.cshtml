@@ -1,0 +1,54 @@
+@{
+    ViewBag.Title = "Đặt bàn";
+    Layout = null;
+    ViewBag.ModuleName = "Quản lý Đặt bàn";
+    ViewBag.PageName = "Thông tin Đặt bàn";
+    ViewBag.ModuleCode = "DatBan_detail";
+}
+@using Model.IdentityEntities
+@using Model.Entities
+@using Web.Areas.DatBanArea.Models
+
+@model DetailVM
+@section ActionBarRight{
+    <a href="/DatBanArea/DatBan/Index" class="btn btn-primary btn-sm"><i class="fa fa-reply" aria-hidden="true"></i> Quay lại</a>
+}
+
+<div class="modal-dialog" style="width:60%">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="center">
+                <h4 class="modal-title">Thông tin đặt bàn</h4>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <table class="table-info table">
+
+                        <tr><td>Họ</td><td>@Model.objInfo.Ho</td></tr>
+                        <tr><td>Tên</td><td>@Model.objInfo.Ten</td></tr>
+                        <tr><td>Thời gian</td><td>@Model.objInfo.ThoiGian</td></tr>
+                        <tr><td>Điện thoại</td><td>@Model.objInfo.DienThoai</td></tr>
+                        <tr><td>Nội dung</td><td>@Model.objInfo.NoiDung</td></tr>
+                        <tr><td>Trạng thái</td><td>@Model.objInfo.TrangThaiText</td></tr>
+
+                    </table>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal-footer center">
+            <button type="submit" class="btn btn-primary">Hoàn thành</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+
+</script>
+@Scripts.Render("~/bundles/jqueryval")

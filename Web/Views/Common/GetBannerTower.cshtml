@@ -1,0 +1,25 @@
+﻿@using Model.Entities
+@using Service.AppUserService.Dto
+@using Service.Constant
+@using Service.Common
+@using Web.Core
+
+@model List<Banners>
+@{
+    var userInfo = SessionManager.GetUserInfo() as Model.IdentityEntities.AppUser;
+}
+<div class="tranh-chap-kn">
+    @foreach (var item in Model)
+    {
+        <a href="@(item.IsLinkActive == true? item.ImageLink: "")">
+            <img src="~/@(string.IsNullOrEmpty(item.ImageSrc)? "":item.ImageSrc)" onerror="this.src = '/assets/images/web.png'" title="@item.Name" />
+        </a>
+
+    }
+
+</div>
+@if (userInfo != null && userInfo.TypeAccount == AccountTypeConstant.BussinessUser)
+{
+    <a href="/Common/settupBanner/@ViewBag.CodePage" title="Thiết lập banner cho trang"><i class="fa fa-cogs"></i>&nbsp; Thiết lập Banner dọc</a>
+}
+

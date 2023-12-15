@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://210.211.98.203:8080/apws.asmx?wsdl" filename="APWsImplService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://210.211.98.203:8080/apws.asmx?xsd=1" filename="apws.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

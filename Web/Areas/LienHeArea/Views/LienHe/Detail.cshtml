@@ -1,0 +1,49 @@
+@{
+    ViewBag.Title = "Liên hệ";
+    Layout = null;
+    ViewBag.ModuleName = "Quản lý Liên hệ";
+    ViewBag.PageName = "Thông tin Liên hệ";
+    ViewBag.ModuleCode = "LienHe_detail";
+}
+@using Model.IdentityEntities
+@using Model.Entities
+@using Web.Areas.LienHeArea.Models
+
+@model DetailVM
+@section ActionBarRight{
+    <a href="/LienHeArea/LienHe/Index" class="btn btn-primary btn-sm"><i class="fa fa-reply" aria-hidden="true"></i> Quay lại</a>
+}
+<div class="modal-dialog" style="width:60%">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="center">
+                <h4 class="modal-title">Chi tiết liên hệ</h4>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <table class="table-info table">
+                        <tr><td>Họ tên</td><td>@Model.objInfo.HoTen</td></tr>
+                        <tr><td>Email</td><td>@Model.objInfo.Email</td></tr>
+                        <tr><td>Tiêu đề</td><td>@Model.objInfo.TieuDe</td></tr>
+                        <tr><td>Nội dung</td><td>@Model.objInfo.NoiDung</td></tr>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal-footer center">
+            <button type="submit" class="btn btn-primary">Hoàn thành</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+
+</script>
+@Scripts.Render("~/bundles/jqueryval")

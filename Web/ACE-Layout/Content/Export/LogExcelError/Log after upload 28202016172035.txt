@@ -1,0 +1,52 @@
+
+Dòng 3 mã sản phẩm không được để trống
+Dòng 4 mã sản phẩm không được để trống
+Dòng 5 mã dự án bị bỏ trống
+Dòng 6 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 7 mã dự án bị bỏ trống
+Dòng 8 mã dự án bị bỏ trống
+Dòng 9 mã dự án bị bỏ trống
+Dòng 10 mã sản phẩm không được để trống
+Dòng 11 mã dự án không tồn tại trong csdl hoặc không đúng với dự án đang thiết lập
+Dòng 12 sản phẩm này đã được bán
+Dòng 23 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 24 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 25 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 26 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 27 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 28 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 29 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 30 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 31 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 32 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 33 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 34 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 35 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 36 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 37 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 38 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 39 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 40 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 41 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 42 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 43 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 44 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 45 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 46 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 47 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 48 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 49 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 50 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 51 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 52 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 53 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 54 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 55 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 56 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 57 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 58 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 59 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 60 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 61 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 62 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này
+Dòng 63 mã sản phẩm không tồn tại trên hệ thống hoặc không thuộc dự án này

@@ -1,0 +1,65 @@
+﻿@using Service.Common
+@model PageListResultBO<Model.Entities.Notification>
+<style>
+    .notRead {
+        background-color: #f2f2f2 !important;
+    }
+
+        .notRead:hover {
+            background-color: #FCF4F9 !important;
+        }
+</style>
+<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+    <i class="ace-icon fa fa-bell icon-animated-bell"></i>
+    <span class="badge badge-important">
+        @if (Model.Count > 99)
+        {
+            <span>99+</span>
+        }
+        else
+        {
+            <span>@Model.Count</span>
+        }
+    </span>
+</a>
+
+<ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+    <li class="dropdown-header">
+        <i class="ace-icon fa fa-exclamation-triangle"></i>
+        @Model.Count <span>Thông báo</span>
+    </li>
+
+    <li class="dropdown-content ace-scroll" style="position: relative;">
+
+        <div class="scroll-content123" id="scroll-content123" style="max-height: 200px; overflow-y: scroll;">
+            <ul class="dropdown-menu dropdown-navbar navbar-pink" id="listNotiMain">
+                @{ Html.RenderPartial("_Notification", Model); }
+            </ul>
+        </div>
+    </li>
+
+    <li class="dropdown-footer">
+        <a href="/NotificationArea/Notification">
+            Xem tất cả
+            <i class="ace-icon fa fa-arrow-right"></i>
+        </a>
+    </li>
+</ul>
+<script>
+    var pageNotiMain = 1;
+    $("#scroll-content123").scroll(function () {
+        var objDiv = document.getElementById("scroll-content123");
+        if (objDiv.scrollTop > objDiv.scrollHeight - 201) {
+            console.log("bottom!");
+            pageNotiMain++;
+            $.ajax({
+                url: "/NotificationArea/Notification/GetMore",
+                type: "Post",
+                data: { page:pageNotiMain},
+                success: function(result) {
+                    $("#listNotiMain").append(result);
+                }
+            })
+        }
+    });
+</script>

@@ -1,0 +1,39 @@
+﻿@model Service.Common.PageListResultBO<Model.Entities.Notification>
+@foreach (var item in Model.ListItem)
+{
+    <li class="@(item.IsRead == true ? "isRead" : "notRead")">
+        <a href="@(!string.IsNullOrEmpty(item.Link) ? "/NotificationArea/Notification/ReadNotification/"+item.Id : "javascript:onShowThongBao("+item.Id+")")">
+            <div class="clearfix">
+                <label class="pull-left">
+                    <i class="btn btn-xs no-hover btn-pink fa fa-globe"></i>
+
+                </label>
+                <p style="text-align: left; padding-left: 4rem;">
+                    @Html.Raw(item.Message)
+                </p>
+                @{
+                    var timeSpan = (TimeSpan)(DateTime.Now - item.CreatedDate);
+                    if (timeSpan.TotalMinutes < 2)
+                    {
+                        <small class="pull-right"><i>Vừa xong</i></small>
+                    }
+                    else if (timeSpan.TotalMinutes < 60)
+                    {
+                        <small class="pull-right"><i>@Math.Round(timeSpan.TotalMinutes) phút trước</i></small>
+                    }
+                    else if (timeSpan.TotalHours < 24)
+                    {
+                        <small class="pull-right"><i>@Math.Round(timeSpan.TotalHours) giờ trước</i></small>
+                    }
+                    else
+                    {
+                        <small class="pull-right"><i>@string.Format("{0:dd/MM/yyyy HH:mm:ss}", item.CreatedDate) </i></small>
+                    }
+
+                }
+
+            </div>
+
+        </a>
+    </li>
+}

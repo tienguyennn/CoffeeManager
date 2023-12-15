@@ -1,0 +1,116 @@
+
+Ở dòng 3 mã sản phẩm không tồn tại trong hệ thống
+Ở dòng 3 tên sản phẩm đã tồn tại trong hệ thống
+Ở dòng 3 diện tích tim tường bị âm, trống hoặc bằng 0
+Ở dòng 3 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 4 mã sản phẩm bị bỏ trống
+Ở dòng 4 mã lịch thanh toán không tồn tại trong hệ thống
+Ở dòng 4 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 5 mã sản phẩm bị bỏ trống
+Ở dòng 5 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 6 mã dự án bị bỏ trống
+Ở dòng 6 tên sản phẩm bị rỗng
+Ở dòng 6 tên đường bị trống
+Ở dòng 6 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 7 mã dự án không tồn tại trong csdl
+Ở dòng 7 mã lịch thanh toán không tồn tại trong hệ thống
+Ở dòng 7 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 8 mã dự án bị bỏ trống
+Ở dòng 8 mã sản phẩm không tồn tại trong hệ thống
+Ở dòng 8 tên đường bị trống
+Ở dòng 8 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 9 mã dự án bị bỏ trống
+Ở dòng 9 mã sản phẩm không tồn tại trong hệ thống
+Ở dòng 9 tên đường bị trống
+Ở dòng 9 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 10 mã dự án bị bỏ trống
+Ở dòng 10 mã sản phẩm không tồn tại trong hệ thống
+Ở dòng 10 mã lịch thanh toán không tồn tại trong hệ thống
+Ở dòng 10 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 11 mã sản phẩm bị bỏ trống
+Ở dòng 11 tên đường bị trống
+Ở dòng 11 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 12 dự án không thuộc quản lí của chủ đầu tư hiện tại 
+Ở dòng 12 mã lịch thanh toán không tồn tại trong hệ thống
+Ở dòng 12 mã block dự án không thuộc dự án 
+Ở dòng 12 loại BĐS không thuộc dự án
+Ở dòng 12 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 13 tên đường bị trống
+Ở dòng 13 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 14 mã lịch thanh toán không tồn tại trong hệ thống
+Ở dòng 14 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 15 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 16 tên đường bị trống
+Ở dòng 16 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 17 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 18 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 19 mã block dự án không thuộc dự án 
+Ở dòng 19 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 20 tên đường bị trống
+Ở dòng 20 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 21 mã lịch thanh toán không tồn tại trong hệ thống
+Ở dòng 21 mã block dự án không thuộc dự án 
+Ở dòng 21 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 22 mã block dự án không thuộc dự án 
+Ở dòng 22 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 23 mã block dự án không thuộc dự án 
+Ở dòng 23 tên đường bị trống
+Ở dòng 23 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 24 mã lịch thanh toán không tồn tại trong hệ thống
+Ở dòng 24 mã block dự án không thuộc dự án 
+Ở dòng 24 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 25 mã loại BĐS không tồn tại trong hệ thống
+Ở dòng 25 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 26 mã loại BĐS không tồn tại trong hệ thống
+Ở dòng 26 tên đường bị trống
+Ở dòng 26 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 27 loại BĐS không thuộc dự án
+Ở dòng 27 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 28 lô số nhà bị trống
+Ở dòng 28 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 30 số tầng sản phẩm lớn hơn số tầng cho phép của block dự án
+Ở dòng 30 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 31 số tầng bị âm, rỗng hoặc bằng 0
+Ở dòng 31 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 32 số tầng bị âm, rỗng hoặc bằng 0
+Ở dòng 32 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 33 tên đường bị trống
+Ở dòng 33 vị trí sản phẩm bị âm, rỗng hoặc bằng 0
+Ở dòng 33 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 34 vị trí sản phẩm bị âm, rỗng hoặc bằng 0
+Ở dòng 34 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 35 vị trí sản phẩm bị âm, rỗng hoặc bằng 0
+Ở dòng 35 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 36 số tầng sản phẩm lớn hơn số tầng cho phép của block dự án
+Ở dòng 36 vị trí của sản phẩm lớn hơn số phòng cho phép của block
+Ở dòng 36 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 37 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 38 tổng giá gồm VAT bị trống
+Ở dòng 38 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 39 tổng giá gồm VAT bị trống
+Ở dòng 39 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 40 tổng giá gồm VAT bị trống
+Ở dòng 40 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 41 diện tích đất bị âm, trống hoặc bằng 0
+Ở dòng 41 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 42 diện tích đất bị âm, trống hoặc bằng 0
+Ở dòng 42 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 43 tên đường bị trống
+Ở dòng 43 diện tích đất bị âm, trống hoặc bằng 0
+Ở dòng 43 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 44 diện tích đất bị âm, trống hoặc bằng 0
+Ở dòng 44 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 44 mã hướng của không có trong hệ thống
+Ở dòng 44 mã hướng ban công không có trong hệ thống
+Ở dòng 45 diện tích đất bị âm, trống hoặc bằng 0
+Ở dòng 45 diện tích thông thủy bị âm, trống hoặc bằng 0
+Ở dòng 45 mã hướng của không có trong hệ thống
+Ở dòng 45 mã hướng ban công không có trong hệ thống
+Ở dòng 48 mã sản phẩm không tồn tại trong hệ thống
+Ở dòng 48 tên sản phẩm đã tồn tại trong hệ thống
+Ở dòng 50 mã sản phẩm không tồn tại trong hệ thống
+Ở dòng 50 tên sản phẩm đã tồn tại trong hệ thống
+Ở dòng 51 tên sản phẩm đã tồn tại trong hệ thống
+Ở dòng 52 tên sản phẩm đã tồn tại trong hệ thống
+Ở dòng 53 tên sản phẩm đã tồn tại trong hệ thống
+Ở dòng 54 tên sản phẩm đã tồn tại trong hệ thống

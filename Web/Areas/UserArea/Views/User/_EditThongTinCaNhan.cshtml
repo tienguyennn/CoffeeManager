@@ -1,0 +1,103 @@
+﻿@using Model.IdentityEntities
+@using Web.Areas.UserArea.Models
+@model EditThongTinCaNhanViewModel
+<div class="modal-dialog">
+    @using (Ajax.BeginForm("SaveThongTinCaNhan", "User", new { @area = "UserArea" }, new AjaxOptions()
+    {
+        HttpMethod = "POST",
+        OnFailure = "AjaxFormError",
+        OnSuccess = "editThongTinCaNhanSuccess",
+    }, new { id = "createForm" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(x => x.Id)
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <div class="center">
+                    <h4 class="modal-title">
+                        CẬP NHẬT THÔNG TIN CÁ NHÂN
+                    </h4>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">Họ tên <span class="red">*</span></label>
+                        <div class="col-sm-8">
+                            @Html.TextBoxFor(m => m.FullName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.FullName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">Giới tính</label>
+                        <div class="col-sm-8">
+                            @Html.DropDownListFor(x => x.Gender, Model.ListGender, "---Chọn---", new { @class = "select2" })
+                            @Html.ValidationMessageFor(m => m.Gender, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">Ngày sinh </label>
+                        <div class="col-sm-8">
+                            @Html.TextBoxFor(x => x.BirthDay, new { @class = "form-control date-picker" })
+                            @*@Html.DatePickerFor(m => m.BirthDay, "autoclose=true", "todayBtn=true", "todayHighlight=true")*@
+                            @Html.ValidationMessageFor(m => m.BirthDay, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">Địa chỉ Email <span class="red">*</span></label>
+                        <div class="col-sm-8">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">Điện thoại</label>
+                        <div class="col-sm-8">
+                            @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.PhoneNumber, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">Địa chỉ</label>
+                        <div class="col-sm-8">
+                            @Html.TextAreaFor(m => m.Address, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer center">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fa fa-save"></i>&nbsp;Hoàn thành
+                </button>
+
+                <button type="button" class="btn btn-danger" data-dismiss="modal">
+                    <i class="fa fa-times"></i>&nbsp;Đóng
+                </button>
+            </div>
+        </div>
+    }
+</div>
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/configform")
+<script>
+    function editThongTinCaNhanSuccess(result) {
+        if (result.Status) {
+            NotiSuccess('Thành công', result.Message);
+
+            setTimeout(function () {
+                location.reload();
+            }, 1500);
+        } else {
+            NotiError('Thất bại', result.Message);
+            return false;
+        }
+    }
+</script>

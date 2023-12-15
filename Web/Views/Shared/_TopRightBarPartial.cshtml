@@ -1,0 +1,80 @@
+﻿@using Service.Constant
+@using Service.Common
+@using Microsoft.AspNet.Identity
+@using Service.AppUserService.Dto
+@{
+    var currentUser = (UserDto)SessionManager.GetUserInfo();
+}
+<style>
+    #menu-dichvucong>li>a{
+        white-space:normal;
+    }
+    #menu-dichvucong {
+        min-width:500px;
+    }
+</style>
+<ul class="nav ace-nav">
+    <li id="NotiArea" class="purple dropdown-modal">
+        @{Html.RenderAction("ShowNotification", "Notification", new { @area = "NotificationArea" });}
+    </li>
+
+    <li class="light-blue dropdown-modal">
+        @*<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+            <span class="">
+                <small>Danh sách DVC</small>
+            </span>
+            <i class="ace-icon fa fa-caret-down"></i>
+        </a>*@
+        @*@if (countDichVuCong > 0)
+        {
+            <ul id="menu-dichvucong" class="dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                @for (int i = 0; i < countDichVuCong; i++)
+                {
+                    var itemDichVuCong = currentUser.ListDichVuCong[i];
+                    <li>
+                        <a href="/HoSoDichVuCongArea/HoSoDichVuCongChuaXuLy/Index?idDichVuCong=@itemDichVuCong.Id">
+                            <i class="ace-icon fa fa-file"></i>
+                            @itemDichVuCong.TenDichVuCong
+                        </a>
+                    </li>
+
+                    if (i != (countDichVuCong - 1))
+                    {
+                        <li class="divider"></li>
+                    }
+                }
+            </ul>
+        }*@
+    </li>
+
+    @if (currentUser != null)
+    {
+        <li class="light-blue dropdown-modal">
+            <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                <img class="nav-user-photo" src="/@currentUser.Avatar" onerror="this.src = '/assets/images/avatars/userNew.png'" alt="@currentUser.FullName" />
+                <span class="user-info">
+                    <small>Xin chào,</small>
+                    @currentUser.FullName
+                </span>
+
+                <i class="ace-icon fa fa-caret-down"></i>
+            </a>
+
+            <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                <li>
+                    <a href="/UserArea/User/MyProfile">
+                        <i class="ace-icon fa fa-user"></i>
+                        Trang cá nhân
+                    </a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="#" id="confirmLogout">
+                        <i class="ace-icon fa fa-power-off"></i>
+                        Đăng xuất
+                    </a>
+                </li>
+            </ul>
+        </li>
+    }
+</ul>

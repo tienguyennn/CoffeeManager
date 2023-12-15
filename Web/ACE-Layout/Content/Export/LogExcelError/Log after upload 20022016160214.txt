@@ -1,0 +1,19 @@
+
+ -Dòng 3 mã sản phẩm không tồn tại trong csdl
+ -Dòng 4 mã sản phẩm không tồn tại trong csdl
+ -Dòng 5 mã sản phẩm không tồn tại trong csdl
+ -Dòng 6 mã sản phẩm không tồn tại trong csdl
+ -Dòng 7 mã sản phẩm không tồn tại trong csdl
+ -Dòng 8 mã sản phẩm không tồn tại trong csdl
+ -Dòng 9 mã sản phẩm không tồn tại trong csdl
+ -Dòng 10 mã sản phẩm không tồn tại trong csdl
+ -Dòng 11 mã sản phẩm không tồn tại trong csdl
+ -Dòng 12 mã sản phẩm không tồn tại trong csdl
+ -Dòng 13 mã sản phẩm không tồn tại trong csdl
+ -Dòng 14 mã sản phẩm không tồn tại trong csdl
+ -Dòng 15 mã sản phẩm không tồn tại trong csdl
+ -Dòng 16 mã sản phẩm không tồn tại trong csdl
+ -Dòng 17 mã sản phẩm không tồn tại trong csdl
+ -Dòng 18 mã sản phẩm không tồn tại trong csdl
+ -Dòng 19 mã sản phẩm không tồn tại trong csdl
+ -Dòng 20 mã sản phẩm không tồn tại trong csdl

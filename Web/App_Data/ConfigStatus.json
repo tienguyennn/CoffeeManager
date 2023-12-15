@@ -1,0 +1,459 @@
+﻿[
+  {
+    "Type": "LichCongTac",
+    "Status": "1",
+    "statusRefers": [
+      {
+        "Status": "2",
+        "Name": "Trình trưởng phòng",
+        "Code": "LichCongTac_2",
+        "LinkPattern": "/LichCongTacArea/LichCongTac/ChangeStatus?id={0}&status=2",
+        "Icon": "glyphicon glyphicon-th-large",
+        "Type": 3
+      }
+
+    ]
+  },
+  {
+    "Type": "LichCongTac",
+    "Status": "2",
+    "statusRefers": [
+      {
+        "Status": "6",
+        "Name": "Trình lãnh đạo",
+        "Code": "LichCongTac_6",
+        "LinkPattern": "/LichCongTacArea/LichCongTac/ChangeStatus?id={0}&status=6",
+        "Icon": "glyphicon glyphicon-th-large",
+        "Type": 3
+      },
+      {
+        "Status": "3",
+        "Name": "Phê duyệt",
+        "Code": "LichCongTac_3",
+        "LinkPattern": "/LichCongTacArea/LichCongTac/ChangeStatus?id={0}&status=3",
+        "Icon": "glyphicon glyphicon-th-large",
+        "Type": 3
+      },
+      {
+        "Status": "4",
+        "Name": "Từ chối",
+        "Code": "LichCongTac_4",
+        "LinkPattern": "/LichCongTacArea/LichCongTac/ChangeStatusPopup?id={0}&status=4",
+        "Icon": "glyphicon glyphicon-th-large",
+        "Type": 2
+      },
+      {
+        "Status": "5",
+        "Name": "Hủy bỏ",
+        "Code": "LichCongTac_5",
+        "LinkPattern": "/LichCongTacArea/LichCongTac/ChangeStatusPopup?id={0}&status=5",
+        "Icon": "glyphicon glyphicon-th-large",
+        "Type": 2
+      }
+    ]
+  },
+  {
+    "Type": "LichCongTac",
+    "Status": "3",
+    "statusRefers": [
+      {
+        "Status": "5",
+        "Name": "Hủy bỏ",
+        "Code": "LichCongTac_5",
+        "LinkPattern": "/LichCongTacArea/LichCongTac/ChangeStatusPopup?id={0}&status=5",
+        "Icon": "glyphicon glyphicon-th-large",
+        "Type": 2
+      }
+    ]
+  },
+  {
+    "Type": "LichCongTac",
+    "Status": "4",
+    "statusRefers": [
+      {
+        "Status": "2",
+        "Name": "Gửi duyệt",
+        "Code": "LichCongTac_2",
+        "LinkPattern": "/LichCongTacArea/LichCongTac/ChangeStatus?id={0}&status=2",
+        "Icon": "glyphicon glyphicon-th-large",
+        "Type": 3
+      }
+    ]
+  },
+  {
+    "Type": "LichCongTac",
+    "Status": "6",
+    "statusRefers": [
+      {
+        "Status": "3",
+        "Name": "Phê duyệt",
+        "Code": "LichCongTac_3",
+        "LinkPattern": "/LichCongTacArea/LichCongTac/ChangeStatus?id={0}&status=3",
+        "Icon": "glyphicon glyphicon-th-large",
+        "Type": 3
+      },
+      {
+        "Status": "4",
+        "Name": "Từ chối",
+        "Code": "LichCongTac_4",
+        "LinkPattern": "/LichCongTacArea/LichCongTac/ChangeStatusPopup?id={0}&status=4",
+        "Icon": "glyphicon glyphicon-th-large",
+        "Type": 2
+      }
+    ]
+  },
+
+  //Quản lý tháo tác của quản lý danh mục công việc
+  {
+    "Type": "DanhMuc",
+    "Status": "DangThucHien",
+    "statusRefers": [
+      {
+        "Status": "DungThucHien",
+        "Name": "Dừng thực hiện công việc",
+        "Code": "QLCongViec_DungThucHien",
+        "LinkPattern": "/QLCongViecArea/QLCongViec/RequestStatus?id={0}&status=DungThucHien",
+        "Type": 2
+      }
+    ]
+  },
+  {
+    "Type": "DanhMuc",
+    "Status": "ChuaThucHien",
+    "statusRefers": [
+      {
+        "Status": "",
+        "Name": "Phân công công việc",
+        "Icon": "glyphicon glyphicon-list-alt blue_color",
+        "Code": "QLCongViec_PhanCong",
+        "LinkPattern": "/QLCongViecArea/QLCongViec/PhanCongCongViec?id={0}",
+        "Type": 2
+      },
+      {
+        "Status": "",
+        "Name": "Sửa thông tin",
+        "Icon": "glyphicon glyphicon-edit",
+        "Code": "QLCongViec_Edit",
+        "LinkPattern": "/QLCongViecArea/QLCongViec/Edit?id={0}",
+        "Type": 2
+      },
+      {
+        "Status": "",
+        "Name": "Xóa",
+        "Icon": "glyphicon glyphicon-remove red_color",
+        "Code": "QLCongViec_Delete",
+        "LinkPattern": "/QLCongViecArea/QLCongViec/Delete?id={0}",
+        "Type": 3
+      }
+    ]
+  },
+
+  //Quản lý thao tác của quản lý kế hoạch
+  //Trạng thái mới tạo
+  {
+    "Type": "Kehoach",
+    "Status": "MoiTao",
+    "statusRefers": [
+      {
+        "Status": "ChoDuyet",
+        "Name": "Gửi duyệt kế hoạch",
+        "Icon": "glyphicon glyphicon-share",
+        "Code": "QLPlan_ChoDuyet",
+        "LinkPattern": "/QLPlanArea/QLPlan/RequestStatus?id={0}&status=ChoDuyet",
+        "Type": 2
+      },
+      {
+        "Status": "",
+        "Name": "Sửa thông tin",
+        "Icon": "glyphicon glyphicon-edit",
+        "Code": "QLPlan_Edit",
+        "LinkPattern": "/QLPlanArea/QLPlan/Edit?id={0}",
+        "Type": 2
+      },
+      {
+        "Status": "",
+        "Name": "Xóa",
+        "Icon": "glyphicon glyphicon-remove red_color",
+        "Code": "QLPlan_Delete",
+        "LinkPattern": "/QLPlanArea/QLPlan/Delete?id={0}",
+        "Type": 3
+      }
+    ]
+  },
+  //Trạng thái chờ duyệt
+  {
+    "Type": "Kehoach",
+    "Status": "ChoDuyet",
+    "statusRefers": [
+      {
+        "Status": "YeuCauChinhSua",
+        "Name": "Yêu cầu chỉnh sửa",
+        "Icon": "glyphicon glyphicon-minus-sign",
+        "Code": "QLPlan_YeuCauChinhSua",
+        "LinkPattern": "/QLPlanArea/QLPlan/RequestStatus?id={0}&status=YeuCauChinhSua",
+        "Type": 2
+      },
+      {
+        "Status": "DaPheDuyet",
+        "Name": "Phê duyệt",
+        "Icon": "glyphicon glyphicon-check",
+        "Code": "QLPlan_DaPheDuyet",
+        "LinkPattern": "/QLPlanArea/QLPlan/RequestStatus?id={0}&status=DaPheDuyet",
+        "Type": 2
+      },
+      {
+        "Status": "TuChoi",
+        "Name": "Từ chối",
+        "Icon": "glyphicon glyphicon-remove-sign",
+        "Code": "QLPlan_TuChoi",
+        "LinkPattern": "/QLPlanArea/QLPlan/RequestStatus?id={0}&status=TuChoi",
+        "Type": 2
+      }
+    ]
+  },
+  //Trạng thái yêu cầu chỉnh sửa
+  {
+    "Type": "Kehoach",
+    "Status": "YeuCauChinhSua",
+    "statusRefers": [
+      {
+        "Status": "",
+        "Name": "Sửa thông tin",
+        "Icon": "glyphicon glyphicon-edit",
+        "Code": "QLPlan_Edit",
+        "LinkPattern": "/QLPlanArea/QLPlan/Edit?id={0}",
+        "Type": 2
+      }
+    ]
+  },
+  //Trạng thái đã phê duyệt
+  {
+    "Type": "Kehoach",
+    "Status": "DaPheDuyet",
+    "statusRefers": [
+      {
+        "Status": "",
+        "Name": "Đăng ký tin bài dự kiến",
+        "Icon": "glyphicon glyphicon-plus",
+        "Code": "QLPlan_CreateWork",
+        "LinkPattern": "/QLWorkArea/QLWork/CreateByCurrentUser?id={0}",
+        "Type": 2
+      }
+    ]
+  },
+
+  {
+    "Type": "QuangCao",
+    "Status": "ChoDang",
+    "statusRefers": [
+      {
+        "Status": "DaDang",
+        "Name": "Đăng quảng cáo",
+        "Icon": "fa fa-check",
+        "Code": "QLQuangCao_QuyenDang",
+        "LinkPattern": "/QuanLyQuangCaoArea/QuanLyQuangCao/RequestChangeStatus?id={0}&&status=DaDang",
+        "Type": 3
+      },
+      {
+        "Status": "DaGo",
+        "Name": "Gỡ quảng cáo",
+        "Icon": "fa fa-times-circle-o",
+        "Code": "QLQuangCao_QuyenGo",
+        "LinkPattern": "/QuanLyQuangCaoArea/QuanLyQuangCao/RequestChangeStatus?id={0}&&status=DaGo",
+        "Type": 3
+      }
+    ]
+  },
+  {
+    "Type": "QuangCao",
+    "Status": "DaDang",
+    "statusRefers": [
+      {
+        "Status": "ChoDang",
+        "Name": "Chờ Đăng quảng cáo",
+        "Icon": "fa fa-spinner",
+        "Code": "QLQuangCao_QuyenChoDang",
+        "LinkPattern": "/QuanLyQuangCaoArea/QuanLyQuangCao/RequestChangeStatus?id={0}&&status=ChoDang",
+        "Type": 3
+      },
+      {
+        "Status": "DaGo",
+        "Name": "Gỡ quảng cáo",
+        "Icon": "fa fa-times-circle-o",
+        "Code": "QLQuangCao_QuyenGo",
+        "LinkPattern": "/QuanLyQuangCaoArea/QuanLyQuangCao/RequestChangeStatus?id={0}&&status=DaGo",
+        "Type": 3
+      }
+    ]
+  },
+  {
+    "Type": "QuangCao",
+    "Status": "DaGo",
+    "statusRefers": [
+      {
+        "Status": "DaDang",
+        "Name": "Đăng quảng cáo",
+        "Icon": "fa fa-check",
+        "Code": "QLQuangCao_QuyenDang",
+        "LinkPattern": "/QuanLyQuangCaoArea/QuanLyQuangCao/RequestChangeStatus?id={0}&&status=DaDang",
+        "Type": 3
+      },
+      {
+        "Status": "ChoDang",
+        "Name": "Chờ Đăng quảng cáo",
+        "Icon": "fa fa-spinner",
+        "Code": "QLQuangCao_QuyenChoDang",
+        "LinkPattern": "/QuanLyQuangCaoArea/QuanLyQuangCao/RequestChangeStatus?id={0}&&status=ChoDang",
+        "Type": 3
+      }
+    ]
+  },
+  //Quảng cáo báo in
+  {
+    "Type": "QuangCaoBaoIn",
+    "Status": "MoiTao",
+    "statusRefers": [
+      {
+        "Status": "DaGuiKyThuat",
+        "Name": "Gửi kỹ thuật",
+        "Icon": "fa fa-check",
+        "Code": "QuangCaoBaoIn_DaGuiKyThuat",
+        "LinkPattern": "/QLQuangCaoBaoInArea/QLQuangCaoBaoIn/ChangeStatusPopup?id={0}&&status=DaGuiKyThuat",
+        "Type": 2
+      }
+    ]
+  },
+  {
+    "Type": "QuangCaoBaoIn",
+    "Status": "DaGuiKyThuat",
+    "statusRefers": [
+      {
+        "Status": "KyThuatTraKetQua",
+        "Name": "Trả kết quả",
+        "Icon": "fa fa-check",
+        "Code": "QuangCaoBaoIn_KyThuatTraKetQua",
+        "LinkPattern": "/QLQuangCaoBaoInArea/QLQuangCaoBaoIn/ChangeStatusPopup?id={0}&&status=KyThuatTraKetQua",
+        "Type": 2
+      }
+    ]
+  },
+  {
+    "Type": "QuangCaoBaoIn",
+    "Status": "KyThuatTraKetQua",
+    "statusRefers": [
+      {
+        "Status": "DaGuiKyThuat",
+        "Name": "Gửi kỹ thuật",
+        "Icon": "fa fa-check",
+        "Code": "QuangCaoBaoIn_DaGuiKyThuat",
+        "LinkPattern": "/QLQuangCaoBaoInArea/QLQuangCaoBaoIn/ChangeStatusPopup?id={0}&&status=DaGuiKyThuat",
+        "Type": 2
+      },
+      {
+        "Status": "DaGuiThuKy",
+        "Name": "Gửi thư ký",
+        "Icon": "fa fa-check",
+        "Code": "QuangCaoBaoIn_DaGuiThuKy",
+        "LinkPattern": "/QLQuangCaoBaoInArea/QLQuangCaoBaoIn/ChangeStatusPopup?id={0}&&status=DaGuiThuKy",
+        "Type": 2
+      }
+    ]
+  },
+  {
+    "Type": "QuangCaoBaoIn",
+    "Status": "DaGuiThuKy",
+    "statusRefers": [
+      {
+        "Status": "ThuKyDaDuyet",
+        "Name": "Duyệt",
+        "Icon": "fa fa-check",
+        "Code": "QuangCaoBaoIn_ThuKyDaDuyet",
+        "LinkPattern": "/QLQuangCaoBaoInArea/QLQuangCaoBaoIn/ChangeStatusPopup?id={0}&&status=ThuKyDaDuyet",
+        "Type": 2
+      },
+      {
+        "Status": "ThuKyTraVe",
+        "Name": "Trả về chuyên viên",
+        "Icon": "fa fa-check",
+        "Code": "QuangCaoBaoIn_ThuKyTraVe",
+        "LinkPattern": "/QLQuangCaoBaoInArea/QLQuangCaoBaoIn/ChangeStatusPopup?id={0}&&status=ThuKyTraVe",
+        "Type": 2
+      }
+
+    ]
+  },
+  {
+    "Type": "QuangCaoBaoIn",
+    "Status": "ThuKyTraVe",
+    "statusRefers": [
+      {
+        "Status": "DaGuiThuKy",
+        "Name": "Gửi thư ký",
+        "Icon": "fa fa-check",
+        "Code": "QuangCaoBaoIn_DaGuiThuKy",
+        "LinkPattern": "/QLQuangCaoBaoInArea/QLQuangCaoBaoIn/ChangeStatusPopup?id={0}&&status=DaGuiThuKy",
+        "Type": 2
+      },
+      {
+        "Status": "DaGuiKyThuat",
+        "Name": "Gửi kỹ thuật",
+        "Icon": "fa fa-check",
+        "Code": "QuangCaoBaoIn_DaGuiKyThuat",
+        "LinkPattern": "/QLQuangCaoBaoInArea/QLQuangCaoBaoIn/ChangeStatusPopup?id={0}&&status=DaGuiKyThuat",
+        "Type": 2
+      }
+    ]
+  },
+  //Thông báo hệ thống
+  {
+    "Type": "ThongBaoheThong",
+    "Status": "BanThao",
+    "statusRefers": [
+      {
+        "Status": "ChoDuyet",
+        "Name": "Gửi duyệt",
+        "Icon": "fa fa-check",
+        "Code": "Btn_QLTinHeThong_ChoDuyet",
+        "LinkPattern": "/QLTinHeThongArea/QLTinHeThong/ChangeStatusPopup?id={0}&&status=ChoDuyet",
+        "Type": 2
+      }
+    ]
+  },
+  {
+    "Type": "ThongBaoheThong",
+    "Status": "ChoDuyet",
+    "statusRefers": [
+      {
+        "Status": "DaDuyet",
+        "Name": "Phê duyệt",
+        "Icon": "fa fa-check",
+        "Code": "Btn_QLTinHeThong_DaDuyet",
+        "LinkPattern": "/QLTinHeThongArea/QLTinHeThong/ChangeStatus?id={0}&&status=DaDuyet",
+        "Type": 3
+      },
+      {
+        "Status": "TuChoi",
+        "Name": "Trả về",
+        "Icon": "",
+        "Code": "Btn_QLTinHeThong_TuChoi",
+        "LinkPattern": "/QLTinHeThongArea/QLTinHeThong/ChangeStatusPopup?id={0}&&status=TuChoi",
+        "Type": 2
+      }
+    ]
+  },
+  {
+    "Type": "ThongBaoheThong",
+    "Status": "TuChoi",
+    "statusRefers": [
+      {
+        "Status": "ChoDuyet",
+        "Name": "Gửi duyệt",
+        "Icon": "fa fa-check",
+        "Code": "Btn_QLTinHeThong_ChoDuyet",
+        "LinkPattern": "/QLTinHeThongArea/QLTinHeThong/ChangeStatusPopup?id={0}&&status=ChoDuyet",
+        "Type": 2
+      }
+    ]
+  }
+
+]

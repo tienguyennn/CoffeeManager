@@ -1,0 +1,269 @@
+﻿body {
+    font-family:Arial;
+    font-size: 13px;
+    margin: 0;
+    padding: 0;
+}
+.clear {
+    clear:both;
+}
+
+#owner {
+    color:#ff6600;
+}
+#header {
+    background: #1e2b69;
+    padding: 20px 50px;
+    color: white;
+}
+
+#header #logo {
+    background: url(Images/QuocHuy.png) no-repeat;
+    padding: 10px 60px;
+}
+#appname {
+    font-size: 16px;
+    font-weight:bolder;
+}
+
+#footerLogin {
+    background: #1f1f1f;
+    padding: 20px 50px;
+    color: white;
+}
+
+#content {
+    min-height:450px;
+    background: #f8f8f8;
+}
+
+.LoginInForm {
+    width: 300px;
+    margin: 0 auto;
+}
+
+input {
+    border: 1px solid #aeaeae;
+    padding: 5px;
+}
+input:focus { 
+    border: 1px solid #337de4;
+}
+
+.DlStyle input {
+    width: 100%;
+}
+.DlStyle dd {
+    margin:0;
+    padding: 5px 0;
+}
+.DlStyle dt {
+    margin:0;
+    padding: 5px 0;
+}
+
+.Title2Style {
+    padding-top: 30px;
+    font-weight:bold;
+}
+
+.CaptchaRefeshStyle {
+    background: url(Images/refresh.png) no-repeat center;
+    display: block;
+    height: 32px;
+    width: 28px;
+}
+.float-left {
+    float:left;
+}
+.CaptchaSection {
+    width: 330px;
+}
+
+.LoginBtnSection {
+    padding-top: 10px;
+}
+
+.LoginBtnSection input {
+    background:#28597f;
+    border:none;
+    padding: 7px 13px;
+    color:white;
+}
+
+.LoginBtnSection input:hover {
+    background:#00ccff;
+    cursor:pointer;
+}
+
+.ErrorMsgStyle {
+    color:red;
+}
+
+table.webGrid {
+    border-collapse: collapse;
+}
+ul.ds_24h
+{
+  float:left;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+ul.ds_24h li
+{
+    width:360px;
+    float:left;
+    list-style:none;
+}
+/*.box-border
+{
+    width:1099px;
+    float:left;
+    margin-top:20px;
+    padding:10px;
+    border:solid 1px #1f1f1f;
+}
+ul.ul-tiem
+{
+    float:left;
+    width:600px;
+}
+ul.ul-tiem li
+{
+    width:260px;
+    float:left;
+    list-style:none;
+}
+ul.ul-chuandoan
+{
+    float:left;
+    width:500px;
+    margin-left:40px;
+}
+ul.ul-chuandoan li
+{
+    width:200px;
+    float:left;
+    list-style:none;
+}
+.xetnghiem
+{
+    float:left;
+    width:540px;
+    border-right:solid 1px #1f1f1f;
+}
+ul.ul-loaixetnghiem
+{
+    float:left;
+    width:500px;
+    margin-left:40px;
+}
+ul.ul-loaixetnghiem li
+{
+    float:left;
+    width:125px;
+    list-style:none;
+}
+.box-ngay
+{
+    width:160px;
+    float:left;
+    margin-left:10px;
+    padding-right:10px;
+}
+.tt_doituong
+{
+    width:700px;
+    border:solid 1px #1f1f1f;
+    float:left;
+    padding-bottom:10px;
+}
+.tt_tiensu
+{
+    width:384px;
+    min-height:302px;
+    height:auto;
+    float:left;
+    margin-left:10px;
+    padding:0px 10px 10px 10px;
+    border:solid 1px #1f1f1f;
+}
+table.tb-tiensu, table.tb-tiensu th, table.tb-tiensu td
+{
+    text-align:center;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+table.tb-tiensu tr
+{
+    height:30px;
+}*/
+.tit_h2
+{
+    font-weight:bold;
+    font-size:18px;
+    padding:10px 0px;
+}
+.tit_h3
+{
+    font-weight:bold;
+    font-size:14px;
+    padding:10px 0px;
+}
+.line
+{
+    margin:10px 40px;
+    border-top:solid 1px #1f1f1f;
+}
+#somac tr td
+{
+    height:40px;
+}
+#xn tr td
+{
+    height:40px;
+}
+#phongchong tr td
+{
+    height:40px;
+}
+ul.tt-qlthb
+{
+    float:left;
+    width:100%;
+    margin-left:15px;
+}
+
+ul.tt-qlthb li
+{
+    width:150px;
+    float:left;
+    list-style:none;
+}
+.btnUpdate
+{
+    color:white;
+    padding:5px;
+    border: none;
+    width: 120px;
+    background:#336699;
+    border-radius:5px;
+}
+.btnUpdate:hover, .btnUpdate:visited
+{
+    color:white;
+}
+.lnk-tiensu:link, .lnk-tiensu:hover, .lnk-tiensu:visited
+{
+    color:#372e2e;
+}
+.b-tiensu
+{
+    background:#aeaeae;
+}
+.scroll
+{
+overflow-y: auto;
+height: 100px;
+border:solid 1px #242020;
+}

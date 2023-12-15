@@ -1,0 +1,52 @@
+@{
+    ViewBag.Title = "Danh mục sản phẩm";
+    Layout = null;
+    ViewBag.ModuleName = "Quản lý Danh mục sản phẩm";
+    ViewBag.PageName = "Thông tin Danh mục sản phẩm";
+    ViewBag.ModuleCode = "DanhMuc_detail";
+}
+@using Model.IdentityEntities
+@using Model.Entities
+@using Web.Areas.DanhMucArea.Models
+
+@model DetailVM
+@section ActionBarRight{
+    <a href="/DanhMucArea/DanhMuc/Index" class="btn btn-primary btn-sm"><i class="fa fa-reply" aria-hidden="true"></i> Quay lại</a>
+}
+
+<div class="modal-dialog" style="width:60%">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="center">
+                <h4 class="modal-title">Chi tiết danh mục</h4>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <table class="table-info table">
+
+                        <tr><td>Tên danh mục</td><td>@Model.objInfo.TenDanhMuc</td></tr>
+                        <tr><td>Mã danh mục</td><td>@Model.objInfo.MaDanhMuc</td></tr>
+                        <tr><td>Thứ tự</td><td>@Model.objInfo.ThuTu</td></tr>
+                        <tr><td>Ghi chú</td><td>@Model.objInfo.GhiChu</td></tr>
+
+                    </table>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal-footer center">
+            <button type="submit" class="btn btn-primary">Hoàn thành</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+
+</script>
+@Scripts.Render("~/bundles/jqueryval")

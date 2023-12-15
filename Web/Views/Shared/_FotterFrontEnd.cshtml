@@ -1,0 +1,100 @@
+﻿@using Service.DM_DulieuDanhmucService.DTO;
+@model CauHinhHeThong
+<div class="slide-multiple bg-eff5fd overflow-hidden">
+    <div class="container">
+        <div class="row overflow-hidden">
+            <div class="multiple-items d-flex owl-loaded owl-drag">
+                <div class="owl-stage-outer">
+                    <div class="owl-stage" style="transform: translate3d(-1525px, 0px, 0px); transition: all 0.25s ease 0s; width: 3660px;">
+
+                        <div class="owl-item" style="width: 255px; margin-right: 50px;">
+                            <div class="slide-item text-center">
+                                <div class="slide-item_height bg-white d-flex">
+                                    <img src="/Content/img/link-1.png" alt="">
+                                </div>
+                                <p class="mb-0 font-16-utm">
+                                    Trung tâm một cửa hỗ trợ<br>triển khai chính phủ điện tử
+                                </p>
+                            </div>
+                        </div>
+                        <div class="owl-item active" style="width: 255px; margin-right: 50px;">
+                            <div class="slide-item text-center">
+                                <div class="slide-item_height bg-white d-flex">
+                                    <img src="/Content/img/link-2.png" alt="">
+                                </div>
+                                <p class="mb-0 font-16-utm">
+                                    Cục tin học hóa<br>Bộ Thông tin &amp; Truyền thông
+                                </p>
+                            </div>
+                        </div>
+                        <div class="owl-item active" style="width: 255px; margin-right: 50px;">
+                            <div class="slide-item text-center">
+                                <div class="slide-item_height bg-white d-flex">
+                                    <img src="/Content/img/link-3.png" alt="">
+                                </div>
+                                <p class="mb-0 font-16-utm">
+                                    Cổng thông tin điện tử<br>Bộ Thông tin &amp; Truyền thông
+                                </p>
+                            </div>
+                        </div>
+                        <div class="owl-item active" style="width: 255px; margin-right: 50px;">
+                            <div class="slide-item text-center">
+                                <div class="slide-item_height bg-white d-flex">
+                                    <img src="/Content/img/link-4.png" alt="">
+                                </div>
+                                <p class="mb-0 font-16-utm">
+                                    Cẩm nang chuyển đổi số<br>www.dx.mic.gov.vn
+                                </p>
+                            </div>
+                        </div>
+                        <div class="owl-item cloned active" style="width: 255px; margin-right: 50px;">
+                            <div class="slide-item text-center">
+                                <div class="slide-item_height bg-white d-flex">
+                                    <img src="/Content/img/link-1.png" alt="">
+                                </div>
+                                <p class="mb-0 font-16-utm">
+                                    Trung tâm một cửa hỗ trợ<br>triển khai chính phủ điện tử
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button>
+                </div>
+                <div class="owl-dots disabled"><button role="button" class="owl-dot active"><span></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container section text-center">
+        <div class="row">
+            <div class="col-sm-12 col-md-10 col-xs-12 float-none mx-auto">
+                <p class="font-16-utm text-uppercase font-weight-bold mb-0">
+                    @Model.TenDonVi
+                </p>
+                <p class="font-16-utm mb-0">
+                    <a class="font-16-utm text-white" href="">
+                        @Model.DiaChiDonVi
+                    </a>
+                </p>
+                <div class="col-sm-12 col-md-12 col-xs-12 px-0 d-flex justify-content-between flex-wrap">
+                    <p class="col-sm-4 col-md-4 col-xs-12 px-0 mb-0 font-16-utm">
+                        Điện Thoại :
+                        <a class="font-16-utm text-white" href="tel:024.37821766">@Model.DienThoai</a>
+                    </p>
+                    <p class="col-sm-4 col-md-4 col-xs-12 px-0  mb-0 font-16-utm">
+                        Fax:<a class="font-16-utm text-white" href="">@Model.Fax</a>
+                    </p>
+                    <p class="col-sm-4 col-md-4 col-xs-12 px-0  mb-0 font-16-utm">
+                        Email:
+                        <a class="font-16-utm text-white" href="mailto:aita@mic.gov.vn">@Model.Email</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,196 @@
+@media (min-width: 1441px){
+    #banner2 {
+        display: block !important;
+    }
+
+        #banner2 .col-sm-12.col-md-4.col-lg-4 a {
+            margin: 10px 0;
+            float: left !important;
+        }
+
+        #banner2 .col-sm-12.col-md-4.col-lg-4 {
+            margin-top: auto;
+            text-align: left;
+        }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+    #banner2 {
+        display: block !important;
+    }
+
+        #banner2 .col-sm-12.col-md-4.col-lg-4 a {
+            margin: 10px 0;
+            float: left !important;
+        }
+
+        #banner2 .col-sm-12.col-md-4.col-lg-4 {
+            margin-top: auto;
+            text-align: left;
+        }
+}
+
+@media screen and (max-width: 1024px) {
+    #banner2 .col-sm-12.col-md-4.col-lg-4 a {
+        margin-bottom: 10px;
+    }
+
+    #banner2 .col-sm-12.col-md-4.col-lg-4 {
+        margin-top: auto;
+        margin-left: auto;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .box-button-kekhai {
+        margin-top: 20px;
+    }
+
+    .svg-dotbaocao svg {
+        padding: 0px;
+    }
+
+    .col-sm-12 {
+        width: unset;
+    }
+
+    #banner2 .col-sm-12.col-md-4.col-lg-4 a {
+        margin-bottom: 10px;
+    }
+
+    #banner2 .col-sm-12.col-md-4.col-lg-4 {
+        margin-top: auto;
+        margin-left: auto;
+    }
+
+    .xephangcontainer .nav-pills li a {
+        padding: 10px;
+    }
+
+    .xephangcontainer .nav-pills li {
+        width: unset;
+    }
+
+    .block--table-donvi, .block--chart-donvi {
+        width: 100%;
+    }
+
+        .block--chart-donvi .highcharts-container svg,
+        .block--chart-donvi .highcharts-container {
+            width: 100% !important;
+        }
+}
+
+
+@media screen and (max-width: 480px) {
+    .svg-dotbaocao svg {
+        padding: 20px 0px;
+    }
+
+    #banner2 div .btn {
+        margin-top: 20px;
+    }
+
+    .xephangcontainer h3 {
+        padding: 10px;
+    }
+
+    .xephangcontainer .nav.nav-pills li a {
+        text-align: center;
+        width: 100%;
+        display: block;
+    }
+
+    .xephangcontainer .nav.nav-pills li {
+        text-align: center;
+        width: 70%;
+    }
+
+    .tabbable .nav-tabs li {
+        width: 100% !important;
+    }
+
+    .xephangcontainer .nav-tabs li {
+        max-width: 100%;
+        border-right: 1px solid;
+        float: left;
+    }
+
+    #collapse086 .xephangcontainer .nav-tabs li a {
+        margin: 0px !important;
+        border: 1px solid #ddd;
+    }
+
+    .xephangcontainer .nav-tabs.tab-color-blue li.active a {
+        background: #cee3f8 !important;
+    }
+
+    .xephangcontainer .nav-tabs.tab-color-blue li a {
+        background: #fff !important;
+    }
+
+    #reportTable {
+        width: 100% !important;
+    }
+
+    .highcharts-container {
+        width: 100% !important;
+    }
+}
+
+
+@media screen and (max-width: 320px) {
+    .svg-dotbaocao svg {
+        padding: 20px 0px;
+    }
+
+    #banner2 div .btn {
+        margin-top: 20px;
+    }
+
+    .xephangcontainer h3 {
+        padding: 10px;
+    }
+
+    .xephangcontainer .nav.nav-pills li a {
+        text-align: center;
+        width: 100%;
+        display: block;
+    }
+
+    .xephangcontainer .nav.nav-pills li {
+        text-align: center;
+        width: 70%;
+    }
+
+    .tabbable .nav-tabs li {
+        width: 100% !important;
+    }
+
+    .xephangcontainer .nav-tabs li {
+        max-width: 100%;
+        border-right: 1px solid;
+        float: left;
+    }
+
+    #collapse086 .xephangcontainer .nav-tabs li a {
+        margin: 0px !important;
+        border: 1px solid #ddd;
+    }
+
+    .xephangcontainer .nav-tabs.tab-color-blue li.active a {
+        background: #cee3f8 !important;
+    }
+
+    .xephangcontainer .nav-tabs.tab-color-blue li a {
+        background: #fff !important;
+    }
+
+    #reportTable {
+        width: 100% !important;
+    }
+
+    .highcharts-container {
+        width: 100% !important;
+    }
+}

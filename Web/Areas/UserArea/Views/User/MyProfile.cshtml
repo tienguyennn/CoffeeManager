@@ -1,0 +1,63 @@
+﻿@using Web.Areas.UserArea.Models
+@using Newtonsoft.Json;
+
+@{
+    Layout = "~/Views/Shared/_LayoutAce.cshtml";
+    ViewBag.Title = "Hồ sơ cá nhân";
+    ViewBag.ModuleName = "Quản lý hồ sơ tài khoản";
+    ViewBag.PageName = "Quản lý hồ sơ tài khoản cá nhân";
+}
+@model DetailVM
+@{
+
+}
+<!DOCTYPE html>
+@section ActionBarRight{
+    <a href="javascript:void(0)" onclick="EditAction('/UserArea/User/EditProfile/@Model.users.Id')" class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i>&nbsp;&nbsp;Chỉnh sửa</a>
+    <a href="javascript:void(0)" onclick="history.back()" class="btn btn-primary btn-sm"><i class="fa fa-reply"></i>&nbsp;&nbsp;Quay lại</a>
+}
+<html>
+<body>
+
+    <div class="col-sm-12">        
+        <div class="container-fluid">
+            <table class="table-info table100">
+
+                <tr>
+                    <td rowspan="5">
+                        <span class="profile-picture">
+                            <img id="avatar" class="editable img-responsive center-block" alt="Avatar" src="~/@Model.users.Avatar" onerror="this.src = '/assets/images/avatars/userNew.png'" />
+                            <button class="btn btn-primary btn-block btn-sm avatar-change" onclick="EditAction('/UserArea/User/EditAvatar/@Model.users.Id')">Thay đổi ảnh đại diện</button>
+                        </span>
+                    </td>
+                    <td class="labelData col-sm-3">Tên tài khoản</td>
+                    <td class="col-sm-3">@Model.users.UserName</td>
+                    <td class="labelData col-sm-3">Họ tên</td>
+                    <td class="col-sm-3">@Model.users.FullName</td>
+                </tr>
+
+                <tr><td class="labelData">Giới tính</td><td>@(Model.users.Gender == 1 ? "Nam" : "Nữ")</td><td class="labelData">Ngày sinh</td><td>@Model.users.BirthDay</td></tr>
+
+                <tr><td class="labelData">Điện thoại</td><td>@Model.users.PhoneNumber</td><td class="labelData">Email</td><td>@Model.users.Email</td></tr>
+
+                <tr><td class="labelData">Phòng ban</td><td>@ViewBag.departmentName</td><td class="labelData">Chức vụ</td><td>@ViewBag.job</td></tr>
+
+                <tr>
+                    <td class="labelData">Vai trò</td>
+                    <td>
+                        <ul class="list-roles">
+                            @foreach (var item in Model.users.ListRoles)
+                            {
+                                <li>@item.Name</li>
+                            }
+                        </ul>                        
+                    </td>
+                    <td class="labelData">Địa chỉ</td>
+                    <td>@Model.users.Address</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+@Scripts.Render("~/bundles/jqueryval")

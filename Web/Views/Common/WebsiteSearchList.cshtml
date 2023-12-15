@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "WebsiteSearchList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Web.Models;
+@model ListWebsiteSearchViewModel
+
+<div id="NoiDungChinh">
+    <div class="container">
+        <div class="col-sm-8 pdl0 content-left">
+            <div class="btn-group btn-breadcrumb">
+                <a href="/" class="btn btn-info"><i class="glyphicon glyphicon-home" style="font-size: 17px; line-height: 0.2;margin-top:5px;"></i>&nbsp;&nbsp;Trang chủ</a>
+                <a href="" class="btn btn-info history-url">Tra cứu website</a>
+            </div>
+            <div class="vanban__phapluat">
+                <h1 class="content-header">Tra cứu website</h1>
+                <div class="table-search">
+                    <form action="/" class="search-form" enctype="multipart/form-data" id="SearchForm" method="post"><input class="form-control" id="SearchFormInput" name="search" placeholder="Tìm kiếm..." type="text" value=""></form>
+                </div>
+                <table class="table document-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">STT</th>
+                            <th scope="col" style="min-width:120px">Tên website</th>
+                            <th scope="col" style="min-width:120px">Địa chỉ</th>
+                            <th scope="col" style="min-width:140px">Tên công ty</th>
+                            <th scope="col" style="min-width:140px">Số điện thoại công ty</th>
+                            <th scope="col" style="min-width:140px">Địa chỉ công ty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{var i = 0;}
+                            @foreach (var item in Model.ListWebsite.ListItem)
+                            {
+                            <tr>
+                                <th scope="row">@(++i)</th>
+                                <td>@item.Name</td>
+                                <td>@item.Domain</td>
+                                <td>@item.CompanyName</td>
+                                <td>@item.CompanyPhone</td>
+                                <td>@item.CompanyAddress</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="text-center" style="margin-top: 20px;">
+                <button type="button" id="loadmore-tbl" class="btn">Xem thêm</button>
+            </div>
+        </div>
+        @{ Html.RenderAction("EndUserContentRightPartial", "Common"); }
+    </div>
+    <script>
+    </script>
+</div>
+

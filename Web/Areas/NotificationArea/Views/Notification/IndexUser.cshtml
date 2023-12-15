@@ -1,0 +1,132 @@
+﻿@{
+    ViewBag.Title = "Thông báo hệ thống";
+    Layout = "~/Views/Shared/_LayoutAcePublish.cshtml";
+    ViewBag.ModuleName = "Quản lý Thông báo hệ thống";
+    ViewBag.PageName = "Danh sách Thông báo hệ thống";
+    ViewBag.ModuleCode = "Notification_index";
+
+}
+@using Model.IdentityEntities;
+@using Model.Entities;
+@using Newtonsoft.Json;
+@using Service.Common;
+@using Service.NotificationService.Dto;
+@model PageListResultBO<NotificationDto>
+    @{
+    var lstData = Html.Raw(JsonConvert.SerializeObject(Model.ListItem));
+    }
+
+    @section ActionBarRight{
+    @*<a href="#collapseDiv" class="btn btn-sm btn-primary" aria-controls="collapsePanel" data-toggle="collapse" role="button">
+        Tìm kiếm
+    </a>*@
+    }
+<div class="navSearch wf100">
+    @*@using (Ajax.BeginForm("searchDataNumber", "Article", new { Area = "ArticleArea" },
+      new AjaxOptions()
+      {
+          HttpMethod = "POST",
+          OnFailure = "AjaxFormError",
+          OnSuccess = "AjaxSearchSuccess",
+      }, new { autocomplete = "off" }))
+    {
+        <input type="hidden" name="userName" value="@ViewBag.username" />
+        <input class="form-control width100" placeholder="Nhập từ khóa" type="text" name="TieuDeFilter" />
+        <input type="submit" id="searchApp" value="" />
+    }*@
+</div>
+
+    <div id="tbl-Notification" class="hntbl-cover">
+        <div class="hntbl-cover-tableScroll">
+            <table class="hinet-table table table-striped table-hover" cellspacing="0" width="100%">
+               
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    @section scripts{
+    <script>
+        var lstData = eval(@lstData);
+        var moduleTableSelector="#tbl-Notification";
+        function pagefunction(){
+            var conf=[
+                
+				{
+					isSort:true,
+					nameModel:'FromUser',
+                    content: function (data) {
+                         var html = "<div class='box_grContent'><div class='grContent'>";
+                        html += "<div class='grContent_img grContent_img_bell'><center><i class='fa fa-bell'></i></center></div>";
+                        
+                        html += "<div class='grContent_main'><div class='grContent_title'><b>" + data.FromUserName+"</b></div>";
+                        html += "<div class='grContent_StatusName'>";
+                         if (data.IsRead != true) {
+                            html += "<span style='color:#16a085' >"+ToStrong(data.Message)+"</span>";
+                        } else {
+                            html += data.Message;
+                        }
+                        html += "</div>";
+                        html += "<div class='grContent_datetao'><i class='fa fa-calendar'></i><i>"+ToDateTime(data.CreatedDate)+"</i></div>";
+
+                           html += "</div>";
+                           return html;
+				}
+                },
+               
+            ];
+
+
+            var getdatafunc=function(page,sortQuery,pageSize){
+                $.ajax({
+                    url: '/NotificationArea/Notification/GetDataUser',
+                    type: 'post',
+                    cache: false,
+                    data: {
+                        "userId":"@((int)ViewBag.UserId)",
+                        "indexPage": page,
+                        "sortQuery": sortQuery,
+                        "pageSize": pageSize
+                    },
+                    success: function (data) {
+                        $(moduleTableSelector).hinetTable("data",{
+                            pageSize:pageSize!=-1?pageSize:data.Count,
+                            pageIndex:page,
+                            pagecount: data.TotalPage,
+                            recordCount: data.Count,
+                            listItem: data.ListItem,});
+                    },
+                    error: function (err) {
+                        CommonJS.alert(xhr.responseText);
+                    }
+                });
+
+            }
+
+            var tblData=$("#tbl-Notification").hinetTable("init",{
+                pageSizeList:{size:[20,50,100,-1],label:['20','50','100','Tất cả']},
+                pagecount: @Model.TotalPage,
+                recordCount: @Model.Count,
+                actionToolBar:'<a href=\"#collapseDiv\" aria-controls=\"collapsePanel\" data-toggle=\"collapse\" role=\"button\" class="btn btn-primary btn-xs"><i class="fa fa-search"></i> Tìm kiếm</a>',
+                getData:getdatafunc,
+                listItem:lstData,
+                config:conf
+            });
+
+        }
+
+        function AfterSussessActionAjaxform(){
+            $(moduleTableSelector).hinetTable("reload");
+        }
+        function AjaxSearchSuccess(rs) {
+            $(moduleTableSelector).hinetTable("data", {
+                pageIndex: 1,
+                pagecount: rs.TotalPage,
+                recordCount: rs.Count,
+                listItem: rs.ListItem,
+            });
+        }
+        pagefunction();
+    </script>
+    }
+

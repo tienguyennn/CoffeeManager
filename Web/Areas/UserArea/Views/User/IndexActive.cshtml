@@ -1,0 +1,216 @@
+﻿@{
+    ViewBag.Title = "Quản lý tài khoản";
+    Layout = "~/Views/Shared/_LayoutAce.cshtml";
+    ViewBag.ModuleName = "Quản lý người dùng";
+    ViewBag.PageName = "Danh sách người dùng";
+    ViewBag.ModuleCode = "QLTaiKhoan";
+}
+@using Model.IdentityEntities;
+@using Newtonsoft.Json;
+@using Service.Common;
+@using Service.AppUserService.Dto;
+@using Web.Areas.UserArea.Models
+@model UserListViewModel
+@{
+    var lstData = Html.Raw(JsonConvert.SerializeObject(Model.ListUser.ListItem));
+}
+@section ActionBarRight{
+    <a href="#collapseDiv" class="btn btn-sm btn-primary" aria-controls="collapsePanel" data-toggle="collapse" role="button">
+        <i class="fa fa-search"></i> Tìm kiếm
+    </a>
+    <a href="/UserArea/User/ExportExcel" class="btn btn-labeled btn-success btn-sm">
+        <span class='btn-label'><i class='glyphicon glyphicon-download'></i></span> Xuất Excel
+    </a>
+    <a href="javascript:void(0)" onclick="CreateAction('/UserArea/User/Create')" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Thêm mới</a>
+}
+@Html.Partial("_SearchUserActivePartial")
+
+<div id="tbl-user" class="hntbl-cover table-scroll">
+    <div class="table-wrap">
+        <table class="hinet-table table table-striped table-hover fixed-table" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th class="fixed-side"></th>
+                    <th class="fixed-side">#</th>
+                    <th>Họ tên</th>
+                    <th>Tên tài khoản</th>
+                    <th>Đơn vị</th>
+                    <th>Phòng ban</th>
+                    <th>Chức vụ</th>
+                    <th>Email</th>
+                    <th>Điện thoại</th>
+                    <th>Ngày sinh</th>
+                    <th>Giới tính</th>
+                    <th>Địa chỉ</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        var lstData = eval(@lstData);
+        var moduleTableSelector="#tbl-user";
+        function pagefunction(){
+            var conf=[
+                {
+                    tdClass:"center fixed-side",
+                    isSort:false,
+                    nameModel: "",
+                    content: function (data) {
+                        return "<input type='checkbox'/>";
+                    }
+                },
+                {
+                    tdClass: "center fixed-side",
+                    isSort: false,
+                    nameModel: "",
+                    isCounter:true,
+                },
+                {
+                    isSort:true,
+                    nameModel:'FullName',
+					content: function (data) {
+						var result = "";
+						var str = "";
+						if (data.IsCongTacVien == true) {
+							str += '&nbsp;' + '<i class="fa fa-user" style="color:#3498db;" title="Cộng tác viên"></i>' + '&nbsp;';
+						}
+						for (var i = 0; i < data.ListRoles.length; i++) {
+							result += '<b class="label label-warning">' + data.ListRoles[i].Name + '</b>' + '&nbsp;';
+						}
+						return data.FullName + str + "</br>" + result;
+                    }
+                },
+                 {
+                     isSort:true,
+                     nameModel:'UserName',
+                     content: function (data) {
+						 var str = "";
+						 str += "<a href='/UserArea/User/Detail/" + data.Id + "'> " + data.UserName + "</a><br/>";
+						 if (data.IsLock == true) {
+							 str += '<b class="label label-danger">Bị khóa tài khoản</b>'
+                         }
+                         if (data.IsSendMail) {
+                             str += "<i class='green glyphicon glyphicon-envelope'> </i>";
+                         }
+						 return str;
+                     }
+                },
+                {
+                    isSort: false,
+                    nameModel: 'DonViName',
+                    content: function (data) {
+                        return data.DonViName;
+                    }
+                },
+				{
+					isSort: false,
+					nameModel: '',
+					content: function (data) {
+						var str = "";
+						str += ShowMessageIfEmpty(data.DepartmentName);
+						if (data.IsTruongPhongDepartment == true) {
+							str += '<br/><b class="label label-primary">Trưởng phòng</b>'
+						}
+						return str;
+					}
+                },
+                {
+                    isSort: false,
+                    nameModel: '',
+                    content: function (data) {
+						return data.IdChucVuName;
+                    }
+                },
+                {
+                    isSort: true,
+                    nameModel: 'Email',
+                    content: function (data) {
+						return ShowMessageIfEmpty(data.Email)
+                    }
+                },
+                {
+                    isSort: true,
+                    nameModel: 'PhoneNumber',
+                    content: function (data) {
+						return ShowMessageIfEmpty(data.PhoneNumber);
+                    }
+                },
+                 {
+                     isSort:true,
+                     nameModel:'BirthDay',
+                     content: function (data) {
+                         return ToDate(data.BirthDay)
+                     }
+                 },
+                 {
+                     isSort:true,
+                     nameModel:'Gender',
+                     content: function (data) {
+
+                         return data.Gender==1?"Nam":"Nữ";
+                     }
+                 },
+                 {
+                      isSort:false,
+                      nameModel:"Address",
+                      content: function (data) {
+                          return ShowMessageIfEmpty(data.Address);
+                      }
+                },
+            ];
+
+
+            var getdatafunc=function(page,sortQuery,pageSize){
+                $.ajax({
+                    url: '/UserArea/User/GetDataActive',
+                    type: 'post',
+                    cache: false,
+                    data:{"indexPage":page,"sortQuery":sortQuery,"pageSize":pageSize},
+                    success: function (data) {
+                        $(moduleTableSelector).hinetTable("data",{
+                            pageSize:pageSize!=-1?pageSize:data.Count,
+                            pageIndex:page,
+                            pagecount: data.TotalPage,
+                            recordCount: data.Count,
+                            listItem: data.ListItem,
+                        });
+
+                    },
+                    error: function (err) {
+                        CommonJS.alert(xhr.responseText);
+                    }
+                });
+
+            }
+
+            var tblData=$("#tbl-user").hinetTable("init",{
+                pageSizeList:{size:[20,50,100,-1],label:['20','50','100','Tất cả']},
+                pagecount: @Model.ListUser.TotalPage,
+                recordCount: @Model.ListUser.Count,
+                actionToolBar: '',
+                getData: getdatafunc,
+                listItem:lstData,
+                config:conf
+            });
+
+        }
+
+        function AfterSussessActionAjaxform() {
+            $(moduleTableSelector).hinetTable("reload");
+        }
+        function AjaxSearchSuccess(result) {
+            $(moduleTableSelector).hinetTable("data", {
+                pageIndex: 1,
+                pagecount: result.TotalPage,
+                recordCount: result.Count,
+                listItem: result.ListItem,
+            });
+        }
+
+        pagefunction();
+    </script>
+}

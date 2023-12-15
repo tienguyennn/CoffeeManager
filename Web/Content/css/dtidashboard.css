@@ -1,0 +1,88 @@
+﻿ .titleBang {
+        text-align: center;
+    }
+
+        .titleBang a, .titleBang > a:active {
+            font-size: 33px;
+            margin-top: 4rem;
+            margin-bottom: 2rem;
+            color: #DD5A43;
+            font-weight: bold;
+        }
+
+            .titleBang a:after {
+                font-family: 'Glyphicons Halflings';
+                content: "\e114";
+                transition: all 0.5s;
+                display: inline-block;
+            }
+
+        .titleBang.active a:after {
+            -webkit-transform: rotate(180deg);
+            -moz-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+
+    .dt-buttons > .btn, .dt-buttons > .btn-default, .dt-buttons > .btn-default.focus, .dt-buttons > .btn-default:focus, .dt-buttons > .btn.focus, .dt-buttons > .btn:focus {
+        background-color: #87B87F !important;
+        border-color: #87B87F;
+        border-radius: 5px;
+    }
+
+        .dt-buttons > .btn:hover {
+            background-color: #c3dbbf !important;
+            border-color: #c3dbbf;
+        }
+
+    .dataTables_wrapper > .table.table-bordered > thead > tr > th {
+        background: #0995ed !important;
+        color: white;
+    }
+
+    .table-bordered > thead > tr > td, .table-bordered > thead > tr > th {
+        border-bottom-width: 0px;
+    }
+
+    .dataTable > thead > tr > th.sorting_asc:after {
+        color: white;
+        top: 25px;
+    }
+
+    .dataTable > thead > tr > th[class*=sort]:after {
+        color: white;
+        top: 25px;
+    }
+
+    .highcharts-title {
+        text-transform: uppercase;
+    }
+
+
+
+    .btn-group > .btn, .btn-group > .btn + .btn, .btn-group > .btn:first-child {
+        margin: 0;
+    }
+
+        .btn-group > .btn:last-child {
+            border-right: 0;
+        }
+
+
+
+    .table > thead > tr > th:last-child {
+        border-right-color: #a4c2e0;
+    }
+
+    .highcharts-container {
+        height: 100%;
+    }
+
+    article.xephang-nguoicham {
+        background: #fff;
+        min-height: 200px;
+        display: none;
+    }
+
+        article.xephang-nguoicham.on {
+            display: block;
+        }

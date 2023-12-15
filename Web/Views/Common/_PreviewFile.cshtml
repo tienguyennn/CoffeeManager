@@ -1,0 +1,65 @@
+﻿@using Web.Models;
+@using Service.Common;
+@model PreviewFileViewModel
+@{
+}
+<div class="modal-dialog" style="height: 100%;width:80%">
+    <div class="modal-content" style="height: auto;min-height: 100vh">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="center">
+                <h4 class="modal-title">
+                    <strong>
+                        NỘI DUNG TÀI LIỆU
+                    </strong>
+                </h4>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div id="flow-container" style="overflow:hidden">
+                <div class="col-sm-12">
+                    <div style=" width: 100%;overflow: hidden;height: 80vh;border: 1px solid #808080;">
+                        @if (!Model.IsFileExisted)
+                        {
+                            <h3 class="text-danger">
+                                FILE KHÔNG TỒN TẠI TRONG HỆ THỐNG
+                            </h3>
+                        }
+                        else
+                        {
+                            if (Model.FileType == (int)Constant.FILE_TYPE_ENUM.IMAGE)
+                            {
+                                <img src="@Model.FilePath" width="100%" height="100%" />
+                            }
+                            else if (Model.FileType == (int)Constant.FILE_TYPE_ENUM.PDF)
+                            {
+                                <iframe src="@Model.FilePath" type="application/pdf" width="100%" height="100%" />
+                                @*<div id="pdfImages"></div>*@
+                                @*<div id="pdf-viewer"></div>*@
+
+
+                            }
+                            else if (Model.FileType == (int)Constant.FILE_TYPE_ENUM.WORD)
+                            {
+                                <iframe src="@Model.FilePath" type="application/pdf" width="100%" height="100%" />
+                                @*<div id="pdf-viewer"></div>*@
+                            }
+                            else
+                            {
+                                <h3 class="text-danger">
+                                    ĐỊNH DẠNG FILE KHÔNG HỖ TRỢ XEM TRƯỚC
+                                </h3>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer center" style="position:absolute;bottom:0;width:100%">
+            <button type="button" class="btn btn-danger btn-dong" data-dismiss="modal">
+                Đóng
+            </button>
+        </div>
+    </div>
+</div>
+

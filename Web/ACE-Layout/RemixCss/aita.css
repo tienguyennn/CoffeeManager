@@ -1,0 +1,214 @@
+﻿.targetgroup-box {
+    padding: 10px;
+    position: relative;
+}
+
+.targetgroup-head {
+    position: relative;
+    font-size: 23px;
+    text-align: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    cursor: pointer;
+    color: #CE7A58;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+    .targetgroup-head:before {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        background: #CE7A58;
+        height: 4px;
+        border-radius: 20px;
+    }
+
+    .targetgroup-head h2, .targetgroup-head .targetgroup-title {
+        font-size: 23px;
+        margin: 0px;
+    }
+
+.targetgroup-body {
+    position: relative;
+    font-size: 18px;
+}
+
+.item .wrap {
+    display: block;
+    padding: 10px;
+    padding-left: 60px;
+    border-radius: 8px;
+    background: #f5f5f5;
+    cursor: pointer;
+         margin-bottom: 10px; 
+    border: 1px solid #1bb0dd;
+    position: relative;
+}
+
+.breadcrumb a {
+    font-weight: bold;
+    color: #3498db;
+    margin: 5px;
+}
+
+.infobox {
+    height: 90px;
+}
+
+.table > thead > tr > th {
+    border-bottom: none;
+    background-color: #438EB9;
+    color: white;
+    text-align: center;
+    font-family: RobotoMedium;
+    font-size: 17px;
+}
+
+.table > tbody > tr {
+    border-bottom: none;
+}
+
+    .table > tbody > tr > td {
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        font-family: RobotoMedium;
+    font-size: 17px;
+    }
+
+.aitatable td, .aitatable th {
+    font-family: RobotoMedium;
+    font-size: 18px;
+}
+
+.reject {
+    color: red;
+}
+
+.chitietkekhai label, .chitietkekhai a {
+    font-family: RobotoMedium;
+    font-size: 18px;
+}
+.chitietkekhai label {
+    font-weight: bold;
+}
+.hr-32, .hr32 {
+    margin: 15px 0;
+}
+
+.nav-list > li .submenu > li > a {
+    font-family: RobotoMedium;
+    font-size: 16px;
+}
+.navbar-header small {
+    font-family: RobotoMedium;
+    font-weight: bold;
+}
+.no-skin .nav-list > li > a > span {
+    font-family: RobotoMedium;
+    font-size: 16px;
+}
+
+.infobox > .infobox-data > .infobox-data-number {
+    font-size: 21px;
+}
+
+.txt-label, .txt-select2 option {
+    font-family: RobotoMedium;
+    font-size: 16px;
+}
+
+/*body {
+    font-family: RobotoMedium;    
+}
+.hinet-table tbody tr td {
+    font-size: 16px !important;
+}
+.hinet-table thead tr th {
+    font-size: 16px !important;
+    color: white !important;.aitatable td, .aitatable th
+}*/
+.width15percent {
+    width: 15%;
+}
+.width20percent {
+    width: 20%;
+}
+.width30percent {
+    width: 30%;
+}
+.width40percent {
+    width: 40%;
+}
+.width50percent {
+    width: 50%;
+}
+@media screen and (max-width:767px) and (min-width:480px) {
+      .baocaodanhgia .infobox-container .infobox {
+            width:50% !important;
+          text-align: center;
+        }
+      .baocaodanhgia .infobox > .infobox-data > .infobox-data-number {
+              font-size: 18px;
+      }
+      .baocaodanhgia .infobox>.infobox-icon {
+          width: 100%;
+      }
+}
+@media screen and (max-width:479px) {
+    .Baocaotk,
+    .Baocaotk h2{
+        width: 100%;
+        text-align: center;
+        display: block !important;
+    }
+      .baocaodanhgia .infobox-container .infobox {
+            width:100% !important;
+          text-align: center;
+
+        }
+      .baocaodanhgia .infobox>.infobox-icon {
+          width: 100%;
+      }
+      .baocaodanhgia .infobox > .infobox-data > .infobox-data-number {
+              font-size: 16px;
+      }
+}
+.modal-header {
+    background: #f99602;
+}
+#map {
+    height: 600px;
+}
+@media screen and (min-width: 1600px) {
+    #boxResultBenhVien {
+        height: 550px;
+    }
+    #map{
+        height:718px;
+    }
+}
+/* ----------- Non-Retina Screens ----------- */
+@media screen and (min-width: 1200px) and (max-width: 1600px) {
+    #boxResultBenhVien {
+        height: 373px;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1199px){
+    #boxResultBenhVien {
+        height: 494px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    #boxResultBenhVien {
+        height: 521px;
+    }
+}
+@media screen and (max-width:768px){
+    #form-search-data > div:nth-child(3){
+        padding:0px;
+    }
+}

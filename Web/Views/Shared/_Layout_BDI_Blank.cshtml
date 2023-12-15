@@ -1,0 +1,43 @@
+﻿@using Service.AppUserService.Dto
+@using Web.Models
+@{
+    var user = SessionManager.GetUserInfo() as Model.IdentityEntities.AppUser;
+    var isLogin = user != null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="/Content/DVC/js/jquery.min.js"></script>
+    @Styles.Render("~/assets/appcss")
+    <title> @ViewBag.Title</title>
+
+    <link href="~/Content/css/css/bootstrap.css?v=1" rel="stylesheet" />
+    <link href="~/Content/css/css/font-awesome.min.css?v=1" rel="stylesheet" />
+    <link href="~/assets/css/gritter-ace.min.css?v=1" rel="stylesheet" />
+    <link rel="stylesheet" href="~/assets/css/bootstrap-duallistbox.min.css?v=1" />
+
+    <link href="~/Content/css/css/animate.css?v=1" rel="stylesheet" />
+    <link href="~/assets/css/jquery.gritter.min.css?v=1" rel="stylesheet" />
+    <link href="~/Content/fixed-element.css?v=1" rel="stylesheet" />
+    <link href="~/Content/ADashboard.css?v=1" rel="stylesheet" />
+    <link href="~/Content/Admin_respon.css?v=1" rel="stylesheet" />
+    <link href="~/Content/css/css/style-1.css?v=1" rel="stylesheet" />
+    <link href="~/Content/css/css/style.css?v=1" rel="stylesheet" />
+    <link href="~/ACE-Layout/Content/ACE/css/datepicker.min.css?v=1" rel="stylesheet" />
+    <link href="~/Content/backend.css?v=1" rel="stylesheet" />
+    <link href="~/Content/CongThongTin.css?v=3.1" rel="stylesheet" />
+    <link href="~/Content/Responsive-CongThongTin.css?v=0.0.2" rel="stylesheet" />
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/assets/js/jquery.bootstrap-duallistbox.min.js"></script>
+    <script src="~/Scripts/OldAutoNumeric/autoNumeric.js"></script>
+    <script src="~/assets/js/jquery.gritter.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/Common.js"></script>
+
+</head>
+<body>
+    @RenderBody()
+</body>
+
+</html>

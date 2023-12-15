@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Hết phiên làm việc";
+    //Layout = "~/Views/Shared/_LayoutBlank.cshtml";
+}
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="center">
+                <h4 class="modal-title">Phiên làm việc đã hết hạn</h4>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="alert-content">
+                <div class="col-sm-5 sitetitle">
+                    <div class="qhieu">
+                        <img src="~/Content/EndUser/img/error.png" height="180px" style="" alt="">
+                    </div>
+                    <div class="box-sitename">
+                    </div>
+                </div>
+                <div class="row col-sm-7 contentbox-err">
+                    <!-- PAGE CONTENT BEGINS -->
+
+                    <div class="error1">
+                        <div class="content-err">
+                            <h1>
+                                THÔNG BÁO
+                            </h1>
+                            <h3 class="lighter smaller">Phiên làm việc của bạn đã hết hạn. <br />Vui lòng đăng nhập lại để tiếp tục sử dụng hệ thống!</h3>
+
+                        </div>
+                    </div>
+
+                    <div class=" comeback">
+                        <a href="/AccountAdmin/login" class="btn btn-primary">
+                            Đăng nhập
+                        </a>
+                    </div>
+                    <!-- PAGE CONTENT ENDS -->
+                </div><!-- /.row -->
+            </div><!-- /.row -->
+        </div>
+        <div class="modal-footer center">
+         
+        </div>
+    </div>
+</div>

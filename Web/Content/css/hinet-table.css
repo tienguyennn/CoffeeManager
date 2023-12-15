@@ -1,0 +1,72 @@
+﻿.table-hover tbody tr:hover {
+    cursor: pointer;
+}
+
+    .table-hover tbody tr:hover > td {
+        background: #edf9ff !important;
+    }
+
+.hntbl-cover {
+    padding: 10px;
+}
+
+.hinet-table {
+    border: 1px solid #ddd;
+    /*background-color: #fff;*/
+    width: 100% !important;
+}
+
+    .hinet-table thead tr th:first-child {
+        text-transform: uppercase;
+    }
+
+    .hinet-table thead tr th {
+        cursor: pointer;
+        padding: 10px 15px 10px 10px;
+        vertical-align: middle;
+        line-height: 20px;
+        font-size: 12px;
+        display: table-cell;
+        background-repeat: no-repeat;
+        background-position: center right;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+        white-space: nowrap
+    }
+
+
+
+    .hinet-table tbody tr td {
+        font-size: 12px;
+    }
+
+
+
+        .hinet-table tbody tr td ul {
+            padding: 0;
+        }
+
+            .hinet-table tbody tr td ul li {
+                list-style: none;
+            }
+
+                .hinet-table tbody tr td ul li a {
+                    text-decoration: none
+                }
+
+        .hinet-table tbody tr td .btn-group a {
+            margin: 3px;
+        }
+
+.sort-asc {
+    background: url('../../Content/Images/hinetTable/sort_asc.png') no-repeat center right;
+}
+
+.sort-desc {
+    background: url('../../Content/Images/hinetTable/sort_desc.png') no-repeat center right;
+}
+
+.sort-none {
+    background: url('../../Content/Images/hinetTable/sort_both.png') no-repeat center right;
+    background-size: 17px;
+}

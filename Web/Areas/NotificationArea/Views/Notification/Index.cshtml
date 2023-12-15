@@ -1,0 +1,215 @@
+@{
+    ViewBag.Title = "Thông báo hệ thống";
+    Layout = "~/Views/Shared/_LayoutAce.cshtml";
+    ViewBag.ModuleName = "Quản lý Thông báo hệ thống";
+    ViewBag.PageName = "Danh sách Thông báo hệ thống";
+    ViewBag.ModuleCode = "Notification_index";
+
+}
+@using Model.IdentityEntities;
+@using Model.Entities;
+@using Newtonsoft.Json;
+@using Service.Common;
+@using Service.NotificationService.Dto;
+@model PageListResultBO<NotificationDto>
+@{
+    var lstData = Html.Raw(JsonConvert.SerializeObject(Model.ListItem));
+}
+
+
+
+@section ActionBarRight{
+    <a href="#collapseDiv" class="btn btn-sm btn-primary" aria-controls="collapsePanel" data-toggle="collapse" role="button">
+        <i class="fa fa-search"></i>&nbsp;Tìm kiếm
+    </a>
+    <a class="btn btn-sm btn-primary" onclick="XemTatCa()">
+        <i class="fa fa-eye" aria-hidden="true"></i> Xem tất cả
+    </a>
+}
+@Html.Partial("_SearchPartial")
+
+<div id="tbl-Notification" class="hntbl-cover">
+    <div class="hntbl-cover-tableScroll">
+        <table class="hinet-table table table-striped table-hover" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    @*<th></th>*@
+                    <th>#</th>
+                    @*<th></th>*@
+                    <th>Người gửi</th>
+                    <th>Ngày gửi</th>
+                    <th>Nội dung</th>
+                    @*<th>Liên kết</th>*@
+                    @*<th>Loại</th>*@
+
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        var lstData = eval(@lstData);
+        var moduleTableSelector="#tbl-Notification";
+        function pagefunction(){
+            var conf=[
+                {
+                    tdClass:"center width50",
+                    isSort:false,
+                    nameModel: "",
+                    isCounter:true,
+                    content: function (data) {
+                        return "<input type='checkbox'/>"
+                    }
+                },
+				//{
+				//	isSort:true,
+				//	nameModel:'Id',
+				//	content: function (data) {
+				//	return data.Id
+				//}
+				//},
+				{
+					isSort:true,
+					nameModel:'FromUser',
+                    content: function (data) {
+                        return data.FromUserName
+				}
+                },
+                {
+                    isSort: false,
+                    nameModel: '',
+                    content: function (data) {
+                        return ToDateTime(data.CreatedDate)
+                    }
+                },
+				{
+					isSort:true,
+					nameModel:'Message',
+                    content: function (data) {
+                        var str = "";
+                        if (data.IsRead != true) {
+                            str = "<a href='/NotificationArea/Notification/ReadNotification/" + data.Id + "'><span style='color:#16a085' >" + ToStrong(data.Message) + "</span></a>";
+                        } else {
+                            str = "<a href=" + data.Link + " style='color:#333' >" + data.Message + "</a>"
+                        }
+
+                        return str;
+					return data.Message
+				}
+				},
+				//{
+				//	isSort:true,
+				//	nameModel:'Link',
+				//	content: function (data) {
+				//	return data.Link
+				//}
+				//},
+				//{
+				//	isSort:true,
+				//	nameModel:'Type',
+				//	content: function (data) {
+				//	return data.Type
+				//}
+				//},
+
+                   {
+                       isSort:false,
+                       nameModel:"",
+                       tdClass:"center dropdowntt",
+                       content: function (data) {
+                           var result = "";
+                           result += "<a href='javascript:void(0)' class='btn btn-danger btn-xs' onclick='DeleteAction(\"/NotificationArea/Notification/Delete/" + data.Id + "\")'  title = 'Xóa'><i class=' glyphicon glyphicon-remove'> </i> Xóa</a>";
+
+                           return result;
+                       }
+                   },
+
+            ];
+
+
+            var getdatafunc=function(page,sortQuery,pageSize){
+                $.ajax({
+                    url: '/NotificationArea/Notification/getData',
+                    type: 'post',
+                    cache: false,
+                    data:{"indexPage":page,"sortQuery":sortQuery,"pageSize":pageSize},
+                    success: function (data) {
+                        $(moduleTableSelector).hinetTable("data",{
+                            pageSize:pageSize!=-1?pageSize:data.Count,
+                            pageIndex:page,
+                            pagecount: data.TotalPage,
+                            recordCount: data.Count,
+                            listItem: data.ListItem,});
+                    },
+                    error: function (err) {
+                        CommonJS.alert(xhr.responseText);
+                    }
+                });
+
+            }
+
+            var tblData=$("#tbl-Notification").hinetTable("init",{
+                pageSizeList:{size:[20,50,100,-1],label:['20','50','100','Tất cả']},
+                pagecount: @Model.TotalPage,
+                recordCount: @Model.Count,
+                actionToolBar:'<a href=\"#collapseDiv\" aria-controls=\"collapsePanel\" data-toggle=\"collapse\" role=\"button\" class="btn btn-primary btn-xs"><i class="fa fa-search"></i> Tìm kiếm</a>',
+                getData:getdatafunc,
+                listItem:lstData,
+                config:conf
+            });
+
+        }
+
+        function AfterSussessActionAjaxform(){
+            $(moduleTableSelector).hinetTable("reload");
+        }
+        function AjaxSearchSuccess(rs) {
+            $(moduleTableSelector).hinetTable("data", {
+                pageIndex: 1,
+                pagecount: rs.TotalPage,
+                recordCount: rs.Count,
+                listItem: rs.ListItem,
+            });
+        }
+            pagefunction();
+
+
+             function XemTatCa() {
+            $.confirm({
+                    title: 'XÁC NHẬN XEM TẤT CẢ',
+                    content: 'Bạn có muốn xác nhận không?',
+                    draggable: false,
+                    theme: 'material',
+                    buttons: {
+                        confirm: {
+                            btnClass: 'btn-primary',
+                            text: "ĐỒNG Ý",
+                            action: function () {
+                                AjaxCall('/NotificationArea/Notification/XemTatCa', 'post', null, function (rs) {
+                                    if (rs.Status) {
+                                        NotiSuccess("Thành công", rs.Message);
+                                        location.reload();
+                                    } else {
+                                        NotiError("Lỗi xử lý", rs.Message);
+                                    }
+                                })
+                            }
+                        },
+                    cancel: {
+                        text: "HỦY BỎ",
+                        action: function () {
+
+                        }
+                    }
+                }
+            });
+    }
+
+
+    </script>
+}

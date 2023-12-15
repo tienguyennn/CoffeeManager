@@ -1,0 +1,244 @@
+﻿#main-content .modal-dialog {
+    margin: 0px;
+    margin-bottom: 10px;
+}
+
+.select2-hidden-accessible {
+    display: none;
+}
+
+.container {
+    /*padding-top: 10px !important;*/
+}
+
+#formKeKhai table tr td {
+    background: #ffffff !important;
+}
+
+table p.pt-Normal {
+    margin-bottom: 0px !important;
+}
+
+.select2-container {
+    min-width: 200px !important;
+    width: 100% !important;
+}
+
+.select2-choice {
+    border-radius: 0.5rem !important;
+    height: 40px !important;
+}
+
+.select2-drop {
+    /*    margin-left: 5px;*/
+    margin-top: -0.5rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.select2-chosen {
+    padding: 0.5rem;
+}
+
+.select2-arrow {
+    padding-top: 0.5rem;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    width: 2rem; /*Desired width*/
+    height: 2rem; /*Desired height*/
+    cursor: pointer;
+    /*    -webkit-appearance: none;*/
+}
+
+.input-line, .select2-choice {
+    border-bottom: 1px dotted black !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    /*        margin-left: 5px;*/
+    margin-right: 5px !important;
+    outline: none !important;
+    height: 40px !important;
+    width: 100% !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    border-radius: 0px !important;
+}
+
+.input-line-tb {
+    border-bottom: 1px dotted black !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    margin-left: 5px !important;
+    outline: none !important;
+    height: 20px !important;
+    max-width: 110px !important;
+}
+
+#formKeKhai table {
+    max-width: 100%;
+}
+
+    #formKeKhai table tr td {
+        /*width: auto;*/
+        border: 1px solid #000000 !important;
+        vertical-align: middle !important;
+        padding: 5px;
+    }
+
+p.pt-Normal {
+    line-height: inherit;
+}
+
+.tooltip-inner {
+    font-size: 8px;
+}
+
+#formKeKhai table tr td span {
+    white-space: inherit !important;
+}
+
+.red {
+    color: red;
+}
+
+.content-docx table {
+    width: 100%;
+}
+
+.content-docx p span {
+    line-height: 26px;
+}
+
+.content-docx textarea {
+    /*border: none;*/
+    line-height: 16px;
+    /*background-image: linear-gradient(transparent, transparent 25px, black 0px);*/
+    background-size: 100% 26px;
+    margin: 0px;
+    margin-top: 5px;
+}
+
+    .content-docx textarea:focus {
+        outline: none;
+    }
+
+td.pt-000019, td.pt-000050 {
+    border: 1px solid !important;
+}
+
+.modal-body {
+    padding: 10px;
+}
+
+.tab-content {
+    padding-top: 10px;
+}
+/*#content-main .container {
+        width: 95% !important;
+    }*/
+#myTabContent table tbody tr p span {
+    font-weight: normal;
+}
+
+#myTabContent table tbody tr:first-child p span {
+    font-weight: bold !important;
+}
+
+#myTabContent table tbody tr:first-child {
+    height: 30px !important;
+}
+
+    #myTabContent table tbody tr:first-child td {
+        background: #92d050 !important;
+    }
+    #myTabContent table tbody tr:first-child td span {
+        background: none !important;
+    }
+
+        #myTabContent table tbody tr:first-child td:nth-child(1) {
+            width: 5% !important;
+        }
+
+/*#myTabContent table tbody tr:first-child td:nth-child(2) {
+        width: 25% !important;
+    }
+
+    #myTabContent table tbody tr:first-child td:nth-child(3) {
+        width: 5% !important;
+    }
+
+    #myTabContent table tbody tr:first-child td:nth-child(5) {
+        width: 23% !important;
+    }
+
+    #myTabContent table tbody tr:first-child td:nth-child(6) {
+        width: 17% !important;
+    }
+
+    #myTabContent table tbody tr:first-child td:last-child {
+        width: 8% !important;
+    }
+
+    #myTabContent .tab-pane:first-child table tbody tr:first-child td:nth-child(1) {
+        width: 5% !important;
+    }
+
+    #myTabContent .tab-pane:first-child table tbody tr:first-child td:nth-child(2) {
+        width: 23% !important;
+    }
+
+    #myTabContent .tab-pane:first-child table tbody tr:first-child td:nth-child(3) {
+        /*width: 25% !important;*/
+/*width: 5% !important;
+    }
+
+    #myTabContent .tab-pane:first-child table tbody tr:first-child td:nth-child(4) {
+        width: 20% !important;
+    }
+
+    #myTabContent .tab-pane:first-child table tbody tr:first-child td:last-child {
+        width: 10% !important;
+    }*/
+
+#myTabContent p span {
+    font-family: 'Times New Roman', 'serif' !important;
+    font-size: 12pt;
+    /*        color: #000000;*/
+}
+
+.ajax-upload-dragdrop span b {
+    font-size: 9pt !important;
+}
+
+/*#myTabContent table tbody tr:nth-child(2) td {
+        background: #ffff00 !important;
+    }*/
+
+html input[disabled] {
+    border: none;
+}
+/*menu*/
+
+
+.content-docx .nav-tabs > li > a {
+    margin-right: 0px;
+    border-radius: 0;
+    background: #bdd7ee;
+    color: #000000;
+    font-size: 11pt;
+    text-align: center;
+    /*font-family: 'RobotoMedium';*/
+    font-family: 'Times New Roman', 'serif';
+    font-weight: bold;
+    height: 55px;
+    border-left: 1px solid #ddd;
+}
+
+.content-docx .nav-tabs > li.active > a {
+    background-color: #fff;
+    color: #000000;
+}
+/*end*/
+/*#myTabContent table tbody tr:has()*/

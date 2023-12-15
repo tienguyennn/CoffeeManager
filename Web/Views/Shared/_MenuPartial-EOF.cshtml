@@ -1,0 +1,268 @@
+﻿@using Service.AppUserService.Dto;
+@using Service.ModuleService.DTO;
+@using System.Configuration;
+@{
+    var listMenu = SessionManager.GetListPermission() as List<ModuleMenuDTO>;
+    var user = SessionManager.GetUserInfo() as Model.IdentityEntities.AppUser;
+
+    string provinceName = user.SystemConfigProviceName ?? string.Empty;
+    string unitName = user.SystemConfigUnitName ?? string.Empty;
+    string productionYear = user.SystemConfigProductionYear ?? string.Empty;
+}
+<style>
+    li.active > .submenu li.active {
+        font-weight: bold;
+    }
+
+    .submenu > li.fa {
+        color: #0066cc;
+    }
+</style>
+<aside id="left-panel">
+    <div class="login-info">
+        <div class="logo">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#button-menu">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="style-mini">
+                <div class="text-pdti">
+                    <a class="logoDesk" href="/DashboardArea/Dashboard">
+                        <img src="~/Content/Img-EOF/logo-EVNgenco3.png" />
+                    </a>
+
+                </div>
+                <div class="text-tp">
+                    <a href="/DashboardArea/Dashboard" class="logoMini">
+                        E-OFFICE
+                        @*provinceName*@
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 class-dashb">
+        <ul class="ul-icon">
+            <li class="menuicon">
+                <button type="button" class="navbar-toggle show in" id="btnMenu">
+                    <div class="bt-bar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </div>
+                    <div class="text-dashb">Dashboard</div>
+                    <i class="fa fa-angle-down icon-up-down"></i>
+                </button>
+            </li>
+        </ul>
+    </div>
+    <div class="nav nav-list classmenu">
+        <div class="collapse navbar-collapse pd0 content-menu-MenuMain " id="button-menu">
+            <nav style="width:100%; float:left">
+                <ul class="admin-menu-left">
+                    @*<li class="trangchu li_vanbanden">
+                            <a href="/DashboardArea/Dashboard" title="Trang chủ" class="hvr-icon-wobble-horizontal">
+                                <i class="hvr-icon-wobble-horizontal fa fa-television" aria-hidden="true"></i>
+                                <span>Trang chủ</span>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </a>
+                        </li>*@
+
+                    @if (listMenu != null && listMenu.Any())
+                    {
+                        foreach (var module in listMenu)
+                        {
+                            if (module.Code == "QL_TONGHOP_SOLIEU")
+                            {
+                                if (module.ListOperation != null && module.ListOperation.Any(x => x.IsShow))
+                                {
+                                    string modulecode = ViewBag.ModuleCode;
+                                    var isactive = !string.IsNullOrEmpty(modulecode) && modulecode.Contains("TongHopSoLieu") ? "active" : "";
+                                    var isOpen = isactive == "active" ? "open" : "";
+                                    <li class="@isactive @isOpen liactive">
+                                        <a href="#" class="dropdown-toggle a-class" style="">
+                                            <div class="icon_div">
+                                                @if (module.Icon != null)
+                                                {
+                                                    <img class="menu-icon" src="/@module.Icon" onerror="this.src = '/Uploads/CommonIcons/function-icon-default.jpg'" />
+                                                }
+                                                else
+                                                {
+                                                    <span><i class="menu-icon @(string.IsNullOrEmpty(module.ClassCss) ? "fa fa-asterisk" : module.ClassCss)"></i></span>
+                                                }
+                                            </div>
+                                            <div class="text_div">
+                                                <span class="menu-text">
+                                                    @module.Name
+                                                </span>
+                                            </div>
+
+                                            <b class="arrow fa fa-angle-down"></b>
+
+
+                                            <i class="fa fa-caret-right " id="i-caret"></i>
+                                            <i class="fa fa-caret-down " id="i-caret"></i>
+                                            <span class="so-menu-con">3</span>
+                                        </a>
+
+                                        <b class="arrow"></b>
+                                        <ul class="submenu nav-hide" style="display: none">
+                                            @{ Html.RenderAction("ShowListTongHopSoLieu", "Dashboard", new { @area = "DashboardArea", ModuleCode = ViewBag.ModuleCode });}
+                                        </ul>
+                                    </li>
+
+                                }
+                            }
+                            else if (module.Code == "QL_BAOCAO_THONGKE")
+                            {
+                                if (module.ListOperation != null && module.ListOperation.Any(x => x.IsShow))
+                                {
+                                    string modulecode = ViewBag.ModuleCode;
+                                    var isactive = !string.IsNullOrEmpty(modulecode) && modulecode.Contains("BaoCao_ThongKe") ? "active" : "";
+                                    var isOpen = isactive == "active" ? "open" : "";
+                                    <li class="@isactive @isOpen liactive">
+                                        <a href="#" class="dropdown-toggle a-class" style="">
+                                            <div class="icon_div">
+                                                @if (module.Icon != null)
+                                                {
+                                                    <img class="menu-icon" src="/@module.Icon" onerror="this.src = '/Uploads/CommonIcons/function-icon-default.jpg'" />
+                                                }
+                                                else
+                                                {
+                                                    <span><i class="menu-icon @(string.IsNullOrEmpty(module.ClassCss) ? "fa fa-asterisk" : module.ClassCss)"></i></span>
+                                                }
+                                            </div>
+                                            <div class="text_div">
+                                                <span class="menu-text">
+                                                    @module.Name
+                                                </span>
+                                            </div>
+
+                                            <b class="arrow fa fa-angle-down"></b>
+                                            <i class="fa fa-caret-right" id="i-caret"></i>
+                                            <i class="fa fa-caret-down" id="i-caret"></i>
+                                            <span class="so-menu-con">3</span>
+                                        </a>
+
+                                        <b class="arrow"></b>
+
+
+                                        <ul class="submenu nav-hide" style="display: none">
+                                            @{ Html.RenderAction("ShowListTongHopBaoCaoKhaoSat", "Dashboard", new { @area = "DashboardArea", ModuleCode = ViewBag.ModuleCode });}
+                                        </ul>
+                                    </li>
+
+                                }
+                            }
+                            else
+                            {
+                                var isactive = module.ListOperation != null && module.ListOperation.Any(x => x.Code == ViewBag.ModuleCode) ? "active" : "";
+                                var isOpen = isactive == "active" ? "open" : "";
+                                if (module.IsShow)
+                                {
+                                    if (module.ListOperation != null && module.ListOperation.Any(x => x.IsShow))
+                                    {
+                                        <li class="@isactive @isOpen liactive">
+                                            <a href="#" class="dropdown-toggle a-class" style="">
+                                                <div class="icon_div">
+                                                    @if (module.Icon != null)
+                                                    {
+                                                        <img class="menu-icon" src="/@module.Icon" onerror="this.src = '/Uploads/CommonIcons/function-icon-default.jpg'" />
+                                                    }
+                                                    else
+                                                    {
+                                                        <span><i class="menu-icon @(string.IsNullOrEmpty(module.ClassCss)?"fa fa-asterisk":module.ClassCss)"></i></span>
+                                                    }
+                                                </div>
+                                                <div class="text_div">
+                                                    <span class="menu-text">
+                                                        @module.Name
+                                                    </span>
+                                                </div>
+
+                                                <b class="arrow fa fa-angle-down"></b>
+                                                <i class="fa fa-caret-right" id="i-caret"></i>
+                                                <i class="fa fa-caret-down" id="i-caret"></i>
+                                                <span class="so-menu-con">3</span>
+                                            </a>
+
+                                            <b class="arrow"></b>
+
+
+                                            <ul class="submenu nav-hide" style="display: none">
+                                                @foreach (var operation in module.ListOperation.Where(x => x.IsShow))
+                                                {
+                                                    <li class="@(operation.Code == ViewBag.ModuleCode ? "active" : "") ">
+                                                        <a href="@operation.URL">
+                                                            <i class="menu-icon @operation.Css"></i>
+                                                            &nbsp;@operation.Name
+
+                                                        </a>
+                                                        <b class="arrow"></b>
+                                                    </li>
+                                                }
+                                            </ul>
+                                        </li>
+                                    }
+
+                                }
+                                else
+                                {
+                                    if (module.ListOperation != null && module.ListOperation.Any(x => x.IsShow))
+                                    {
+                                        foreach (var operation in module.ListOperation.Where(x => x.IsShow).ToList())
+                                        {
+                                            <li class="@isactive">
+                                                <a href="@operation.URL">
+                                                    <div class="icon_div">
+                                                        <span>
+                                                            <i class="menu-icon @(string.IsNullOrEmpty(operation.Css)?"fa fa-asterisk":operation.Css)"></i>
+                                                        </span>
+                                                    </div>
+                                                    <div class="text_div">
+                                                        <span class="menu-text">
+                                                            @operation.Name
+                                                        </span>
+                                                    </div>
+                                                </a>
+
+                                                <b class="arrow"></b>
+                                            </li>
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                </ul>
+            </nav>
+
+        </div><!-- /.nav-list -->
+    </div>
+</aside>
+<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+    <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+</div>
+<style>
+    .body-miniMenu .admin-menu-left li:hover ul, .body-miniMenu .admin-menu-left li:hover {
+        display: block;
+    }
+
+    .fa-caret-down {
+        display: none;
+    }
+
+    .a-class {
+        width: 100%;
+        float: left;
+        padding: 20px 10px;
+    }
+</style>
+<script>
+    $(document).ready(function () {
+    })
+</script>

@@ -1,0 +1,25 @@
+﻿@using Model.Entities
+@model EndUserDocument
+
+<div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="center">
+                <h4 class="modal-title">Hướng dẫn thực hiện</h4>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div>@Html.Raw(Model.CurrentStatusDescription)</div>
+            <div>
+                @Html.Raw(Model.NextStepGuide)
+            </div>
+        </div>
+        <div class="modal-footer center">
+
+            <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+        </div>
+    </div>
+    
+</div>

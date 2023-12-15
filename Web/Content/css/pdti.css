@@ -1,0 +1,165 @@
+﻿.navbar-top {
+    display: flex;
+}
+
+#nav-search {
+    position: relative !important;
+    padding-top: 8px;
+    padding-right: 15px;
+}
+
+.nav-show {
+    display: block;
+}
+
+mark {
+    background: yellow;
+}
+
+.imgArrow {
+    cursor: pointer;
+}
+
+.infoboxpersonal {
+    margin: 0;
+}
+
+.nav-wrap-up {
+    height: calc(100vh - 150px) !important;
+    /*overflow: scroll;*/
+    overflow:auto;
+}
+
+.icon-66 {
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    font-family: FabricMDL2Icons;
+    font-size: 16px;
+    margin: 0px 4px;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+    flex-shrink: 0;
+    color: rgb(0, 120, 212);
+    width: 16px;
+}
+
+.btn.active {
+    background-color: #ffffff00 !important;
+}
+
+.open > .btn.dropdown-toggle {
+    background-color: #ffffff00 !important;
+}
+
+.from-search-menu .open .shadow-sm:focus {
+    .from-search-menu .open background-color: #ffffff00 !important;
+}
+
+.from-search-menu .open .shadow-sm:active {
+    background-color: #ffffff00 !important;
+}
+
+.from-search-menu .dropdown .shadow-sm:hover {
+    background-color: #ffffff00 !important;
+}
+
+.dropdown-item {
+    background-color: #ffffff00;
+    border-color: #ffffff00;
+}
+
+.shadow-sm i {
+    font-family: 'FontAwesome';
+}
+
+.shadow-sm {
+    background-color: #ffffff00 !important;
+    border-color: #ffffff00 !important;
+    padding: 0;
+}
+
+    .shadow-sm span {
+        color: #333333;
+        font-size: 13px;
+    }
+
+a.btn-outline-lightgrey i {
+    font-family: 'FontAwesome';
+    font-size: 14ppt;
+}
+
+a.btn-outline-lightgrey {
+    color: #333333 !important;
+    font-size: 14px;
+    background-color: #ffffff00 !important;
+    border-color: #ffffff00;
+    padding: 0px ​10px;
+    font-family: inherit;
+    width: 100%;
+    text-align: left;
+}
+
+.btn.active, .btn.active:focus {
+    background-color: #ccc !important
+}
+
+a.btn-outline-lightgrey:hover {
+    background-color: #ccc !important
+}
+
+.from-search-menu .dropdown .dropdown-menu {
+    min-width: 0 !important;
+    left: 50px;
+}
+
+.d-inline-block {
+    float: left;
+    padding-top: 4px;
+}
+
+.efile-css .tab-pane {
+    background-color: #ffffff;
+    padding: 10px;
+    /*height: calc(100vh - 200px);*/
+}
+
+.efile-css .table > thead > tr {
+    background-image: none;
+    background: none;
+}
+
+.efile-css .page-header {
+    border-bottom: 0;
+}
+
+.efile-css .table > thead > tr > th:first-child {
+    padding-left: 8px;
+}
+
+.efile-css .table > thead > tr > th {
+    padding-left: 0;
+    border-bottom: none !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+    .efile-css .table > thead > tr > th span {
+        margin-right: 8px;
+        font-size: 18px;
+        font-family: none;
+    }
+
+.efile-css .table > tbody > tr > td img {
+    margin-top: -3px;
+}
+
+.efile-css .table > tbody > tr > td {
+    border: none !important;
+    padding: 10px 8px;
+}
+
+

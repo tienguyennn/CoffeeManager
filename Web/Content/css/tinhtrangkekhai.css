@@ -1,0 +1,257 @@
+﻿#table--danhsach-donvi {
+        border-collapse:separate;
+    }
+    #table--danhsach-donvi thead tr th {
+        background: #CEE3F8;
+        color: black;
+    }
+
+    .btn-app {
+        width: 14rem !important;
+    }
+
+    .centerstatistics {
+        width: 100%;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .no-submenu-button {
+        @*width: 100%;*@
+        text-align: center;
+    }
+    #table--danhsach-donvi .btn-group .btn {
+        background-color: #6193BA !important;
+        border-color: #6193BA;
+        border-radius: 5px;
+        height: 30px;
+        width: 30px;
+        padding: 2px;
+    }
+    #table--danhsach-donvi .btn-group img {
+        position: relative;
+        top: -4px;
+        left: -4px;
+    }
+    #table--danhsach-donvi .btn img {
+        position: relative;
+        top: -4px;
+        left: -4px;
+    }
+    #table--danhsach-donvi .btn-group:first-child {
+        margin-left: 5px;
+    }
+    #table--danhsach-donvi .btn-group .btn + .btn, .btn-group .btn + .btn-group, .btn-group .btn-group + .btn, .btn-group .btn-group + .btn-group {
+        margin-left: 10px;
+    }
+        #table--danhsach-donvi .btn-group .btn:hover {
+            background-color: #5784a7 !important;
+            border-color: #5784a7;
+        }
+    #table--danhsach-donvi .dropdown-menu {
+        right: auto;
+        left: 50%;
+        -webkit-transform: translate(-50%, 3%);
+        -o-transform: translate(-50%, 3%);
+        transform: translate(-50%, 3%);
+        border-radius: 5px !important;
+        padding-top: 0px;
+        min-width: 180px;
+    }
+        #table--danhsach-donvi .dropdown-menu a {
+            display: block;
+            padding: 5px 11px;
+            color: black;
+        }
+            #table--danhsach-donvi .dropdown-menu a:hover {
+                color: #0066cc;
+            }
+
+
+    #table--danhsach-donvi .dropdown-menu p {
+        margin-bottom: 5px;
+        padding: 15px 10px 10px 10px;
+        text-align: center;
+        background: #6193BA;
+        color: white;
+        font-weight: 600;
+        border-radius: 5px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    #table--danhsach-donvi .dropdown-menu::after {
+            border-top: 10px solid #538cc6;
+            border-left: 5px solid rgba(0, 0, 0, 0);
+            border-right: 5px solid rgba(0, 0, 0, 0);
+            content: "";
+            display: inline-block;
+            left: 47%; /* position */
+            position: absolute;
+            top: -9px;
+        }
+
+    #table--danhsach-donvi > thead:first-child > tr:first-child > td, .table > thead:first-child > tr:first-child > th {
+        padding:0;
+    }
+
+    #table--danhsach-donvi .table-bordered, .table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > thead > tr > th {
+        border: 1px solid #A4C2E0;
+        font-family: "Arial";
+        padding: 15px 10px;
+    }
+    #table--danhsach-donvi > thead > tr > th:first-child {
+        border-left-color: #A4C2E0 !important;
+    }
+    #table--danhsach-donvi > thead > tr > th:last-child {
+        border-right-color: #A4C2E0 !important;
+    }
+    #table--danhsach-donvi .table > caption + thead > tr:first-child > td, .table > caption + thead > tr:first-child > th, .table > colgroup + thead > tr:first-child > td, .table > colgroup + thead > tr:first-child > th, .table > thead:first-child > tr:first-child > td, .table > thead:first-child > tr:first-child > th {
+        border-top: 1px solid #A4C2E0;
+    }
+
+    .table--danhsach-donvi-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        scrollbar-color: #0080dd #bdd7ee;
+        scrollbar-width: thin;
+        height: 1000px;
+        border-bottom: 1px solid #A4C2E0;
+    }
+
+    #table--danhsach-donvi thead tr th {
+        position: sticky;
+        z-index: 1;
+    }
+
+    #table--danhsach-donvi .col-status {
+        height: 70px;
+    }
+
+    #table--danhsach-donvi thead tr:first-child th {
+        top:0;
+    }
+
+    #table--danhsach-donvi thead tr:nth-child(2) th {
+        top: 70px;
+    }
+
+
+    #btn--thaydoi-trangthai {
+        cursor: pointer;
+    }
+     .nav-pills {
+        text-align: center;
+        margin-bottom: 15px;
+        margin-left: 0;
+    }
+
+    .nav-pills > li {
+        float: none;
+        display: inline-block;
+        zoom: 1;
+    }
+
+   .nav-pills li {
+        min-width: 180px;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: arial;
+        font-weight: 700;
+        background: #cee3f8;
+        border-color: #cee3f8;
+        border-radius: 5px;
+    }
+
+    .nav-pills li a {
+        color: black;
+        text-decoration: none;
+        /* letter-spacing: 1px; */
+        padding: 10px 5px;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .nav-pills li.active a {
+        color: white;
+        background-color: #0066cc;
+    }
+    .class-pd-tong {
+        margin: 0;
+    }
+    .tab-content {
+        border: 0;
+        padding: 0;
+        position: relative;
+    }
+    .nav-pills>li+li {
+        margin-left: 10px;
+    }
+
+    .pd-bg-trangthai {
+        height: 140px;
+    }
+
+    .sub-cell {
+        width:100px;
+    }
+
+    .sub-cell i {
+        display:none;
+    }
+
+    .sub-cell-text {
+        font-size:11px;
+    }
+
+    .sub-cell-text b {
+        font-size:13px;
+    }
+
+    .col-donvi {
+        width:250px;
+    }
+
+    .col-thaotac-full {
+        width: 300px;
+        height: 100px;
+    }
+
+    .col-thaotac-mini {
+        width: 180px;
+        height:100px;
+    }
+
+    .btn-report {
+        margin: 10px 0;
+    }
+
+    .col-order {
+        width:10px;
+    }
+
+    .tab-content .table > tbody > tr > td {
+        vertical-align: top !important;
+    }
+
+    .block-checkmark {
+        height: 50px;
+    }
+
+    /*ẩn chấm điểm hiện tại*/
+    .block-capdanhgia .table-chitiet-chamdiem {
+        display: none;
+    }
+
+    .select2-container{
+        width: auto !important;
+    }
+
+    .SearchBox .select2-container {
+        width:100% !important;
+    }

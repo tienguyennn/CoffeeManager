@@ -1,0 +1,81 @@
+﻿@using Model.Entities
+@using Service.AppUserService.Dto
+@using Service.Constant
+@using Service.Common
+@using Web.Core
+@using CommonHelper.String
+
+@model List<Banners>
+@{
+    var userInfo = SessionManager.GetUserInfo() as Model.IdentityEntities.AppUser;
+}
+@if (Model.Any())
+{
+    <div class="no-padding">
+        <div id="banner">
+            <div id="myBannerPage" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    @{
+                        <li data-target="#myBannerPage" data-slide-to="0" class="active"></li>
+                        for (int i = 1; i < Model.Count; i++)
+                        {
+                            <li data-target="#myBannerPage" data-slide-to="@i"></li>
+                        }
+                    }
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    @{
+                        string[] link = new string[Model.Count];
+                        if (Model[0].IsLinkActive == true)
+                        {
+                            link[0] = Model[0].ImageLink;
+                        }
+                        else
+                        {
+                            link[0] = "";
+                        }
+                        <div class="item active">
+                            <a href="@link[0]">
+                                <img class="img-cover img-responsive" src="~/@Model[0].ImageSrc" alt="Banner">
+                            </a>
+                        </div>
+                        for (int i = 1; i < Model.Count; i++)
+                        {
+                            if (Model[i].IsLinkActive == true)
+                            {
+                                link[i] = Model[i].ImageLink;
+                            }
+                            else
+                            {
+                                link[i] = "";
+                            }
+                            <div class="item">
+                                <a href="@link[i]">
+                                    <img class="img-cover img-responsive" src="~/@Model[i].ImageSrc.StandardPath()" alt="Banner">
+                                </a>
+                            </div>
+                        }
+                    }
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myBannerPage" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myBannerPage" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+}
+
+@if (userInfo != null && userInfo.TypeAccount == AccountTypeConstant.BussinessUser && userInfo.ListOperations.Any(x=>x.Code == "EditInfoDashBoard")) 
+{
+    <a href="/Common/settupBanner/@ViewBag.CodePage" title="Thiết lập banner cho trang" class="setupBannerCommon"><i class="fa fa-cogs"></i>&nbsp; Thiết lập Banner</a>
+}

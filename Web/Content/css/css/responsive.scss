@@ -1,0 +1,94 @@
+@media (max-width: 1400px){
+	#header #logo img {
+	    max-width: 90%;
+	}
+	#header #menu {
+	    margin-left: 0;
+	}
+	#header #menu ul li a{
+		font-size: 13px;
+	}
+	#header.active{
+		height: 65px;
+	}
+	.lydohoc .item {
+	    padding: 30px 10px;
+	}
+	.lydohoc .item p {
+	    font-size: 17px;
+	}
+}
+
+@media (max-width: 1100px){
+	#header #menu ul li{
+		padding: 0 5px;
+		a{
+			font-size: 14px;
+		}
+	}
+	#header #hotline{
+		font-size: 30px;
+		float: left;
+	}
+	#header{
+		height: 65px;
+	}
+	#header #menu ul{
+		padding-top:25px;
+	}
+	#header.active #hotline, #header.active #hotline:hover, #header.active #hotline:visited, #header.active #hotline:focus{
+		font-size: 30px !important;
+		padding-top: 13px;
+	}
+	.hocduocgi {
+	    height: 300px;
+	}
+}
+
+@media (max-width: 768px){
+	#header .mobile{
+		display: block;
+	}
+	#header.active{
+		height: 50px;
+	}
+	#header{		
+		height: 50px;
+		#logo, #menu, #hotline{
+			display: none;
+		}
+	}
+	.nghe-moigioi .nguoi-moigioi {
+	    margin-top: 15px;
+	}
+	.lydohoc .item {
+	    padding: 10px;
+	}
+	.chuyengia .content .item {
+	    border: 1px solid #f68601;
+	}
+	.chuyengia .button a {
+	    padding: 15px;
+	    font-size: 17px;
+	}
+	#footer .footer-content {
+	    padding: 10px 0;
+	}
+	#footer .footer-content .logo-ft {
+	    margin: 15px 0 20px;
+	}
+	#footer .footer-content h2 {
+	    margin: 20px 0 10px;
+	}
+	.hocduocgi {
+	    height: 200px;
+	}
+	.slider #carousel-daotao-slider img.down {
+	    left: 45%;
+	    bottom: -20%;
+	    width: 38px;
+	}
+}
+
+@media (max-width: 480px){	
+}

@@ -1,0 +1,103 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+@{
+    ViewBag.Title = "Có lỗi";
+    Layout = "~/Views/Shared/_LayoutBlank.cshtml";
+    string message = ViewBag.Message;
+}
+<style>
+    font-face {
+        font-family: 'Roboto-Bold';
+        src: url('../../Content/EndUser/fonts/Roboto-Bold.ttf') format('truetype');
+    }
+
+    .main-container:before {
+        background: unset;
+    }
+
+    .alert-content {
+        width: 60%;
+        margin: 100px auto;
+        background: #fff !important;
+        padding: 30px 0;
+        height: 50vh;
+        border: 5px solid #009ae0;
+        box-shadow: -23px 20px 0px 0px #227ca7;
+    }
+
+    .sitetitle {
+        text-align: center;
+    }
+
+        .sitetitle h1, .content-err h1 {
+            text-transform: uppercase;
+            color: #e00000 !important;
+            font-size: 28px;
+            font-weight: bold;
+            font-family: Roboto-Bold;
+        }
+
+        .sitetitle h2, .contentbox-err h3 {
+            color: #428bca;
+            line-height: 1.6;
+            font-size: 20px;
+            font-family: Roboto-Bold;
+            font-weight: bold;
+        }
+
+    .comeback {
+        float: left;
+        width: 100%;
+        text-align: left;
+        margin-top: 30px;
+    }
+
+        .comeback a {
+            border-radius: 20px;
+        }
+
+    .contentbox-err h3 {
+        padding-right: 80px;
+    }
+
+    .contentbox-err {
+        height: 100%;
+        padding-left: 30px;
+    }
+</style>
+<div class="alert-content">
+    <div class="col-sm-5 sitetitle">
+        <div class="col-sm-5 sitetitle">
+            <div class="qhieu">
+                <img src="~/Content/EndUser/img/error.png" height="180px" style="" alt="">
+            </div>
+            <div class="box-sitename">
+            </div>
+        </div>
+    </div>
+    <div class="row col-sm-7 contentbox-err">
+        <!-- PAGE CONTENT BEGINS -->
+
+        <div class="error1">
+            <div class="content-err">
+                <h1 class="grey lighter smaller">
+                    @if (!string.IsNullOrEmpty(message))
+                    {
+                        <span>@message</span>
+                    }
+                    else
+                    {
+                        @:Có lỗi xảy ra!
+                    }
+                </h1>
+                <h3 class="lighter smaller">Vui lòng kiểm tra lại hoặc liên hệ quản trị viên để biết thêm thông tin!</h3>
+
+            </div>
+        </div>
+        <div class=" comeback">
+            <a href="/" class="btn btn-primary">
+                Trở về trang chủ
+            </a>
+        </div>
+        <!-- PAGE CONTENT ENDS -->
+    </div><!-- /.row -->
+</div>

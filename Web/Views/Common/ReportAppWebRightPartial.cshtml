@@ -1,0 +1,327 @@
+﻿@using Service.Constant
+@using Web.Models
+@model ReportAppWebViewModel
+@{
+    var dropdownListReportType = Model.dropdownListReportType as List<SelectListItem>;
+    var dropdownWebsiteType = ViewBag.dropdownWebsiteType as List<SelectListItem>;
+}
+@using BotDetect.Web.Mvc;
+@using Web;
+@section HeadIncludes {
+    <link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl"
+          rel="stylesheet" type="text/css" />
+}
+
+
+<div class="content-right__PhanAnh content-right__Chung col-sm-12 pd0" id="phanAnh">
+    <h2>Phản ánh - Kiến Nghị</h2>
+    <form>
+        <div class="form-group">
+            <label class="col-sm-4 no-padding-left">Đối tượng</label>
+
+            <div class="col-sm-8 no-padding" id="radio-group">
+                <label class="col-sm-4 report-target">
+                    <input id="radioOption1" type="radio" name="ReportTarget" value="0" onchange="nextPrev(0)" checked />
+                    Website
+                </label>
+                <label class="col-sm-4 report-target">
+                    <input id="radioOption2" type="radio" name="ReportTarget" value="3" onchange="nextPrev(3)" />
+                    Ứng dụng
+                </label>
+            </div>
+        </div>
+    </form>
+    @using (Html.BeginForm("WebsiteReportPost", "Home", FormMethod.Post, new
+    {
+        id = "createWebReportForm",
+        enctype = "multipart/form-data"
+    }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="tab" id="Case1">
+            <!--tap 0-->
+            <div class="form-group col-sm-12 no-padding">
+                <div class="container-fluid no-padding">
+                    <div class="form-group" style="height: 60px;">
+                        <label class="col-sm-4 no-padding-left" id="loaiPhanAnhLabel">Loại phản ánh</label>
+                        <div class="col-sm-8 no-padding-left no-padding-right">
+                            @Html.DropDownListFor(m => m.KindOfReflection, dropdownListReportType, new { id = "loaiPhanAnh" })
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Địa chỉ tên miền <span style="color:red">*</span></label>
+                        @Html.TextBoxFor(m => m.Domain, new { @placeholder = "Địa chỉ tên miền", @id = "domain", @class = "inputField" })
+                        @Html.ValidationMessageFor(m => m.Domain, "", new { @class = "text-danger" })
+                        <div class="divoutput"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Nội dung phản ánh <span style="color:red">*</span></label>
+                        @Html.TextAreaFor(m => m.Comment, new { @placeholder = "Nội dung phản ánh", @style = "resize:vertical", @id = "noidung2", @class = "inputField" })
+                        @Html.ValidationMessageFor(m => m.Comment, "", new { @class = "text-danger" })
+                        @*<div id="seperator" style="height:60px;"></div>*@
+                        <div class="divoutput"></div>
+                    </div>
+                    <div class="clearBoth"></div>
+                    @{MvcCaptcha websiteReportRightCaptcha = CaptchaHelper.WebsiteReportRightCaptcha(); }
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="CaptchaCode">Nhập mã xác nhận <span style="color:red">*</span></label>
+                        <div class="col-sm-8">
+                            @Html.TextBox("CaptchaCodeWebRight", null, new { @class = "form-control captchaVal" })
+                            @Html.ValidationMessage("CaptchaCodeWebRight", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="clearBoth"></div>
+                    <div class="form-group">
+                        <div class="col-md-offset-4 col-sm-8">
+                            @Html.Captcha(websiteReportRightCaptcha)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="button" class="btn btn-primary" onclick="nextPrev(1)">Tiếp tục&nbsp;<i class="glyphicon glyphicon-chevron-right btn-icon"></i></button>
+            </div>
+        </div>
+        <!--NEXT STEP-->
+        <div class="tab" id="Case1">
+            <!--tap 1-->
+            <div class="form-group col-sm-12 no-padding">
+                <div style="display:block" class="container-fluid no-padding">
+                    <div class="form-group">
+                        <label>Họ và tên</label>
+                        @Html.TextBoxFor(m => m.Name, new { @placeholder = "Họ và tên", @id = "name", @class = "inputField" })
+                        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                        <div class="divoutput"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Ngày sinh<span style="color:red">*</span></label>
+                        @Html.DatePickerFor(m => m.DateOfBirthWebRight, "autoclose=true", "todayBtn=true", "todayHighlight=true")
+                        @Html.ValidationMessageFor(m => m.DateOfBirthWebRight, "", new { @class = "text-danger" })
+                        <div class="divoutput"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Số CMND/CCCD<span style="color:red">*</span></label>
+                        @Html.TextBoxFor(m => m.NumberId, new { @placeholder = "Số CMND hoặc CCCD", @id = "numberId", @class = "inputField" })
+                        @Html.ValidationMessageFor(m => m.NumberId, "", new { @class = "text-danger" })
+                        <div class="divoutput"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Ngày cấp<span style="color:red">*</span></label>
+                        @Html.DatePickerFor(m => m.NumberDateWebRight, "autoclose=true", "todayBtn=true", "todayHighlight=true")
+                        @Html.ValidationMessageFor(m => m.NumberDateWebRight, "", new { @class = "text-danger" })
+                        <div class="divoutput"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Nơi cấp<span style="color:red">*</span></label>
+                        @Html.TextBoxFor(m => m.NumberAddress, new { @placeholder = "Nơi cấp CMND/CCCD", @id = "numberAddress", @class = "inputField" })
+                        @Html.ValidationMessageFor(m => m.NumberAddress, "", new { @class = "text-danger" })
+                        <div class="divoutput"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="button" class="btn btn-secondary" onclick="nextPrev(0)"><i class="glyphicon glyphicon-chevron-left btn-icon"></i>&nbsp;Trở lại</button>
+                <button type="button" class="btn btn-primary" onclick="nextPrev(2)">Tiếp tục&nbsp;<i class="glyphicon glyphicon-chevron-right btn-icon"></i></button>
+            </div>
+        </div>
+        <div class="tab" id="Case1">
+            <!--tap 2-->
+            <div class="form-group col-sm-12 no-padding">
+                <div style="display:block" class="container-fluid no-padding">
+                    <div class="form-group">
+                        <label>Đia chỉ thường trú</label>
+                        @Html.TextBoxFor(m => m.Address, new { @placeholder = "Địa chỉ thường trú", @id = "adress", @class = "inputField" })
+                        @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
+                        <div class="divoutput"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Số điện thoại<span style="color:red">*</span></label>
+                        @Html.TextBoxFor(m => m.Phone, new { @placeholder = "Số điện thoại", @id = "phone", @class = "inputField" })
+                        @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })
+                        <div class="divoutput"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Email<span style="color:red">*</span></label>
+                        @Html.TextBoxFor(m => m.Email, new { @placeholder = "Email liên lạc", @id = "email", @class = "inputField" })
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                        <div class="divoutput"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Tập tin đính kèm</label>
+                        <div class="xdl-f-upload">
+                            <input type="file" id="web-file" name="TaiLieuDinhKem" class="form-control form-control-sm xdl-f-upload-input" style="">
+                            <div class="xdl-f-upload-content">Chưa chọn tập tin đính kèm</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="button" class="btn btn-secondary" onclick="nextPrev(1)"><i class="glyphicon glyphicon-chevron-left btn-icon"></i>&nbsp;Trở lại</button>
+                <button type="submit" class="btn btn-primary">Gửi phản ánh&nbsp;<i class="glyphicon glyphicon-send btn-icon"></i></button>
+            </div>
+        </div>
+    }
+
+    @using (Html.BeginForm("AppReportPost", "Home", FormMethod.Post, new
+    {
+        id = "createAppReportForm",
+        enctype = "multipart/form-data"
+    }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="tab" id="Case2">
+            <div class="form-group col-sm-12 no-padding">
+                <div class="container-fluid no-padding" style="display:block">
+                    <div class="form-group" style="height: 60px;">
+                        <label class="col-sm-4 no-padding-left" id="loaiPhanAnhLabel">Loại phản ánh</label>
+                        <div class="col-sm-8 no-padding-left no-padding-right">
+                            @Html.DropDownListFor(m => m.KindOfReflection, dropdownListReportType, new { id = "loaiPhanAnh" })
+                            @Html.ValidationMessageFor(m => m.KindOfReflection, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Tên ứng dụng <span style="color:red">*</span></label>
+                        @Html.TextBoxFor(m => m.AppName, new { @placeholder = "Tên ứng dụng", @id = "appName", @class = "inputField" })
+                        @Html.ValidationMessageFor(m => m.AppName, "", new { @class = "text-danger" })
+                        <div class="divoutput"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Nội dung phản ánh <span style="color:red">*</span></label>
+                        @Html.TextAreaFor(m => m.Comment, new { @placeholder = "Nội dung phản ánh", @style = "resize:vertical", @id = "noidung1", @class = "inputField" })
+                        @Html.ValidationMessageFor(m => m.Comment, "", new { @class = "text-danger" })
+                        <div class="divoutput"></div>
+                    </div>
+                    <div class="clearBoth"></div>
+                    @{MvcCaptcha appReportRightCaptcha = CaptchaHelper.AppReportRightCaptcha(); }
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="CaptchaCode">Nhập mã xác nhận <span style="color:red">*</span></label>
+                        <div class="col-sm-8">
+                            @Html.TextBox("CaptchaCodeAppRight", null, new { @class = "form-control captchaVal" })
+                            @Html.ValidationMessage("CaptchaCodeAppRight", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="clearBoth"></div>
+                    <div class="form-group">
+                        <div class="col-md-offset-4 col-sm-8">
+                            @Html.Captcha(appReportRightCaptcha)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="button" class="btn btn-primary" onclick="nextPrev(4)">Tiếp tục&nbsp;<i class="glyphicon glyphicon-chevron-right btn-icon"></i></button>
+            </div>
+        </div>
+        <!--NEXT STEP-->
+        <div class="tab" id="Case1">
+            <!--tap 4-->
+            <div class="form-group col-sm-12 no-padding">
+                <div style="display:block" class="container-fluid no-padding">
+                    <div class="form-group">
+                        <label>Họ và tên</label>
+                        @Html.TextBoxFor(m => m.Name, new { @placeholder = "Họ và tên", @id = "nameAppReport", @class = "inputField" })
+                        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                        <div class="divoutput"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Ngày sinh<span style="color:red">*</span></label>
+                        @Html.DatePickerFor(m => m.DateOfBirthAppRight, "autoclose=true", "todayBtn=true", "todayHighlight=true")
+                        @Html.ValidationMessageFor(m => m.DateOfBirthAppRight, "", new { @class = "text-danger" })
+                        <div class="divoutput"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Số CMND/CCCD<span style="color:red">*</span></label>
+                        @Html.TextBoxFor(m => m.NumberId, new { @placeholder = "Số chứng minh nhân dân", @id = "appNumberId", @class = "inputField" })
+                        @Html.ValidationMessageFor(m => m.NumberId, "", new { @class = "text-danger" })
+                        <div class="divoutput"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Ngày cấp<span style="color:red">*</span></label>
+                        @Html.DatePickerFor(m => m.NumberDateAppRight, "autoclose=true", "todayBtn=true", "todayHighlight=true")
+                        @Html.ValidationMessageFor(m => m.NumberDateAppRight, "", new { @class = "text-danger" })
+                        <div class="divoutput"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Nơi cấp<span style="color:red">*</span></label>
+                        @Html.TextBoxFor(m => m.NumberAddress, new { @placeholder = "Nơi cấp CMND/CCCD", @id = "appNumberAddress", @class = "inputField" })
+                        @Html.ValidationMessageFor(m => m.NumberAddress, "", new { @class = "text-danger" })
+                        <div class="divoutput"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="button" class="btn btn-secondary" onclick="nextPrev(3)"><i class="glyphicon glyphicon-chevron-left btn-icon"></i>&nbsp;Trở lại</button>
+                <button type="button" class="btn btn-primary" onclick="nextPrev(5)">Tiếp tục&nbsp;<i class="glyphicon glyphicon-chevron-right btn-icon"></i></button>
+            </div>
+        </div>
+        <div class="tab" id="Case1">
+            <!--tap 2-->
+            <div class="form-group col-sm-12 no-padding">
+                <div style="display:block" class="container-fluid no-padding">
+                    <div class="form-group">
+                        <label>Đia chỉ thường trú</label>
+                        @Html.TextBoxFor(m => m.Address, new { @placeholder = "Địa thường trú", @id = "appAddress", @class = "inputField" })
+                        @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
+                        <div class="divoutput"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Số điện thoại<span style="color:red">*</span></label>
+                        @Html.TextBoxFor(m => m.Phone, new { @placeholder = "Số điện thoại", @id = "appPhone", @class = "inputField" })
+                        @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })
+                        <div class="divoutput"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Email<span style="color:red">*</span></label>
+                        @Html.TextBoxFor(m => m.Email, new { @placeholder = "Địa chỉ email", @id = "appEmail", @class = "inputField" })
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                        <div class="divoutput"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Tập tin đính kèm</label>
+                        <div class="xdl-f-upload">
+                            <input type="file" id="app-file" name="TaiLieuDinhKem" class="form-control form-control-sm xdl-f-upload-input" style="">
+                            <div class="xdl-f-upload-content">Chưa chọn tập tin đính kèm</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="button" class="btn btn-secondary" onclick="nextPrev(4)"><i class="glyphicon glyphicon-chevron-left btn-icon"></i>&nbsp;Trở lại</button>
+                <button type="submit" class="btn btn-primary">Gửi phản ánh&nbsp;<i class="glyphicon glyphicon-send btn-icon"></i></button>
+            </div>
+        </div>
+    }
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        $(".captchaVal").on("change", function () {
+            $(this).rules('add', {
+                required: true,
+                messages: {
+                    required: "Vui lòng nhập mã xác nhận"
+                }
+            });
+        });
+    }); 
+    $(".BDC_CaptchaImageDiv a").css('display', 'none');
+    $().ready(function () {
+        $('#DateOfBirthWebRight').removeAttr("data-val-date");
+        $('#DateOfBirthAppRight').removeAttr("data-val-date");
+        $('#NumberDateAppRight').removeAttr("data-val-date");
+        $('#NumberDateAppRight').removeAttr("data-val-date");
+    });
+
+</script>
+
+<script>
+    $("#createWebReportForm").submit(function () {
+        $("#CaptchaCodeWebRight").Captcha.ReloadImage();
+    })
+    $("#createAppReportForm").submit(function () {
+        $("#CaptchaCodeAppRight").Captcha.ReloadImage();
+    })
+</script>

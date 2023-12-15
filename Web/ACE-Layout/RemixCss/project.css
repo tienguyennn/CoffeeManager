@@ -1,0 +1,78 @@
+label {
+    font-weight: bold;
+    text-align: right;
+}
+
+    label .required {
+        color: red;
+    }
+
+table.webGrid tr.head th {
+    padding: 5px;
+}
+
+#UploadTaiLieuDuAn input {
+    width: 95%;
+}
+
+img {
+    max-height: 235px !important;
+}
+#AnhSoDo{
+    max-height: 450px !important;
+}
+.error {
+    color: red;
+}
+
+#AnhGioiThieu-remove, #AnhQuyMo-remove, #AnhViTri-remove, #AnhSoDo-remove {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: -5px;
+    right: 5px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    background: #B74635;
+    border-radius: 100%;
+    display: none;
+}
+
+#insert-AnhGioiThieu, #insert-AnhQuyMo, #insert-AnhViTri, #insert-AnhSoDo {
+    width: 0.1px;
+    height: 0.1px;
+    overflow: hidden;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+    #insert-AnhGioiThieu + label, #insert-AnhQuyMo + label, #insert-AnhViTri + label, #insert-AnhSoDo + label {
+        font-size: 1.25em;
+        font-weight: 700;
+        color: white;
+        background-color: #438EB9;
+        display: inline-block;
+        cursor: pointer;
+        text-align: center;
+        height: 30px;
+        line-height: 30px;
+    }
+
+        #insert-AnhGioiThieu:focus + label, #insert-AnhQuyMo:focus + label, #insert-AnhViTri:focus + label, #insert-AnhSoDo:focus + label,
+        #insert-AnhGioiThieu + label:hover, #insert-AnhQuyMo + label:hover, #insert-AnhViTri + label:hover, #insert-AnhSoDo + label:hover {
+            background-color: #6FB3E0;
+        }
+
+#AnhGioiThieu, #AnhQuyMo, #AnhViTri, #AnhSoDo {
+    /*height: 200px;*/
+    width: 100%;
+    text-align: center;
+    border: 1px solid #438EB9;
+    background: url('../../../../Content/Images/no-image.png') no-repeat center;
+}
+
+#AnhGioiThieuFileName, #AnhQuyMoFileName, #AnhViTriFileName, #AnhSoDoFileName {
+    display: none;
+}

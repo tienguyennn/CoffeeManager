@@ -1,0 +1,639 @@
+#nullPassword, #nullUserName {
+    display: none;
+}
+
+@font-face {
+    font-family: Roboto-Black;
+    src: url(../../../ACE-Layout/Content/Custom/Font/Roboto/Roboto-Black.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: Roboto-BoldCondensed;
+    src: url(../../../ACE-Layout/Content/Custom/Font/Roboto/RobotoCondensed-Bold.ttf) format("truetype");
+}
+
+
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url(../../../ACE-Layout/Content/Custom/Font/Roboto/Roboto-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: Roboto-Medium;
+    src: url(../../../ACE-Layout/Content/Custom/Font/Roboto/Roboto-Medium.ttf) format("truetype");
+}
+
+#LoginBtn {
+    border: 0px none;
+    height: 39px;
+    font-size: 15px;
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    outline: none;
+}
+
+.login-layout {
+    background-color: #03027f !important;
+}
+
+    .login-layout .login-title {
+        font-family: Roboto-BoldCondensed;
+        font-size: 38px;
+        text-transform: uppercase;
+        text-align: center;
+        color: #fff;
+        width: 100%;
+    }
+
+    .login-layout h4#id-software-text {
+        font-size: 40px;
+    }
+
+#header-top-mobile {
+    display: none;
+}
+
+.login-layout {
+    /* background: url('../../../ACE-Layout/Content/ACE/css/images/bg2-after-v5.jpg') no-repeat; */
+    background: url('/Content/bg-login2.png') no-repeat;
+    background-image: url('../../../assets/coffeeassets/images/bg_4.jpg');
+    /*background: url('/Content/hcm.jpg') no-repeat;*/
+    background-size: 100% 100%;
+}
+
+    .login-layout .item-container {
+        width: 100%;
+        /*        float: left;*/
+    }
+
+    .login-layout #header-top {
+        margin-bottom: 20px;
+        margin-top: 80px;
+        width: 100%;
+    }
+
+    .login-layout .item-container #login-form {
+        /*        width: 555px !important;*/
+        margin: auto;
+        margin-top: 35px;
+    }
+
+
+    .login-layout h1#openland {
+        margin: 20px 0px;
+        font-size: 60px;
+        width: 100%;
+        height: auto;
+        line-height: inherit;
+    }
+
+        .login-layout h1#openland a {
+            background-size: 100%;
+        }
+
+    .login-layout .widget-box .widget-main {
+        /*float: left;*/
+    }
+
+
+
+
+
+        .login-layout .widget-box .widget-main .session {
+            padding: 0px;
+        }
+
+        .login-layout .widget-box .widget-main form .input-icon-right {
+            width: 100%;
+        }
+
+        .login-layout .widget-box .widget-main form .input-icon-left {
+            padding-top: 0px;
+            display: none;
+        }
+
+    /*.login-layout h4#id-software-text {*/
+    /*display: none;*/
+    /*font-size: 18pt;
+        line-height: 35px;
+        margin-top: 15px;
+    }
+
+    .login-layout #id-software-text2 {
+        font-size: 10pt !important;
+        line-height: 25px !important;
+    }*/
+
+    .login-layout .item-container #login-form {
+        width: 100%;
+    }
+
+
+
+    .login-layout .row {
+        margin: 0px;
+    }
+
+    .login-layout .login-container {
+        width: 100%;
+    }
+
+    .login-layout h1#openland {
+        float: left;
+        margin: auto;
+        margin-top: 45px;
+        margin-bottom: 5px;
+        width: 100%;
+        text-indent: -9999px;
+        height: 69px;
+    }
+
+        .login-layout h1#openland a {
+            width: 100%;
+            text-indent: -9999px;
+            height: 100%;
+            background: transparent url("images/logoaita.png") no-repeat scroll 0% 0%;
+            float: left;
+            background-position: center;
+            outline: none;
+        }
+
+
+#login-form .widget-body {
+    padding: 0px;
+}
+
+
+/*.login-layout h4#id-software-text {
+    font-family: software;
+    font-size: 36px;
+    text-transform: uppercase;
+    margin: 0px;
+    padding: 0px;
+    letter-spacing: 2px;
+    color: #fff;
+    text-align: center;
+    float: left;
+    width: 100%;
+    line-height: 52px;
+}*/
+
+.login-layout #login-form h4.bigger {
+    /*color: rgb(0, 90, 171);*/
+    color: white;
+    font-size: 26.66px;
+    font-weight: bold;
+    font-family: arial;
+    line-height: inherit;
+    float: left;
+    width: 100%;
+}
+
+    .login-layout #login-form h4.bigger a.hinet {
+        background: url(images/logo-hinet.png) no-repeat;
+        height: 40px;
+        width: 91px;
+        text-indent: -9999px;
+        float: left;
+    }
+
+    .login-layout #login-form h4.bigger span {
+        /*padding-left: 60px;*/
+    }
+
+.login-layout #login-form .hr-space {
+    background: url(images/hrbg.png) repeat-x;
+    height: 1px;
+    float: left;
+    width: 100%;
+}
+
+.login-layout #login-form #login-box {
+    float: left;
+    background: transparent;
+    background-color: rgb(255 255 255 / 15%);
+    color: white;
+}
+
+.login-layout .main-container:before {
+    display: none;
+}
+
+.login-layout .main-content {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    min-height: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.login-layout label {
+    /*margin-bottom: 20px;*/
+}
+
+.login-layout .widget-box {
+    visibility: hidden;
+    position: fixed;
+    z-index: -5;
+    margin: 0px;
+    border-bottom: none;
+    /*box-shadow: 2px 0px 7px #808080;*/
+    padding: 0px;
+    background: #fff;
+}
+
+    .login-layout .widget-box.visible {
+        visibility: visible;
+        position: relative;
+        z-index: auto;
+        -moz-transform: scale(1, 1) translate(0);
+        -webkit-transform: scale(1, 1) translate(0);
+        -o-transform: scale(1, 1) translate(0);
+        -ms-transform: scale(1, 1) translate(0);
+        transform: scale(1, 1) translate(0);
+        transition: transform .3s ease;
+        -moz-transition: -moz-transform .3s ease;
+        -webkit-transition: -webkit-transform .3s ease;
+        -o-transition: -o-transform .2s ease;
+    }
+
+
+
+    .login-layout .widget-box .widget-main .session {
+        padding: 0px 60px;
+    }
+
+    .login-layout .widget-box .widget-main form {
+        float: left;
+        width: 100%;
+        margin: 25px 0px;
+    }
+
+        .login-layout .widget-box .widget-main form .input-icon-right {
+            width: 279px;
+            float: right;
+        }
+
+            .login-layout .widget-box .widget-main form .input-icon-right input {
+                width: 100%;
+                height: 42px;
+                border-radius: 3px !important;
+                box-shadow: 0px 0px 1px #ccc !important;
+            }
+
+        .login-layout .widget-box .widget-main form .input-icon-left {
+            float: left;
+            padding-top: 8px;
+            font-size: 16px;
+            color: rgb(72, 72, 72);
+            font-weight: bold;
+        }
+
+    .login-layout .widget-box .widget-body .toolbar > div > a {
+        font-size: 15px;
+        font-weight: 400;
+        text-shadow: 1px 0 1px rgba(0, 0, 0, .25);
+    }
+
+.login-box .forgot-password-link {
+    color: #FE9;
+}
+
+.login-box .user-signup-link {
+    color: #CF7;
+}
+
+.login-box .toolbar > div {
+    width: 50%;
+    display: inline-block;
+    padding: 9px 0 11px;
+}
+
+    .login-box .toolbar > div:first-child {
+        float: left;
+        text-align: left;
+    }
+
+        .login-box .toolbar > div:first-child > a {
+            margin-left: 11px;
+        }
+
+        .login-box .toolbar > div:first-child + div {
+            float: right;
+            text-align: right;
+        }
+
+            .login-box .toolbar > div:first-child + div > a {
+                margin-right: 11px;
+            }
+
+#loginForm .login-form-input {
+    background-size: 23px 25px !important;
+    background-position: 10px 5px !important;
+    padding-left: 35px;
+}
+
+#loginForm .form-control {
+    height: 40px !important;
+}
+
+.login-form-text {
+    background: url('../../../ACE-Layout/Content/ACE/css/images/input-user.png') no-repeat #fff !important;
+}
+
+.login-form-pass {
+    background: url('../../../ACE-Layout/Content/ACE/css/images/input-pass.png') no-repeat #fff !important;
+}
+
+
+
+#FormLogin #btn_checkbox {
+    margin-top: 10px;
+}
+
+.field-validation-error {
+    color: #fe2020;
+}
+
+.login-footer {
+    margin: 20px 0 0 0;
+    font-family: Roboto-Regular;
+    text-align: center;
+    color: #fff;
+}
+
+@media only screen and (min-width:320px) {
+    .login-layout #login-form #login-box, .login-form-body {
+        border-radius: 5px;
+    }
+
+    .login-form-body {
+        padding: 0;
+        background: #464695;
+    }
+
+    .login-form-title {
+        text-align: center;
+        font-weight: normal !important;
+        font-family: Roboto-Medium !important;
+        margin: 0 !important;
+        padding: 20px !important;
+        border-top-left-radius: 5px !important;
+        border-top-right-radius: 5px !important;
+        border-bottom: 1px solid #7d7eb3;
+    }
+
+    .login-layout #login-form h4.bigger span {
+        padding-left: 20px;
+        font-size: 20px;
+    }
+
+    .login-form-label {
+        font-weight: 100;
+        font-family: Roboto-Medium;
+        margin: 0 0 10px 0 !important;
+        text-align: left !important;
+    }
+
+    .login-form-password-utils {
+        margin: 0 0 10px 0;
+        font-family: Roboto-Medium !important;
+        font-size: 11px;
+    }
+
+        .login-form-password-utils input {
+            margin: 0 10px 0 0;
+        }
+
+        .login-form-password-utils .login-form-password-utils-section {
+            width: 50%;
+            float: left;
+        }
+
+        .login-form-password-utils .login-form-password-section {
+            font-family: Roboto-Medium !important;
+        }
+
+        .login-form-password-utils .login-form-password-forget a {
+            color: #b1d3ff !important;
+            font-style: italic;
+        }
+
+        .login-form-password-utils .login-form-password-utils-section:first-child {
+            text-align: left;
+        }
+
+        .login-form-password-utils .login-form-password-utils-section:nth-child(2) {
+            text-align: right;
+        }
+
+    #LoginBtn {
+        box-shadow: none;
+        background: #0062c6;
+        width: 100%;
+        font-family: Roboto-BoldCondensed;
+        text-transform: uppercase;
+        font-size: 11px;
+    }
+}
+
+
+@media only screen and (min-width:320px) and (max-width:480px) {
+    .login-layout #login-form #login-box {
+        width: 100%;
+    }
+
+    .login-layout .widget-box .widget-main {
+        width: 100%;
+        padding: 0px;
+    }
+}
+
+@media only screen and (max-width:320px) {
+    .login-title-mobile {
+        font-size: 18px !important;
+    }
+
+    .login-footer {
+        font-size: 9px !important;
+    }
+
+    .login-layout .item-container #login-form {
+        margin: 15px 0 0 0;
+    }
+}
+
+@media only screen and (max-width:360px) and (min-width:321px) {
+    .login-title-mobile {
+        font-size: 22px !important;
+    }
+
+    .login-layout .item-container #login-form {
+        margin: 20px 0 0 0;
+    }
+}
+
+/*iphone 11*/
+@media only screen and (min-width: 322px) and (max-width:414px) {
+    .login-title-mobile {
+        font-size: 24px !important;
+    }
+
+    .login-layout .item-container #login-form {
+        margin: 20px 0 0 0;
+    }
+}
+
+@media only screen and (min-width: 361px) and (max-width:480px) {
+    .login-title-mobile {
+        font-size: 22px !important;
+    }
+
+    .login-layout .item-container #login-form {
+        margin: 20px 0 0 0;
+    }
+
+    .login-layout > .main-container {
+        margin: 200px 0 0 0 !important;
+    }
+}
+
+
+
+
+@media only screen and (max-width:540px) {
+    .login-layout .item-container {
+        width: 100%;
+    }
+
+    .login-form-label {
+        font-size: 11px;
+    }
+
+    .login-layout .item-container #login-form {
+        width: auto;
+    }
+
+    .login-layout {
+        background: url(../../../ACE-Layout/Content/ACE/css/images/bg-login-mobile.jpg) !important;
+        background-repeat: no-repeat;
+        background-size: 100% 100% !important;
+    }
+
+        .login-layout .widget-box .widget-main {
+            /*padding: 16px;*/
+        }
+
+    .login-container {
+        width: 98%;
+    }
+
+    .login-layout > .main-container {
+        margin: 225px 0 0 0;
+    }
+
+    .login-layout .widget-box {
+        padding: 0;
+    }
+
+    .login-layout .main-content {
+        /*padding-left: 6px;
+        padding-right: 6px;*/
+    }
+
+    .login-box .toolbar > div {
+        width: auto;
+    }
+
+    #header-top {
+        display: none;
+    }
+
+    #header-top-mobile {
+        display: block;
+    }
+
+    .login-title-mobile {
+        text-align: center;
+        color: #fff;
+        font-size: 26px;
+        font-family: Roboto-BoldCondensed;
+    }
+
+        .login-title-mobile:first-child {
+            font-size: 24px;
+        }
+
+    .login-layout #login-form #login-box {
+        box-shadow: none;
+    }
+
+    .login-layout .widget-box .widget-main, .login-form-title,
+    .login-layout #login-form #login-box {
+        border-radius: 3px !important;
+    }
+
+    .login-form-body {
+        padding: 0;
+        /*background: #464695;*/
+    }
+
+    #FormLogin {
+        padding: 0 40px;
+    }
+
+
+
+    .login-form-input::placeholder {
+        color: #9c9c9c;
+        font-family: Arial;
+        font-size: 11px;
+    }
+
+    .login-footer {
+        font-size: 11px;
+    }
+}
+
+#login-form {
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (min-width: 768px) {
+    .login-layout #header-top {
+        /* width:50%; */
+    }
+
+    .login-layout .item-container {
+        width: 100%;
+    }
+
+    #loginForm .login-form-label, #loginForm .login-form-input-container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .login-layout #login-form h4.bigger span {
+        font-size: 26px;
+    }
+
+    .login-layout #login-form #login-box {
+        width: 530px;
+        /* margin-left: calc(calc(100% - 560px)/2); */
+    }
+
+    #FormLogin {
+        padding: 0 100px;
+    }
+
+    #LoginBtn {
+        font-size: 14px;
+    }
+
+    .login-footer {
+        font-size: 18px;
+        /* width:50%; */
+    }
+}

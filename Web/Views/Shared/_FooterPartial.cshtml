@@ -1,0 +1,16 @@
+﻿@using Service.AppUserService.Dto;
+@{
+    var user = SessionManager.GetUserInfo() as Model.IdentityEntities.AppUser;
+    string unitName = string.Empty;
+    string productionYear = string.Empty;
+
+}
+<div class="footer">
+    <div class="footer-inner">
+        <div class="footer-content">
+            <span class="bigger-120">
+                @unitName &copy; @productionYear
+            </span>
+        </div>
+    </div>
+</div>

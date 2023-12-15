@@ -1,0 +1,88 @@
+﻿@using Model.IdentityEntities
+@using Web.Areas.UserArea.Models
+@using Newtonsoft.Json;
+@{
+
+    var listVaiTro = ViewBag.ListVaiTro as List<SelectListItem>;
+    var listDonVi = ViewBag.ListDonVi as List<SelectListItem>;
+}
+<div class="modal-dialog">
+    @using (Ajax.BeginForm("SaveGenerateUserByRole", "User", new { @area = "UserArea" }, new AjaxOptions()
+    {
+        HttpMethod = "POST",
+        OnFailure = "AjaxFormError",
+        OnSuccess = "AjaxFormSuccess",
+    }, new { id = "form-generate-user" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="modal-content">
+            <div class="modal-header">
+                :
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <div class="center">
+                    <h4 class="modal-title">
+                        CẬP NHẬT NGƯỜI DÙNG VÀO PHÒNG BAN THEO VAI TRÒ
+                    </h4>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">Chế độ</label>
+                        <div class="col-sm-8">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="TypeGenerate" id="inlineRadio1" value="0" checked onchange="onChangeGenerateType(this)">
+                                <label class="form-check-label" for="inlineRadio1">Toàn đơn vị</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="TypeGenerate" id="inlineRadio2" value="1" onchange="onChangeGenerateType(this)">
+                                <label class="form-check-label" for="inlineRadio2">Chọn đơn vị</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group hide" id="block-donvi">
+                        <label class="control-label col-sm-4">Đơn vị</label>
+                        <div class="col-sm-8">
+                            @Html.ListBox("DonViToGenerate", listDonVi, new { @class = "select2", @multiple = "multiple" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">Vai trò</label>
+                        <div class="col-sm-8">
+                            @foreach (var itemVaiTro in listVaiTro)
+                            {
+                                <div class="ace-settings-item">
+                                    <input name="VaiTroToGenerate" type="checkbox" value="@itemVaiTro.Value" class="ace ace-checkbox-2" id="ace-settings-@itemVaiTro.Value" />
+                                    <label class="lbl" for="ace-settings-@itemVaiTro.Value"> @itemVaiTro.Text</label>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer center">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fa fa-save"></i>&nbsp;Lưu lại
+                </button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">
+                    <i class="fa fa-close"></i>&nbsp;Đóng
+                </button>
+            </div>
+        </div>
+    }
+</div>
+
+@Scripts.Render("~/bundles/configform")
+
+<script>
+    function onChangeGenerateType(item) {
+        var isAllDonVi = item.value == '0';
+        if (isAllDonVi) {
+            $('#block-donvi').addClass('hide');
+        } else {
+            $('#block-donvi').removeClass('hide');
+        }
+    }
+</script>

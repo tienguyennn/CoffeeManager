@@ -1,0 +1,94 @@
+﻿@model Web.Models.CreateEndUserModel
+@{
+    ViewBag.Title = "Đăng ký tài khoản";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*<div id="quytrinh">
+    <div class="container">
+        <h2>Quy trình đăng ký cung cấp dịch vụ</h2>
+        <p>Sàn giao dịch TMĐT | Website khuyến mại trực tuyến | Website đấu giá trực tuyến</p>
+        <div class="quytrinh__cacbuoc">
+            <div class="col-sm-2 quytrinh__cacbuoc_chung quytrinh__cacbuoc1">
+                <img src="~/Content/EndUser/img/buoca.png" alt="" width="100%">
+            </div>
+            <div class="col-sm-2 quytrinh__cacbuoc_chung quytrinh__cacbuoc2">
+                <img src="~/Content/EndUser/img/buocb.png" alt="" width="100%">
+            </div>
+            <div class="col-sm-2 quytrinh__cacbuoc_chung quytrinh__cacbuoc3">
+                <img src="~/Content/EndUser/img/buocc.png" alt="" width="100%">
+            </div>
+            <div class="col-sm-2 quytrinh__cacbuoc_chung quytrinh__cacbuoc4">
+                <img src="~/Content/EndUser/img/buocd.png" alt="" width="100%">
+            </div>
+            <div class="col-sm-2 quytrinh__cacbuoc_chung quytrinh__cacbuoc5">
+                <img src="~/Content/EndUser/img/buoce.png" alt="" width="100%">
+            </div>
+        </div>
+    </div>
+</div>*@
+<div id="FormDangKy">
+    <div class="container">
+
+        <div class="col-md-12 report">
+            <div class="title">
+                <h1>Đăng ký mở tài khoản</h1>
+                <h4>* * *</h4>
+            </div>
+            <div class="note">
+                <h3><span class="glyphicon glyphicon-tags"></span> Chú ý</h3>
+                <p>
+                    - Tổ chức: bao gồm các cơ quan hành chính sự nghiệp, hiệp hội, đơn vị… được thành lập một cách hợp pháp có thể có hoặc không có mã số thuế.
+                    <br>
+                    - Thương nhân: bao gồm các tổ chức kinh tế được thành lập một cách hợp pháp và có mã số thuế, đăng ký kinh doanh (VD Tập đoàn, Tổng công ty, Công ty, Hộ kinh doanh…)
+                    <br>
+                    - Cá nhân: các cá nhân tự thiết lập hoặc sở hữu các website thương mại điện tử bán hàng.<br>
+                    <span style="color:red">(*)</span> Thông tin bắt buộc phải nhập&nbsp; &nbsp;
+                </p>
+            </div>
+            <div class="register">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3 text-left">Chọn đối tượng đăng ký <span style="color:red">*</span></label>
+                        <div class="col-sm-6">
+                            <select id="chooseObjectRegister" class="form-control">
+                                <option value="1">Cá nhân</option>
+                                <option value="2">Thương nhân</option>
+                                <option value="3">Tổ chức</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div id="boxRegisterForm">
+                    @Html.Partial("_RegisterPersonalPartial", Model)
+                </div>
+                <div class="clearBoth"></div>
+
+
+                <div class="notice col-md-12">
+                    <p>Gửi phản ánh bằng văn bản tới Cục Thương mại điện tử và Công nghệ thông tin, Bộ Công Thương</p>
+                    <p>Địa chỉ: Số 25 Ngô Quyền, Hoàn Kiếm, Hà Nội; hoặc qua thư điện tử qltmdt@moit.gov.vn</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $("#chooseObjectRegister").change(function () {
+            var type = $(this).val();
+            $.ajax({
+                url: '/account/GFormRegister/' + type,
+                type: 'post',
+                success: function (rs) {
+                    $("#boxRegisterForm").html(rs);
+                },
+                error: function (e) {
+                    NotiError("Lỗi xử lý");
+                }
+            });
+        });
+    </script>
+    @Scripts.Render("~/bundles/jqueryval")
+}

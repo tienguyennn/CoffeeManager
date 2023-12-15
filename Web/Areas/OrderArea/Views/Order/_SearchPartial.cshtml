@@ -1,0 +1,90 @@
+<div id="collapseDiv" class="panel-collapse collapse" aria-expanded="false" role="tabpanel">
+    <div class="well SearchBox">
+
+        @using (Ajax.BeginForm("searchData", "Order", new { Area = "OrderArea" },
+            new AjaxOptions()
+            {
+                HttpMethod = "POST",
+                OnFailure = "AjaxFormError",
+                OnSuccess = "AjaxSearchSuccess",
+            }, new { }))
+        {
+            @Html.AntiForgeryToken()
+        <div class="row row-block">
+		<div class="col-md-6 row-block">
+			<div class="col-md-4 txt-label">Họ </div>
+			<div class="col-md-8">
+				<input class="form-control width100" type="text" name="HoFilter" />
+			</div>
+		</div>
+
+		<div class="col-md-6 row-block">
+			<div class="col-md-4 txt-label">Tên</div>
+			<div class="col-md-8">
+				<input class="form-control width100" type="text" name="TenFilter" />
+			</div>
+		</div>
+
+		<div class="col-md-6 row-block">
+			<div class="col-md-4 txt-label">Địa chỉ</div>
+			<div class="col-md-8">
+				<input class="form-control width100" type="text" name="DiaChiFilter" />
+			</div>
+		</div>
+
+		<div class="col-md-6 row-block">
+			<div class="col-md-4 txt-label">Địa chỉ chi tiết</div>
+			<div class="col-md-8">
+				<input class="form-control width100" type="text" name="DiaChiChiTietFilter" />
+			</div>
+		</div>
+
+		<div class="col-md-6 row-block">
+			<div class="col-md-4 txt-label">Điện thoại</div>
+			<div class="col-md-8">
+				<input class="form-control width100" type="text" name="DienThoaiFilter" />
+			</div>
+		</div>
+
+		<div class="col-md-6 row-block">
+			<div class="col-md-4 txt-label">Email</div>
+			<div class="col-md-8">
+				<input class="form-control width100" type="text" name="EmailFilter" />
+			</div>
+		</div>
+
+		<div class="col-md-6 row-block">
+			<div class="col-md-4 txt-label">Sản phẩm</div>
+			<div class="col-md-8">
+				<input class="form-control width100" type="text" name="SanPhamIdsFilter" />
+			</div>
+		</div>
+
+		<div class="col-md-6 row-block">
+			<div class="col-md-4 txt-label">Trạng thái</div>
+			<div class="col-md-8">
+				<input class="form-control width100" type="text" name="TrangThaiFilter" />
+			</div>
+		</div>
+
+
+            <div class="col-md-12 center" style=" margin-top:20px;">
+                <button id="btnSearch" type="submit" class="btn btn-labeled btn-primary btn-sm">
+                    <span class="btn-label">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </span>
+                    Tìm kiếm
+                </button>
+<a href="/OrderArea/Order/ExportExcel" class="btn btn-labeled btn-success btn-sm"><span class='btn-label'><i class='glyphicon glyphicon-download'></i></span> Xuất Excel</a>
+                <a aria-expanded="false" href="#collapseDiv" data-toggle="collapse" role="button" class="btn btn-labeled btn-danger btn-sm">
+                    <span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span>
+                    Đóng
+                </a>
+            </div>
+        </div>
+
+        }
+    </div>
+</div>
+
+

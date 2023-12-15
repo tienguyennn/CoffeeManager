@@ -1,0 +1,76 @@
+@{
+    ViewBag.Title = "Đặt hàng";
+    Layout = null;
+    ViewBag.ModuleName = "Quản lý Đặt hàng";
+    ViewBag.PageName = "Thông tin Đặt hàng";
+    ViewBag.ModuleCode = "Order_detail";
+}
+@using Model.IdentityEntities
+@using Model.Entities
+@using Web.Areas.OrderArea.Models
+
+@model DetailVM
+@section ActionBarRight{
+    <a href="/OrderArea/Order/Index" class="btn btn-primary btn-sm"><i class="fa fa-reply" aria-hidden="true"></i> Quay lại</a>
+}
+<div class="modal-dialog" style="width:60%">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="center">
+                <h4 class="modal-title">Thông tin đặt hàng</h4>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <table class="table-info table">
+
+                        <tr><td>Họ </td><td>@Model.objInfo.Ho</td></tr>
+                        <tr><td>Tên</td><td>@Model.objInfo.Ten</td></tr>
+                        <tr><td>Địa chỉ</td><td>@Model.objInfo.DiaChi</td></tr>
+                        <tr><td>Địa chỉ chi tiết</td><td>@Model.objInfo.DiaChiChiTiet</td></tr>
+                        <tr><td>Điện thoại</td><td>@Model.objInfo.DienThoai</td></tr>
+                        <tr><td>Email</td><td>@Model.objInfo.Email</td></tr>
+                        <tr>
+                            <td>Sản phẩm</td>
+                            <td>
+                                <div>
+                                    @foreach (var item in Model.objInfo.OrderDetails)
+                                    {
+                                        <div>
+                                            <span>
+
+                                                @item.SanPham.Ten:
+                                            </span>
+                                            <span>
+                                                @item.SoLuong
+                                            </span>
+                                            <span style="padding-left:12px;font-weight:bold">
+                                                $@item.GiaTien
+                                            </span>
+                                        </div>
+                                    }
+                                </div>
+                            </td>
+                        </tr>
+                        <tr><td>Trạng thái</td><td>@Model.objInfo.TrangThai</td></tr>
+
+                    </table>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal-footer center">
+            <button type="submit" class="btn btn-primary">Hoàn thành</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+
+</script>
+@Scripts.Render("~/bundles/jqueryval")

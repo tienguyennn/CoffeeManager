@@ -1,0 +1,190 @@
+@{
+    ViewBag.Title = "Blog";
+    Layout = "~/Views/Shared/_LayoutAce.cshtml";
+    ViewBag.ModuleName = "Quản lý Blog";
+    ViewBag.PageName = "Danh sách Blog";
+    ViewBag.ModuleCode = "Blog_index";
+
+}
+@using Model.IdentityEntities;
+@using Model.Entities;
+@using Newtonsoft.Json;
+@using Service.Common;
+@using Service.BlogService.Dto;
+@model PageListResultBO<BlogDto>
+@{
+    var lstData = Html.Raw(JsonConvert.SerializeObject(Model.ListItem));
+}
+
+
+
+@section ActionBarRight{
+    <a href="#collapseDiv" class="btn btn-sm btn-primary" aria-controls="collapsePanel" data-toggle="collapse" role="button">
+        <i class="fa fa-search"></i> Tìm kiếm
+    </a>
+    <a href="javascript:void(0)" onclick="CreateAction('/BlogArea/Blog/Create')" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Thêm mới</a>
+}
+@Html.Partial("_SearchPartial")
+
+<div id="tbl-Blog" class="hntbl-cover table-scroll">
+    <div class="table-wrap">
+        <table class="hinet-table table table-striped table-hover" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th class="fixed-side">#</th>
+                    <th class="fixed-side">Thao tác</th>
+                    <th>Tiêu đề</th>
+                    <th>Mô tả</th>
+                    <th>Hình ảnh</th>
+                    <th>Thời gian</th>
+                    <th>Trạng thái</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        var lstData = eval(@lstData);
+        var moduleTableSelector="#tbl-Blog";
+        function pagefunction(){
+            var conf=[
+                {
+                    tdClass:"center width50 fixed-side",
+                    isSort:false,
+                    nameModel: "",
+                    isCounter:true,
+                    content: function (data) {
+                        return "<input type='checkbox'/>"
+                    }
+                },
+
+                   {
+                       isSort:false,
+                       nameModel:"",
+                       tdClass:"center fixed-side",
+                       content: function (data) {
+                           var result = `<div class="btn-group">
+                               <button data-toggle="dropdown" class="btn btn-xs btn-primary btn-white dropdown-toggle" aria-expanded="false">Thao tác<i class="ace-icon fa fa-angle-down icon-on-right"></i>
+                               </button>
+
+                               <ul class="dropdown-menu">`;
+
+                           result += "<li><a href='javascript:OpenModal(\"/BlogArea/Blog/Detail/" + data.Id +  "\")'   title = 'Chi tiết'><i class='fa fa-info-circle'> </i> Thông tin chi tiết</a> </li>";
+                           if (data.IsPhatHanh) {
+                               result += "<li><a href='javascript:Change(" + data.Id + ",false)'   title = 'Chi tiết'><i class='glyphicon glyphicon-edit'> </i>  Ẩn</a> </li>";
+                           }
+                           else {
+                               result += "<li><a href='javascript:Change(" + data.Id + ",true)'   title = 'Chi tiết'><i class='glyphicon glyphicon-edit'> </i>  Hiển thị</a> </li>";
+                           }
+result += "<li><a href='javascript:void(0)' onclick='EditAction(\"/BlogArea/Blog/Edit/" + data.Id + "\")'   title = 'Chỉnh sửa'><i class='glyphicon glyphicon-edit'> </i> Sửa thông tin</a> </li>";
+                           result += "<li><a href='javascript:void(0)' onclick='DeleteAction(\"/BlogArea/Blog/Delete/" + data.Id + "\")'  title = 'Xóa'><i class=' glyphicon glyphicon-remove' style='color:red'> </i> Xóa</a></li>";
+                           result += "</ul></div>";
+                           return result;
+                       }
+                   },
+				{
+					isSort:false,
+					nameModel:'TieuDe',
+					content: function (data) {
+					return data.TieuDe
+				}
+                },
+                {
+                    isSort: false,
+                    nameModel: 'MoTa',
+                    content: function (data) {
+                        return data.MoTa
+                    }
+                },
+                {
+					isSort:false,
+					nameModel:'HinhAnh',
+					content: function (data) {
+					return `<img class="img-index" src="/Uploads/${data.HinhAnh}" />`
+				}
+				},
+				{
+					isSort:false,
+					nameModel:'NoiDung',
+					content: function (data) {
+					return ToDate(data.CreatedDate)
+				}
+				},
+                {
+                    isSort: false,
+                    nameModel: 'NoiDung',
+                    content: function (data) {
+                        return data.IsPhatHanh ? "Hiển thị" : "Ẩn";
+                    }
+                },
+
+            ];
+
+
+            var getdatafunc=function(page,sortQuery,pageSize){
+                $.ajax({
+                    url: '/BlogArea/Blog/getData',
+                    type: 'post',
+                    cache: false,
+                    data:{"indexPage":page,"sortQuery":sortQuery,"pageSize":pageSize},
+                    success: function (data) {
+                        $(moduleTableSelector).hinetTable("data",{
+                            pageSize:pageSize!=-1?pageSize:data.Count,
+                            pageIndex:page,
+                            pagecount: data.TotalPage,
+                            recordCount: data.Count,
+                            listItem: data.ListItem,});
+                    },
+                    error: function (err) {
+                        CommonJS.alert(xhr.responseText);
+                    }
+                });
+
+            }
+
+            var tblData=$("#tbl-Blog").hinetTable("init",{
+                pageSizeList:{size:[20,50,100,-1],label:['20','50','100','Tất cả']},
+                pagecount: @Model.TotalPage,
+                recordCount: @Model.Count,
+                actionToolBar:'<a href=\"#collapseDiv\" aria-controls=\"collapsePanel\" data-toggle=\"collapse\" role=\"button\" class="btn btn-primary btn-xs"><i class="fa fa-search"></i> Tìm kiếm</a>',
+                getData:getdatafunc,
+                listItem:lstData,
+                config:conf
+            });
+
+        }
+
+        function AfterSussessActionAjaxform(){
+            $(moduleTableSelector).hinetTable("reload");
+        }
+        function AjaxSearchSuccess(rs) {
+            $(moduleTableSelector).hinetTable("data", {
+                pageIndex: 1,
+                pagecount: rs.TotalPage,
+                recordCount: rs.Count,
+                listItem: rs.ListItem,
+            });
+        }
+        pagefunction();
+
+
+        function Change(id, isPhatHanh) {
+            AjaxCall('/BlogArea/Blog/ChangeIsPhatHanh', 'POST',
+                {
+                    id: id,
+                    isPhatHanh: isPhatHanh,
+                },
+                rs => {
+                    if (rs.Status) {
+                        NotiSuccess("Thành công", "Cập nhật thành công");
+                        $(moduleTableSelector).hinetTable("reload");
+                    }
+                }
+            )
+
+        }
+    </script>
+}

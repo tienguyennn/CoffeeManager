@@ -1,0 +1,126 @@
+﻿.jconfirm.jconfirm-material .jconfirm-box {
+    font-family: Roboto;
+}
+
+.accordion-item {
+    background: none;
+    border: none;
+    position: relative;
+}
+
+.accordion-item {
+    margin-bottom: 1rem;
+}
+
+.guide-pathway-accordion-color-green {
+    background: #e0f2f1;
+}
+
+.accordion-item:last-of-type {
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}
+
+.accordion-item:first-of-type {
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+
+.accordion-item .accordion-item-tile {
+    border-bottom: 0.0625rem solid #ebebeb;
+    box-sizing: border-box;
+    position: relative;
+    transition: background-color .5s;
+}
+
+.accordion-item-tile {
+    border-bottom: none;
+}
+
+.accordion-item.guide-pathway-accordion-color-green .accordion-item-tile {
+    background: #e0f2f1;
+}
+
+.accordion-item .accordion-item-tile .accordion-item-tile-inner {
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 0 0 1rem;
+    width: 100%;
+    display: flex;
+}
+
+    .accordion-item .accordion-item-tile .accordion-item-tile-inner .accordion-item-tile-image {
+        padding: 1.5rem 0 1rem;
+    }
+
+        .accordion-item .accordion-item-tile .accordion-item-tile-inner .accordion-item-tile-image svg {
+            height: auto;
+            width: 250px;
+        }
+
+    .accordion-item .accordion-item-tile .accordion-item-tile-inner .accordion-item-tile-inner-text {
+        display: flex;
+        flex-direction: column;
+        padding: 0 1rem;
+        width: 100%;
+    }
+
+    .accordion-item .accordion-item-tile .accordion-item-tile-inner .accordion-item-tile-inner-title {
+        max-width: 85%;
+        overflow: hidden;
+    }
+
+    .accordion-item .accordion-item-tile .accordion-item-tile-inner .accordion-item-tile-inner-text .accordion-item-tile-inner-title {
+        padding-top: 1.5rem;
+    }
+
+        .accordion-item .accordion-item-tile .accordion-item-tile-inner .accordion-item-tile-inner-text .accordion-item-tile-inner-title .h3, .accordion-group.accordion-item-list-group .accordion-item .accordion-item-tile .accordion-item-tile-inner .accordion-item-tile-inner-text .accordion-item-tile-inner-title h3 {
+            color: #333;
+            line-height: 1.75;
+            padding: 0;
+            transition: all .3s ease 0s;
+        }
+
+    .accordion-item .accordion-item-tile .accordion-item-tile-inner .accordion-item-tile-inner-description {
+        padding-bottom: 1.5rem;
+    }
+
+.float-button {
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 3.125rem !important;
+    padding: 0 !important;
+}
+
+.accordion-item .accordion-item-tile .accordion-item-tile-inner .float-button {
+    align-items: stretch;
+    align-self: stretch;
+    display: flex;
+    margin-left: auto;
+    min-width: 92px;
+}
+
+.iconAnimateWrapper {
+    align-items: center;
+    display: flex;
+    height: auto;
+    justify-content: center;
+    line-height: 0;
+    width: 92px;
+    background: #ceeae9;
+}
+
+    .iconAnimateWrapper svg {
+        height: 18px;
+        min-height: 18px;
+        min-width: 28px;
+        width: 28px;
+    }
+
+.guide-pathway-accordion-color-yellow {
+    background: #fff3cf;
+}
+
+.guide-pathway-accordion-color-magenta {
+    background: #ffecf3;
+}

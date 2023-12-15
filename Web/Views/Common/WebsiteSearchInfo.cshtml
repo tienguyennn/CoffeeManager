@@ -1,0 +1,46 @@
+﻿@using Web.Models
+@model WebsiteSearchInfoViewModel
+
+
+<div class="padding-left-right-24">
+    <div class="content-right__PhanAnh content-right__Chung col-sm-12 pd0" id="boxTraCuu">
+        <h2>Tra cứu</h2>
+        <div class="text-center titleNote">
+            WEBSITE THƯƠNG MẠI ĐIỆN TỬ ĐÃ ĐĂNG KÝ THÔNG BÁO VỚI BỘ CÔNG THƯƠNG
+        </div>
+        @using (Html.BeginForm("WebsiteSearchList", "Common", FormMethod.Post, new
+        {
+            id = "websiteInfoSearchForm",
+            enctype = "multipart/form-data"
+        }))
+        {
+            <div class="form-group">
+                <label>Tên miền</label>
+                @Html.TextBoxFor(m => m.Name, new {  @placeholder = "Tên miền website"})
+            </div>
+            <div class="form-group">
+                <label>Tên Thương nhân/ Tổ chức</label>
+                @Html.TextBoxFor(m => m.CompanyName, new {@placeholder = "Tên thương nhân/tổ chức" })
+            </div>
+            <div class="form-group">
+                <label>Mã số thuế</label>
+                @Html.TextBoxFor(m => m.TaxCode, new { @placeholder="Mã số thuế"})
+            </div>
+            <div class="form-group">
+                <label>Điện thoại</label>
+                @Html.TextBoxFor(m => m.Phone, new { @placeholder="Số điện thoại"})
+            </div>
+            @*<div class="form-group">
+                <label>Email</label>
+                @Html.TextBoxFor(m => m.Email, new { @placeholder="Địa chỉ email"})
+            </div>*@
+            <div class="form-group">
+                <label>Loại website</label>
+                @Html.DropDownListFor(m => m.WebsiteManageType, Model.ListWebsiteManageType)
+            </div>
+            <div class="text-center">
+                <button type="submit">Tìm kiếm</button>
+            </div>
+        }
+    </div>
+</div>

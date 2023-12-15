@@ -1,0 +1,44 @@
+﻿@using Web.Models;
+@
+@using CommonHelper.String;
+
+@model List<AttachTempFileItemTinBai>
+
+@if (Model != null && Model.Any())
+{
+	foreach (var item in Model)
+	{
+		<div class="itemUploaded col-sm-3" style="padding:0px;" id="@item.IdToken">
+			<div class="itemUploaded-item-cell itemUploaded-item-name">
+				<p><img src="/@item.Path" onerror="this.src = '/assets/images/notfoundimage.png'"/> @*<i>(@item.Size.ConvertToStringMb())</i>*@</p>
+				<span class="motaAnhUpload">@item.Mota_Anh</span>
+			</div>
+			<div class="itemUploaded-item-cell itemUploaded-item-delete" id="delete-@item.IdToken">
+				<button onclick="DeleteDataFileUpload('@item.IdToken', '@ItemTypeConstant.TinBai')" class="btn btn-warning btn-smini"><i class="glyphicon glyphicon-remove"></i></button>
+			</div>
+			<div class="itemUploaded-item-cell itemUploaded-item-info" id="info-@item.IdToken">
+				<button href="javascript:void(0)" onclick="FixedRightAction_6('/common/DetailFileUploadedMulti?path=@item.IdToken&type=@ItemTypeConstant.TinBai')" class="btn btn-info btn-smini"><i class="glyphicon glyphicon-info-sign"></i></button>
+			</div>
+		</div>
+	}
+}
+else
+{
+	<div class="text-danger">Không có tệp nào</div>
+}
+<script>
+	$('.itemUploaded-item-delete').hide();
+	$('.itemUploaded-item-info').hide();
+	$(".itemUploaded")
+		.mouseenter(function () {
+			var id = $(this).attr('id');
+			$('#delete-' + id).show();
+			$('#info-' + id).show();
+		})
+		.mouseleave(function () {
+			var id = $(this).attr('id');
+			$('#delete-' + id).hide();
+			$('#info-' + id).hide();
+
+		});
+</script>

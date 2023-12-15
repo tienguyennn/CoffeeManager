@@ -1,0 +1,556 @@
+﻿@using Hinet
+@using Web.Core
+@using Web.LocationResouces
+@using Service.AppUserService.Dto
+@using Microsoft.AspNet.Identity
+@using Service.Constant
+@using Model.Entities;
+@using CommonHelper.String;
+
+@{
+    var userInfo = SessionManager.GetUserInfo() as Model.IdentityEntities.AppUser;
+    long jsUserId = 0;
+    string jsUserName = "";
+    if (userInfo != null)
+    {
+        jsUserId = userInfo.Id;
+        jsUserName = userInfo.UserName;
+    }
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="overview &amp; stats" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    @Styles.Render("~/assets/appcss")
+    <link rel="stylesheet" href="~/assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+    <link href="~/Content/fixed-element.css" rel="stylesheet" />
+    <link href="~/Content/ADashboard.css" rel="stylesheet" />
+    <link href="~/assets/css/jquery-confirm.css" rel="stylesheet" />
+    <link href="~/Content/responsive-dti.css" rel="stylesheet" />
+
+    @Styles.Render("~/Content/bootstrap-datepicker.css")
+    @Styles.Render("~/Content/Common2.css")
+
+    @RenderSection("css", required: false)
+    @Scripts.Render("~/assets/appjs")
+    @Scripts.Render("~/bundles/datepicker")
+    <script src="~/assets/js/ace-extra.min.js">
+    </script>
+    <script src="~/Scripts/compareDocument.js">
+    </script>
+    <script src="~/assets/js/bootstrap-multiselect.min.js">
+    </script>
+    <link href="~/Content/Admin_respon.css" rel="stylesheet" />
+    <script src="~/assets/js/jquery.bootstrap-duallistbox.min.js">
+    </script>
+    <link rel="stylesheet" href="~/assets/css/bootstrap-duallistbox.min.css" />
+    <script src="~/assets/ckeditor/ckeditor.js">
+    </script>
+    <script src="~/content/go.js">
+    </script>
+    <script src="~/Scripts/easyNotify.js">
+    </script>
+    <link href="~/Content/lobibox/css/lobibox.css" rel="stylesheet" />
+    <link href="~/assets/css/colorbox.min.css" rel="stylesheet" />
+    <script src="~/Content/lobibox/js/Lobibox.js">
+    </script>
+    <script src="~/assets/markjs/jquery.mark.min.js"></script>
+    <link href="~/Content/backend.css" rel="stylesheet" />
+    <script src="~/assets/js/bootstrap-wysiwyg.min.js">
+    </script>
+    <script src="~/Content/Highcharts_v9.1.2/highcharts.js">
+    </script>
+    <script src="~/Content/Highcharts_v9.1.2/exporting.js">
+    </script>
+    <script src="~/Content/Highcharts_v9.1.2/export-data.js">
+    </script>
+    <script src="~/Content/Highcharts_v9.1.2/accessibility.js">
+    </script>
+    <script src="~/Content/Highcharts_v9.1.2/no-data-to-display.js">
+    </script>
+    <script src="~/Content/Highcharts_v9.1.2/annotations.js">
+    </script>
+    <script src="~/Content/Highcharts_v9.1.2/highcharts-more.js">
+    </script>
+
+    <link href="~/Content/css/pdti.css" rel="stylesheet" />
+</head>
+
+
+<body class="no-skin">
+    <div id="hinet-preloader" style="position: absolute;z-index: 20000;width: 100%;height: 100%;display:none;">
+        <div style="background-color: #ffffff;padding: 10px 30px;width: 200px;border-radius: 10px;border: 2px solid #2980b9;position: fixed;
+                    top: 40%;left: 50%;margin-left: -100px;-webkit-box-shadow: 4px 7px 25px -7px  rgba(0,0,0,0.75);-moz-box-shadow:4px 7px 25px -7px  rgba(0,0,0,0.75);box-shadow: 4px 7px 25px -7px  rgba(0,0,0,0.75);">
+            <p style="text-align: center;margin-top: 10px;font-weight: bold;color: #2980b9;font-size: 1.2em;">Đang xử lý...</p><p></p>
+            <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+            <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" viewBox="0 0 128 16" xml:space="preserve"><rect x="0" y="0" width="100%" height="100%" fill="#FFFFFF" /><path fill="#949494" fill-opacity="0.42" d="M6.4,4.8A3.2,3.2,0,1,1,3.2,8,3.2,3.2,0,0,1,6.4,4.8Zm12.8,0A3.2,3.2,0,1,1,16,8,3.2,3.2,0,0,1,19.2,4.8ZM32,4.8A3.2,3.2,0,1,1,28.8,8,3.2,3.2,0,0,1,32,4.8Zm12.8,0A3.2,3.2,0,1,1,41.6,8,3.2,3.2,0,0,1,44.8,4.8Zm12.8,0A3.2,3.2,0,1,1,54.4,8,3.2,3.2,0,0,1,57.6,4.8Zm12.8,0A3.2,3.2,0,1,1,67.2,8,3.2,3.2,0,0,1,70.4,4.8Zm12.8,0A3.2,3.2,0,1,1,80,8,3.2,3.2,0,0,1,83.2,4.8ZM96,4.8A3.2,3.2,0,1,1,92.8,8,3.2,3.2,0,0,1,96,4.8Zm12.8,0A3.2,3.2,0,1,1,105.6,8,3.2,3.2,0,0,1,108.8,4.8Zm12.8,0A3.2,3.2,0,1,1,118.4,8,3.2,3.2,0,0,1,121.6,4.8Z" /><g><path fill="#2980b9" fill-opacity="1" d="M-42.7,3.84A4.16,4.16,0,0,1-38.54,8a4.16,4.16,0,0,1-4.16,4.16A4.16,4.16,0,0,1-46.86,8,4.16,4.16,0,0,1-42.7,3.84Zm12.8-.64A4.8,4.8,0,0,1-25.1,8a4.8,4.8,0,0,1-4.8,4.8A4.8,4.8,0,0,1-34.7,8,4.8,4.8,0,0,1-29.9,3.2Zm12.8-.64A5.44,5.44,0,0,1-11.66,8a5.44,5.44,0,0,1-5.44,5.44A5.44,5.44,0,0,1-22.54,8,5.44,5.44,0,0,1-17.1,2.56Z" /><animateTransform attributeName="transform" type="translate" values="23 0;36 0;49 0;62 0;74.5 0;87.5 0;100 0;113 0;125.5 0;138.5 0;151.5 0;164.5 0;178 0" calcMode="discrete" dur="1170ms" repeatCount="indefinite" /></g></svg>
+        </div>
+    </div>
+    <div id="main" class="content__main pdr0 pading-no-body" role="main">
+
+        <div class=" ace-save-state" id="main-container">
+            <script type="text/javascript">
+                try { ace.settings.loadState('main-container') } catch (e) { }
+            </script>
+
+            <div id="sidebar" class="sidebar responsive ace-save-state sidebar-left-menu">
+                <script type="text/javascript">
+                    try { ace.settings.loadState('sidebar') } catch (e) { }
+                </script>
+                @Html.Partial("_SidebarShortcutsPartial")
+                @Html.Partial("_MenuPartial")
+            </div>
+
+            <div class="main-content">
+                <div class="main-content-inner">
+                    <div class="border-bt">
+                        <div class="col-sm-9 pdl0 header-left">
+                            <div class="from-search-menu">
+                                <div class="chucnang">
+                                    <ul>
+                                        <li class="iconMenu">
+                                            <button type="button" class="navbar-toggle show in" id="btn-MenuLeft">
+                                                <span class="sr-only">Toggle navigation</span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown d-inline-block">
+                                    <a class="d-style btn-lighter-success btn-bgc-tp shadow-sm text-600 letter-spacing px-4 dropdown-toggle mb-1" href="#" role="button" id="dropdownMenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                        <span>Thêm tài liệu</span>
+                                    </a>
+
+                                    <div style="min-width: 240px;" class="dropdown-menu dropdown-caret px-1px py-2px border-1 brc-default-l1 shadow radius-1 dropdown-animated animated-2">
+                                        <a href="javascript:createFolder()" class="dropdown-item btn btn-outline-lightgrey">
+                                            <i class="fa fa-folder-o" aria-hidden="true" style="color:yellow"></i>
+                                            Thư mục
+                                        </a>
+
+                                        <div class="dropdown-divider my-0"></div>
+
+                                        <a href="javascript:createFiles()" class="dropdown-item btn btn-outline-lightgrey">
+                                            <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                                            Tài liệu đính kèm
+                                        </a>
+
+                                        <div class="dropdown-divider my-0"></div>
+
+                                        @*<a href="javascript:createFiles()" class="dropdown-item btn btn-outline-lightgrey">
+                                                <i class="fa fa-file-word-o" aria-hidden="true"></i>
+                                                Word document
+                                            </a>
+                                            <div class="dropdown-divider my-0"></div>
+
+                                            <a href="javascript:createFiles()" class="dropdown-item btn btn-outline-lightgrey">
+                                                <i class="fa fa-file-excel-o" aria-hidden="true"></i>
+                                                Excel document
+                                            </a>
+                                            <div class="dropdown-divider my-0"></div>
+
+                                            <a href="javascript:createFiles()" class="dropdown-item btn btn-outline-lightgrey">
+                                                <i class="far fa-image"></i>
+                                                File ảnh
+                                            </a>*@
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 pdl0 header-right">
+                            @if (userInfo != null)
+                            {
+                                <ul>
+                                    <li class="dangxuat">
+                                        <img src="/@userInfo.Avatar" onerror="this.src='/assets/images/images1/admin.png';" alt="" class="imgArrow" /><i class="fa fa-angle-down imgArrow" aria-hidden="true" id=""></i>
+                                        <ul class="dropdown-menu pull-right" id="infoboxpersonal">
+
+                                            <li class="li-thongtin-admin">
+                                                <div class="class-img-admin">
+                                                    <div class="img-thongtin">
+                                                        <img src="/@userInfo.Avatar" onerror="this.src='/assets/images/images1/admin.png';" alt="" aria-hidden="true" />
+                                                    </div>
+                                                    <div class="class-name" style="color: #505050">
+                                                        @userInfo.FullName
+                                                    </div>
+                                                </div>
+                                                <div class="chucnang-admin">
+                                                    <a href="/UserArea/User/DetailUser" id="btn--update-info-layout" class="a-button a-online">
+                                                        <i class="fa fa-info-circle fa-lg class-a-icon"></i> Thông tin cá nhân
+                                                    </a>
+                                                    <a href="/AccountAdmin/ChangePassword" id="btn--update-password-layout" class="a-button a-online">
+                                                        <i class="fa fa-key fa-lg class-a-icon"></i> Đổi mật khẩu
+                                                    </a>
+                                                </div>
+                                                <div class="chucnang-dangxuat">
+                                                    <a href="/AccountAdmin/LogOff" class="a-button a-online" data-action="userLogout">
+                                                        <i class="fa fa-sign-out fa-lg class-a-icon class-hv-icon"></i> Đăng xuất
+                                                    </a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li id="NotiArea" class="purple dropdown-modal">
+                                        @{Html.RenderAction("ShowNotification", "Notification", new { @area = "NotificationArea" });}
+                                    </li>
+
+                                </ul>
+                            }
+
+                            @{Html.RenderAction("RenderFileHuongDan", "Dashboard", new { @area = "DashboardArea" });}
+
+                        </div>
+                    </div>
+                    @if (ViewBag.ModuleName != "Dashboard" && (ViewBag.EnableBreadcrumbs != false))
+                    {
+                        <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+                            <div class="page-header">
+                                <h1 class="width-100">
+                                    <b><a href="/DashboardArea/Dashboard">Dashboard</a></b>
+                                    <small>
+                                        <i class="ace-icon fa fa-angle-double-right"></i>
+                                        @Html.Raw(ViewBag.PageName)
+                                    </small>
+                                    <div class="action-right-bar">
+                                        @RenderSection("ActionBarRight", false)
+                                        <a href="#" class="btn btn-sm btn-primary" role="button" onclick="goBack()">
+                                            <i class="ace-icon fa fa-reply"></i>
+                                            Quay lại
+                                        </a>
+                                    </div>
+                                </h1>
+
+                            </div>
+                            <div id="KhuVucQuanLy dropdown" style="margin-left:20px;">
+                            </div>
+                        </div>
+                    }
+                    <div class="page-content">
+                        <div>
+                            @RenderBody()
+                        </div>
+                        <div id="MasterModalFixed" class="modal fade">
+                        </div>
+                        <div id="MasterModal" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="static">
+                        </div>
+
+                        <div id="WorkFlowModal" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="static" style="overflow:scroll !important">
+                        </div>
+                        @Html.Partial("_FooterPartial")
+                    </div><!-- /.page-content -->
+                </div>
+            </div><!-- /.main-content -->
+            <a href="#" id="btn-scroll-up" onclick="scroll()" class="btn-scroll-up btn btn-sm btn-inverse">
+                <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+            </a>
+        </div>
+
+        <script>
+            //var width = $(window).width();
+            //var onResize = function () {
+            //    var currentWidth = $(window).width();
+            //    if (currentWidth <= 480) {
+            //        $('body').addClass('body-miniMenu')
+            //    } else {
+            //        $('body').removeClass('body-miniMenu')
+            //    }
+            //}
+            //$(window).on('resize', function () {
+            //    onResize();
+            //});
+            function goBack() {
+                window.location = document.referrer;
+            }
+             var jsUserId = parseInt(eval('@jsUserId'));
+           var jsUserName = '@jsUserName';
+            var typeAcc = 'BussinessUser';
+
+            $(document).ready(function () {
+                $(".table-scroll .hinet-table").clone(true).appendTo('.table-scroll').addClass('clone');
+
+                var endofTextRun = function () {
+                    $("#boxRunText").empty();
+                }
+
+                $(document).on("hover", ".body-miniMenu .admin-menu-left li", function () {
+                    alert("c");
+                    $(".admin-menu-left li").hide();
+                    $(this).show();
+                }, function () {
+                    $(this).hide('open');
+                });
+
+
+                document.addEventListener('DOMContentLoaded', function () {
+                   
+                    var dropdownItem = document.querySelector('.admin-menu-left > li');
+                    var dropdown = document.querySelector('.submenu');
+
+                    dropdownItem.addEventListener('mouseenter', function (e) {
+                        dropdown.classList.add('open');
+                    });
+                    dropdownItem.addEventListener('mouseleave', function () {
+                        dropdown.classList.remove('open');
+                    })
+
+                })
+
+
+                $("#nav-search-input").keyup(function (e) {
+                    if (e.key === 'Enter' || e.keyCode === 13) {
+                        var value = $('#nav-search-input').val().trim();
+                        if (value) {
+                            location.href = "/HoSoDichVuCongArea/HoSoDichVuCongTimKiemNhanh/Index?keyword=" + value;
+                        }
+                    }
+                });
+
+                $(document).ready(function () {
+                    setInterval(function () {
+                        var firstItemNoti = $("#boxRunText .textItem.active").each(function () {
+                            $(this).remove();
+                        });
+                        showBroadcastNoti();
+                    }, 10000)
+                });
+
+                $(document).ajaxStart(function () {
+                    $("#hinet-preloader").css("display", "block");
+                }).ajaxStop(function () {
+                    $("#hinet-preloader").css("display", "none");
+                });
+
+                $(window).scroll(function (event) {
+                    var scroll = $(window).scrollTop();
+                    if (scroll > 45) {
+                        $("#sidebar").addClass("fixtop0");
+                        $(".btn-scroll-up").css("display", "block")
+                    } else {
+                        $(".btn-scroll-up").css("display", "none")
+                        $("#sidebar").removeClass("fixtop0");
+                    }
+                });
+
+                //resize man hinh
+                /*onResize();*/
+            });
+
+
+            var full_path = location.href.split("#")[0];
+            $(".no-skin .nav-list > li .submenu > li > a").each(function () {
+                var $this = $(this);
+                if ($this.prop("href").split("#")[0] == full_path) {
+                    $(this).parent().addClass("active_trail");
+                }
+            });
+
+            $(window).load(function () {
+                var count = $(".nav-list").find(".menuLi").length;
+                if (count == 1) {
+                    $(".nav-list .menuLi").addClass("open");
+                    $(".nav-list .menuLi .submenu ").addClass("nav-show");
+                }
+            });
+
+            $("#confirmLogout").on("click",
+                function () {
+                    $.confirm({
+                        title: 'XÁC NHẬN ĐĂNG XUẤT',
+                        content: 'Bạn muốn thực hiện thao tác này ?',
+                        buttons: {
+                            confirm: {
+                                text: 'Đăng xuất',
+                                btnClass: 'btn-danger',
+                                keys: ['enter', 'shift'],
+                                action: function () {
+                                    window.location.href = "/AccountAdmin/LogOff";
+                                }
+                            },
+                            cancel: {
+                                text: 'Huỷ bỏ',
+                                btnClass: 'btn-secondary'
+                            }
+                        }
+                    });
+                });
+
+
+            $('.page-content').on('hidden.bs.modal', function (e) {
+                if (e.target.id == "MasterModalFixed" || e.target.id == "MasterModal" || e.target.id == "WorkFlowModal" || e.target.id == "ViewKeKhaiTrucTuyenModal") {
+                    $(e.target).empty();
+                } else {
+                    $(e.target).remove();
+                }
+                if ($('.modal').hasClass('in')) {
+                    $('body').addClass('modal-open');
+                }
+            });
+
+
+            $(document).ready(function () {
+                //Menu main
+                var full_path = location.href.split("#")[0];
+                $(".admin-menu-left > li > ul > li > ul > li > a").each(function () {
+                    var $this = $(this);
+                    if ($this.prop("href").split("#")[0] == full_path) {
+                        $(this).parent().addClass("active_trail");
+                    }
+                });
+                var $pathname = window.location.pathname;
+            });
+
+            $(document).ready(function () {
+                $("#left-panel nav ul li.open > a > b em").removeClass("fa-angle-left").addClass("fa-angle-down");
+                $(".dangxuat").click(function () {
+                    $(".dangxuat .dropdown-menu.pull-right").toggleClass("show");
+                });
+
+            });
+            $(document).on("click", function (event) {
+                if ($(event.target).closest("#infoboxpersonal").length == 0) {
+                    if ($(event.target).closest(".nameUser").length == 0 && $(event.target).closest(".imgArrow").length == 0) {
+                        $("#infoboxpersonal").removeClass("show");
+                        $("#infoboxpersonal").hide();
+                    }
+                }
+
+            });
+
+            $(".imgArrow").on("click", function (evnet) {
+                if ($("#infoboxpersonal").hasClass("show")) {
+                    $("#infoboxpersonal").hide();
+                } else {
+                    $("#infoboxpersonal").show();
+                }
+
+            });
+
+            var listListOpen = [];
+
+            $("#btn-MenuLeft").click(function () {
+                $("body").toggleClass("body-miniMenu");
+                $("#left-panel").toggleClass("miniMenu");
+                if (!$("#left-panel").hasClass("miniMenu")) {
+                    $("#left-panel").addClass("toggleMenu");
+
+                    //mở lại các menu đã đóng
+                    var countLiOpen = listListOpen.length;
+                    if (countLiOpen > 0) {
+                        for (var i = 0; i < countLiOpen; i++) {
+                            $('#' + listListOpen[i]).find('.nav-show').css('display', 'block')
+                        }
+                    }
+                } else {
+                    $("#left-panel").removeClass("toggleMenu");
+
+                    //đóng các menu đang mở
+                    $('.liactive .nav-show').css('display', 'none');
+
+                    //lại các menu đang mở
+                    $('.liactive').each(function (index, item) {
+                        if ($(item).hasClass('open')) {
+                            listListOpen.push($(item).attr('id'));
+                        }
+                    })
+                }
+            });
+
+            function onShowThongBao(idThongBao) {
+                onOpenEditModal('/NotificationArea/Notification/ShowChiTietThongBao', {
+                    id: idThongBao
+                }, 'post');
+            }
+        </script>
+        @RenderSection("scripts", required: false)
+
+        @Html.Partial("_addMenuPartial")
+        <script src="~/assets/js/jquery.colorbox.min.js">
+        </script>
+        <script src="~/assets/js/jquery-confirm.js">
+        </script>
+        <script src="~/Scripts/jquery.signalR-2.4.1.min.js">
+        </script>
+        <script src='/signalr/js'>
+        </script>
+        <script src="~/Scripts/ThongBaoHub.js">
+        </script>
+    </div>
+    <div id="createFolderModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Tạo thư mục</h4>
+                </div>
+                <div class="modal-body">
+                    <input name="tenthumuc" class="form-control" id="tenthumuc" placeholder="Điền tên thư mục" autofocus="autofocus" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" onclick="submitCreateFolder()">
+                        <i class="fa fa-save"></i>&nbsp;Lưu
+                    </button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        <i class="fa fa-times"></i>&nbsp;Đóng
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="editFolderModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Sửa tên file/ thư mục</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="idtenthumucorfile" />
+                    <input name="edittenthumuc" id="edittenthumuc" placeholder="Điền tên file/ thư mục" style="width:100%; height:35px" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" onclick="submitEditFileOrFolder()">Cập nhật thông tin</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="createFileModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            Modal content
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Upload file</h4>
+                </div>
+                <div class="modal-body">
+                    @Html.Partial("~/Views/Shared/_UploadEfile.cshtml", new List<TaiLieuDinhKem>(),
+                    new ViewDataDictionary { { "subfolderid", 0 },
+                    { "AllowEdit", "1" } })
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" onclick="submitCreateFolder()">
+                        <i class="fa fa-save"></i>&nbsp;Lưu
+                    </button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        <i class="fa fa-close"></i>&nbsp;Đóng
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="~/Scripts/modules/efile/efile.js">
+    </script>
+</body>
+</html>

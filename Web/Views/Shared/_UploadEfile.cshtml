@@ -1,0 +1,73 @@
+﻿@using Model.Entities;
+@using CommonHelper.String;
+
+@model List<TaiLieuDinhKem>
+@{
+    int subfolderid = ViewData["subfolderid"].ToString().ToIntOrZero();
+    var isAllowEdit = ViewData["AllowEdit"] == null ? false : ViewData["AllowEdit"].ToString().ToIntOrZero() > 0;
+   
+}
+
+<link href="~/Content/LibUploadFile/uploadfile.css" rel="stylesheet" />
+<style>
+    .ajax-file-upload-filename {
+        max-width: 250px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: inline-block;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        word-wrap: break-word;
+        overflow: hidden;
+        margin-right: 20px;
+        line-height: 2.8;
+    }
+
+    
+</style>
+
+@if (isAllowEdit)
+{
+    <div class="input-multiple-file-onlyefile" data-id-folder="@subfolderid">Tải lên</div>
+}
+
+<div class="wf100" id="moduleuploadefile">
+    @if (Model != null && Model.Any())
+    {
+        int count = 0;
+        <div class="boxUploads wf100")>
+            @foreach (var item in Model)
+            {
+                string valueDinhDangFile = !string.IsNullOrEmpty(item.DinhDangFile) ? item.DinhDangFile.Trim().ToLower() : "";
+
+                <div class="ajax-file-upload-container" id="ROW_TAILIEU_@item.Id">
+                    <div class="ajax-file-upload-statusbar" style="width: inherit;border:1px solid #808080;color:black">
+                        <div class="ajax-file-upload-filename" style="width:100%">
+                            <span><i class="fa fa-paperclip"></i>@(count + 1)</span>
+                            @item.TenTaiLieu
+                        </div>
+                        <div class="ajax-file-upload-green" style="">
+                            <a href="javascript:void(0)" onclick="onTaiFile(@item.Id)" download style="color: white !important">
+                                <i class="fa fa-download"></i> Tải xuống
+                            </a>
+                        </div>
+                        @if (valueDinhDangFile.Contains(".pdf") || valueDinhDangFile.Contains(".docx") || valueDinhDangFile.Contains(".jpg") || valueDinhDangFile.Contains(".png"))
+                        {
+                            <div class="ajax-file-upload-green" style="">
+                                <a href="javascript:void(0)" onclick="onXemFile(@item.Id,'@item.LoaiTaiLieu')" style="color:white !important">
+                                    <i class="fa fa-eye" aria-hidden="true"></i> Xem nội dung
+                                </a>
+                            </div>
+                        }
+
+                        @if (isAllowEdit)
+                        {
+                            <div class="ajax-file-upload-red" style=""><a href="javascript:onXoaFile(@item.Id)"><i class="mdi mdi-delete"></i> Xóa</a></div>
+                        }
+                    </div>
+                </div>
+                count++;
+            }
+        </div>       
+    }
+</div>

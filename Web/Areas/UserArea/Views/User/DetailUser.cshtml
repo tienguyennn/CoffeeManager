@@ -1,0 +1,170 @@
+﻿@using Web.Models
+@using Service.Constant
+@using Web.Areas.UserArea.Models
+@using CommonHelper.String
+@using Web.Bootstrap_Html_Helpers
+@model ThongTinCaNhanViewModel
+
+@{
+    ViewBag.Title = "Thông tin tài khoản";
+    Layout = "~/Views/Shared/_LayoutAce.cshtml";
+    ViewBag.ModuleName = "Thông tin tài khoản";
+    ViewBag.PageName = "Thông tin tài khoản";
+
+}
+<style type="text/css">
+    .profile-user-info .profile-info-name {
+        text-align: left;
+        font-weight: bold;
+    }
+</style>
+
+@section ActionBarRight{
+
+    <a href="javascript:void(0)"
+       onclick="EditAction('/UserArea/User/EditAvatar/@Model.ThongTinCaNhan.Id')"
+       class="btn btn-primary btn-sm ">
+        <i class="glyphicon glyphicon-edit"></i> Cập nhật ảnh đại diện
+    </a>
+    <a href="javascript:void(0)"
+       onclick="EditAction('/UserArea/User/EditThongTinCaNhan/@Model.ThongTinCaNhan.Id')"
+       class="btn btn-success btn-sm">
+        <i class="glyphicon glyphicon-edit"></i> Sửa thông tin
+    </a>
+}
+
+<div id="user-profile-2" class="user-profile">
+    <div class="tabbable">
+        <ul class="nav nav-tabs padding-18">
+            <li class="active">
+                <a data-toggle="tab" href="#home" aria-expanded="true">
+                    <i class="green ace-icon fa fa-user bigger-120"></i>
+                    Thông tin cá nhân
+                </a>
+            </li>
+        </ul>
+
+        <div class="tab-content no-border padding-24">
+            <div id="home" class="tab-pane active">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3 center">
+                        <span class="profile-picture">
+                            <img class="editable img-responsive center-block" alt="Ảnh đại diện @Model.ThongTinCaNhan.FullName"
+                                 src="/@Model.ThongTinCaNhan.Avatar"
+                                 onerror="this.src='/assets/images/images1/admin.png';"
+                                 id="avatar2">
+                        </span>
+
+                        <div class="space space-4"></div>
+
+                        <div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
+                            <div class="inline position-relative">
+                                <a href="#" class="user-title-label dropdown-toggle" data-toggle="dropdown">
+                                    <i class="ace-icon fa fa-circle light-green"></i>
+                                    &nbsp;
+                                    <span class="white">
+                                        @Html.InfoLabel(Model.ThongTinCaNhan.FullName)
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="space-6"></div>
+
+                        <div class="profile-contact-info">
+                            <div class="profile-contact-links align-left">
+                                <a href="#" class="btn btn-link">
+                                    <i class="ace-icon fa fa-phone bigger-120 green"></i>
+                                    @Html.InfoLabel(Model.ThongTinCaNhan.PhoneNumber)
+                                </a>
+                                <br>
+                                <a href="#" class="btn btn-link">
+                                    <i class="ace-icon fa fa-envelope bigger-120 pink"></i>
+                                    @Html.InfoLabel(Model.ThongTinCaNhan.Email)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-9">
+                        <div class="profile-user-info profile-user-info-striped">
+                            <div class="profile-info-row">
+                                <div class="profile-info-name">
+                                    Tên tài khoản
+                                </div>
+
+                                <div class="profile-info-value">
+                                    @Html.InfoLabel(Model.ThongTinCaNhan.UserName)
+                                </div>
+                            </div>
+
+                            <div class="profile-info-row">
+                                <div class="profile-info-name">
+                                    Họ tên
+                                </div>
+
+                                <div class="profile-info-value">
+                                    @Html.InfoLabel(Model.ThongTinCaNhan.FullName)
+                                </div>
+                            </div>
+
+                            <div class="profile-info-row">
+                                <div class="profile-info-name">
+                                    Giới tính
+                                </div>
+
+                                <div class="profile-info-value">
+                                    @Html.InfoLabel(Model.ThongTinCaNhan.Gender == 1 ? "Nam" : "Nữ")
+                                </div>
+                            </div>
+
+                            <div class="profile-info-row">
+                                <div class="profile-info-name">
+                                    Ngày sinh
+                                </div>
+
+                                <div class="profile-info-value">
+                                    @Html.InfoLabel(Model.ThongTinCaNhan.BirthDay.ToVnDateTimeString())
+                                </div>
+                            </div>
+
+                            <div class="profile-info-row">
+                                <div class="profile-info-name">
+                                    Địa chỉ email
+                                </div>
+
+                                <div class="profile-info-value">
+                                    @Html.InfoLabel(Model.ThongTinCaNhan.Email)
+                                </div>
+                            </div>
+
+                            <div class="profile-info-row">
+                                <div class="profile-info-name">
+                                    Điện thoại
+                                </div>
+
+                                <div class="profile-info-value">
+                                    @Html.InfoLabel(Model.ThongTinCaNhan.PhoneNumber)
+                                </div>
+                            </div>
+
+
+
+                            <div class="profile-info-row">
+                                <div class="profile-info-name">
+                                    Địa chỉ
+                                </div>
+
+                                <div class="profile-info-value">
+                                    @Html.InfoLabel(Model.ThongTinCaNhan.Address)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-20"></div>
+            </div>
+        </div>
+    </div>
+</div>

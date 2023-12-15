@@ -1,0 +1,346 @@
+﻿@media only screen and (max-width: 480px) {
+    
+    #MasterModal .modal-dialog {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    #MasterModal {
+        padding: 0 !important;
+    }
+
+    #nav-search {
+        display: none;
+    }
+
+    #navbar-container {
+        display: block !important;
+    }
+
+    #ChuyenHoSoForm .modal-body .form-group > .row .col-sm-8 {
+        width: 78%;
+    }
+
+    .runtext-container {
+        height: auto !important;
+    }
+
+    #navbar ul.nav {
+        float: right !important;
+    }
+
+    #nav-menu {
+        background-color: #1798e2 !important;
+    }
+
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+    }
+
+        .navbar-brand > strong {
+            font-size: 17px;
+        }
+
+    #sidebar:after {
+        height: auto !important;
+    }
+
+    .block_infocommon h2 {
+        margin-left: 0 !important;
+        margin-bottom: 5px !important;
+        margin-top: 0 !important;
+    }
+
+    div.listDvcReport {
+        padding-right: 22px !important;
+        padding: 80px 22px 10px 22px !important;
+    }
+
+    .block_infocommon h2, .newExcept h2, .processing h2 {
+        float: left;
+        width: 100%;
+    }
+/*
+    .main-content {
+        padding-bottom: 40px;
+    }*/
+
+    .table-custom tbody tr td, .hinet-table tbody tr td {
+        font-size: 14px;
+    }
+
+    #reportCt table tr td:first-child, .newsRegis table tr td:first-child,
+    #reportCt table thead th:first-child, .newsRegis table thead th:first-child {
+        display: none;
+    }
+
+    .footer .footer-inner .footer-content {
+        line-height: 1.2;
+    }
+
+    .block-step.bieumau table tr td:nth-child(2) {
+        width: 50%;
+    }
+
+    .block-step.bieumau table tr td:nth-child(3) {
+        width: 30%;
+    }
+
+        .block-step.bieumau table tr td:nth-child(3) .nameStep {
+            word-break: break-all;
+        }
+
+    .sidebar.responsive span {
+        white-space: normal !important;
+    }
+
+    .login-form-brand {
+        background-image: unset !important;
+    }
+
+    .actionGr {
+        position: relative !important;
+        margin-bottom: 15px;
+    }
+
+    .stepAction {
+        margin-top: 10px !important;
+    }
+
+    h2.group-tittle {
+        font-size: 22px;
+    }
+
+    .hntbl-cover-tableScroll {
+        float: left;
+        width: 100%;
+        overflow: scroll;
+    }
+
+    .ct-row ul.nav, .ct-row h4 {
+        width: 98% !important;
+    }
+
+    .ct-row ul li a.nav-link:first-child {
+        padding-left: 0 !important;
+        padding-top: 2px !important;
+    }
+
+    .fixed-modal-right .modal-body {
+        margin-top: 65px !important;
+    }
+
+    .ct-row {
+        display: unset !important;
+    }
+
+    #navbar-container {
+        display: flex;
+    }
+
+    #MasterModalFixed .modal-dialog {
+        width: 100% !important;
+        margin: auto !important;
+    }
+
+    #navbar-container .navbar-header {
+        flex-grow: 1;
+    }
+
+    .cnt_thongbao .title-bar {
+        float: left;
+        width: 100%;
+    }
+
+    .page-header {
+        margin-bottom: 0 !important;
+        position: static !important;
+    }
+
+    .block_infocommon {
+        padding: 0 !important;
+    }
+
+    #navbar ul.nav {
+        background: #1798e2;
+    }
+
+    #ChuyenHoSoForm .modal-body .form-group > .row {
+        display: flex;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width:768px) {
+    .modal-dialog {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    #MasterModal {
+        padding: 0 !important;
+    }
+
+    #nav-search {
+        display: none;
+    }
+
+    #navbar-container {
+        display: block !important;
+    }
+
+    .runtext-container {
+        height: auto !important;
+    }
+
+    #navbar ul.nav {
+        float: right !important;
+    }
+
+    #nav-menu {
+        background-color: #1798e2 !important;
+    }
+
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+    }
+
+        .navbar-brand > strong {
+            font-size: 17px;
+        }
+
+  
+
+    #sidebar:after {
+        height: auto !important;
+    }
+
+    .block_infocommon h2 {
+        margin-left: 0 !important;
+        margin-bottom: 5px !important;
+        margin-top: 0 !important;
+    }
+
+    div.listDvcReport {
+        padding-right: 22px !important;
+        padding: 80px 22px 10px 22px !important;
+    }
+
+    .block_infocommon h2, .newExcept h2, .processing h2 {
+        float: left;
+        width: 100%;
+    }
+/*
+    .main-content {
+        padding-bottom: 20px;
+    }
+*/
+    .table-custom tbody tr td, .hinet-table tbody tr td {
+        font-size: 14px;
+    }
+
+    #reportCt table tr td:first-child, .newsRegis table tr td:first-child,
+    #reportCt table thead th:first-child, .newsRegis table thead th:first-child {
+        display: none;
+    }
+
+    .footer .footer-inner .footer-content {
+        line-height: 1.2;
+    }
+
+    .block-step.bieumau table tr td:nth-child(2) {
+        width: 50%;
+    }
+
+    .block-step.bieumau table tr td:nth-child(3) {
+        width: 30%;
+    }
+
+        .block-step.bieumau table tr td:nth-child(3) .nameStep {
+            word-break: break-all;
+        }
+
+    .sidebar.responsive span {
+        white-space: normal !important;
+    }
+
+    .login-form-brand {
+        background-image: unset !important;
+    }
+
+    .actionGr {
+        position: relative !important;
+        margin-bottom: 15px;
+    }
+
+    .stepAction {
+        margin-top: 10px !important;
+    }
+
+    h2.group-tittle {
+        font-size: 22px;
+    }
+
+    .hntbl-cover-tableScroll {
+        float: left;
+        width: 100%;
+        overflow: scroll;
+    }
+
+    .ct-row ul.nav, .ct-row h4 {
+        width: 98% !important;
+    }
+
+    .ct-row ul li a.nav-link:first-child {
+        padding-left: 0 !important;
+        padding-top: 2px !important;
+    }
+
+    .fixed-modal-right .modal-body {
+        margin-top: 65px !important;
+    }
+
+    .ct-row {
+        display: unset !important;
+    }
+
+    #navbar-container {
+        display: block;
+    }
+
+    #MasterModalFixed .modal-dialog {
+        width: 100% !important;
+        margin: auto !important;
+    }
+
+    #navbar-container .navbar-header {
+        width: 100%;
+        display: block;
+    }
+
+    .cnt_thongbao .title-bar {
+        float: left;
+        width: 100%;
+    }
+
+    .page-header {
+        margin-bottom: 0 !important;
+        position: static !important;
+    }
+
+    .block_infocommon {
+        padding: 0 !important;
+    }
+
+    #navbar ul.nav {
+        background: #1798e2;
+    }
+    .block_infocommon .col-sm-7, .blockDvct .newExcept, .blockDvct .processing,
+    .block_infocommon .col-sm-5 {
+        width: 100%;
+    }
+
+}

@@ -1,0 +1,75 @@
+<div id="collapseDiv" class="panel-collapse collapse" aria-expanded="false" role="tabpanel">
+    <div class="well SearchBox">
+
+        @using (Ajax.BeginForm("searchData", "DatBan", new { Area = "DatBanArea" },
+            new AjaxOptions()
+            {
+                HttpMethod = "POST",
+                OnFailure = "AjaxFormError",
+                OnSuccess = "AjaxSearchSuccess",
+            }, new { }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="row row-block">
+                <div class="col-md-6 row-block">
+                    <div class="col-md-4 txt-label">Họ</div>
+                    <div class="col-md-8">
+                        <input class="form-control width100" type="text" name="HoFilter" />
+                    </div>
+                </div>
+
+                <div class="col-md-6 row-block">
+                    <div class="col-md-4 txt-label">Tên</div>
+                    <div class="col-md-8">
+                        <input class="form-control width100" type="text" name="TenFilter" />
+                    </div>
+                </div>
+
+                <div class="col-md-6 row-block">
+                    <div class="col-md-4 txt-label">Thời gian</div>
+                    <div class="col-md-8 row">
+                        <div class="col-sm-6">
+                            <input class="form-control width100" type="text" id="ThoiGianFromFilter" name="ThoiGianFromFilter" placeholder="Từ" />
+
+                        </div>
+                        <div class="col-sm-6">
+                            <input class="form-control width100" type="text" id="ThoiGianToFilter" name="ThoiGianToFilter" placeholder="Đến" />
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 row-block">
+                    <div class="col-md-4 txt-label">Điện thoại</div>
+                    <div class="col-md-8">
+                        <input class="form-control width100" type="text" name="DienThoaiFilter" />
+                    </div>
+                </div>
+
+                <div class="col-md-6 row-block">
+                    <div class="col-md-4 txt-label">Trạng thái</div>
+                    <div class="col-md-8">
+                        @Html.DropDownList("TrangThaiFilter", Service.Common.ConstantExtension.GetDropdownData<Service.Constant.TrangThaiConstant>(), "--Chọn--", new { @class = "form-control" })
+                    </div>
+                </div>
+
+
+                <div class="col-md-12 center" style=" margin-top:20px;">
+                    <button id="btnSearch" type="submit" class="btn btn-labeled btn-primary btn-sm">
+                        <span class="btn-label">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </span>
+                        Tìm kiếm
+                    </button>
+                    <a aria-expanded="false" href="#collapseDiv" data-toggle="collapse" role="button" class="btn btn-labeled btn-danger btn-sm">
+                        <span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span>
+                        Đóng
+                    </a>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>
+
+

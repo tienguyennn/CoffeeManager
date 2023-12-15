@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "DetailTinTuc";
+    Layout = "~/Views/Shared/_LayoutFrontEnd.cshtml";
+}
+<style>
+    .gioithieu h3 {
+        font-size: 20px;
+        font-weight: bold;
+        margin: 20px 0;
+    }
+
+    .gioithieu p {
+        font-size: 16px;
+    }
+
+    .bre-index {
+        width: 100%;
+        float: left;
+        margin: 30px 0;
+        border-bottom: 1px solid #ccc;
+    }
+
+        .bre-index .bre-2 {
+            display: inline-block;
+        }
+
+        .bre-index .bre-1 {
+            display: inline-block;
+            padding-right: 10px;
+        }
+
+            .bre-index .bre-1 span a:hover {
+                color: #c62d2f;
+            }
+
+            .bre-index .bre-1 span a {
+                text-transform: uppercase;
+                font-size: 16px;
+                color: #2c3e50;
+                font-family: RobotoBold;
+            }
+
+        .bre-index span a {
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #c62d2f;
+            font-family: Roboto;
+        }
+
+        .bre-index .bre-1 span::after {
+            padding-left: 5px;
+            font-size: 20px;
+            content: "\00BB";
+        }
+
+    .pd-15 {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+</style>
+@if (Model.TinTucGioiThieu != null)
+{
+    <div class="container ">
+        <div class="gioithieu">
+            <div class="pd-15">
+                <div class="bre-index" style="width:100%;float:left;">
+                    <div class="bre-1">
+                        <span>
+                            <a href="/"> Trang chủ</a>
+                        </span>
+                    </div>
+                    <div class="bre-2">
+                        <span>
+                            <a href="#">Chi tiết</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6"><img alt="" src="/@Model.TinTucGioiThieu.ImageThumb" width="100%" /></div>
+                <div class="col-sm-3"></div>
+            </div>
+            <div class="col-sm-12">
+                <h3>@Model.TinTucGioiThieu.Title</h3>
+                <h5> @Html.Raw(Model.TinTucGioiThieu.Content)</h5>
+                <p> @Model.TinTucGioiThieu.Description</p>
+            </div>
+        </div>
+    </div>
+}
+

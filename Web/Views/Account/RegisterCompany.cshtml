@@ -1,0 +1,488 @@
+﻿@model Web.Models.RegisterCompanyModel
+@using CommonHelper.Upload
+
+@{
+    ViewBag.Title = "Đăng ký tài khoản doanh nghiệp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var ListLinhVucKinhDoanh = Model.Product as List<SelectListItem>;
+    var dropdownListLoaiHinhKinhTe = ViewBag.dropdownListLoaiHinhKinhTe as List<SelectListItem>;
+    var dropdownListLoaiHinhKTChiTiet = ViewBag.dropdownListLoaiHinhKTChiTiet as List<SelectListItem>;
+}
+@using BotDetect.Web.Mvc;
+@using Web;
+@section HeadIncludes {
+    <link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl"
+          rel="stylesheet" type="text/css" />
+}
+
+<div id="FormDangKy">
+    <div class="container">
+        <div class="col-md-12 report">
+            <div class="title">
+                @*<h1>Đăng ký mở tài khoản</h1>
+                    <h4>* * *</h4>*@
+            </div>
+            <div class="register">
+                <div id="boxRegisterForm">
+                    <div class="row form">
+                        <div class="col-sm-12">
+                            @using (Html.BeginForm("RegisterCompany", "Account", FormMethod.Post, new { id = "RegisterCompanyForm", enctype = "multipart/form-data" }))
+                            {
+                                @Html.AntiForgeryToken();
+
+                                <div class="formBox">
+                                    <div class="fieldset-title">
+                                        Đăng ký tài khoản doanh nghiệp ICT
+                                    </div>
+                                    <div class="form-horizontal ">
+                                        <div class="alert alert-warning">
+                                            <strong><i class="fa fa-warning"></i> Lưu ý: </strong>
+                                            <span>Nếu mã số thuế đã tồn tại trên hệ thống vui lòng liên hệ quản trị hệ thống để lấy thông tin đăng nhập</span>
+
+                                        </div>
+                                        @*@Html.ValidationSummary(false)*@
+                                        <div class="text-center">
+                                        </div>
+                                        &nbsp; &nbsp;<span style="color:red">(*)</span> Thông tin bắt buộc phải nhập
+                                        <div class="boxFormHeader">
+                                            <span class="formHeader">1.Thông tin Doanh nghiệp</span>
+                                        </div>
+                                        <div class="form-group col-sm-12">
+                                            <label class="control-label col-sm-4"><span style="color:red">*</span>&nbsp;Tên doanh nghiệp</label>
+                                            <div class="col-sm-6">
+                                                @Html.TextBoxFor(m => m.TenThuongNhan, new { @class = "form-control required" })
+                                                @Html.ValidationMessageFor(m => m.TenThuongNhan, "", new { @class = "text-danger" })
+                                                <p class="messageNote">Ví dụ: Công Ty TNHH xyz hoặc Hộ kinh doanh xyz</p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group  col-sm-12">
+                                            <label class="control-label col-sm-4"><span style="color:red">*</span>&nbsp;Mã số thuế</label>
+                                            <div class="col-sm-6">
+                                                @Html.TextBoxFor(m => m.MaSoThue, new { @class = "form-control required" })
+                                                @Html.ValidationMessageFor(m => m.MaSoThue, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group  col-sm-12">
+                                            <label class="control-label col-sm-4"><span style="color:red">*</span>&nbsp;Ngày cấp MST</label>
+                                            <div class="col-sm-6">
+                                                @Html.DatePickerFor(m => m.NgayCapTaxCode, "autoclose=true", "todayBtn=true", "todayHighlight=true")
+                                                @Html.ValidationMessageFor(m => m.NgayCapTaxCode, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-sm-12">
+                                            <label class="control-label col-sm-4"><span style="color:red">*</span>&nbsp;Số đăng ký kinh doanh</label>
+                                            <div class="col-sm-6">
+                                                @Html.TextBoxFor(m => m.SoDangKyKinhDoanh, new { @class = "form-control required" })
+                                                @Html.ValidationMessageFor(m => m.SoDangKyKinhDoanh, "", new { @class = "text-danger" })
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-sm-12">
+                                            <label class="control-label col-sm-4"><span style="color:red">*</span>&nbsp;Nơi cấp đăng ký kinh doanh</label>
+                                            <div class="col-sm-6">
+                                                @Html.DropDownListFor(m => m.CityId, Model.dropdownListTinh, "--Chọn tỉnh--", new { @class = "required form-control select2Box" })
+                                                @Html.ValidationMessageFor(m => m.CityId, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-sm-12">
+                                            <label class="control-label col-sm-4"><span style="color:red">*</span>&nbsp;Logo công ty</label>
+                                            <div class="col-sm-6">
+                                                <input type="file" class="form-control required" name="Logo" onchange='CheckFileUpload(this,@UploadProvider.MaxSizeCommon,"@UploadProvider.ListExtensionCommonImage")' />
+
+                                                @Html.ValidationMessage("Logo", "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        @*<div class="form-group  col-sm-12">
+            <label class="control-label col-sm-4"><span style="color:red">*</span>&nbsp;Đăng ký kinh doanh</label>
+            <div class="col-sm-6">
+                <input type="file" name="FileAttach" required class="form-control" onchange='CheckFileUpload(this,@UploadProvider.MaxSizeCommon,"@UploadProvider.ListExtensionCommon")' multiple />
+                @Html.ValidationMessageFor(m => m.FileAttach, "", new { @class = "text-danger" })
+                <p class="messageNote">Đăng tải tệp tin mềm đăng ký kinh doanh, tệp tin có định dạng png, jpg, jpeg, doc, docx, pdf</p>
+            </div>
+        </div>*@
+
+                                        <div class="form-group  col-sm-12">
+                                            <label class="control-label col-sm-4"><span style="color:red">*</span>&nbsp;Chọn lĩnh vực</label>
+                                            <div class="col-sm-6">
+                                                @Html.DropDownListFor(m => m.CodeLinhVuc, ViewBag.dropdownListLinhVuc as List<SelectListItem>, "--Chọn lĩnh vực--", new { @class = "form-control select2Box" })
+                                                @Html.ValidationMessageFor(m => m.CodeLinhVuc, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group  col-sm-12">
+                                            <label class="control-label col-sm-4"><span style="color:red">*</span>&nbsp;Chọn ngành nghề</label>
+                                            <div class="col-sm-6">
+                                                @Html.DropDownListFor(m => m.CodeNganhNghe, ViewBag.dropdownNganhNghe as List<SelectListItem>, "--Chọn ngành nghề--", new { @class = "form-control select2Box" })
+                                                @Html.ValidationMessageFor(m => m.CodeNganhNghe, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group  col-sm-12">
+                                            <label class="control-label col-sm-4"><span style="color:red">*</span>&nbsp;Loại hình kinh tế</label>
+                                            <div class="col-sm-6">
+                                                @Html.DropDownListFor(m => m.LHKT, dropdownListLoaiHinhKinhTe, "--Chọn loại hình kinh tế--", new { @class = "form-control select2Box" })
+                                                @Html.ValidationMessageFor(m => m.LHKT, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group  col-sm-12">
+                                            <label class="control-label col-sm-4"><span style="color:red">*</span>&nbsp;Loại hình kinh tế chi tiết</label>
+                                            <div class="col-sm-6">
+                                                @Html.DropDownListFor(m => m.LHKT_CT,  dropdownListLoaiHinhKTChiTiet, "--Chọn loại hình kinh tế chi tiết--", new { @class = "form-control select2Box" })
+                                                @Html.ValidationMessageFor(m => m.LHKT_CT, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="clearBoth"></div>
+                                        <div class="form-group  col-sm-12">
+                                            <label class="control-label col-sm-4"><span style="color:red">*</span>&nbsp;Địa chỉ doanh nghiệp</label>
+                                            <div class="col-sm-2" data-diachinh="1">
+                                                @Html.DropDownListFor(m => m.TinhId, Model.dropdownListTinh, "--Chọn tỉnh--", new { @class = "required form-control select2Box" })
+                                                @Html.ValidationMessageFor(m => m.TinhId, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="col-sm-2" data-diachinh="1">
+                                                @Html.DropDownListFor(m => m.HuyenId, Model.dropdownListHuyen, "--Chọn huyện--", new { @class = "required form-control select2Box" })
+                                                @Html.ValidationMessageFor(m => m.HuyenId, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="col-sm-2" data-diachinh="1">
+                                                @Html.DropDownListFor(m => m.XaId, Model.dropdownListXa, "--Chọn xã--", new { @class = "required form-control select2Box" })
+                                                @Html.ValidationMessageFor(m => m.XaId, "", new { @class = "text-danger" })
+                                            </div>
+                                            <br />
+                                            <div class="col-sm-4">
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <p class="messageNote">Hãy chọn theo thứ tự Tỉnh -> Huyện -> Xã</p>
+                                            </div>
+                                        </div>
+                                        <div class="clearBoth"></div>
+                                        <div class="form-group  col-sm-12">
+                                            <label class="control-label col-sm-4"><span style="color:red">*</span>&nbsp;Số nhà</label>
+                                            <div class="col-sm-6">
+                                                @Html.TextBoxFor(m => m.DiaChi, new { @class = "form-control required" })
+                                                @Html.ValidationMessageFor(m => m.DiaChi, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="clearBoth"></div>
+                                        <div class="form-group col-sm-12">
+                                            <label class="control-label col-sm-4"><span style="color:red">*</span>&nbsp;Email</label>
+                                            <div class="col-sm-6">
+                                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control required" })
+                                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group  col-sm-12">
+                                            <label class="control-label col-sm-4"><span style="color:red">*</span>&nbsp;Điện thoại</label>
+                                            <div class="col-sm-6">
+                                                @Html.TextBoxFor(m => m.DienThoai, new { @class = "form-control required" })
+                                                @Html.ValidationMessageFor(m => m.DienThoai, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group  col-sm-12">
+                                            <label class="control-label col-sm-4">&nbsp;Fax</label>
+                                            <div class="col-sm-6">
+                                                @Html.TextBoxFor(m => m.Fax, new { @class = "form-control required" })
+                                                @Html.ValidationMessageFor(m => m.Fax, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="boxFormHeader">
+                                            <span class="formHeader">2. Thông tin liên hệ thông báo</span>
+                                        </div>
+                                        <div class="clearBoth"></div>
+                                        <div class="form-group  col-sm-12">
+                                            <label class="control-label col-sm-4"><span style="color:red">*</span>&nbsp;Địa chỉ nhận thông báo</label>
+                                            <div class="col-sm-2">
+                                                @Html.DropDownListFor(m => m.TB_TinhId, Model.dropdownListTinh, "--Chọn tỉnh--", new { @class = "required form-control select2Box" })
+                                                @Html.ValidationMessageFor(m => m.TB_TinhId, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="col-sm-2">
+                                                @Html.DropDownListFor(m => m.TB_HuyenId, Model.dropdownListHuyen, "--Chọn huyện--", new { @class = "required form-control select2Box" })
+                                                @Html.ValidationMessageFor(m => m.HuyenId, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="col-sm-2">
+                                                @Html.DropDownListFor(m => m.TB_XaId, Model.dropdownListXa, "--Chọn xã--", new { @class = "required form-control select2Box" })
+                                                @Html.ValidationMessageFor(m => m.XaId, "", new { @class = "text-danger" })
+                                            </div>
+                                            <br />
+                                            <div class="col-sm-4">
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <p class="messageNote">Hãy chọn theo thứ tự Tỉnh -> Huyện -> Xã</p>
+                                            </div>
+                                        </div>
+                                        <div class="clearBoth"></div>
+                                        <div class="form-group  col-sm-12">
+                                            <label class="control-label col-sm-4"><span style="color:red">*</span>&nbsp;Số nhà</label>
+                                            <div class="col-sm-6">
+                                                @Html.TextBoxFor(m => m.TB_SoNha, new { @class = "form-control required" })
+                                                @Html.ValidationMessageFor(m => m.TB_SoNha, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="clearBoth"></div>
+                                        <div class="form-group col-sm-12">
+                                            <label class="control-label col-sm-4"><span style="color:red">*</span>&nbsp;Email</label>
+                                            <div class="col-sm-6">
+                                                @Html.TextBoxFor(m => m.TB_Email, new { @class = "form-control required" })
+                                                @Html.ValidationMessageFor(m => m.TB_Email, "", new { @class = "text-danger" })
+                                                <p class="messageNote">E-mail này được dùng để nhận thông tin</p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group  col-sm-12">
+                                            <label class="control-label col-sm-4"><span style="color:red">*</span>&nbsp;Điện thoại</label>
+                                            <div class="col-sm-6">
+                                                @Html.TextBoxFor(m => m.TB_Phone, new { @class = "form-control required" })
+                                                @Html.ValidationMessageFor(m => m.TB_Phone, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group  col-sm-12">
+                                            <label class="control-label col-sm-4">&nbsp;Fax</label>
+                                            <div class="col-sm-6">
+                                                @Html.TextBoxFor(m => m.TB_Fax, new { @class = "form-control " })
+                                                @Html.ValidationMessageFor(m => m.TB_Fax, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="boxFormHeader">
+                                            <span class="formHeader">3.Thông tin người đại diện pháp luật</span>
+                                        </div>
+                                        <div class="form-group col-sm-12">
+                                            <label class="control-label col-sm-4"><span style="color:red">*</span>&nbsp;Họ và tên</label>
+                                            <div class="col-sm-6">
+                                                @Html.TextBoxFor(m => m.HoTenDaiDien, new { @class = "form-control required" })
+                                                @Html.ValidationMessageFor(m => m.HoTenDaiDien, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group  col-sm-12">
+                                            <label class="control-label col-sm-4"><span style="color:red">*</span>&nbsp;Chức vụ</label>
+                                            <div class="col-sm-6">
+                                                @Html.TextBoxFor(m => m.ChucVuDaiDien, new { @class = "form-control required" })
+                                                @Html.ValidationMessageFor(m => m.ChucVuDaiDien, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group  col-sm-12">
+                                            <label class="control-label col-sm-4"><span style="color:red">*</span>&nbsp;Email</label>
+                                            <div class="col-sm-6">
+                                                @Html.TextBoxFor(m => m.EmailDaiDien, new { @class = "form-control required" })
+                                                @Html.ValidationMessageFor(m => m.EmailDaiDien, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group  col-sm-12">
+                                            <label class="control-label col-sm-4"><span style="color:red">*</span>&nbsp;Điện thoại di động</label>
+                                            <div class="col-sm-6">
+                                                @Html.TextBoxFor(m => m.DienThoaiDaiDien, new { @class = "form-control required" })
+                                                @Html.ValidationMessageFor(m => m.DienThoaiDaiDien, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group  col-sm-12">
+                                            <label class="control-label col-sm-4"><span style="color:red">*</span>&nbsp;Địa chỉ liên lạc</label>
+                                            <div class="col-sm-6">
+                                                @Html.TextBoxFor(m => m.DiaChiDaiDien, new { @class = "form-control required" })
+                                                @Html.ValidationMessageFor(m => m.DiaChiDaiDien, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="boxFormHeader">
+                                            <span class="formHeader">4.Thông tin doanh thu</span>
+                                        </div>
+                                        <div class="form-group col-sm-12">
+                                            <label class="control-label col-sm-4">&nbsp;Tổng số lao động đăng ký thuế</label>
+                                            <div class="col-sm-6">
+                                                @Html.TextBoxFor(m => m.TongSoLaoDongDangKyThue, new { @class = "form-control txtNumber" })
+                                                @Html.ValidationMessageFor(m => m.TongSoLaoDongDangKyThue, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-sm-12">
+                                            <label class="control-label col-sm-4">&nbsp;Doanh thu</label>
+                                            <div class="col-sm-6">
+                                                @Html.TextBoxFor(m => m.DoanhThu, new { @class = "form-control txtNumber" })
+                                                @Html.ValidationMessageFor(m => m.DoanhThu, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-sm-12">
+                                            <label class="control-label col-sm-4">&nbsp;Lợi nhuận sau thuế</label>
+                                            <div class="col-sm-6">
+                                                @Html.TextBoxFor(m => m.LoiNhanSauThue, new { @class = "form-control txtNumber" })
+                                                @Html.ValidationMessageFor(m => m.LoiNhanSauThue, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-sm-12">
+                                            <label class="control-label col-sm-4">&nbsp;Nộp ngân sách nhà nước</label>
+                                            <div class="col-sm-6">
+                                                @Html.TextBoxFor(m => m.NopNganSachNhaNuoc, new { @class = "form-control txtNumber" })
+                                                @Html.ValidationMessageFor(m => m.NopNganSachNhaNuoc, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-sm-12">
+                                            <label class="control-label col-sm-4">&nbsp;Số lao động</label>
+                                            <div class="col-sm-6">
+                                                @Html.TextBoxFor(m => m.SoLaoDong, new { @class = "form-control txtNumber" })
+                                                @Html.ValidationMessageFor(m => m.SoLaoDong, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-sm-12">
+                                            <label class="control-label col-sm-4">&nbsp;Tiền lương</label>
+                                            <div class="col-sm-6">
+                                                @Html.TextBoxFor(m => m.TienLuong, new { @class = "form-control txtNumber" })
+                                                @Html.ValidationMessageFor(m => m.TienLuong, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="clearBoth"></div>
+                                        <div class="boxFormHeader">
+                                            <span class="formHeader">5.Thông tin đăng nhập</span>
+                                        </div>
+                                        <div class="form-group col-sm-12">
+                                            <label class="control-label col-sm-4"><span style="color:red">*</span>&nbsp;Tài khoản</label>
+                                            <div class="col-sm-6">
+                                                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control required", autocomplete = "off", @readonly = true, disabled = "disabled" })
+                                                @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                                                <p class="messageNote">Tài khoản tự động lấy theo Mã số thuế doanh nghiệp</p>
+                                            </div>
+                                        </div>
+                                        <div class="clearBoth"></div>
+
+                                        <div class="form-group col-sm-12">
+                                            <label class="control-label col-sm-4"><span style="color:red">*</span>&nbsp;Mật khẩu</label>
+                                            <div class="col-sm-6">
+                                                @Html.PasswordFor(m => m.PassWord, new { @class = "form-control required" })
+                                                @Html.ValidationMessageFor(m => m.PassWord, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-sm-12">
+                                            <label class="control-label col-sm-4"><span style="color:red">*</span>&nbsp;Nhập lại mật khẩu</label>
+                                            <div class="col-sm-6">
+                                                @Html.PasswordFor(m => m.RePassWord, new { @class = "form-control required" })
+                                                @Html.ValidationMessageFor(m => m.RePassWord, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+
+                                        <div class="clearBoth"></div>
+                                        @{MvcCaptcha registrationCaptcha = CaptchaHelper.GetRegistrationCaptcha(); }
+
+                                        <div class="form-group col-sm-12">
+                                            <label class="control-label col-sm-4" for="CaptchaCode"><span style="color:red">*</span>&nbsp;Nhập mã xác nhận</label>
+
+                                            <div class="col-sm-6">
+                                                @Html.TextBox("CaptchaCode", null, new { @class = "form-control captchaVal" })
+                                                @Html.ValidationMessage("CaptchaCode", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="clearBoth"></div>
+                                        <div class="form-group col-sm-12">
+                                            <div class="col-md-offset-4 col-sm-4">
+                                                @Html.Captcha(registrationCaptcha)
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-12">
+                                            <center>
+                                                <button type="reset" name="reset" class="btn btn-default btn-md "><i class="glyphicon glyphicon-refresh"></i> Làm lại</button>
+                                                <button type="submit" class="btn btn-primary btn-md"><i class="glyphicon glyphicon-send"></i> Đăng ký</button>
+                                            </center>
+                                        </div>
+                                        <div class="clearBoth" style="margin-bottom:30px;"></div>
+                                    </div>
+                                </div>
+
+                            }
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+                <div class="clearBoth"></div>
+
+
+                @*<div class="notice col-md-12">
+                        <p>Gửi phản ánh bằng văn bản tới Cục Thương mại điện tử và Công nghệ thông tin, Bộ Công Thương</p>
+                        <p>Địa chỉ: Số 25 Ngô Quyền, Hoàn Kiếm, Hà Nội; hoặc qua thư điện tử qltmdt@moit.gov.vn</p>
+                    </div>*@
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/captcha.validate.js")
+    <script>
+        $('#NgayCapTaxCode').datepicker('setEndDate', '0');
+        $("#RegisterCompanyForm").submit(function () {
+            $("#CaptchaCode").Captcha.ReloadImage();
+        })
+        $("#MaSoThue").keyup(function () {
+            var data = $(this).val();
+            $("#UserName").val(data);
+        })
+        $("#CodeLinhVuc").on("change", function () {
+            var type = $(this).val();
+            renderDropdownListPost('/Account/GetNganhNghe', { 'linhvuc': type }, 'CodeNganhNghe', '--Chọn ngành nghề--');
+            $('#CodeNganhNghe').val('').change();
+        });
+        $("input").prop("autocomplete", "off")
+
+        $("#TinhId").on("change", function () {
+            var type = $(this).val();
+            renderDropdownList('/Account/GetHuyenDropdownOfTinh/' + type, 'HuyenId', '--Chọn Huyện--');
+            $('#HuyenId').val('').change();
+        });
+
+        $("#TB_TinhId").on("change", function () {
+            var type = $(this).val();
+            renderDropdownList('/Account/GetHuyenDropdownOfTinh/' + type, 'TB_HuyenId', '--Chọn Huyện--');
+            $('#TB_HuyenId').val('').change();
+        });
+        
+        $("#HuyenId").on("change", function () {
+            var type = $(this).val();
+            renderDropdownList('/Account/GetXaDropdownOfHuyen/' + type, 'XaId', '--Chọn Xã--');
+            $('#XaId').val('').change();
+        });
+        $("#TB_HuyenId").on("change", function () {
+            var type = $(this).val();
+            renderDropdownList('/Account/GetXaDropdownOfHuyen/' + type, 'TB_XaId', '--Chọn Xã--');
+            $('#TB_XaId').val('').change();
+        });
+        $("#CodeQuocGia").on("change", function () {
+            var type = $(this).val();
+            if (type == 'VN') {
+                $("div[data-diachinh=1]").show();
+            } else {
+                $("div[data-diachinh=1]").hide();
+            }
+        });
+         $("#LHKT").on("change", function () {
+            var type = $(this).val();
+            renderDropdownList('/Account/GetLoaiHinhChiTietByLoaiHinh/' + type, 'LHKT_CT', '--Chọn loại hình kinh tế chi tiết--');
+            $('#LHKT_CT').val('').change();
+        });
+        (function renderHuyenXa() {
+            $("div[data-diachinh=1]").show();
+        }());
+
+        $(".select2Box").select2();
+        $(".txtNumber").autoNumeric({ digitGroupSeparator: '.', decimalCharacter: ',', vMin: 0, mDec: 0 });
+        $("#XaId").select2();
+        $("#HuyenId").select2();
+    </script>
+    @*<script>
+            $("#chooseObjectRegister").change(function () {
+                var type = $(this).val();
+                $.ajax({
+                    url: '/account/GFormRegister/' + type,
+                    type: 'post',
+                    success: function (rs) {
+                        $("#boxRegisterForm").html(rs);
+                    },
+                    error: function (e) {
+                        NotiError("Lỗi xử lý");
+                    }
+                });
+            });
+        </script>
+        @Scripts.Render("~/bundles/jqueryval")*@
+}
+
+

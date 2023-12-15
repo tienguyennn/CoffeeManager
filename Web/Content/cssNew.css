@@ -1,0 +1,322 @@
+﻿body {
+    font-size: 14px !important;
+}
+
+a:hover, .content-right__TinNoiBat_Content h3:hover {
+	color: #f44336 !important;
+}
+.content-menu-MenuMain {
+    overflow: hidden;
+}
+.content-menu-MenuMain__item {
+    background-color: rgba(244, 121, 13, 0.95);
+    transition: 0.05s;
+}
+.content-menu-MenuMain .content-menu-MenuMain__ul .content-menu-MenuMain__item ul li:hover,
+.content-menu-MenuMain .content-menu-MenuMain__ul .content-menu-MenuMain__item:hover {
+}
+
+    .content-menu-MenuMain .content-menu-MenuMain__ul .content-menu-MenuMain__item:hover > a,
+    .content-menu-MenuMain .content-menu-MenuMain__ul .content-menu-MenuMain__item ul li:hover a {
+        color: #e2d600 !important;
+    }
+    .content-menu-MenuMain .content-menu-MenuMain__ul .content-menu-MenuMain__item:hover > a,
+    .content-menu-MenuMain .content-menu-MenuMain__ul .content-menu-MenuMain__item ul li:focus a {
+        color: #e2d600 !important;
+    }
+    .content-menu-MenuMain .content-menu-MenuMain__ul .content-menu-MenuMain__item:hover > a,
+    .content-menu-MenuMain .content-menu-MenuMain__ul .content-menu-MenuMain__item ul li:active a {
+        color: #e2d600 !important;
+    }
+
+    .content-menu-MenuMain .content-menu-MenuMain__ul .content-menu-MenuMain__item:hover > a {
+        text-decoration: underline;
+    }
+
+.content-left .btn-breadcrumb a {
+    background-color: transparent;
+    color: #808080;
+}
+
+.btn-breadcrumb .btn.btn-info:not(:last-child):after {
+    content: "/";
+    background-color: transparent;
+    border: 0;
+    line-height: 2.8;
+    right: 0 !important;
+    left: unset;
+}
+
+.btn-breadcrumb .btn.btn-info {
+    padding-right: 15px;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+    .btn-breadcrumb .btn.btn-info:hover {
+        color: #0094ff;
+    }
+
+    .btn-breadcrumb .btn.btn-info:not(:last-child):before {
+        content: none;
+    }
+
+    .btn-breadcrumb .btn.btn-info:last-child {
+        color: #0094ff;
+    }
+
+.content-left__TinNoiBat h3 {
+    font-size: 24px !important;
+}
+
+.content-left {
+    text-align: justify;
+}
+
+.table-search form > input[name = search] {
+    background-image: url('EndUser/img/searchTracuu.png');
+    background-position: 98% center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+}
+
+.listBaiKhac p a {
+    font-size: 14px;
+}
+
+.listBaiKhac p::before {
+    content: "-";
+    color: #0094ff;
+}
+
+.document-table.table > tbody > tr > td, .document-table.table > tbody > tr > th,
+.document-table.table > tfoot > tr > td, .document-table.table > tfoot > tr > th,
+.document-table.table > thead > tr > td, .document-table.table > thead > tr > th {
+    border: 1px solid #eee !important;
+    vertical-align: middle;
+}
+
+.document-table.table > thead > tr > th {
+    background: aliceblue;
+    font-weight: normal !important;
+    padding: 12px;
+}
+
+.document-table.table > tbody > tr > th, .document-table.table > tfoot > tr > th, .document-table.table > thead > tr > th,
+.content-right__PhanAnh form button {
+    font-weight: normal !important;
+    text-align: center;
+}
+
+.document-table tr:nth-child(even) {
+    background-color: #f7f7f7 !important;
+}
+
+.indexer button, .indexer button[disabled] {
+    background: #006dcb !important;
+    color: #fff !important;
+}
+
+.loginForm-Box {
+    /*float: left;
+    width: 100%;
+    padding: 15px;
+    background-color: aliceblue;
+    border: 1px solid #ddd;
+    margin-bottom: 40px;
+    margin-top: 10px;*/
+}
+
+section#loginForm .loginForm-Box .form-group {
+    /*display: block !important;*/
+}
+
+    section#loginForm .loginForm-Box .form-group > label {
+        /*width: 100% !important;
+        text-align: left !important;
+        margin-bottom: 10px;*/
+    }
+
+section#loginForm .loginForm-Box form {
+    /*float: left;
+    width: 100%;
+    border: 2px solid #0094ff;*/
+}
+
+section#loginForm .loginForm-Box .form-group p {
+    text-align: center;
+}
+
+.menu-profile {
+    padding: 2px;
+}
+
+.navbar-toggle .icon-bar {
+    background: #ffffff;
+}
+
+#iconmenu {
+    background-color: transparent;
+}
+
+#Case1 > .text-center .btn-icon:before {
+    font-size: 14px;
+}
+
+.dropdown-menu li:last-child{
+    border-bottom: 0;
+}
+footer p:last-child{
+    margin-bottom:0;
+}
+/*---------Trang admin----------------*/
+.menu-profile .box-image ul {
+    margin-top: 20px !important;
+}
+.li-parrent-anchor::after {
+    border-top: 5px solid #cecece;
+}
+.end-user-nav-wrap{
+    overflow:auto;
+}
+.end-user-nav-li:last-child a{
+    border-bottom:0;
+}
+/*----------------legend admin------------*/
+@media screen and (max-width: 1200px) and (min-width: 1024px) {
+    .content-menu-MenuMain .content-menu-MenuMain__ul {
+        width: 100% !important;
+    }
+
+    .UngDungWeb h2 {
+        font-size: 18px;
+    }
+
+    /*----------------admin---------*/
+    .PageContent .PageBody {
+        padding: 10px 0;
+    }
+    /*----------legend admin-----------*/
+}
+
+@media screen and (max-width: 992px) and (min-width: 769px) {
+    #createWebReportForm .form-group .col-sm-8 {
+        width: 100%;
+    }
+
+    #RegisterPersonalForm .formBox {
+        padding-bottom: 20px;
+    }
+
+    #FormDangKy .notice {
+        margin-top: 15px;
+    }
+
+    section#loginForm {
+        width: 100%;
+    }
+}
+
+@media screen and (width: 768px) {
+    .content-right__PhanAnh .text-center {
+        float: left;
+        width: 100%;
+    }
+
+    #FormDangKy .notice {
+        margin-top: 15px;
+    }
+
+    #RegisterPersonalForm .formBox {
+        padding-bottom: 20px;
+    }
+
+    #createWebReportForm .form-group .col-sm-8 {
+        width: 100%;
+    }
+
+    section#loginForm {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) and (min-width: 481px) {
+    .content-right__PhanAnh form .form-group {
+        height: auto !important;
+    }
+
+    .header__logo a img {
+        width: 50px;
+        padding-top: 5px;
+    }
+
+    .header__logo h1 {
+        margin-top: 15px;
+        font-size: 22px !important;
+    }
+
+    .content-menu-MenuMain .content-menu-MenuMain__ul .content-menu-MenuMain__item a {
+        display: block;
+        font-size: 16px;
+    }
+
+    #RegisterPersonalForm .formBox {
+        padding-bottom: 20px;
+    }
+
+    #FormDangKy .notice {
+        margin-top: 15px;
+    }
+
+    section#loginForm {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .content-menu-MenuMain .content-menu-MenuMain__ul .content-menu-MenuMain__item a {
+        font-size: 16px;
+    }
+
+    .content-right__PhanAnh form .form-group {
+        height: auto !important;
+    }
+
+    .quytrinh__cacbuoc_chung {
+        width: 33.333% !important;
+        margin: auto auto 20px;
+    }
+
+    .quytrinh__cacbuoc {
+        display: flex !important;
+        flex-wrap: wrap;
+    }
+
+    #quytrinh h2 {
+        font-size: 19px;
+    }
+
+    #quytrinh > .container > p {
+        font-size: 14px;
+    }
+
+    .content-left__TinNoiBat a {
+        font-size: 20px;
+    }
+
+    #RegisterPersonalForm .formBox {
+        padding-bottom: 20px;
+    }
+
+    #FormDangKy .notice {
+        margin-top: 15px;
+    }
+
+    section#loginForm {
+        width: 100%;
+    }
+
+    #banner img {
+        height: 200px;
+    }
+}

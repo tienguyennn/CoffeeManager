@@ -1,0 +1,155 @@
+﻿@using Web.Areas.UserArea.Models
+@using Newtonsoft.Json;
+@model LogKhoaTruyCapViewModel
+@{
+    var listDataKhoaTruyCap = Html.Raw(JsonConvert.SerializeObject(Model.DataKhoaTruyCap.ListItem));
+}
+<div class="modal-dialog" style="width:70%">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="center">
+                <h4 class="modal-title">
+                    TRA CỨU LOG TRUY CẬP CỦA TÀI KHOẢN @Model.UserName
+                </h4>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="form-horizontal">
+                <div class="row row-block">
+                    <div id="tbl-logAudit" class="hntbl-cover table-scroll">
+                        <div class="table-wrap">
+                            <table class="hinet-table table table-striped table-hover" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th class="fixed-side">#</th>
+                                        <th>Mã log</th>
+                                        <th>Mã phiên làm việc</th>
+                                        <th>Địa chỉ IP</th>
+                                        <th>Người dùng</th>
+                                        <th>Nội dung</th>
+                                        <th>Thời gian</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer center">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+                <i class="fa fa-close"></i>&nbsp;Đóng
+            </button>
+        </div>
+    </div>
+</div>
+
+
+@Scripts.Render("~/bundles/configform")
+<script>
+    var listLogKhoaTruyCap = eval(@listDataKhoaTruyCap);
+    var idTableLogKhoaTruyCap = "#tbl-logAudit";
+    function pagingLogKhoaTruyCap() {
+            var configTableLogKhoaTruyCap =[
+                {
+                    tdClass:"center width50 fixed-side",
+                    isSort:false,
+                    nameModel: "",
+                    isCounter:true,
+                    content: function (data) {
+                        return "<input type='checkbox'/>"
+                    }
+                },
+				{
+					isSort:true,
+					nameModel:'AuditID',
+					content: function (data) {
+                        return data.AuditID
+				    }
+				},
+				{
+					isSort:true,
+					nameModel:'SessionID',
+					content: function (data) {
+                        return data.SessionID
+				    }
+                },
+                {
+                    isSort: true,
+                    nameModel: 'IPAddress',
+                    content: function (data) {
+                        return data.IPAddress
+                    }
+                },
+                {
+                    isSort: true,
+                    nameModel: 'UserName',
+                    content: function (data) {
+                        return data.UserName
+                    }
+                },
+                {
+                    isSort: true,
+                    nameModel: 'Note',
+                    content: function (data) {
+                        return data.Note
+                    }
+                },
+                {
+                    isSort: true,
+                    nameModel: 'TimeAccessed',
+                    content: function (data) {
+                        return ToDate(data.TimeAccessed)
+                    }
+                },
+            ];
+
+
+            var getDataLogKhoaTruyCap = function(page,sortQuery,pageSize){
+                $.ajax({
+                    url: '/UserArea/User/GetDataLogKhoaTruyCap',
+                    type: 'post',
+                    cache: false,
+                    data: {
+                        "indexPage": page,
+                        "sortQuery": sortQuery,
+                        "idUser": '@Model.IdUser',
+                        "pageSize": pageSize
+                    },
+                    success: function (data) {
+                        $(idTableQuanLyDonVi).hinetTable("data",{
+                            pageSize:pageSize!=-1?pageSize:data.Count,
+                            pageIndex:page,
+                            pagecount: data.TotalPage,
+                            recordCount: data.Count,
+                            listItem: data.ListItem,});
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+            }
+
+            var tblData = $(idTableLogKhoaTruyCap).hinetTable("init",{
+                pageSizeList: {
+                    size: [5, 10, -1],
+                    label: ['5', '10', 'Tất cả']
+                },
+                pagecount: @Model.DataKhoaTruyCap.TotalPage,
+                recordCount: @Model.DataKhoaTruyCap.Count,
+                pageSize: 5,
+                actionToolBar:'<a href=\"#collapseDiv\" aria-controls=\"collapsePanel\" data-toggle=\"collapse\" role=\"button\" class="btn btn-primary btn-xs"><i class="fa fa-search"></i> Tìm kiếm</a>',
+                getData: getDataLogKhoaTruyCap,
+                listItem: listLogKhoaTruyCap,
+                config: configTableLogKhoaTruyCap
+            });
+
+    }
+
+
+    $(function () {
+        pagingLogKhoaTruyCap();
+    })
+</script>

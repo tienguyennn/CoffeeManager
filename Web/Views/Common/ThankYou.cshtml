@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "ThankYou";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var msg = TempData["Msg"];
+}
+<div class="container" style="margin-bottom: 50px;">
+    <div style="display: block;width: 100%;padding: 100px;border-bottom: 2px solid #0072ce;border-radius: 20px;">
+        <h1 style="text-align: center;font-size: 50px;color: #005494;">Cảm ơn quý vị đã gửi phản ánh!</h1>
+    </div>
+
+    <img src="~/assets/images/email.png" style="display: block;margin: 0 auto;width: 130px;margin-top: -70px;background-color: #ffffff;" />
+    <p style="font-size: 20px;text-align:center">Phản ánh của quý vị được chuyển đến chuyên viên. <br />Vui lòng kiểm tra email để có các thông báo mới nhất từ phản ảnh.</p>
+</div>
+
+
+<script type="text/javascript">
+$(document).ready(function () {
+    if ('@msg' == '1') {
+        NotiSuccess("Thành công", "Bạn đã gửi phản ánh thành công!");
+    }
+})
+</script>

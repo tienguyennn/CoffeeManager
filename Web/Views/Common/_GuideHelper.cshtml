@@ -1,0 +1,26 @@
+﻿@using Web.Models;
+@model GuideHelperViewModel
+@if (true)
+{
+    <a href="#" class="btn btn-primary btn-sm button-help">Hướng dẫn</a>
+}
+
+
+<script>
+    $(".button-help").on('click', function () {
+        $.alert({
+            animationSpeed: 150,
+            theme: 'my-theme',
+            boxWidth: '33%',
+            useBootstrap: false,
+            icon: 'glyphicon glyphicon-flag',
+            buttons: {
+                close: {
+                    text: 'Đóng'
+                },
+            },
+            title: false,
+            content: description + "<br />" + "@Model.Help.NextStepGuide"
+        });
+    });
+</script>

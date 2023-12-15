@@ -1,0 +1,242 @@
+﻿@model Web.Models.LoginViewModel
+@using System.Configuration;
+@{
+    ViewBag.Title = "Đăng nhập hệ thống";
+    Layout = null;
+
+    string provinceName = (string)ViewBag.ProvinceName ?? string.Empty;
+    string unitName = (string)ViewBag.UnitName ?? string.Empty;
+    string unitAddress = (string)ViewBag.UnitAddress ?? string.Empty;
+    string provinceCode = (string)ConfigurationManager.AppSettings["PROVINCE_CODE"];
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="User login page" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" href="/ACE-Layout/Content/ACE/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/ACE-Layout/Content/ACE/font-awesome/4.2.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/ACE-Layout/Content/ACE/fonts/fonts.googleapis.com.css" />
+    <link rel="stylesheet" href="/ACE-Layout/Content/ACE/css/ace.css" />
+    <link rel="stylesheet" href="/ACE-Layout/Content/ACE/css/ace-rtl.min.css" />
+    <link rel="stylesheet" href="/Content/css/custom/MyStyleLogin.css" />
+
+    @if (provinceCode == "THANH_HOA")
+    {
+        <style type="text/css">
+            .login-layout {
+                background: url(/Content/bg-login2.png) no-repeat;
+                background-size: 100% 100%;
+            }
+
+            #login-form-container {
+                margin: 0 auto;
+            }
+
+            .login-layout #login-form #login-box {
+                background-color: #fff;
+            }
+
+            .login-layout #login-form h4.bigger {
+                color: #0062c6;
+            }
+
+            #loginForm .login-form-label {
+                color: #000;
+            }
+
+            #LoginBtn {
+                background-color: #0062c6;
+            }
+
+            .login-layout #login-form .hr-space {
+                background: none;
+                height: 2px;
+                background-color: #0062c6;
+            }
+
+            #loginForm .login-form-input {
+                background-color: #1d497b !important;
+                border-color: #1d497b;
+                padding-left: 65px;
+                color: #fff;
+            }
+
+            #loginForm .login-form-input-container::before {
+                content: '';
+                background-color: #0062c6;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 20px 20px;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 45px;
+                border-bottom-left-radius: 5px;
+                border-top-left-radius: 5px;
+            }
+
+            #loginForm .login-form-input-container::before {
+                background-image: url('/Content/input-user-th.png');
+            }
+
+            #loginForm .login-pass-container::before {
+                background-image: url('/Content/input-pass-th.png');
+            }
+
+            #loginForm .login-form-input::placeholder {
+                color: #c3d7ed;
+            }
+
+            #login-form .login-form-input-container {
+                position: relative;
+            }
+
+            .login-form-text, .login-form-pass {
+                background-image: none !important;
+            }
+
+
+            @@media only screen and (min-width: 320px) and (max-width:480px) {
+                .login-layout {
+                    background-image: url(/Content/bg-login2.png);
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
+                }
+
+                #login-form-container {
+                    margin: 0 auto;
+                }
+            }
+
+            /*fix css tạm thời*/
+            @@media only screen and (max-width:991px) {
+                .login-layout {
+                    background-image: url(/Content/bg-login2.png);
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
+                }
+            }
+
+
+            @@media only screen and (min-width: 320px) and (max-width:768px) {
+                .login-layout #login-form #login-box {
+                    width: 100%;
+                }
+
+                .login-layout #login-form .form-group [class*="col-"] {
+                    padding: 0;
+                }
+            }
+        </style>
+    }
+
+    <style type="text/css">
+        #btnLoginSSO {
+            box-shadow: none;
+            background: #0062c6;
+            background-color: rgb(0, 98, 198);
+            background-image: none;
+            width: 100%;
+            font-family: Roboto-BoldCondensed;
+            text-transform: uppercase;
+            color: #fff;
+            height: 39px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body class="login-layout">
+    <div class="main-container">
+        <div class="main-content">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="login-container">
+                        <div id="header-top" class="item-container">
+                            <h1 id="id-software-text2" class="login-title">HỆ THỐNG ĐÁNH GIÁ MỨC ĐỘ</h1>
+                            <h4 id="id-software-text" class="login-title">CHUYỂN ĐỔI SỐ @provinceName.ToUpper()</h4>
+                        </div>
+                        <div class="clearfix"></div>
+
+                        <div id="header-top-mobile" class="item-container">
+                            <h4 class="login-title-mobile">HỆ THỐNG ĐÁNH GIÁ MỨC ĐỘ</h4>
+                            <h4 class="login-title-mobile">CHUYỂN ĐỔI SỐ @provinceName.ToUpper()</h4>
+                        </div>
+
+                        <div id="login-form-container" class="position-relative item-container">
+                            <div id="login-form">
+                                <div id="login-box" class="login-box visible widget-box no-border">
+                                    <div class="widget-body">
+                                        <div class="widget-main login-form-body">
+                                            <h4 class="header bigger session login-form-title">
+                                                <span>ĐĂNG NHẬP HỆ THỐNG</span>
+                                            </h4>
+
+                                            <div class="hr-space"></div>
+                                            <section id="loginForm">
+                                                @using (Html.BeginForm("Login", "AccountAdmin", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { id = "FormLogin", @class = "session form-horizontal", role = "form" }))
+                                                {
+                                                    @Html.AntiForgeryToken()
+
+                                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                                    <div class="form-group">
+                                                        <label class="col-md-12 control-label login-form-label">Tên đăng nhập</label>
+                                                        <div class="col-md-12 login-form-input-container">
+                                                            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control login-form-input login-form-text", @autofocus = "autofocus", @placeholder = "Nhập tên" })
+                                                            @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-12 control-label login-form-label">Mật khẩu</label>
+                                                        <div class="col-md-12 login-form-input-container login-pass-container">
+                                                            @Html.PasswordFor(m => m.Password, new { @class = "form-control login-form-input login-form-pass", @placeholder = "Nhập mật khẩu" })
+                                                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="form-group">
+                                                        <input type="submit" value="Đăng nhập" class="btn btn-default" id="LoginBtn" />
+                                                    </div>
+
+                                                    if (ViewBag.SsoUrl != null)
+                                                    {
+                                                        <div class="form-group text-center">
+                                                            <a href="@ViewBag.SsoUrl" class="btn btn-primary" id="btnLoginSSO">
+                                                                <i class="fa fa-key"></i>&nbsp;Đăng nhập SSO
+                                                            </a>
+                                                        </div>
+                                                    }
+                                                }
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="login-footer">
+                            <p class="login-footer-text">Đơn vị quản lý: @unitName</p>
+                            <p class="login-footer-text">Trụ sở chính: @unitAddress</p>
+                        </div>
+
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.main-content -->
+        </div><!-- /.main-container -->
+    </div>
+</body>
+</html>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+            $('#UserName').focus();
+        })
+    </script>
+}

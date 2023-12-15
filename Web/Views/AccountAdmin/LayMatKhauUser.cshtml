@@ -1,0 +1,109 @@
+﻿@model Web.Models.ForgotViewModel
+@using System.Configuration;
+@{
+    ViewBag.Title = "Lấy lại mật khẩu";
+    Layout = null;
+
+    string provinceName = (string)ViewBag.ProvinceName ?? string.Empty;
+    string unitName = (string)ViewBag.UnitName ?? string.Empty;
+    string unitAddress = (string)ViewBag.UnitAddress ?? string.Empty;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="User login page" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" href="/ACE-Layout/Content/ACE/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/ACE-Layout/Content/ACE/font-awesome/4.2.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/ACE-Layout/Content/ACE/fonts/fonts.googleapis.com.css" />
+    <link rel="stylesheet" href="/ACE-Layout/Content/ACE/css/ace.css" />
+    <link rel="stylesheet" href="/ACE-Layout/Content/ACE/css/ace-rtl.min.css" />
+    <link rel="stylesheet" href="/Content/css/custom/MyStyleLogin.css" />
+</head>
+<body class="login-layout">
+    <div class="main-container">
+        <div class="main-content">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="login-container">
+                        <div id="header-top" class="item-container">
+                            <h1 id="id-software-text2" class="login-title">HỆ THỐNG ĐÁNH GIÁ MỨC ĐỘ</h1>
+                            <h4 id="id-software-text" class="login-title">CHUYỂN ĐỔI SỐ @provinceName.ToUpper()</h4>
+                        </div>
+                        <div class="clearfix"></div>
+
+                        <div id="header-top-mobile" class="item-container">
+                            <h4 class="login-title-mobile">HỆ THỐNG ĐÁNH GIÁ MỨC ĐỘ</h4>
+                            <h4 class="login-title-mobile">CHUYỂN ĐỔI SỐ @provinceName.ToUpper()</h4>
+                        </div>
+
+                        <div class="position-relative item-container">
+                            <div id="login-form">
+                                <div id="login-box" class="login-box visible widget-box no-border">
+                                    <div class="widget-body">
+                                        <div class="widget-main login-form-body">
+                                            <h4 class="header bigger session login-form-title">
+                                                <span>Lấy mật khẩu</span>
+                                            </h4>
+
+                                            <div class="hr-space"></div>
+                                            <section id="loginForm">
+                                                @using (Html.BeginForm("LayMatKhauUser", "AccountAdmin", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { id = "FormLogin1", @class = "session form-horizontal", role = "form" }))
+                                                {
+                                                    @Html.AntiForgeryToken()
+
+                                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                                    <div class="form-group">
+                                                        <label class="col-md-12 control-label login-form-label">Email của tài khoản</label>
+                                                        <div class="col-md-12 login-form-input-container">
+                                                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control login-form-input login-form-text", @autofocus = "autofocus", @placeholder = "Nhập địa chỉ mail" })
+                                                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <div class="form-group">
+                                                        <input type="submit" value="Lấy mật khẩu" class="btn btn-default" id="LoginBtn" />
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <center>
+                                                            <a href="/AccountAdmin/login" style="color:#fff">
+                                                               Đăng nhập
+                                                            </a>
+                                                        </center>
+                                                    </div>
+
+                                                }
+                                            </section>
+                                        </div><!-- /.widget-body -->
+                                    </div><!-- /.login-box -->
+                                </div>
+
+                            </div><!-- /.position-relative -->
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="login-footer">
+                            <p class="login-footer-text">Đơn vị quản lý: @unitName</p>
+                            <p class="login-footer-text">Trụ sở chính: @unitAddress</p>
+                        </div>
+
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.main-content -->
+        </div><!-- /.main-container -->
+    </div>
+</body>
+</html>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+            $('#UserName').focus();
+        })
+    </script>
+}

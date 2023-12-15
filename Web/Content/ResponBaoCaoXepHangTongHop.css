@@ -1,0 +1,87 @@
+@media (min-width: 1441px) {
+
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+   
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .class-h1, .class-h1-sub {
+        font-size: 20px !important;
+    }
+}
+
+
+@media (min-width: 321px) and (max-width: 480px) {
+    .FileHuongDanSD {
+        display: none;
+    }
+
+    .page-content {
+        width: 100%;
+        float: left;
+    }
+
+    .class-h1, .class-h1-sub {
+        font-size: 20px !important;
+    }
+
+    .nav.nav-tabs.padding-12.tab-color-blue.background-blue {
+        padding-left: 0px;
+        padding-top: 0px;
+        border: 2px solid #ddd;
+    }
+
+    .table-xephanh-cq.col-sm-12.col-md-12.nopd li {
+        width: 100% !important;
+    }
+
+    .nav-pills li {
+        margin-left: 0px !important;
+    }
+
+    .tab-content.padding-10 {
+        padding: 0px;
+        overflow: auto;
+        width: 100%;
+    }
+    
+}
+
+
+@media screen and (max-width: 320px) {
+    .FileHuongDanSD{
+        display:none;
+    }
+
+    .page-content{
+        width:100%;
+        float:left;
+    }
+
+    .class-h1, .class-h1-sub {
+        font-size: 20px !important;
+    }
+
+    .nav.nav-tabs.padding-12.tab-color-blue.background-blue {
+        padding-left: 0px;
+        padding-top: 0px;
+        border: 2px solid #ddd;
+    }
+    .table-xephanh-cq.col-sm-12.col-md-12.nopd li{
+        width:100% !important;
+    }
+    .nav-pills li {
+        margin-left: 0px !important;
+    }
+    .tab-content.padding-10{
+        padding:0px;
+        overflow:auto;
+        width:100%;
+    }
+}

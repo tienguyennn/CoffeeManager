@@ -1,0 +1,125 @@
+﻿@using Model.Entities;
+@using CommonHelper.String;
+
+@model List<TaiLieuDinhKem>
+@{
+    var isAllowEdit = ViewData["AllowEdit"] == null ? false : ViewData["AllowEdit"].ToString().ToIntOrZero() > 0;
+    var isCollapsible = ViewData["IsCollapsible"] != null && ViewData["IsCollapsible"].ToString().ToIntOrZero() > 0;
+    var idCollap = string.Empty;
+    if (isCollapsible)
+    {
+        idCollap = Guid.NewGuid().ToString();
+    }
+}
+
+<link href="~/Content/LibUploadFile/uploadfile.css" rel="stylesheet" />
+<style>
+    .ajax-file-upload-filename {
+        max-width: 250px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: inline-block;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        word-wrap: break-word;
+        overflow: hidden;
+        margin-right: 20px;
+        line-height: 2.8;
+    }
+
+    @if (isCollapsible)
+    {
+        <text>
+    #module@(idCollap) a.buttonextend.collapsed:after {
+        content: '+ Xem thêm';
+    }
+
+    #module@(idCollap) a.buttonextend:not(.collapsed):after {
+        content: '- Thu lại';
+    }
+
+    @if (isAllowEdit)
+    {
+        <text>
+    .collapse[aria-expanded="false"] {
+        display: block;
+        height: 16rem !important;
+        overflow: hidden;
+    }
+
+    .collapsing[aria-expanded="false"] {
+        height: 16rem !important;
+    }
+
+    </text>
+    }
+    else
+    {
+        <text>
+    .collapse[aria-expanded="false"] {
+        display: block;
+        height: 13rem !important;
+        overflow: hidden;
+    }
+
+    .collapsing[aria-expanded="false"] {
+        height: 13rem !important;
+    }
+
+    </text>
+    }
+
+    </text>
+    }
+</style>
+
+<div class="wf100" id="module@(idCollap)">
+    @if (Model != null && Model.Any())
+    {
+        int count = 0;
+        <div class="boxUploads wf100 @(isCollapsible?"collapse":"")" @(isCollapsible ? "id=colapse" + idCollap + " aria-expanded=false" : "")>
+            @foreach (var item in Model)
+            {
+                string valueDinhDangFile = !string.IsNullOrEmpty(item.DinhDangFile) ? item.DinhDangFile.Trim().ToLower() : "";
+
+                <div class="ajax-file-upload-container" id="ROW_TAILIEU_@item.Id">
+                    <div class="ajax-file-upload-statusbar" style="width: inherit;border:1px solid #808080;color:black">
+                        <div class="ajax-file-upload-filename" style="width: 100%; max-height: 4rem;">
+                            <span title="@item.TenTaiLieu" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><i class="fa fa-paperclip"></i>@(count + 1)&nbsp;&nbsp;@item.TenTaiLieu</span>
+                        </div>
+                        <div class="ajax-file-upload-green" style="">
+                            <a href="/Uploads/@item.DuongDanFile" download style="color: white !important">
+                                <i class="fa fa-download"></i> Tải xuống
+                            </a>
+                        </div>
+                        @if (valueDinhDangFile.Contains(".pdf") || valueDinhDangFile.Contains(".docx") || valueDinhDangFile.Contains(".jpg") || valueDinhDangFile.Contains(".png"))
+                        {
+                            <div class="ajax-file-upload-green" style="">
+                                <a href="javascript:void(0)" onclick="onXemFile(@item.Id)" style="color:white !important">
+                                    <i class="fa fa-eye" aria-hidden="true"></i> Xem nội dung
+                                </a>
+                            </div>
+                        }
+                    </div>
+                </div>
+                count++;
+            }
+        </div>
+        if (isCollapsible && count > 1)
+        {
+            <a role="button" class="buttonextend collapsed" data-toggle="collapse" data-target="#colapse@(idCollap)" aria-expanded="false" aria-controls="colapse@(idCollap)" style="display: block; font-weight: bold; font-size: 16px;">
+            </a>
+        }
+    }
+    else
+    {
+        <span class="text-danger font-italic">Không có tài liệu</span>
+    }
+</div>
+
+
+<script>
+    function onXemFile(idFile) {
+        onOpenEditModal('/SystemCommon/PreviewFile', { id: idFile }, 'post');
+    }
+</script>

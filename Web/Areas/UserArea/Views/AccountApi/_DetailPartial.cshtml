@@ -1,0 +1,76 @@
+﻿@using Web.Models
+@using Web.Areas.UserArea.Models
+@model DetailVM
+
+<div class="modal-dialog" id="demo">
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="center">
+                <h4 class="modal-title">Chi tiết thông tin tài khoản truy cập API</h4>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="form-horizontal">
+                <div class="row">
+                    <div class="col-xs-12">
+
+                        <div class="profile-user-info profile-user-info-striped">
+
+                            <div class="profile-info-row">
+                                <div class="profile-info-name"> Tài khoản </div>
+
+                                <div class="profile-info-value">
+                                    <span class="editable">@Model.users.UserName</span>
+                                </div>
+                            </div>
+                            <div class="profile-info-row">
+                                <div class="profile-info-name"> Tên đầy đủ </div>
+                                <div class="profile-info-value">
+                                    <span class="editable">@Model.users.FullName</span>
+                                </div>
+                            </div>
+                            <div class="profile-info-row">
+                                <div class="profile-info-name"> Giới tính </div>
+                                <div class="profile-info-value">
+                                    <span class="editable">@(Model.users.Gender == 1 ? "Nam" : "Nữ")</span>
+                                </div>
+                            </div>
+                            <div class="profile-info-row">
+                                <div class="profile-info-name"> Ngày sinh </div>
+                                <div class="profile-info-value">
+                                    <span class="editable">@string.Format("{0:dd/MM/yyyy}", Model.users.BirthDay)</span>
+                                </div>
+                            </div>
+                            <div class="profile-info-row">
+                                <div class="profile-info-name"> Điện thoại </div>
+                                <div class="profile-info-value">
+                                    <span class="editable">@Model.users.PhoneNumber</span>
+                                </div>
+                            </div>
+                            <div class="profile-info-row">
+                                <div class="profile-info-name"> Email </div>
+                                <div class="profile-info-value">
+                                    <span class="editable">@Model.users.Email</span>
+                                </div>
+                            </div>
+                            <div class="profile-info-row">
+                                <div class="profile-info-name"> Địa chỉ </div>
+
+                                <div class="profile-info-value">
+                                    <span class="editable">@Model.users.Address</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer center">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">
+                <i class="fa fa-times"></i>&nbsp;Đóng
+            </button>
+        </div>
+    </div>
+</div>

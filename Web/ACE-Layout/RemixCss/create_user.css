@@ -1,0 +1,102 @@
+﻿.chosen-container .chosen-drop {
+        border-bottom: 0;
+        border-top: 1px solid #aaa;
+        top: auto;
+        bottom: 40px;
+    }
+
+    .chosen-container.chosen-with-drop .chosen-single {
+        background-image: none;
+    }
+
+    .chosen-container.chosen-with-drop .chosen-drop {
+        box-shadow: none;
+        margin-bottom: -16px;
+    }
+
+    #InsertUser {
+        position: relative;
+    }
+
+    #InsertUserSection {
+        float: left;
+        width: 100%;
+        padding: 5px 0;
+        border: 1px solid #438EB9;
+    }
+
+    #InsertUserBtn {
+    }
+
+        #InsertUserBtn > .btn {
+            float: right;
+            margin: 0 10px 0 0;
+        }
+
+    #anhdaidien {
+        width: 0.1px;
+        height: 0.1px;
+        overflow: hidden;
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+    }
+
+        #anhdaidien + label {
+            font-size: 1.25em;
+            font-weight: 700;
+            color: white;
+            background-color: #438EB9;
+            display: inline-block;
+            cursor: pointer;
+            text-align: center;
+            height: 30px;
+            line-height: 30px;
+        }
+
+            #anhdaidien:focus + label,
+            #anhdaidien + label:hover {
+                background-color: #6FB3E0;
+            }
+
+    #anhdaidien-remove {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: -5px;
+        right: 5px;
+        text-align: center;
+        cursor: pointer;
+        color: white;
+        background: #B74635;
+        border-radius: 100%;
+        display: none;
+    }
+
+    #UserAvatar {
+        height: 200px;
+        width: 100%;
+        text-align: center;
+        border: 1px solid #438EB9;
+        background: url('../../../../Content/Images/no-image.png') no-repeat center;
+    }
+
+    .chosen-results {
+        height: 100px;
+    }
+
+    #nguoi_quanly_chosen .chosen-results {
+        height: 75px;
+    }
+
+    #belong-enterprise {
+        margin: 0 0 10px 0;
+    }
+
+    #noicap, #thuongtru {
+        font-weight: bold;
+        font-size: 15px;
+    }
+    .error{
+        color:red
+    }

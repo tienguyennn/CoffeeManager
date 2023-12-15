@@ -1,0 +1,9 @@
+﻿@{
+    var guid = ViewData["Guid1"].ToString();
+    var guidCapDanhGia2 = ViewData["Guid2"].ToString();
+    var listNhomTieuChi = (List<SelectListItem>)ViewData["ListNhomTieuChi"];
+}
+<div class="form-group no-margin">
+    @Html.DropDownList("NhomTieuChi_" + guid + "_" + guidCapDanhGia2, listNhomTieuChi, new { @class = "select2", @multiple = "multiple" })
+    <span class="error text-danger"></span>
+</div>

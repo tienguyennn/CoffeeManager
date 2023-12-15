@@ -1,0 +1,59 @@
+@{
+    ViewBag.Title = "Sản phẩm";
+    Layout = null;
+    ViewBag.ModuleName = "Quản lý Sản phẩm";
+    ViewBag.PageName = "Thông tin Sản phẩm";
+    ViewBag.ModuleCode = "SanPham_detail";
+}
+@using Model.IdentityEntities
+@using Model.Entities
+@using Web.Areas.SanPhamArea.Models
+
+@model DetailVM
+@section ActionBarRight{
+    <a href="/SanPhamArea/SanPham/Index" class="btn btn-primary btn-sm"><i class="fa fa-reply" aria-hidden="true"></i> Quay lại</a>
+}
+
+<div class="modal-dialog" style="width:60%">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="center">
+                <h4 class="modal-title">Chi tiết sản phẩm</h4>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <table class="table-info table">
+                        <tr>
+                            <td>Hình ảnh</td>
+                            <td>
+                                <img src="~/Uploads/@Model.objInfo.HinhAnh" style="width:200px;height:200px" />
+                            </td>
+                        </tr>
+                        <tr><td>Danh mục</td><td>@(Model.objInfo.DanhMucId_DanhMucObj!=null? Model.objInfo.DanhMucId_DanhMucObj.TenDanhMuc: "")</td></tr>
+                        <tr><td>Tên sản phẩm</td><td>@Model.objInfo.Ten</td></tr>
+
+                        <tr><td>Mô tả</td><td>@Model.objInfo.MoTa</td></tr>
+                        <tr><td>Giá</td><td>@Model.objInfo.Gia</td></tr>
+                        <tr><td>Thứ tự</td><td>@Model.objInfo.ThuTu</td></tr>
+
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="modal-footer center">
+            <button type="submit" class="btn btn-primary">Hoàn thành</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+</script>
+@Scripts.Render("~/bundles/jqueryval")

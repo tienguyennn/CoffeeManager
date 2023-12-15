@@ -1,0 +1,811 @@
+@font-face {
+    font-family: 'UTM-FLAMENCO';
+    src: url('../fonts/UTM-FLAMENCO.TTF');
+}
+
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../fonts/fontawesome-webfont.ttf');
+}
+
+.glyphicon-home:before {
+    content: "\e021";
+    color: #727272;
+}
+
+.breadcrumb-main, .breadcrumb {
+    background-color: #eeeeee;
+    margin-bottom: 10px;
+    padding: 8px 0px;
+}
+
+    .breadcrumb-main h1 {
+        text-transform: uppercase;
+        color: #272727;
+        font-size: 28px;
+    }
+
+.title-khoahoc {
+    font-size: 20px;
+    font-weight: bold;
+    color: #533727;
+    text-transform: uppercase;
+    margin-top: 50px
+}
+
+    .title-khoahoc span {
+        color: #f68601
+    }
+
+.khoahoc-hot {
+    margin-top: 50px;
+    position: relative;
+}
+
+#w {
+    display: block;
+    max-width: 100%;
+    min-width: 300px;
+    margin: 0 auto;
+    padding: 2px 3px;
+    position: relative;
+}
+/** posts slider widget **/
+.crsl-items {
+    display: block;
+    padding: 5px;
+}
+
+.crsl-item {
+    background: #fff;
+}
+
+    .crsl-item .thumbnail {
+        display: block;
+        position: relative;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+
+        .crsl-item .thumbnail img {
+            display: block; /* fix 1px image space http://stackoverflow.com/q/5804256/477958 */
+            -webkit-transition: all 0.3s linear;
+            -moz-transition: all 0.3s linear;
+            transition: all 0.3s linear;
+        }
+
+        .crsl-item .thumbnail:hover img {
+            opacity: 0.8;
+        }
+
+    .crsl-item h3 {
+        font-family: 'Oswald', 'Trebuchet MS', Helvetica, sans-serif;
+        font-size: 1.95em;
+        line-height: 1.25em;
+        margin-bottom: 12px;
+    }
+
+        .crsl-item h3 a {
+            text-decoration: none;
+            color: #333;
+        }
+
+            .crsl-item h3 a:hover {
+                text-decoration: underline;
+            }
+
+    .crsl-item .postdate {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 6px;
+        color: #fff;
+        text-shadow: 1px 1px 0 rgba(0,0,0,0.4);
+        font-size: 1.2em;
+        font-weight: bold;
+        background: #4e90da;
+    }
+
+    .crsl-item p {
+        line-height: 1.55em;
+        margin-bottom: 5px;
+    }
+
+        .crsl-item p.readmore a {
+            display: block;
+            float: right;
+            color: #4e90da;
+            padding: 3px 5px;
+            text-decoration: none;
+            font-weight: bold;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+        }
+
+            .crsl-item p.readmore a:hover {
+                background: #4b6caa;
+                color: #fff;
+            }
+
+
+/** posts slider nav **/
+.slidernav {
+    display: block;
+    text-align: center;
+    margin-bottom: 5px;
+    position: absolute;
+    z-index: 99999;
+    margin-top: 12%;
+    width: 100%;
+}
+
+
+
+
+/** media queries **/
+@media screen and (max-width: 660px) {
+    h1 {
+        font-size: 2.4em;
+        line-height: 1.2em;
+    }
+
+    .crsl-item h3 {
+        font-size: 1.65em;
+    }
+}
+
+/** clearfix **/
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+.previous {
+    float: left;
+    background: url(../images/icon-back.png) no-repeat center !important;
+    padding: 50px 23px;
+}
+
+.next {
+    float: right;
+    background: url(../images/icon-next.png) no-repeat center;
+    padding: 50px 23px;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.thumbnail {
+    padding: 10px;
+    border-radius: 0;
+}
+
+.line-title-khoahoc {
+    border-bottom: 2px dotted #ccc;
+    padding: 0;
+    padding-top: 40px;
+    margin: 0;
+}
+
+.line-title-binhluan {
+    padding-top: 0;
+}
+
+.line-title-khoahoc div {
+    padding: 0;
+}
+
+.line-title-khoahoc .title-khoahoc {
+    margin-top: 5px;
+}
+
+.order {
+    float: right;
+    line-height: 40px;
+}
+
+    .order select {
+        padding: 5px;
+    }
+
+.thumbnail h4, .thumbnail-KH h4 {
+    color: #272727;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.price span {
+    font-weight: bold
+}
+
+.list-khoahoc {
+    padding: 15px 0;
+    border-bottom: 2px dotted #ccc;
+    margin: 0;
+}
+
+    .list-khoahoc .col-xs-8 {
+        padding: 0;
+    }
+
+    .list-khoahoc .col-xs-4 .price {
+        text-align: right
+    }
+
+.item-khoahoc figure {
+    max-width: 182px;
+    max-height: 113px;
+    overflow: hidden;
+    float: left;
+    margin-right: 15px;
+}
+
+    .item-khoahoc figure img {
+        width: 100%;
+    }
+
+.item-khoahoc h4 {
+    font-weight: bold;
+}
+
+.list-khoahoc:last-child {
+    border-bottom: 0;
+}
+
+.navigation {
+    text-align: center;
+}
+
+.pagination > li > a, .pagination > li > span {
+    color: #f68601;
+}
+
+.KH-GOIY {
+    border-radius: 3px;
+    border: 1px solid #eee;
+}
+
+    .KH-GOIY .carousel-control.left {
+        left: 0;
+    }
+
+    .KH-GOIY .carousel-control.right {
+        right: 0;
+    }
+
+.pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus {
+    z-index: 3;
+    color: #fff;
+    background-color: #f68601;
+    border-color: #ddd;
+}
+
+.main-chitiet {
+    background: #eeeeee;
+    clear: both;
+    padding-top: 70px;
+}
+
+.title-detail {
+    padding-left: 0;
+}
+
+    .title-detail p {
+        color: #727272;
+        font-size: 14px;
+    }
+
+        .title-detail p span.space {
+            color: #727272;
+            font-size: 12px;
+            padding: 0 20px;
+            font-weight: bold;
+        }
+
+        .title-detail p span {
+            color: #f68601;
+        }
+
+.img-chitiet-daotao {
+    padding: 5px 0;
+    height: 420px;
+    position: relative;
+}
+
+    .img-chitiet-daotao iframe {
+        max-height: 400px;
+        position: absolute
+    }
+
+    .img-chitiet-daotao figure {
+        max-width: 663px;
+        max-height: 425px;
+        overflow: hidden;
+    }
+
+.caption-video {
+    position: absolute;
+    width: 100%;
+    line-height: 75px;
+    color: #fff;
+    background-color: rgba(0,0,0,0.6);
+    padding-left: 10px;
+    bottom: 17px;
+    font-size: 25px;
+}
+
+.ytp-title-link span {
+    display: none !important
+}
+
+.price-chitiet {
+    padding-top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #533727;
+    text-align: right
+}
+
+.btn-muakhoahoc {
+    background-color: #f68601;
+    color: #fff;
+    font-size: 22px;
+    margin-top: 12px;
+}
+
+.txt-ma {
+    background: transparent;
+    margin: 10px 0;
+    width: 200px;
+    border: none;
+    padding: 10px 0;
+    -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 0px 0px rgba(0, 0, 0, .075);
+}
+
+.info-baigiang {
+    padding: 1px 10px;
+    border-left: 2px solid #f68601;
+    margin: 20px 0;
+    width: 100%;
+}
+
+    .info-baigiang p {
+        width: 70%;
+        color: #727272;
+        line-height: 23px;
+        margin: 0;
+    }
+
+        .info-baigiang p span {
+            float: right;
+            font-weight: bold;
+            color: #272727
+        }
+
+.content-khoahoc p {
+    font-size: 14px;
+    color: #272727;
+    line-height: 27px;
+    text-align: justify
+}
+
+.icon-baigiang {
+    text-align: right;
+    padding: 0;
+    margin: 0;
+    max-width: 30px;
+}
+
+.title-baigiang {
+    padding: 0;
+}
+
+    .title-baigiang p {
+        padding: 0 5px;
+        line-height: normal
+    }
+
+.info-icon span {
+    margin-left: 15px
+}
+
+.item-baigiang {
+    border-bottom: 1px solid #cccccc;
+    padding: 10px 0
+}
+
+    .item-baigiang.active, .item-baigiang:hover {
+        background-color: #e2e2e3;
+    }
+
+        .item-baigiang.active i, .item-baigiang:hover i {
+            color: #f79027;
+        }
+
+.panel-default, .panel-heading {
+    border: none
+}
+
+    .panel-default > .panel-heading {
+        font-weight: bold
+    }
+
+.panel-body {
+    padding: 15px 0 0;
+}
+
+.tieusu-tacgia .img-tacgia {
+    max-width: 154px;
+    border-radius: 50%;
+}
+
+.tieusu-tacgia h4 {
+    color: #f68601;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.tieusu-tacgia h3, .binhluan h3 {
+    font-weight: bold
+}
+
+.binhluan h3 {
+    padding-bottom: 20px;
+}
+
+.binhluan {
+    padding: 0;
+}
+
+    .binhluan .row {
+        padding: 20px 0 40px 0;
+    }
+
+        .binhluan .row textarea {
+            width: 99%;
+            min-height: 60px
+        }
+
+.content-binhluan {
+    padding: 0;
+}
+
+.title-gioithieu {
+    color: #533727;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.content-gioithieu p {
+    text-align: justify
+}
+
+.tamthu {
+    max-width: 900px;
+    margin: 0 auto
+}
+
+    .tamthu p {
+        text-align: center;
+        line-height: 23px;
+    }
+
+.line-tamthu {
+    max-width: 500px;
+    width: 100%;
+    border-bottom: solid 1px #ccc;
+    margin: 50px auto 0 auto;
+}
+
+.img-nguoisanglap {
+    max-width: 500px;
+    margin: 50px auto
+}
+
+    .img-nguoisanglap img {
+        max-width: 100%;
+    }
+
+    .img-nguoisanglap h5 {
+        font-family: UTM-FLAMENCO;
+        color: #533727;
+        font-size: 36px;
+        text-align: center;
+        padding-bottom: 30px;
+    }
+
+
+/********************************css for video **************************************************************/
+.bg-video {
+    background-color: #2c2f37;
+    padding: 10px;
+    height: 100vh;
+    text-align: right
+}
+
+    .bg-video iframe {
+        border: none;
+        min-height: 708px;
+        width: 100%;
+        max-height: calc(100vh - 130px)
+    }
+
+.action {
+    width: 100%;
+    text-align: left;
+    padding: 10px 20px 20px 20px;
+    color: #fff;
+}
+
+.back-video {
+    float: left;
+    width: 100px
+}
+
+.baoloi {
+    float: right;
+    width: 100px;
+    margin-right: -40px;
+}
+
+.btn-baoloi {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    text-align: center;
+    margin: 0 0 10px;
+}
+
+    .btn-baoloi:hover {
+        color: #ccc;
+    }
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fontawesome-icon-list .fa-hover a .fa {
+    width: 32px;
+    font-size: 14px;
+    display: inline-block;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.fa-list-ul:before {
+    content: "\f0ca";
+}
+
+.fa-download:before {
+    content: "\f019";
+}
+
+.fa-comments:before {
+    content: "\f086";
+}
+
+.column-right {
+    margin: 0;
+    padding: 0;
+}
+
+    .column-right .nav-tabs > li.active > a, .column-right .nav-tabs > li.active > a:hover, .column-right .nav-tabs > li.active > a:focus, .column-right .nav-tabs > li:hover {
+        color: #f79027;
+        cursor: default;
+        background-color: #fff;
+        border: none;
+        border-left: 0;
+        border-top: 0;
+        border-bottom: 0px solid #f79027
+    }
+
+    .column-right .nav-tabs > li.active,
+    .column-right .nav-tabs li:hover {
+        border-bottom: 2px solid #f79027;
+    }
+
+    .column-right .nav-tabs {
+        border-bottom: 0px solid #ddd;
+    }
+
+        .column-right .nav-tabs > li > a {
+            margin-right: 2px;
+            line-height: 1.42857143;
+            border: 0;
+            border-radius: 0;
+        }
+
+        .column-right .nav-tabs > li {
+            width: 50%;
+            border-right: 1px solid #ddd;
+            border-left: 0;
+            border-top: 0;
+            border-bottom: 2px solid #ddd;
+        }
+
+            .column-right .nav-tabs > li:last-child > a {
+                border-right: 0;
+            }
+
+.action a {
+    color: #fff;
+    padding-left: 5px;
+}
+
+.tab-content .item-baigiang {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+    .tab-content .item-baigiang .row {
+        margin: 0;
+    }
+
+.tab-content {
+    height: 100vh;
+    overflow: scroll;
+}
+
+#comment .container {
+    width: 100%;
+}
+
+#comment {
+    padding: 20px;
+}
+
+    #comment .container .form-control {
+        border-radius: 0;
+    }
+
+.icon-comment {
+    padding-top: 10px;
+}
+
+.item-comment {
+    border-bottom: 1px solid #cccccc;
+    padding: 0 5px;
+}
+
+    .item-comment h4 {
+        font-size: 14px;
+    }
+
+    .item-comment span {
+        color: #f68601;
+        font-weight: bold
+    }
+
+    .item-comment a {
+        font-weight: bold;
+        text-decoration: none
+    }
+
+.item-baigiang .fa {
+    color: #ccc;
+    padding: 4px;
+    border-radius: 50%;
+    border: 2px solid;
+    font-size: 8px;
+}
+
+.main-video {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.pagination-video, .pagination-video a {
+    color: #fff;
+    line-height: 65px;
+}
+
+    .pagination-video a:first-child {
+        padding-right: 30px;
+    }
+
+.form-right-icon {
+    padding: 15px 0 35px;
+}
+
+.form-baoloi, .form-kichhoat, .form-khuyenmai {
+    display: none;
+    position: absolute;
+    width: 300px;
+    right: 0;
+    margin: 15px 10px;
+    padding: 20px;
+    background-color: #fff;
+    -webkit-box-shadow: 0px 9px 47px 1px rgba(179,173,179,1);
+    -moz-box-shadow: 0px 9px 47px 1px rgba(179,173,179,1);
+    box-shadow: 0px 9px 47px 1px rgba(179,173,179,1);
+}
+
+.form-right-icon {
+    text-align: right
+}
+
+.icon-kichhoat {
+    width: 15px;
+    height: 15px;
+    background: url(../images/icon-chitiet-khoahoc-all.png);
+    position: absolute;
+}
+
+.icon-khuyenmai {
+    width: 19px;
+    height: 23px;
+    background: url(../images/icon-chitiet-khoahoc-all.png);
+    position: absolute;
+    background-position: -15px 0px;
+    margin-left: 21px;
+}
+
+.icon-baoloi {
+    width: 22px;
+    height: 23px;
+    margin-left: 28px;
+    background: url(../images/icon-chitiet-khoahoc-all.png);
+    position: absolute;
+    background-position: -35px 0px;
+}
+
+#click-show-kichhoat:hover .icon-kichhoat {
+    background-position: 0 15px;
+}
+
+#click-show-khuyenmai:hover .icon-khuyenmai {
+    background-position: -15px 18px;
+    height: 19px;
+}
+
+.khoahoc-goiy {
+    position: relative;
+}
+
+#click-show-baoloi:hover .icon-baoloi {
+    background-position: -35px 17px;
+    height: 17px;
+}
+
+.form-baoloi textarea {
+}
+
+.icon-download {
+    position: fixed;
+    float: right;
+    right: 0;
+    top: 8%;
+}
+
+@media screen and (max-width: 767px) {
+    .column-right {
+        display: none;
+    }
+
+    .bg-video {
+        width: 100%;
+    }
+
+        .bg-video iframe {
+            min-height: 300px
+        }
+}

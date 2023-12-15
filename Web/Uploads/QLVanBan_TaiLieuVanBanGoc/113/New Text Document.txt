@@ -1,0 +1,1091 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8" />
+    <title>sdi bg docx</title>
+    <meta name="Generator" content="PowerTools for Open XML" />
+    <style>span { white-space: pre-wrap; }
+p.pt-000000 {
+    line-height: 107.9%;
+    margin-bottom: 0;
+    margin-left: 0.50in;
+    text-indent: -0.25in;
+    font-family: .VnTime;
+    font-size: 11pt;
+    margin-top: 0;
+    margin-right: 0;
+}
+span.pt-000001 {
+    font-family: .VnTime;
+    font-size: 11pt;
+    font-style: normal;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    text-indent: 0;
+    width: 0.250in;
+}
+span.pt-DefaultParagraphFont {
+    font-family: 'Times New Roman', 'serif';
+    font-size: 11pt;
+    font-style: normal;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+span.pt-DefaultParagraphFont-000002 {
+    font-family: Wingdings;
+    font-size: 11pt;
+    font-style: normal;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+p.pt-000003 {
+    line-height: 107.9%;
+    margin-bottom: 8pt;
+    margin-left: 0.50in;
+    text-indent: -0.25in;
+    font-family: .VnTime;
+    font-size: 11pt;
+    margin-top: 0;
+    margin-right: 0;
+}
+p.pt-000004 {
+    line-height: 107.9%;
+    margin-bottom: 0;
+    margin-left: 1.00in;
+    text-indent: -0.25in;
+    font-family: 'Courier New';
+    font-size: 11pt;
+    margin-top: 0;
+    margin-right: 0;
+}
+span.pt-000005 {
+    font-family: 'Courier New';
+    font-size: 11pt;
+    font-style: normal;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    text-indent: 0;
+    width: 0.250in;
+}
+p.pt-000006 {
+    line-height: 107.9%;
+    margin-bottom: 0;
+    margin-left: 1.50in;
+    text-indent: -0.25in;
+    font-family: Wingdings;
+    font-size: 11pt;
+    margin-top: 0;
+    margin-right: 0;
+}
+span.pt-000007 {
+    font-family: Wingdings;
+    font-size: 11pt;
+    font-style: normal;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    text-indent: 0;
+    width: 0.250in;
+}
+p.pt-000008 {
+    line-height: 107.9%;
+    margin-bottom: 8pt;
+    margin-left: 1.50in;
+    text-indent: -0.25in;
+    font-family: Wingdings;
+    font-size: 11pt;
+    margin-top: 0;
+    margin-right: 0;
+}
+p.pt-000009 {
+    line-height: 107.9%;
+    margin-bottom: 8pt;
+    margin-left: 1.00in;
+    text-indent: -0.25in;
+    font-family: 'Courier New';
+    font-size: 11pt;
+    margin-top: 0;
+    margin-right: 0;
+}
+p.pt-000010 {
+    line-height: 107.9%;
+    margin-bottom: 0;
+    margin-left: 2.00in;
+    text-indent: -0.25in;
+    font-family: Symbol;
+    font-size: 11pt;
+    margin-top: 0;
+    margin-right: 0;
+}
+span.pt-000011 {
+    font-family: Symbol;
+    font-size: 11pt;
+    font-style: normal;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    text-indent: 0;
+    width: 0.250in;
+}
+p.pt-000012 {
+    line-height: 107.9%;
+    margin-bottom: 8pt;
+    margin-left: 2.00in;
+    text-indent: -0.25in;
+    font-family: Symbol;
+    font-size: 11pt;
+    margin-top: 0;
+    margin-right: 0;
+}
+span.pt-000013 {
+    font-family: .VnTime;
+    font-size: 11pt;
+    font-style: normal;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    text-indent: 0;
+    width: 0.250in;
+}
+span.pt-DefaultParagraphFont-000014 {
+    font-family: 'Times New Roman', 'serif';
+    font-size: 11pt;
+    font-style: normal;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+span.pt-000015 {
+    font-family: 'Courier New';
+    font-size: 11pt;
+    font-style: normal;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    text-indent: 0;
+    width: 0.250in;
+}
+span.pt-000016 {
+    font-family: Wingdings;
+    font-size: 11pt;
+    font-style: normal;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    text-indent: 0;
+    width: 0.250in;
+}
+span.pt-000017 {
+    color: #FF0000;
+    font-family: 'Courier New';
+    font-size: 11pt;
+    font-style: normal;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    text-indent: 0;
+    width: 0.250in;
+}
+span.pt-DefaultParagraphFont-000018 {
+    color: #FF0000;
+    font-family: 'Times New Roman', 'serif';
+    font-size: 11pt;
+    font-style: italic;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+span.pt-DefaultParagraphFont-000019 {
+    font-family: 'Times New Roman', 'serif';
+    font-size: 11pt;
+    font-style: italic;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+span.pt-000020 {
+    font-family: Symbol;
+    font-size: 11pt;
+    font-style: normal;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    text-indent: 0;
+    width: 0.250in;
+}
+</style>
+  </head>
+  <body>
+    <div>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000001">-</span>
+        <span class="pt-DefaultParagraphFont">Cơ sở báo cáo: Nghị định 64/2010/NĐ-CP ngày 11/06/2010</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000001">-</span>
+        <span class="pt-DefaultParagraphFont">Nội dung yêu cầu báo cáo: Mẫu số 007</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000001">-</span>
+        <span xml:space="preserve" class="pt-DefaultParagraphFont">Huyện </span>
+        <span class="pt-DefaultParagraphFont-000002">
+          <span>&#61672;</span>
+        </span>
+        <span xml:space="preserve" class="pt-DefaultParagraphFont"> Tỉnh </span>
+        <span class="pt-DefaultParagraphFont-000002">
+          <span>&#61672;</span>
+        </span>
+        <span xml:space="preserve" class="pt-DefaultParagraphFont"> Sở Xây Dựng </span>
+        <span class="pt-DefaultParagraphFont-000002">
+          <span>&#61672;</span>
+        </span>
+        <span xml:space="preserve" class="pt-DefaultParagraphFont"> Bộ Xây Dựng</span>
+      </p>
+      <p dir="ltr" class="pt-000003">
+        <span class="pt-000001">-</span>
+        <span class="pt-DefaultParagraphFont">Hạn gửi báo cáo 20/12 hằng năm</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000001">-</span>
+        <span class="pt-DefaultParagraphFont">Báo cáo diện tích cây xanh đô thị:</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000005">o</span>
+        <span xml:space="preserve" class="pt-DefaultParagraphFont">Loại đô thị (Loại 1 </span>
+        <span class="pt-DefaultParagraphFont-000002">
+          <span>&#61672;</span>
+        </span>
+        <span xml:space="preserve" class="pt-DefaultParagraphFont"> 5, Đặc biệt)</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000005">o</span>
+        <span class="pt-DefaultParagraphFont">Mỗi loại có bao nhiêu:</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000007"></span>
+        <span class="pt-DefaultParagraphFont">Đất xanh công công cộng (Công viên, Vườn hoa công cộng)</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000007"></span>
+        <span class="pt-DefaultParagraphFont">Đất xanh chuyên dụng (Vườn ươm, nghiên cứu)</span>
+      </p>
+      <p dir="ltr" class="pt-000008">
+        <span class="pt-000007"></span>
+        <span class="pt-DefaultParagraphFont">Diện tích (ha, m2), số lượng mỗi loại</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000001">-</span>
+        <span class="pt-DefaultParagraphFont">Báo cáo số lượng cây bóng mát được quản lý</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000005">o</span>
+        <span xml:space="preserve" class="pt-DefaultParagraphFont">Loại đô thị (Loại 1 </span>
+        <span class="pt-DefaultParagraphFont-000002">
+          <span>&#61672;</span>
+        </span>
+        <span xml:space="preserve" class="pt-DefaultParagraphFont"> 5, Đặc biệt)</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000005">o</span>
+        <span class="pt-DefaultParagraphFont">Cây bóng mát trên đường</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000005">o</span>
+        <span class="pt-DefaultParagraphFont">Cây bóng mát trong công viên</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000005">o</span>
+        <span class="pt-DefaultParagraphFont">Cây bóng mát trồng tại các khu khác</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000001">-</span>
+        <span class="pt-DefaultParagraphFont">Báo cáo kinh phí thực hiện duy trì, chăm sóc cây trên địa bàn</span>
+      </p>
+      <p dir="ltr" class="pt-000009">
+        <span class="pt-000005">o</span>
+        <span xml:space="preserve" class="pt-DefaultParagraphFont">Loại đô thị (Loại 1 </span>
+        <span class="pt-DefaultParagraphFont-000002">
+          <span>&#61672;</span>
+        </span>
+        <span xml:space="preserve" class="pt-DefaultParagraphFont"> 5, Đặc biệt)</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000001">-</span>
+        <span class="pt-DefaultParagraphFont">Phân loại cây:</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000005">o</span>
+        <span class="pt-DefaultParagraphFont">Cây xanh đô thị</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000005">o</span>
+        <span class="pt-DefaultParagraphFont">Cây xanh trên đường phố</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000005">o</span>
+        <span class="pt-DefaultParagraphFont">Cây cổ thụ</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000005">o</span>
+        <span class="pt-DefaultParagraphFont">Cây được bảo tồn</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span lang="es-MX" class="pt-000005">o</span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont">Cây e d/m cấm trồng</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span lang="es-MX" class="pt-000005">o</span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont">Cây e d/m trồng h/chế</span>
+      </p>
+      <p dir="ltr" class="pt-000009">
+        <span lang="es-MX" class="pt-000005">o</span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont">Cây nguy hiểm</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span lang="es-MX" class="pt-000001">-</span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont">Phân loại cây bóng mát</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span lang="es-MX" class="pt-000005">o</span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont">Loại cây (1,2,3)</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span lang="es-MX" class="pt-000001">-</span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont">Đặc tính cây trồng</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span lang="es-MX" class="pt-000005">o</span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont">Tên cây</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span lang="es-MX" class="pt-000005">o</span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont">Tên khoa học</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span lang="es-MX" class="pt-000005">o</span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont">Độ cao</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span lang="es-MX" class="pt-000005">o</span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont">Đường tính tán (m)</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span lang="es-MX" class="pt-000005">o</span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont">Hình thức tán</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span lang="es-MX" class="pt-000005">o</span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont">Dạng lá</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span lang="es-MX" class="pt-000005">o</span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont">Màu lá xanh</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span lang="es-MX" class="pt-000005">o</span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont">Kỳ rụng lá trơ cành</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span lang="es-MX" class="pt-000005">o</span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont">Kỳ nở hoa</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span lang="es-MX" class="pt-000005">o</span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont">Màu hoa</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span lang="es-MX" class="pt-000001">-</span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont">Hoạt động quản lý cây xanh in đô thị</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span lang="es-MX" class="pt-000005">o</span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont">Công tác quy hoạch</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span lang="es-MX" class="pt-000007"></span>
+        <span lang="es-MX" xml:space="preserve" class="pt-DefaultParagraphFont">Đô thị loại 1 </span>
+        <span class="pt-DefaultParagraphFont-000002">
+          <span>&#61672;</span>
+        </span>
+        <span lang="es-MX" xml:space="preserve" class="pt-DefaultParagraphFont"> S vườn ươm cây xanh tối thiểu 1m2/người</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span lang="es-MX" class="pt-000007"></span>
+        <span lang="es-MX" xml:space="preserve" class="pt-DefaultParagraphFont">Đô thị khác </span>
+        <span class="pt-DefaultParagraphFont-000002">
+          <span>&#61672;</span>
+        </span>
+        <span lang="es-MX" xml:space="preserve" class="pt-DefaultParagraphFont"> S vườn ươm cây xanh min 1m2/ng</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span lang="es-MX" class="pt-000007"></span>
+        <span class="pt-DefaultParagraphFont">Q/hoạch chung:</span>
+      </p>
+      <p dir="ltr" class="pt-000010">
+        <span class="pt-000011"></span>
+        <span class="pt-DefaultParagraphFont">X/đ s đất cây xanh</span>
+      </p>
+      <p dir="ltr" class="pt-000010">
+        <span class="pt-000011"></span>
+        <span class="pt-DefaultParagraphFont">tỷ lệ s cây xanh/đầu người</span>
+      </p>
+      <p dir="ltr" class="pt-000010">
+        <span class="pt-000011"></span>
+        <span class="pt-DefaultParagraphFont">s cây xanh từng k/v đô thị</span>
+      </p>
+      <p dir="ltr" class="pt-000010">
+        <span class="pt-000011"></span>
+        <span class="pt-DefaultParagraphFont">% che phủ</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000007"></span>
+        <span class="pt-DefaultParagraphFont">Q/hoạch chi tiết:</span>
+      </p>
+      <p dir="ltr" class="pt-000010">
+        <span class="pt-000011"></span>
+        <span class="pt-DefaultParagraphFont">x/đ vị trí, % d/t đất cây xanh, chọn cây p/hợp</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000005">o</span>
+        <span class="pt-DefaultParagraphFont">Trồng cây xanh đ/thị</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000007"></span>
+        <span class="pt-DefaultParagraphFont">t/c cây xanh đúng theo quy định</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000007"></span>
+        <span class="pt-DefaultParagraphFont">t/c cây xanh đường phố:</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000007"></span>
+        <span class="pt-DefaultParagraphFont">Đường lớn (rộng &gt; 5m)</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000007"></span>
+        <span class="pt-DefaultParagraphFont">Đường tb (rộng 3-5m)</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000007"></span>
+        <span class="pt-DefaultParagraphFont">Đường nhỏ (rộng &lt; 3m)</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000007"></span>
+        <span class="pt-DefaultParagraphFont">tuyến đường &lt; 2km (1-2 loại cây xanh)</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000007"></span>
+        <span class="pt-DefaultParagraphFont">tuyến đường &gt; 2km (1-3 loại cây xanh)</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000005">o</span>
+        <span class="pt-DefaultParagraphFont">B/v cây xanh</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000007"></span>
+        <span class="pt-DefaultParagraphFont">Cắt tỉa:</span>
+      </p>
+      <p dir="ltr" class="pt-000010">
+        <span class="pt-000011"></span>
+        <span xml:space="preserve" class="pt-DefaultParagraphFont"> Loại cây: chưa/đã trưởng thành</span>
+      </p>
+      <p dir="ltr" class="pt-000010">
+        <span class="pt-000011"></span>
+        <span class="pt-DefaultParagraphFont">hoạt động: làm quang vòm, làm mỏng vòm lá, giảm/phục hồi ngọn</span>
+      </p>
+      <p dir="ltr" class="pt-000010">
+        <span class="pt-000011"></span>
+        <span class="pt-DefaultParagraphFont">thời gian thực hiện (2 lần/năm)</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000007"></span>
+        <span class="pt-DefaultParagraphFont">Chăm sóc cây xanh đô thị</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000007"></span>
+        <span class="pt-DefaultParagraphFont">X/đ mức độ nguy hiểm của cây</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000007"></span>
+        <span class="pt-DefaultParagraphFont">Giảm sự nguy hiểm</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000007"></span>
+        <span class="pt-DefaultParagraphFont">Lập hồ sơ quản lý</span>
+      </p>
+      <p dir="ltr" class="pt-000010">
+        <span class="pt-000011"></span>
+        <span class="pt-DefaultParagraphFont">t/k số lượng, c/lg, đánh số, hồ sơ tuyến phố và /k/v công cộng</span>
+      </p>
+      <p dir="ltr" class="pt-000010">
+        <span class="pt-000011"></span>
+        <span class="pt-DefaultParagraphFont">cây cổ thụ =&gt; treo biển, lập hồ sơ =&gt; p/vụ c/tác bảo tồn, mỹ thuật, an toàn</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000005">o</span>
+        <span class="pt-DefaultParagraphFont">Chặt hạ + d/chuyển</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000007"></span>
+        <span xml:space="preserve" class="pt-DefaultParagraphFont">t/h cần cấp phép: </span>
+      </p>
+      <p dir="ltr" class="pt-000010">
+        <span class="pt-000011"></span>
+        <span class="pt-DefaultParagraphFont">cổ thụ, cần bảo tồn</span>
+      </p>
+      <p dir="ltr" class="pt-000010">
+        <span class="pt-000011"></span>
+        <span class="pt-DefaultParagraphFont">trên đ/phố, thuộc sở hữu công cộng</span>
+      </p>
+      <p dir="ltr" class="pt-000010">
+        <span class="pt-000011"></span>
+        <span class="pt-DefaultParagraphFont">cao &gt; 10m, đường kính &gt; 30cm</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000007"></span>
+        <span class="pt-DefaultParagraphFont">t/h miễn phép</span>
+      </p>
+      <p dir="ltr" class="pt-000010">
+        <span class="pt-000011"></span>
+        <span class="pt-DefaultParagraphFont">cây trong phạm vi quản lý of t/chức, chuyên ngành</span>
+      </p>
+      <p dir="ltr" class="pt-000010">
+        <span class="pt-000011"></span>
+        <span class="pt-DefaultParagraphFont">t/thế khẩn cấp (thiên tai, đổ gãy)</span>
+      </p>
+      <p dir="ltr" class="pt-000010">
+        <span class="pt-000011"></span>
+        <span class="pt-DefaultParagraphFont">trong k/v dự án xây dựng công trình</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000007"></span>
+        <span class="pt-DefaultParagraphFont">t/tục cấp phép chặt hạ:</span>
+      </p>
+      <p dir="ltr" class="pt-000012">
+        <span class="pt-000011"></span>
+        <span class="pt-DefaultParagraphFont">hồ sơ cấp giấy phép chặt hạ/dịch chuyển: đơn đề nghị, bản vẽ thiết kế mặt bằng, ảnh chụp hiện trạng</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000013">-</span>
+        <span class="pt-DefaultParagraphFont-000014">Quản lý loại cây</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000015">o</span>
+        <span class="pt-DefaultParagraphFont-000014">…</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000013">-</span>
+        <span class="pt-DefaultParagraphFont-000014">Quản lý hồ sơ:</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000005">o</span>
+        <span class="pt-DefaultParagraphFont">Tổ chức thống kê số lượng</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000005">o</span>
+        <span class="pt-DefaultParagraphFont">Đánh giá chất lượng, tình trạng phát triển</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000005">o</span>
+        <span class="pt-DefaultParagraphFont">Lập danh sách, đánh số, treo biển tên, phân loại</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000005">o</span>
+        <span class="pt-DefaultParagraphFont">Bản vẽ vị trí cây cho từng tuyến phố, khu vực đô thị</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000005">o</span>
+        <span xml:space="preserve" class="pt-DefaultParagraphFont">Xác định cây nguy hiểm, cấm trồng, hạn chế trồng </span>
+        <span class="pt-DefaultParagraphFont-000002">
+          <span>&#61672;</span>
+        </span>
+        <span xml:space="preserve" class="pt-DefaultParagraphFont"> lập kế hoạch di chuyển, chặt hạ và trồng thay thế kịp thời.</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000005">o</span>
+        <span xml:space="preserve" class="pt-DefaultParagraphFont">Với cây cần bảo tồn, nguy hiểm </span>
+        <span class="pt-DefaultParagraphFont-000002">
+          <span>&#61672;</span>
+        </span>
+        <span xml:space="preserve" class="pt-DefaultParagraphFont"> Thực hiện theo quy định tại điều 17, 18 nghị định số 64/2010/NĐ-CP</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000015">o</span>
+        <span xml:space="preserve" class="pt-DefaultParagraphFont">Tham khảo Thông tư </span>
+        <span class="pt-DefaultParagraphFont-000014">20/2005/TT-BXD</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000015">o</span>
+        <span class="pt-DefaultParagraphFont">Loại cây:</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Cây thường: Lập hồ sơ cho từng tuyến phố, khu vực công cộng</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Cây cổ thụ, cây cần bảo tồn: Treo biển tên, lập hồ sơ từng cây</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000013">-</span>
+        <span class="pt-DefaultParagraphFont-000014">Bản đồ cây xanh:</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000015">o</span>
+        <span class="pt-DefaultParagraphFont">Anh Nghiệp</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000013">-</span>
+        <span class="pt-DefaultParagraphFont-000014">Quản lý thông tin đất cây xanh đô thị</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000015">o</span>
+        <span class="pt-DefaultParagraphFont">Thông tin cần quản lý</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Mục đích sử dụng: công cộng, chuyên dụng</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span xml:space="preserve" class="pt-DefaultParagraphFont">Loại đô thị: Loại 1 </span>
+        <span class="pt-DefaultParagraphFont-000002">
+          <span>&#61672;</span>
+        </span>
+        <span xml:space="preserve" class="pt-DefaultParagraphFont"> Loại 5 (Đặc biệt)</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Diện tích (m2, ha)</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000015">o</span>
+        <span class="pt-DefaultParagraphFont">Báo cáo thống kê: Mẫu số 007 thông tin 01/2023/TT-BXD</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000013">-</span>
+        <span class="pt-DefaultParagraphFont-000014">Quản lý danh mục loại cây xanh</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000015">o</span>
+        <span class="pt-DefaultParagraphFont">Phụ lục số 1 thông tư 20/2005/TT-BXD</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000015">o</span>
+        <span class="pt-DefaultParagraphFont">Thông tin cần quản lý</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Tên loại</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Chiều cao</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Khoảng cách trồng</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Khoảng cách tối thiểu lề đường</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Chiều rộng vỉa hè</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000013">-</span>
+        <span class="pt-DefaultParagraphFont-000014">Quản lý cây xanh đô thị</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000015">o</span>
+        <span class="pt-DefaultParagraphFont">Thông tin cần quản lý:</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span lang="es-MX" class="pt-000007"></span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont">Tên cây</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span lang="es-MX" class="pt-000007"></span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont">Tên khoa học</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span lang="es-MX" class="pt-000007"></span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont">Độ cao</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span lang="es-MX" class="pt-000007"></span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont">Đường tính tán (m)</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span lang="es-MX" class="pt-000007"></span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont">Hình thức tán</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span lang="es-MX" class="pt-000007"></span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont">Dạng lá</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span lang="es-MX" class="pt-000007"></span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont">Màu lá xanh</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span lang="es-MX" class="pt-000007"></span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont">Kỳ rụng lá trơ cành</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span lang="es-MX" class="pt-000007"></span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont">Kỳ nở hoa</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span lang="es-MX" class="pt-000007"></span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont">Màu hoa</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span lang="es-MX" class="pt-000007"></span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont">…</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span lang="es-MX" class="pt-000013">-</span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont-000014">Quản lý thông tin phân loại cây xanh</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000017">o</span>
+        <span class="pt-DefaultParagraphFont-000018">Không rõ thông tin cần quản lý</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000013">-</span>
+        <span class="pt-DefaultParagraphFont-000014">Quản lý đặc tính cây xanh</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000015">o</span>
+        <span class="pt-DefaultParagraphFont">Phụ lục số 2 thông tư 20/2005/TT-BXD</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000015">o</span>
+        <span class="pt-DefaultParagraphFont">Thông tin cần quản lý:</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Tên cây</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Tên khoa học</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Cây cao</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Đường kính tán</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Hình thức tán</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Dạng lá</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Màu lá xanh</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Kỳ rụng lá trơ cành</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Kỷ nở hoa</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Màu hoa</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000013">-</span>
+        <span class="pt-DefaultParagraphFont-000014">Quản lý tình trạng sức khỏe, sâu bệnh của cây</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000015">o</span>
+        <span class="pt-DefaultParagraphFont-000019">Chưa có mẫu báo cáo cụ thể</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000013">-</span>
+        <span class="pt-DefaultParagraphFont-000014">Quản lý tình hình sâu bệnh của cây xanh đô thị</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000013">-</span>
+        <span class="pt-DefaultParagraphFont-000014">Quản lý di dời cây:</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000015">o</span>
+        <span class="pt-DefaultParagraphFont">Điều 14 nghị định số 64/2010/NĐ-CP.</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000015">o</span>
+        <span class="pt-DefaultParagraphFont">Trường hợp cần cấp phép</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000015">o</span>
+        <span class="pt-DefaultParagraphFont">Trường hợp không cần cấp phép</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000015">o</span>
+        <span class="pt-DefaultParagraphFont">Bộ hồ sơ:</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Đơn đề nghị nêu rõ vị trí chặt hạ, dịch chuyển, kích thước, loại cây và lý do</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Sơ đồ vị trí cây xanh</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Ảnh chụp hiện trạng cây xanh</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000015">o</span>
+        <span class="pt-DefaultParagraphFont">Quy trình</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span xml:space="preserve" class="pt-DefaultParagraphFont">Nộp hồ sơ </span>
+        <span class="pt-DefaultParagraphFont-000002">
+          <span>&#61672;</span>
+        </span>
+        <span xml:space="preserve" class="pt-DefaultParagraphFont"> Cơ quan quản lý cây xanh đô thị tiếp nhận</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Thời gian giải quyết:</span>
+      </p>
+      <p dir="ltr" class="pt-000010">
+        <span class="pt-000020"></span>
+        <span class="pt-DefaultParagraphFont">Cần cấp phép: 15 ngày</span>
+      </p>
+      <p dir="ltr" class="pt-000010">
+        <span class="pt-000020"></span>
+        <span class="pt-DefaultParagraphFont">Không cần phép: báo cáo lại sau 10 ngày thực hiện</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000013">-</span>
+        <span class="pt-DefaultParagraphFont-000014">Báo cáo thống kê theo tuyến</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span lang="es-MX" class="pt-000017">o</span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont-000018">Chưa có mẫu báo cáo</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span lang="es-MX" class="pt-000013">-</span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont-000014">Báo cáo thống kê theo đơn vị quản lý</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span lang="es-MX" class="pt-000017">o</span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont-000018">Chưa có mẫu báo cáo</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span lang="es-MX" class="pt-000013">-</span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont-000014">Báo cáo thống kê theo phân loại cây</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span lang="es-MX" class="pt-000017">o</span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont-000018">Chưa có mẫu báo cáo</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000013">-</span>
+        <span class="pt-DefaultParagraphFont-000014">Báo cáo thống kê theo loại sâu bệnh</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span lang="es-MX" class="pt-000017">o</span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont-000018">Chưa có mẫu báo cáo</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span lang="es-MX" class="pt-000013">-</span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont-000014">Báo cáo về tình hình di dời cây xanh đô thị</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span lang="es-MX" class="pt-000017">o</span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont-000018">Chưa có mẫu báo cáo</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span lang="es-MX" class="pt-000013">-</span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont-000014">Phản ánh tình hình sâu bệnh</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000013">-</span>
+        <span class="pt-DefaultParagraphFont-000014">Phản ánh tình trạng di dời cây</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000013">-</span>
+        <span class="pt-DefaultParagraphFont-000014">Cảnh báo các thông tin về cây xanh đô thị</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span lang="es-MX" class="pt-000015">o</span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont-000019">Chưa có mẫu báo cáo</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span lang="es-MX" class="pt-000013">-</span>
+        <span lang="es-MX" class="pt-DefaultParagraphFont-000014">Quản lý danh mục cây bảo tồn</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000015">o</span>
+        <span class="pt-DefaultParagraphFont-000019">Không có thông tin. Hiện tại chỉ có thông tin cây khuyến khích trồng</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000013">-</span>
+        <span class="pt-DefaultParagraphFont-000014">Quản lý cây cấm trồng, cây trồng hạn chế</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000015">o</span>
+        <span class="pt-DefaultParagraphFont">Điều 3 phụ lục II nghị định số 64/2010/NĐ-CP</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000015">o</span>
+        <span class="pt-DefaultParagraphFont">Thông tin cần quản lý:</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Tên Việt Nam</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Tên khoa học</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Họ thực vật</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Lý do cấm/hạn chế trồng.</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Biện pháp hạn chế</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000013">-</span>
+        <span class="pt-DefaultParagraphFont-000014">Quản lý đơn vị thực hiện dịch vụ về quản lý cây xanh</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000015">o</span>
+        <span class="pt-DefaultParagraphFont">Điều 17 nghị định số 64/2010/NĐ-CP (chỉ nêu nghĩa vụ thực hiện)</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000015">o</span>
+        <span class="pt-DefaultParagraphFont">Thông tin cần quản lý:</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Tên</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Mã số thuế</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Điện thoại</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Fax</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Email</span>
+      </p>
+      <p dir="ltr" class="pt-000006">
+        <span class="pt-000016"></span>
+        <span class="pt-DefaultParagraphFont">Địa chỉ</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000013">-</span>
+        <span class="pt-DefaultParagraphFont-000014">Quản lý kinh phí thực hiện duy trì và chăm sóc cây</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000015">o</span>
+        <span class="pt-DefaultParagraphFont-000019">Chưa có mẫu báo cáo cụ thể</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000013">-</span>
+        <span class="pt-DefaultParagraphFont-000014">Quản lý quảng cáo</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000013">-</span>
+        <span class="pt-DefaultParagraphFont-000014">Quản lý lịch trình bảo trì, chăm sóc</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000015">o</span>
+        <span class="pt-DefaultParagraphFont-000019">Không có thông tin về mẫu báo cáo</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000013">-</span>
+        <span class="pt-DefaultParagraphFont-000014">Theo dõi tình hình cập nhật số liệu</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000015">o</span>
+        <span class="pt-DefaultParagraphFont">Tương tự cập nhật thông tin vào hồ sơ</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000013">-</span>
+        <span class="pt-DefaultParagraphFont-000014">Quản lý kế hoạch đầu tư, phát triển cây xanh đô thị</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000013">-</span>
+        <span class="pt-DefaultParagraphFont-000014">Báo cáo tổng hợp về diện tích đất cây xanh đô thị</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000015">o</span>
+        <span class="pt-DefaultParagraphFont">Mẫu số 007 thông tin 01/2023/TT-BXD</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000013">-</span>
+        <span xml:space="preserve" class="pt-DefaultParagraphFont-000014">Báo cáo về tổng hợp về số lượng cây bóng mát </span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000015">o</span>
+        <span class="pt-DefaultParagraphFont">Mẫu số 007 thông tin 01/2023/TT-BXD</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000013">-</span>
+        <span class="pt-DefaultParagraphFont-000014">Báo cáo tổng hợp về kinh phí thực hiện duy trì, chăm sóc cây</span>
+      </p>
+      <p dir="ltr" class="pt-000004">
+        <span class="pt-000015">o</span>
+        <span class="pt-DefaultParagraphFont">Mẫu số 007 thông tin 01/2023/TT-BXD</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000013">-</span>
+        <span class="pt-DefaultParagraphFont-000014">Quản lý báo cáo của các đơn vị</span>
+      </p>
+      <p dir="ltr" class="pt-000000">
+        <span class="pt-000013">-</span>
+        <span class="pt-DefaultParagraphFont-000014">Quản lý thông báo</span>
+      </p>
+      <p dir="ltr" class="pt-000003">
+        <span class="pt-000013">-</span>
+        <span class="pt-DefaultParagraphFont-000014">Quản lý thông tin kho tài liệu</span>
+      </p>
+    </div>
+  </body>
+</html>

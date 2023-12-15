@@ -1,0 +1,191 @@
+﻿.cst-form-group {
+    overflow: hidden;
+    width: 100%;
+}
+
+.cst-lbl {
+    font-weight: normal;
+    text-align:right;
+}
+
+.cst-btn {
+    color: #fff;
+    font-family: 'Segoe UI';
+    text-align: center;
+}
+
+.cst-btn-submit {
+    background: #6fb3e0;
+}
+
+.cst-msg {
+    font-size: 13px;
+}
+
+.cst-msg-2 {
+    font-size: 12px;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.cst-txtarea {
+    width: 100%;
+    resize: none;
+    height: 120px;
+    font-size: 14px;
+    font-family: monospace;
+}
+
+.webGrid {
+    margin: 0;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #B4CFC3;
+}
+
+.cst-result-text {
+    font-weight: bolder;
+    font-size: 17px;
+    font-family: RobotoCondensedDefault;
+}
+
+table.webGrid tr.head {
+    background: #C0C0C0;
+}
+
+    table.webGrid tr.head th, table.webGrid tr.head td {
+        border: 1px solid #e8e8e8;
+        background: #f4f4f4;
+        font-weight: bold;
+        /*padding: 10px 0;*/
+        text-align: center;
+    }
+
+table.webGrid tr {
+    background: white;
+}
+
+    table.webGrid tr.alt {
+        /*background: #efefef;*/
+    }
+
+    table.webGrid tr td {
+        border: 1px solid #e8e8e8;
+        padding: 7px 4px;
+        text-align: center;
+    }
+
+table.webGrid tbody tr:hover {
+    background: none repeat scroll 0 0 #f9f9f9 !important;
+}
+
+table.webGrid tfoot {
+    text-align: right;
+}
+
+    table.webGrid tfoot a, .pagination a {
+        background: none repeat scroll 0 0 #cccccc;
+        border: 1px solid #c0c0c0;
+        border-radius: 3px;
+        color: #ffffff;
+        display: inline-block;
+        margin: 0 2px;
+        padding: 4px 8px;
+        text-align: right;
+        text-decoration: none !important;
+    }
+
+        table.webGrid tfoot a:hover, .pagination a:hover, .currentPage {
+            background: none repeat scroll 0 0 #1f77c0 !important;
+            border: 1px solid #0e5a9a !important;
+        }
+
+.btnEdit {
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAAbRJREFUOE+VkF0oQ2Ecxo9yoaEMJbMQKbQtJXEhI2qkpJRbLlAulHuuccGFGqVQtrML24qZzcaW5XNMkSHJpIhtp+2cbShDj3erXbk4x1tv79fzPL/3/6cogeO2sVEhUPpXZiore9WIxXDLZPv/DnG6r2dW2tsxl5mJpdxcuEpLcadUSgUH4WYUvttjXO4dYJqisJifD1tBAQQFxC/GPkPbrfCvSfHi7EYwDiwqFJjLydnmDXg/HZ/knF0IbsrxYszDKwlh1qXw3V/y0wNX6qzvsz74TeVgrHV4Xs1AyK5ExCoBN0+JeenwjiCwUQlut4eQi8A6OhAwy/Ckz1bzmmNHw2ZmqwFhh4pQm8BYapJ01lr8w2t+82gL313NyXpj+/2EWoWIqxffe7X8dSfSQyezA6yXxsf5BMKk+2+HgwjvtJFeVAzx0pMBFwvL3A2N6L0JMZ8BnKMTrL2eEWROiDymKS/8W4g92vAROAR+noV9PUUolEjiVFo6SA34Yr0tgskpoVwuh0gkUv3bqNVqqzUajdVoNJ7TNB0l+y+dTgeDwQC9Xp9cE+fEPXmPkPlAPBaylvwC6PAHISLJskYAAAAASUVORK5CYII=') /*/Content/Images/Edit.png*/ no-repeat;
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin: 0 auto;
+}
+
+.btnDelete {
+    background: url(/Content/Images/Delete.png) no-repeat;
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin: 0 auto;
+}
+
+#HeaderGrid > div {
+    /*margin: 2px 0;*/
+    overflow: hidden;
+}
+
+.cst-button-section {
+    float: right;
+}
+
+.cst-alert {
+    display: none;
+}
+
+.cst-result {
+    font-weight: bold;
+}
+
+.cst-edit-button {
+    font-size: 20px;
+}
+
+.cst-search-frm {
+    border-radius: 4px;
+    border: 1px solid #d5e3ef;
+    overflow: hidden;
+    padding: 0 10px;
+    margin: 0 0 10px 0;
+}
+
+.cst-tab-content {
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.cst-header-title {
+    font-weight: bold;
+}
+
+.dataTables_paginate .pagination li a:hover {
+    background: #EAEFF2 !important;
+    border-color: #d4dfe3 !important;
+    color: #6faed9 !important;
+}
+
+.col-btn-group {
+    min-width: 80px !important;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+    .col-btn-group > .col-btn {
+        position: relative;
+        float: left;
+        margin:0 5px;
+    }
+.search-form .control-label{
+    text-align:left !important;
+}
+
+.mes-note-error {
+    display: inline;
+    color:orangered;
+}
+
+.required-star {
+    color: orangered;
+}
+
+.wrap-text {
+    width: 100% !important;
+    word-wrap: break-word;
+}

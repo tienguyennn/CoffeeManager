@@ -1,0 +1,383 @@
+@media (min-width: 1441px) {
+    table thead tr th.text-center.col-thaotac-full {
+        width: 1% !important;
+        text-align: center;
+    }
+    .btn-group, .btn-group-vertical {
+        display:flex !important;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+    table thead tr th.text-center.col-thaotac-full {
+        width: 1% !important;
+        text-align: center;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    table thead tr th.text-center.col-thaotac-full {
+        width: 1% !important;
+        text-align: center;
+    }
+    .page-content {
+        width: 100% !important;
+        float: left;
+    }
+
+    .FileHuongDanSD {
+        display: none;
+    }
+
+    .tong-left, .tong-right {
+        height: auto;
+    }
+
+    .tong-left {
+        padding: 10px !important;
+    }
+
+        .tong-left .btn.btn-primary.btn-report {
+            width: 100%;
+        }
+
+    .left-thongtin .text-tieude-mini, .right-thongbao .text-tieude-mini {
+        text-align: center;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .left-thongtin {
+        padding: 0px;
+        padding-right: 15px !important;
+        text-align: unset;
+    }
+
+    .tong-right .text-tieude-mini {
+        text-align: center;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .tong-right .col-sm-4 {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .class-pd-tong {
+        width: 100%;
+        float: left;
+    }
+
+    .nav-pills li {
+        margin-left: 0px !important;
+    }
+
+    .center-block.overflow-hidden.width-50 .txt-label {
+        text-align: left;
+    }
+
+    .center-block.overflow-hidden.width-50 {
+        width: 100% !important;
+        padding: 0 20px;
+        text-align: left;
+    }
+
+    #collapse62 .btn-group a:nth-child(1) {
+        display: none;
+    }
+
+    .table--danhsach-donvi-wrapper {
+        max-height: 550px;
+    }
+
+    .nopd.class-tong-solieu .row .col-sm-6 {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .well.SearchBox .row.row-block #btnSearch {
+        margin-top: 20px;
+        height: 32px;
+    }
+
+    .well.SearchBox .col-md-12.center {
+        margin-top: auto !important;
+        padding-bottom: 5px;
+    }
+
+    .well.SearchBox .row.row-block {
+        /*display: flex;*/
+    }
+
+
+    #collapse62 .btn-group a:nth-child(1), #collapse63 div.btn-group a:nth-child(1) {
+        display: none;
+    }
+
+    .col-thaotac-full {
+        width: 1% !important;
+        text-align: center;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .page-content {
+        width: 100% !important;
+        float: left;
+    }
+
+    .FileHuongDanSD {
+        display: none;
+    }
+
+    .tong-left, .tong-right {
+        height: auto;
+    }
+
+    .tong-left {
+        padding: 10px !important;
+    }
+
+        .tong-left .btn.btn-primary.btn-report {
+            width: 100%;
+        }
+
+    .left-thongtin .text-tieude-mini, .right-thongbao .text-tieude-mini {
+        text-align: center;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .left-thongtin {
+        padding: 0px;
+        padding-right: 15px !important;
+        text-align: unset;
+    }
+
+    .tong-right .text-tieude-mini {
+        text-align: center;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .tong-right .col-sm-4 {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .class-pd-tong {
+        width: 100%;
+        float: left;
+    }
+
+    .nav-pills li {
+        margin-left: 0px !important;
+    }
+
+    .center-block.overflow-hidden.width-50 .txt-label {
+        text-align: left;
+    }
+
+    .center-block.overflow-hidden.width-50 {
+        width: 100% !important;
+        padding: 0 20px;
+        text-align: left;
+    }
+
+    #collapse62 .btn-group a:nth-child(1) {
+        display: none;
+    }
+
+    .table--danhsach-donvi-wrapper {
+        max-height: 550px;
+    }
+
+    .nopd.class-tong-solieu .row .col-sm-6 {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .well.SearchBox .row.row-block #btnSearch {
+        margin-top: auto;
+        height: 32px;
+        margin-top: auto;
+    }
+
+    .well.SearchBox .col-md-12.center {
+        margin-top: auto !important;
+        padding-bottom: 5px;
+    }
+
+    .well.SearchBox .row.row-block {
+        display: flex;
+    }
+
+
+    #collapse62 .btn-group a:nth-child(1), #collapse63 div.btn-group a:nth-child(1) {
+        display: none;
+    }
+
+    .col-thaotac-full {
+        width: 1% !important;
+        text-align: center;
+    }
+}
+
+
+@media (min-width: 321px) and (max-width: 480px) {
+    .page-content {
+        width: 100% !important;
+        float: left;
+    }
+
+    .FileHuongDanSD {
+        display: none;
+    }
+
+    .tong-left, .tong-right {
+        height: auto;
+    }
+
+    .tong-left {
+        padding: 10px !important;
+    }
+
+        .tong-left .btn.btn-primary.btn-report {
+            width: 100%;
+        }
+
+    .left-thongtin .text-tieude-mini, .right-thongbao .text-tieude-mini {
+        text-align: center;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .left-thongtin {
+        padding: 0px;
+        padding-right: 15px !important;
+        text-align: unset;
+    }
+
+    .tong-right .text-tieude-mini {
+        text-align: center;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .tong-right .col-sm-4 {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .class-pd-tong {
+        width: 100%;
+        float: left;
+    }
+
+    .nav-pills li {
+        margin-left: 0px !important;
+    }
+
+    .center-block.overflow-hidden.width-50 .txt-label {
+        text-align: left;
+    }
+
+    .center-block.overflow-hidden.width-50 {
+        width: 100% !important;
+        padding: 0 20px;
+        text-align: left;
+    }
+
+    #collapse62 .btn-group a:nth-child(1), #collapse63 div.btn-group a:nth-child(1) {
+        display: none;
+    }
+
+    .table--danhsach-donvi-wrapper {
+        max-height: 550px;
+    }
+
+    .col-thaotac-full {
+        width: 1% !important;
+        text-align: center;
+    }
+}
+
+
+@media screen and (max-width: 320px) {
+    .page-content {
+        width: 100% !important;
+        float: left;
+    }
+
+    .FileHuongDanSD {
+        display: none;
+    }
+
+    .tong-left, .tong-right {
+        height: auto;
+    }
+
+    .tong-left {
+        padding: 10px !important;
+    }
+
+        .tong-left .btn.btn-primary.btn-report {
+            width: 100%;
+        }
+
+    .left-thongtin .text-tieude-mini, .right-thongbao .text-tieude-mini {
+        text-align: center;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .left-thongtin {
+        padding: 0px;
+        padding-right: 15px !important;
+        text-align: unset;
+    }
+
+    .tong-right .text-tieude-mini {
+        text-align: center;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .tong-right .col-sm-4 {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .class-pd-tong {
+        width: 100%;
+        float: left;
+    }
+
+    .nav-pills li {
+        margin-left: 0px !important;
+    }
+
+    .center-block.overflow-hidden.width-50 .txt-label {
+        text-align: left;
+    }
+
+    .center-block.overflow-hidden.width-50 {
+        width: 100% !important;
+        padding: 0 20px;
+        text-align: left;
+    }
+
+    #collapse62 .btn-group a:nth-child(1), #collapse63 div.btn-group a:nth-child(1) {
+        display: none;
+    }
+
+    .table--danhsach-donvi-wrapper {
+        max-height: 550px;
+    }
+
+    table thead tr th.text-center.col-thaotac-full {
+        width: 1% !important;
+        text-align: center;
+    }
+}

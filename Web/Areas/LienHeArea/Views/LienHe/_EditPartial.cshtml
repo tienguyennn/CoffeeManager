@@ -1,0 +1,74 @@
+@using Model.IdentityEntities
+@using Model.IdentityEntities
+@using Web.Areas.LienHeArea.Models
+
+@model EditVM
+@{ 
+
+}
+<div class="modal-dialog">
+    @using (Ajax.BeginForm("Edit", "LienHe", new { @area = "LienHeArea" }, new AjaxOptions()
+    {
+        HttpMethod = "POST",
+        OnFailure = "AjaxFormError",
+        OnSuccess = "AjaxFormSuccess",
+    }, new { id = "editLienHeForm",enctype= "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        //HtmlHelper.UnobtrusiveJavaScriptEnabled = false;
+    <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <div class="center">
+                    <h4 class="modal-title">Cập nhật Liên hệ</h4>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+ 			@Html.HiddenFor(x=>x.Id)
+				<div class="form-group">
+				<label class="control-label col-sm-4">Họ tên </label>
+				<div class="col-sm-8">
+				@Html.TextBoxFor(m => m.HoTen, new { @class = "form-control" })
+				@Html.ValidationMessageFor(m => m.HoTen, "", new { @class = "text-danger" })
+				</div>
+				</div>
+				<div class="form-group">
+				<label class="control-label col-sm-4">Email </label>
+				<div class="col-sm-8">
+				@Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+				@Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+				</div>
+				</div>
+				<div class="form-group">
+				<label class="control-label col-sm-4">Tiêu đề </label>
+				<div class="col-sm-8">
+				@Html.TextBoxFor(m => m.TieuDe, new { @class = "form-control" })
+				@Html.ValidationMessageFor(m => m.TieuDe, "", new { @class = "text-danger" })
+				</div>
+				</div>
+				<div class="form-group">
+				<label class="control-label col-sm-4">Nội dung </label>
+				<div class="col-sm-8">
+				@Html.TextBoxFor(m => m.NoiDung, new { @class = "form-control" })
+				@Html.ValidationMessageFor(m => m.NoiDung, "", new { @class = "text-danger" })
+				</div>
+				</div>
+
+ 
+
+                </div>
+            </div>
+            <div class="modal-footer center">
+                <button type="submit" class="btn btn-primary">Hoàn thành</button>
+
+                <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    }
+</div>
+<script>
+
+</script>
+@Scripts.Render("~/bundles/jqueryval")

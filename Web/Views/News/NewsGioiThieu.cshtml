@@ -1,0 +1,37 @@
+﻿@using Service.NewsService.Dto
+@using Web.Models
+@model IndexTinTucVM
+@{
+    ViewBag.Title = "NewsGioiThieu";
+    Layout = "~/Views/Shared/_LayoutFrontEnd.cshtml";
+}
+<style>
+    .gioithieu h3{
+        font-size:26px;
+        font-weight: bold;
+        text-align: center;
+        padding-bottom: 30px;
+        margin-bottom: 40px;
+            border-bottom: 1px solid #ccc
+    }
+    .gioithieu p {
+        font-size: 18px;
+    }
+
+</style>
+@if (Model.TinTucGioiThieu != null)
+{
+    <div class="container gioithieu">
+
+    <div class="col-sm-12">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6"><img alt="" src="/@Model.TinTucGioiThieu.ImageThumb" width="100%" /></div>
+        <div class="col-sm-3"></div>
+    </div>
+    <div class="col-sm-12">
+        <h3>@Model.TinTucGioiThieu.Title</h3>
+        <p>@Model.TinTucGioiThieu.Description</p>
+    </div>
+</div>
+}
+

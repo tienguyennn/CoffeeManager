@@ -1,0 +1,159 @@
+﻿@model Web.Models.RegisterDoneModel
+@using Service.Common;
+@
+@{
+    ViewBag.Title = "Đăng ký tài khoản thành công";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="FormDangKy">
+    <div class="container">
+
+        <div class="col-md-12 report">
+            
+            <div class="register" style="padding-top:30px;">
+
+                <div id="boxRegisterForm">
+                    <div class="row form">
+                        <div class="col-sm-12">
+                            <div class="formBox doneContent">
+                                <div class="fieldset-title">
+                                    Đăng ký tài khoản doanh nghiệp thành công
+                                </div>
+                                <div class="col-sm-6 text-center">
+                                    <img src="~/Content/EndUser/img/registerDone.png" style="    margin-top: 30px;" />
+                                    <div class="titleDone">Chúc mừng quý vị đã đăng ký thành công</div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div>Thông tin đăng ký tài khoản</div>
+                                    <table class="tableShowDone">
+                                        <tr>
+                                            <td>Tên tài khoản</td>
+                                            <td>@Model.UserInfo.UserName</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email</td>
+                                            <td>@Model.UserInfo.Email</td>
+                                        </tr>
+                                        @if (Model.TypeAccount == OrganizationTypeConstant.Company)
+                                        {
+                                            <tr>
+                                                <td>Tên tổ chức</td>
+                                                <td>@Model.Company.Name</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Mã số thuế</td>
+                                                <td>@Model.Company.TaxCode</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Đăng ký kinh doanh</td>
+                                                <td>@Model.Company.RegisterCode</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Địa chỉ</td>
+                                                <td>@Model.Company.Address, @Model.Company.XaName, @Model.Company.HuyenName, @Model.Company.TinhName</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Người đại diện</td>
+                                                <td>@Model.Company.RepresenterName</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Chức vụ</td>
+                                                <td>@Model.Company.RepresenterJob</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Điện thoại Người đại diện</td>
+                                                <td>@Model.Company.RepresenterMobile</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Email Người đại diện</td>
+                                                <td>@Model.Company.RepresenterEmail</td>
+                                            </tr>
+                                        }
+                                        else if (Model.TypeAccount == OrganizationTypeConstant.Organization)
+                                        {
+                                            <tr>
+                                                <td>Tên tổ chức</td>
+                                                <td>@Model.Company.Name</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Mã số thuế</td>
+                                                <td>@Model.Company.TaxCode</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Đăng ký kinh doanh</td>
+                                                <td>@Model.Company.RegisterCode</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Địa chỉ</td>
+                                                <td>@Model.Company.Address, @Model.Company.XaName, @Model.Company.HuyenName, @Model.Company.TinhName</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Người đại diện</td>
+                                                <td>@Model.Company.RepresenterName</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Chức vụ</td>
+                                                <td>@Model.Company.RepresenterJob</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Điện thoại Người đại diện</td>
+                                                <td>@Model.Company.RepresenterMobile</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Email Người đại diện</td>
+                                                <td>@Model.Company.RepresenterEmail</td>
+                                            </tr>
+                                        }
+
+                                    </table>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+                <div class="clearBoth"></div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+
+    </script>
+    @*<script>
+            $("#chooseObjectRegister").change(function () {
+                var type = $(this).val();
+                $.ajax({
+                    url: '/account/GFormRegister/' + type,
+                    type: 'post',
+                    success: function (rs) {
+                        $("#boxRegisterForm").html(rs);
+                    },
+                    error: function (e) {
+                        NotiError("Lỗi xử lý");
+                    }
+                });
+            });
+        </script>
+        @Scripts.Render("~/bundles/jqueryval")*@
+}
+
+

@@ -1,0 +1,64 @@
+
+Dòng 3 mã sản phẩm bị bỏ trống
+Dòng 4 mã sản phẩm bị bỏ trống
+Dòng 5 mã dự án bị bỏ trống
+Dòng 6 diện tích thông thủy bị âm, trống hoặc bằng 0
+Dòng 7 mã dự án bị bỏ trống
+Dòng 8 mã dự án bị bỏ trống
+Dòng 9 mã dự án bị bỏ trống
+Dòng 10 mã sản phẩm bị bỏ trống
+Dòng 11 mã dự án không tồn tại trong csdl
+Dòng 12 tên đường bị trống
+Dòng 13 diện tích thông thủy bị âm, trống hoặc bằng 0
+Dòng 14 diện tích thông thủy bị âm, trống hoặc bằng 0
+Dòng 15 tên đường bị trống
+Dòng 16 diện tích thông thủy bị âm, trống hoặc bằng 0
+Dòng 17 diện tích thông thủy bị âm, trống hoặc bằng 0
+Dòng 18 diện tích thông thủy bị âm, trống hoặc bằng 0
+Dòng 19 mã block sản phẩm không được để trống
+Dòng 20 diện tích thông thủy bị âm, trống hoặc bằng 0
+Dòng 21 lô số nhà bị trống
+Dòng 22 hướng ban công không được để trống
+Dòng 23 diện tích thông thủy bị âm, trống hoặc bằng 0
+Dòng 24 số tầng bị âm, rỗng hoặc bằng 0
+Dòng 25 số tầng bị âm, rỗng hoặc bằng 0
+Dòng 26 tên đường bị trống
+Dòng 27 vị trí sản phẩm bị âm, rỗng hoặc bằng 0
+Dòng 27 diện tích thông thủy bị âm, trống hoặc bằng 0
+Dòng 28 vị trí sản phẩm bị âm, rỗng hoặc bằng 0
+Dòng 28 diện tích thông thủy bị âm, trống hoặc bằng 0
+Dòng 29 số tầng sản phẩm lớn hơn số tầng cho phép của block dự án
+Dòng 30 diện tích thông thủy bị âm, trống hoặc bằng 0
+Dòng 31 diện tích thông thủy bị âm, trống hoặc bằng 0
+Dòng 32 diện tích thông thủy bị âm, trống hoặc bằng 0
+Dòng 33 diện tích thông thủy bị âm, trống hoặc bằng 0
+Dòng 34 diện tích đất bị âm, trống hoặc bằng 0
+Dòng 35 diện tích đất bị âm, trống hoặc bằng 0
+Dòng 36 tên đường bị trống
+Dòng 37 diện tích đất bị âm, trống hoặc bằng 0
+Dòng 38 diện tích đất bị âm, trống hoặc bằng 0
+Dòng 39 hướng ban công không được để trống
+Dòng 40 hướng ban công không được để trống
+Dòng 41 mã sản phẩm không tồn tại trong hệ thống
+Dòng 42 tên sản phẩm đã tồn tại trong hệ thống
+Dòng 43 tên sản phẩm đã tồn tại trong hệ thống
+Dòng 44 tên sản phẩm đã tồn tại trong hệ thống
+Dòng 45 tên sản phẩm đã tồn tại trong hệ thống
+Dòng 46 hướng ban công không được để trống
+Dòng 47 hướng ban công không được để trống
+Dòng 48 hướng ban công không được để trống
+Dòng 49 hướng ban công không được để trống
+Dòng 50 hướng ban công không được để trống
+Dòng 51 hướng ban công không được để trống
+Dòng 52 hướng ban công không được để trống
+Dòng 53 hướng ban công không được để trống
+Dòng 54 hướng ban công không được để trống
+Dòng 55 hướng ban công không được để trống
+Dòng 56 hướng ban công không được để trống
+Dòng 57 hướng ban công không được để trống
+Dòng 58 hướng ban công không được để trống
+Dòng 59 hướng ban công không được để trống
+Dòng 60 hướng ban công không được để trống
+Dòng 61 hướng ban công không được để trống
+Dòng 62 hướng ban công không được để trống
+Dòng 63 hướng ban công không được để trống

@@ -1,0 +1,27 @@
+﻿@using Service.NewsService.Dto
+@using CommonHelper.String
+
+@model List<NewsDto>
+
+    <div class="title-section">
+        <h1 class="tin-moi-index">Tin Mới</h1>
+    </div>
+
+    @foreach (var item in Model)
+    {
+<div class="list-tin-moi">
+    <div class="list-tin-moi-img">
+        <img src="/@item.Image.StandardPath()" alt="@item.Title" onerror="this.src = '/assets/images/notfoundimage.png'">
+
+    </div>
+    <div class="list-tin-moi-content">
+        <a href="/baiviet/@item.SlugTitle" title="@item.Title">@item.Title</a>
+        <p class="date-time-tin">
+            <i class="fa fa-clock-o"></i>
+           @item.CreatedDate
+        </p>
+    </div>
+</div>
+    }
+
+

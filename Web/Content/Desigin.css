@@ -1,0 +1,97 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    scrollbar-width: thin;
+    scrollbar-color: #999 !important;
+}
+
+.tile_admin {
+    padding: 10px !important;
+    border: 1px solid #ccc !important;
+    background: #fff
+}
+
+.hinet-table thead tr th {
+    background-color: #f6fde1;
+    color: black;
+    border: 1px solid #efefef;
+}
+
+.table-custom tbody tr td, .hinet-table tbody tr td {
+    font-size: 12px;
+    border: 1px solid #dfe6e9;
+    text-align: center;
+}
+
+.tile_admin h2 {
+    margin-top: 0;
+    font-size: 18px;
+    letter-spacing: .5px;
+    margin-bottom: 0;
+    background-color: #cfe7fa;
+    padding: 12px;
+    border-radius: 3px;
+    color: #1a9cef;
+}
+
+.rowthaotac__left .listvanban__box__thaotac__row {
+    display: flex
+}
+
+.listvanban__box__thaotac__btn {
+    background-color: #308ee0;
+    border-radius: 3px;
+    color: #fff;
+    padding: 5px 15px;
+    margin-right: 5px
+}
+
+.btn {
+    background-image: none;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important
+}
+
+.listvanban__box__thaotac {
+    display: flex;
+    padding: 10px;
+    background-color: #fff;
+    align-items: center;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    height: 60px;
+}
+
+.table thead tr {
+    background-image: none !important;
+    background-color: #f6fde1;
+}
+
+.modal-dialog .modal-body {
+    /*//max-height: 80vh !important;*/
+    padding-bottom: 10px !important;
+}
+
+    .modal-dialog .modal-body .tab-content {
+        max-height: 70vh !important;
+        overflow: auto !important;
+    }
+
+.form-horizontal fieldset {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    min-height: 10vh;
+    margin-top: 1.2rem;
+    padding-bottom: 24px;
+}
+
+    .form-horizontal fieldset legend {
+        width: inherit;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        margin: 0px;
+    }

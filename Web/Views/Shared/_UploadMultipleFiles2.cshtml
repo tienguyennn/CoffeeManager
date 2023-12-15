@@ -1,0 +1,241 @@
+﻿@using Model.Entities;
+@using System.Web.Configuration;
+@model IEnumerable<TaiLieuDinhKem>
+<link href="~/Content/LibUploadFile/uploadfile.css" rel="stylesheet">
+<script src="~/Content/LibUploadFile/jquery.uploadfile.js"></script>
+@{
+    var guid = Guid.NewGuid();
+    var mimeTypes = WebConfigurationManager.AppSettings["AllowExtension"];
+    string itemType = string.Empty;
+    string label = "File đính kèm";
+    string softDelete = "";
+    string allowedTypes = "*";
+    string callBack = "";
+    string inputName = "";
+    string inputId = "";
+    int maxFileCount = 100;
+    if (ViewData["ITEM_TYPE"] != null)
+    {
+        itemType = ViewData["ITEM_TYPE"].ToString();
+    }
+    if (ViewData["LABEL"] != null)
+    {
+        label = ViewData["LABEL"].ToString();
+    }
+
+    if (ViewData["CALL_BACK"] != null)
+    {
+        callBack = ViewData["CALL_BACK"].ToString();
+    }
+    if (ViewData["InputName"] != null)
+    {
+        inputName = ViewData["InputName"].ToString();
+    }
+    if (ViewData["SOFT_DELETE"] != null)
+    {
+        softDelete = ViewData["SOFT_DELETE"].ToString();
+    }
+    if (ViewData["ALLOWED_TYPE"] != null)
+    {
+        allowedTypes = ViewData["ALLOWED_TYPE"].ToString();
+    }
+    if (ViewData["IS_SINGLE"] != null && ViewData["IS_SINGLE"].ToString() == "1")
+    {
+        maxFileCount = Model != null && Model.Any() ? 0 : 1;
+    }
+    inputId = inputName.Replace(".", "_");
+}
+<style>
+    .ajax-file-upload-filename {
+        max-width: 300px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: inline-block;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        word-wrap: break-word;
+        overflow: hidden;
+        margin-right: 20px;
+        line-height: 2.8;
+    }
+
+    .ajax-file-upload-statusbar a {
+        color: white;
+    }
+
+        .ajax-file-upload-statusbar a:hover {
+            color: black;
+        }
+</style>
+<section class="uploadMulti wf100" style="">
+    <div class="fileuploader" id="fileuploader@(guid)">Upload</div>
+    <input type="hidden" name="@inputName" id="@inputId" class="fileuploadnames" />
+    <div class="wf100">
+        @if (Model != null && Model.Any())
+        {
+            <div class="boxUploads wf100">
+                @{var idx = 1;}
+                @foreach (var item in Model)
+                {
+                    <div class="ajax-file-upload-container ROW_TAILIEU" id="ROW_TAILIEU_@item.Id" data-file-name="@item.TenTaiLieu">
+                        <div class="ajax-file-upload-statusbar" style="width: inherit;border:1px solid #808080;">
+                            <div class="ajax-file-upload-filename">
+                                <span>@idx) </span>
+                                <span>
+                                    @item.TenTaiLieu
+                                </span>
+                            </div>
+                            <div class="ajax-file-upload-progress" style="">
+                                <div class="ajax-file-upload-bar" style="width: 100%;"></div>
+                            </div>
+                            <div class="ajax-file-upload-green" style="">
+                                <a target="_blank" href="/Uploads/@item.DuongDanFile" download><i class="fa fa-download"></i> Download</a>
+                            </div>
+                            <div class="ajax-file-upload-red" style="">
+                                <a href="javascript:onDeleteFile(@item.Id,'@item.TenTaiLieu')"><i class="fa fa-trash"></i> Xóa</a>
+                            </div>
+                            <div class="ajax-file-upload-green" style="">
+                                <a href="javascript:onPreview(@item.Id)"><i class="fa fa-eye"></i> Xem file</a>
+                            </div>
+                        </div>
+                    </div>
+                    idx += 1;
+                }
+            </div>
+
+        }
+    </div>
+</section>
+
+<script>
+    function onPreview(id) {
+        onOpenEditModal('/SystemCommon/PreviewFile?itemType=@itemType', { id: id }, 'post');
+    }
+    /**
+     * xóa file
+     * param dom: mã file để xóa
+     */
+    function onDeleteFile(dom, filename) {
+        /**
+         * trường hợp xóa file trong cơ sở dữ liệu
+         */
+        if (typeof dom === 'number') {
+            var callBack = function () {
+                $('#ROW_TAILIEU_' + dom).remove();
+                var tenTaiLieu = $('#ROW_TAILIEU_' + dom).data('file-name');
+                var StrFileNames = $("#@inputId").val();
+                var TmpNames = StrFileNames.split('#');
+                TmpNames.splice($.inArray(tenTaiLieu, TmpNames), 1);
+                var CurrNames = "";
+                for (var i = 0; i < TmpNames.length; i++) {
+                    if (TmpNames[i] != undefined && TmpNames[i] != "") {
+                        CurrNames += "#" + TmpNames[i];
+                    }
+                }
+                $("#@inputId").val(CurrNames);
+                if ('@callBack' !== '' && typeof window['@callBack'] === 'function') {
+                    window["@callBack"]();
+                }
+                NotiSuccess("Thành công", "Xoá thành công");
+            };
+
+            var url = '/Common/DeleteFile';
+            var params = {
+                id: dom,
+                softDelete: '@softDelete' == 'True'
+            };
+            var type = 'post';
+            var title = 'Xác nhận xóa file';
+            var content = 'Bạn có chắc chắn muốn xóa file';
+            onConfirmCallAjax(url, type, params, callBack, title, content);
+        } else {
+            var row = dom.closest('tr');
+            row.remove(row.selectedIndex);
+        }
+    }
+
+    $(document).ready(function () {
+        var mimeTypes = "@mimeTypes";
+        $("#fileuploader@(guid)").uploadFile({
+            url: "/SystemCommon/UploadMultipleTempFiles?itemType=@itemType",
+            showDelete: true,
+
+            showDownload: true,
+            maxFileCount: @maxFileCount,
+            deleteStr: "Xóa",
+            dragdropWidth: "inherit",
+            statusBarWidth: "inherit",
+            allowedTypes: '@allowedTypes',
+            onSubmit: function (files, xhr) {
+                var fileExt = files[0].split('.').pop()
+                if (mimeTypes.indexOf(fileExt) == -1) {
+                    NotiError("Thông báo", "Tập tin không được hỗ trợ");
+                    return false;
+                } else {
+                    return true;
+                }
+            },
+            deleteCallback: function (data, pd) {
+                for (var i = 0; i < data.length; i++) {
+                    $.post("/SystemCommon/DeleteTempFile?itemType=@itemType", { name: data[i] },
+                        function (resp, textStatus, jqXHR) {
+                            var StrFileNames = $("#@inputId").val();
+                            var TmpNames = StrFileNames.split('#');
+                            NotiSuccess("Thành công", "Xóa thành công");
+                            TmpNames.splice($.inArray(resp.Message, TmpNames), 1);
+                            var CurrNames = "";
+                            for (var i = 0; i < TmpNames.length; i++) {
+                                if (TmpNames[i] != undefined && TmpNames[i] != "") {
+                                    CurrNames += "#" + TmpNames[i];
+                                }
+                            }
+                            $("#@inputId").val(CurrNames)
+                            if ('@callBack' !== '' && typeof window['@callBack'] === 'function') {
+                                window["@callBack"]();
+                            }
+                        });
+                }
+                pd.statusbar.hide(); //You choice.
+
+            },
+            downloadCallback: function (filename, pd) {
+                window.open('/Uploads/Temp/@itemType/' + filename);
+            },
+            onSuccess: function (files, data, xhr, pd) {
+                if (data.Status == true) {
+                    var LstFileNames = $("#@inputId").val();
+                    for (var i = 0; i < data.Param.length; i++) {
+                        LstFileNames += "#" + data.Param[i];
+                    }
+                    $("#@inputId").val(LstFileNames)
+                    if ('@callBack' !== '' && typeof window['@callBack'] === 'function') {
+                        window["@callBack"]();
+                    }
+                } else {
+                    NotiError("Thông báo", data.Message);
+                }
+            }
+        });
+    });
+
+    function onPreview(id) {
+        var url = '/SystemCommon/PreviewFile';
+        var params = {
+            id: id
+        }
+        var callBack = function (result) {
+            if (result) {
+                var targetModal = $("#MasterModal");
+                console.log(targetModal);
+                if (targetModal.html() != "") {
+                    var $div = $('div[id^="MasterModal"]:last');
+                    var num = (parseInt($div.prop("id").match(/\d+/g), 10) ? parseInt($div.prop("id").match(/\d+/g), 10) : 1) + 1;
+                    var $klon = $div.clone().prop('id', 'MasterModal' + num).appendTo(".page-content");
+                    $klon.html(result).modal('show')
+                }
+            }
+        }
+        AjaxCall(url, 'post', params, callBack);
+    }
+</script>
+

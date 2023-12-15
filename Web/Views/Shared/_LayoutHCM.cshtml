@@ -1,0 +1,142 @@
+﻿@using Hinet
+@using Web.Core
+@using Web.LocationResouces
+@using Service.AppUserService.Dto
+@using Microsoft.AspNet.Identity
+@using Service.Constant
+@using Model.Entities;
+@using CommonHelper.String;
+@using System.Configuration;
+@{
+    var userInfo = SessionManager.GetUserInfo() as Model.IdentityEntities.AppUser;
+    long jsUserId = 0;
+    string jsUserName = "";
+    if (userInfo != null)
+    {
+        jsUserId = userInfo.Id;
+        jsUserName = userInfo.UserName;
+    }
+    var provinceCode = (string)ConfigurationManager.AppSettings["PROVINCE_CODE"];
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="overview &amp; stats" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    @RenderSection("css", required: false)
+
+    <link rel="stylesheet" type="text/css" href="~/Content/DashboardHCM/bower_components/bootstrap/css/bootstrap.min.css" />
+    <!-- feather Awesome -->
+    <link rel="stylesheet" type="text/css" href="~/Content/DashboardHCM/icon/feather/css/feather.css" />
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="~/Content/DashboardHCM/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/DashboardHCM/css/jquery.mCustomScrollbar.css" />
+    <script type="text/javascript" src="~/Content/DashboardHCM\bower_components\jquery\js\jquery.min.js"></script>
+    <script type="text/javascript" src="~/Content/DashboardHCM\bower_components\jquery-ui\js\jquery-ui.min.js"></script>
+
+    <script src="~/Content/amcharts/index.js"></script>
+    <script src="~/Content/amcharts/xy.js"></script>
+    <script src="~/Content/amcharts/Animated.js"></script>
+    <link href="~/assets/font-awesome/5.9.0/css/fontawesome.min.css" rel="stylesheet" />
+    <style>
+        #MasterFileModal .modal-content {
+            width: 200%;
+        }
+
+        #MasterReportModal .modal-content {
+            width: 150%;
+        }
+
+        #MasterReportModal .modal-header {
+            justify-content:flex-start;
+
+        }
+
+        #MasterReportModal .modal-header div.center {
+            margin-left: 20px;
+            font-weight:bold;
+            font-size:18px;
+        }
+
+
+        #MasterReportModal #dialog-tonghop-khaosat-donvi ul.nav {
+            overflow:hidden;
+            padding: 10px;
+        }
+
+        #MasterReportModal .nav-tabs li a.active {
+            background: white;
+            border: none;
+            color: black;
+        }
+
+    </style>
+</head>
+
+
+<body>
+    <div id="hinet-preloader" style="position: absolute;z-index: 20000;width: 100%;height: 100%;display:none;">
+        <div style="background-color: #ffffff;padding: 10px 30px;width: 200px;border-radius: 10px;border: 2px solid #2980b9;position: fixed;
+                    top: 40%;left: 50%;margin-left: -100px;-webkit-box-shadow: 4px 7px 25px -7px  rgba(0,0,0,0.75);-moz-box-shadow:4px 7px 25px -7px  rgba(0,0,0,0.75);box-shadow: 4px 7px 25px -7px  rgba(0,0,0,0.75);">
+            <p style="text-align: center;margin-top: 10px;font-weight: bold;color: #2980b9;font-size: 1.2em;">Đang xử lý...</p><p></p>
+            <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+            <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" viewBox="0 0 128 16" xml:space="preserve"><rect x="0" y="0" width="100%" height="100%" fill="#FFFFFF" /><path fill="#949494" fill-opacity="0.42" d="M6.4,4.8A3.2,3.2,0,1,1,3.2,8,3.2,3.2,0,0,1,6.4,4.8Zm12.8,0A3.2,3.2,0,1,1,16,8,3.2,3.2,0,0,1,19.2,4.8ZM32,4.8A3.2,3.2,0,1,1,28.8,8,3.2,3.2,0,0,1,32,4.8Zm12.8,0A3.2,3.2,0,1,1,41.6,8,3.2,3.2,0,0,1,44.8,4.8Zm12.8,0A3.2,3.2,0,1,1,54.4,8,3.2,3.2,0,0,1,57.6,4.8Zm12.8,0A3.2,3.2,0,1,1,67.2,8,3.2,3.2,0,0,1,70.4,4.8Zm12.8,0A3.2,3.2,0,1,1,80,8,3.2,3.2,0,0,1,83.2,4.8ZM96,4.8A3.2,3.2,0,1,1,92.8,8,3.2,3.2,0,0,1,96,4.8Zm12.8,0A3.2,3.2,0,1,1,105.6,8,3.2,3.2,0,0,1,108.8,4.8Zm12.8,0A3.2,3.2,0,1,1,118.4,8,3.2,3.2,0,0,1,121.6,4.8Z" /><g><path fill="#2980b9" fill-opacity="1" d="M-42.7,3.84A4.16,4.16,0,0,1-38.54,8a4.16,4.16,0,0,1-4.16,4.16A4.16,4.16,0,0,1-46.86,8,4.16,4.16,0,0,1-42.7,3.84Zm12.8-.64A4.8,4.8,0,0,1-25.1,8a4.8,4.8,0,0,1-4.8,4.8A4.8,4.8,0,0,1-34.7,8,4.8,4.8,0,0,1-29.9,3.2Zm12.8-.64A5.44,5.44,0,0,1-11.66,8a5.44,5.44,0,0,1-5.44,5.44A5.44,5.44,0,0,1-22.54,8,5.44,5.44,0,0,1-17.1,2.56Z" /><animateTransform attributeName="transform" type="translate" values="23 0;36 0;49 0;62 0;74.5 0;87.5 0;100 0;113 0;125.5 0;138.5 0;151.5 0;164.5 0;178 0" calcMode="discrete" dur="1170ms" repeatCount="indefinite" /></g></svg>
+        </div>
+    </div>
+
+    @RenderBody()
+
+    <div id="MasterModal" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="static">
+    </div>
+
+    <div id="MasterFileModal" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="static">
+    </div>
+
+    <div id="MasterReportModal" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="static">
+    </div>
+
+    <script type="text/javascript" src="~/Content/DashboardHCM\bower_components\popper.js\js\popper.min.js"></script>
+    <script type="text/javascript" src="~/Content/DashboardHCM\bower_components\bootstrap\js\bootstrap.min.js"></script>
+    <!-- jquery slimscroll js -->
+    <script type="text/javascript" src="~/Content/DashboardHCM\bower_components\jquery-slimscroll\js\jquery.slimscroll.js"></script>
+    <!-- modernizr js -->
+    <script type="text/javascript" src="~/Content/DashboardHCM\bower_components\modernizr\js\modernizr.js"></script>
+    <!-- Chart js -->
+    <script type="text/javascript" src="~/Content/DashboardHCM\bower_components\chart.js\js\Chart.js"></script>
+    <!-- amchart js -->
+    <script src="~/Content\DashboardHCM\pages\widget\amchart\amcharts.js"></script>
+    <script src="~/Content\DashboardHCM\pages\widget\amchart\serial.js"></script>
+    <script src="~/Content\DashboardHCM\pages\widget\amchart\light.js"></script>
+    <script src="~/Content\DashboardHCM\js\jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="~/Content\DashboardHCM\js\SmoothScroll.js"></script>
+    <script src="~/Content\DashboardHCM\js\pcoded.min.js"></script>
+    <!-- custom js -->
+    <script src="~/Content\DashboardHCM\js\vartical-layout.min.js"></script>
+    <script type="text/javascript" src="~/Content\DashboardHCM\pages\dashboard\custom-dashboard.js"></script>
+    <script type="text/javascript" src="~/Content\DashboardHCM\js\script.min.js"></script>
+    <script src="~/Scripts/Common.js"></script>
+
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-23581568-13');
+        $(document).ready(function () {
+            $('.pcoded[theme-layout="vertical"][vertical-nav-type="expanded"]').attr("vertical-nav-type", "offcanvas");
+        })
+        window.onresize = function () {
+            console.log("resize");
+            $('.pcoded[theme-layout="vertical"][vertical-nav-type="expanded"]').attr("vertical-nav-type", "offcanvas");
+        };
+
+    </script>
+
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

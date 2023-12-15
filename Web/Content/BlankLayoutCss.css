@@ -1,0 +1,192 @@
+@font-face {
+    font-family: "Roboto-Black";
+    src: url("../fonts/Roboto-Black.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto-BlackItalic";
+    src: url("../fonts/Roboto-BlackItalic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto-Bold";
+    src: url("../fonts/Roboto-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto-BoldCondensed";
+    src: url("../fonts/Roboto-BoldCondensed.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto-Condensed";
+    src: url("../fonts/Roboto-Condensed.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto-Medium";
+    src: url("../fonts/Roboto-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto-Thin";
+    src: url("../fonts/Roboto-Thin.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "RobotoCondensed-Bold";
+    src: url("../fonts/RobotoCondensed-Bold.ttf") format("truetype");
+}
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('DVC/fonts/Roboto-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: "RobotoCondensed-Regular";
+    src: url("../fonts/RobotoCondensed-Regular.ttf") format("truetype");
+}
+
+.logo-content {
+    text-align: center;
+    font-family: Roboto-Regular
+}
+    #logo-content h3 {
+        font-size: 35px !important;
+        font-family: Roboto-Bold !important;
+    }
+#logo-content p{
+    font-family:Roboto-Regular;
+    font-size:20px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    header {
+        padding-bottom: 10px;
+        height: auto;
+    }
+
+        header h1 {
+            font-size: 25px;
+            line-height: 1em;
+        }
+
+        header h2 {
+            margin-top: 0px;
+            font-size: 17px;
+            line-height: 1em;
+        }
+
+    .wrap-login-form .login-form-brand #logo-content .title {
+        font-size: 1.5em;
+        line-height: 0.1em;
+    }
+
+    .wrap-login-form {
+        margin-top: -26px;
+    }
+
+        .wrap-login-form .login-form-brand #logo-brand {
+            width: 70px;
+            height: 70px;
+        }
+
+    .login-form-form {
+        margin-left: unset;
+        padding-left: unset;
+        padding-right: unset;
+    }
+
+    .wrap-login-form .login-form-brand {
+        margin-top: 52px;
+        margin-left: unset;
+    }
+
+    .login-form-form hr {
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
+}
+
+@media (min-width: 481) and (max-width: 767px) {
+    .wrap-login-form {
+        margin-top: -26px;
+    }
+
+    .page-content {
+        height: 85px;
+    }
+
+    .wrap-login-form .login-form-brand #logo-brand {
+        width: 70px;
+        height: 70px;
+    }
+
+    .login-form-form {
+        margin-left: unset;
+        padding-left: unset;
+        padding-right: unset;
+    }
+
+    .wrap-login-form .login-form-brand {
+        margin-left: unset;
+        margin-top: 40px;
+    }
+
+        .wrap-login-form .login-form-brand #logo-content .title {
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+    header h2 {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    header {
+        padding-bottom: 5px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    header h1 {
+        font-size: 5vh;
+        line-height: 1em;
+        margin-bottom: 12px;
+    }
+
+    header h2 {
+        margin-bottom: 0px;
+        font-size: 4vh;
+        line-height: 1em;
+    }
+
+    .login-form-form {
+        margin-left: unset;
+        padding-left: unset;
+        padding-right: unset;
+    }
+
+    .wrap-login-form .login-form-brand {
+        margin-left: unset;
+    }
+
+        .wrap-login-form .login-form-brand #logo-brand {
+            width: 150px;
+            height: 150px;
+        }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .login-form-form {
+        margin-left: unset;
+        padding-left: unset;
+        padding-right: unset;
+    }
+
+    .wrap-login-form .login-form-brand {
+        margin-left: unset;
+    }
+}
+
+/*# sourceMappingURL=BlankLayoutCss.css.map */

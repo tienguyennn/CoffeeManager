@@ -1,0 +1,7 @@
+
+ -Dòng 15 mã sản phẩm không tồn tại trong csdl ho
+ -Dòng 16 mã sản phẩm không tồn tại trong csdl ho
+ -Dòng 17 mã sản phẩm không tồn tại trong csdl ho
+ -Dòng 18 mã sản phẩm không tồn tại trong csdl ho
+ -Dòng 19 mã sản phẩm không tồn tại trong csdl ho
+ -Dòng 20 mã sản phẩm không tồn tại trong csdl ho

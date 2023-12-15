@@ -1,0 +1,107 @@
+﻿@media (min-width: 1441px) {
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 768px) {
+    .tong-class-tb {
+        min-height:unset !important;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .FileHuongDanSD {
+        display: none;
+    }
+
+    .khaosatblock {
+        background-image: unset !important;
+    }
+
+    .list-nd-ks {
+        padding: 0px;
+    }
+
+    .tong-class-tb {
+        min-height: unset !important;
+    }
+
+    .card.card-height-100 {
+        height: 160px !important;
+    }
+
+    .table-chiso-donvi {
+        max-height: 300px;
+        overflow: auto;
+    }
+
+        .table-chiso-donvi tbody tr td:nth-child(1) {
+            min-width: 50vh;
+        }
+
+    #chartdiv-diemnhomtieuchi {
+        display: none;
+    }
+
+    .col-md-12.col-lg-6.col-sm-12.box-bao-cao-dinh-ky,
+    .col-sm-12.tong-class-tb.height-100.kekhaiblock,
+    .col-sm-12.tong-class-tb.height-100.khaosatblock,
+    .tong-class-tb.height-100 {
+        padding: 10px !important;
+    }
+
+    #box-table-chart-nhomtieuchi {
+        display: none
+    }
+}
+
+
+@media screen and (max-width: 320px) {
+    .FileHuongDanSD {
+        display: none;
+    }
+
+    .khaosatblock {
+        background-image: unset !important;
+    }
+
+    .list-nd-ks {
+        padding: 0px;
+    }
+
+    .tong-class-tb {
+        min-height: unset !important;
+    }
+
+    .card.card-height-100 {
+        height: 160px !important;
+    }
+
+    .table-chiso-donvi {
+        max-height: 300px;
+        overflow: auto;
+    }
+
+        .table-chiso-donvi tbody tr td:nth-child(1) {
+            min-width: 50vh;
+        }
+    #chartdiv-diemnhomtieuchi{
+        display:none;
+    }
+
+    .col-md-12.col-lg-6.col-sm-12.box-bao-cao-dinh-ky, 
+    .col-sm-12.tong-class-tb.height-100.kekhaiblock, 
+    .col-sm-12.tong-class-tb.height-100.khaosatblock, 
+    .tong-class-tb.height-100 {
+        padding: 10px !important;
+    }
+
+    #box-table-chart-nhomtieuchi{
+        display:none
+    }
+}

@@ -1,0 +1,12 @@
+
+ -Dòng 3 tổng giá tim tường và tổng giá thông thủy không bằng nhau
+ -Dòng 4 tổng giá tim tường và tổng giá thông thủy không bằng nhau
+ -Dòng 5 tổng giá tim tường và tổng giá thông thủy không bằng nhau
+ -Dòng 6 tổng giá tim tường và tổng giá thông thủy không bằng nhau
+ -Dòng 7 tổng giá tim tường và tổng giá thông thủy không bằng nhau
+ -Dòng 8 tổng giá tim tường và tổng giá thông thủy không bằng nhau
+ -Dòng 9 tổng giá tim tường và tổng giá thông thủy không bằng nhau
+ -Dòng 10 tổng giá tim tường và tổng giá thông thủy không bằng nhau
+ -Dòng 11 tổng giá tim tường và tổng giá thông thủy không bằng nhau
+ -Dòng 12 tổng giá tim tường và tổng giá thông thủy không bằng nhau
+ -Dòng 13 tổng giá tim tường và tổng giá thông thủy không bằng nhau

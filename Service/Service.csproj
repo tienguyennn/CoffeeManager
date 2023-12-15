@@ -1,0 +1,448 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{47285FC7-3A39-41DB-A30C-BBB386F37636}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Service</RootNamespace>
+    <AssemblyName>Service</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="BitMiracle.LibTiff.NET, Version=2.4.649.0, Culture=neutral, PublicKeyToken=53879b3e20e7a7d6, processorArchitecture=MSIL">
+      <HintPath>..\packages\BitMiracle.LibTiff.NET.2.4.649\lib\net40\BitMiracle.LibTiff.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.Extended.6.1.0.168\lib\net45\EntityFramework.Extended.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Ghostscript.NET, Version=1.2.3.0, Culture=neutral, PublicKeyToken=f85051de34525b59, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ghostscript.NET.1.2.3.1\lib\net40\Ghostscript.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.AWT.WinForms, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.AWT.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Beans, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Beans.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Charsets, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Charsets.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Cldrdata, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Cldrdata.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Corba, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Corba.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Core, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Jdbc, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Jdbc.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Localedata, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Localedata.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Management, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Media, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Misc, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Misc.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Naming, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Naming.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Nashorn, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Nashorn.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Remoting, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Remoting.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Security, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.SwingAWT, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.SwingAWT.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Text, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Tools, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.API, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.XML.API.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Bind, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.XML.Bind.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Crypto, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.XML.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Parse, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.XML.Parse.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Transform, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.XML.Transform.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.WebServices, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.XML.WebServices.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.XPath, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.XML.XPath.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime.JNI, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.Runtime.JNI.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Magick.NET.Core, Version=13.4.0.0, Culture=neutral, PublicKeyToken=2004825badfa91ec, processorArchitecture=MSIL">
+      <HintPath>..\packages\Magick.NET.Core.13.4.0\lib\netstandard20\Magick.NET.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.4\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.4\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.6.0.0\lib\net461\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.6.0.0\lib\net461\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Binder.6.0.0\lib\net461\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.FileExtensions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.FileExtensions.6.0.0\lib\net461\Microsoft.Extensions.Configuration.FileExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Json.6.0.0\lib\net461\Microsoft.Extensions.Configuration.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Abstractions.6.0.0\lib\net461\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Physical, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Physical.6.0.0\lib\net461\Microsoft.Extensions.FileProviders.Physical.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileSystemGlobbing, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileSystemGlobbing.6.0.0\lib\net461\Microsoft.Extensions.FileSystemGlobbing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.6.0.0\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\packages\MongoDB.Bson.2.7.3\lib\netstandard1.5\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\packages\MongoDB.Driver.2.7.3\lib\net45\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.7.3\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Legacy">
+      <HintPath>..\packages\mongocsharpdriver.2.7.3\lib\net45\MongoDB.Driver.Legacy.dll</HintPath>
+    </Reference>
+    <Reference Include="MoreLinq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=384d532d7e88985d, processorArchitecture=MSIL">
+      <HintPath>..\packages\morelinq.4.0.0\lib\netstandard2.0\MoreLinq.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Patagames.Pdf, Version=11.79.45.48, Culture=neutral, PublicKeyToken=60fd6cf9b15941cf, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pdfium.Net.SDK.4.87.2704\lib\net48\Patagames.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Patagames.Pdf.WinForms, Version=4.24.18.48, Culture=neutral, PublicKeyToken=60fd6cf9b15941cf, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pdfium.Net.SDK.4.87.2704\lib\net48\Patagames.Pdf.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Patagames.Pdf.Wpf, Version=4.24.20.48, Culture=neutral, PublicKeyToken=60fd6cf9b15941cf, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pdfium.Net.SDK.4.87.2704\lib\net48\Patagames.Pdf.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="PDFtoImage, Version=2.4.3.0, Culture=neutral, PublicKeyToken=77810836c31722d8, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFtoImage.2.4.3\lib\net462\PDFtoImage.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp, Version=2.88.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\SkiaSharp.2.88.6\lib\net462\SkiaSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.6.0.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Text.Encoding.CodePages, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.5.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.6.0.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Tesseract, Version=5.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tesseract.5.2.0\lib\net48\Tesseract.dll</HintPath>
+    </Reference>
+    <Reference Include="TikaOnDotNet, Version=1.17.1.0, Culture=neutral, PublicKeyToken=fd70f0f601f583f3, processorArchitecture=MSIL">
+      <HintPath>..\packages\TikaOnDotnet.TextExtractor.1.17.1\lib\TikaOnDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="TikaOnDotNet.TextExtraction, Version=1.17.1.0, Culture=neutral, PublicKeyToken=fd70f0f601f583f3, processorArchitecture=MSIL">
+      <HintPath>..\packages\TikaOnDotnet.TextExtractor.1.17.1\lib\TikaOnDotNet.TextExtraction.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppUserService\AppUserService.cs" />
+    <Compile Include="AppUserService\Dto\AppUserApiExportDto.cs" />
+    <Compile Include="AppUserService\Dto\AppUserApiImportDto.cs" />
+    <Compile Include="AppUserService\Dto\LogAccessExportDto.cs" />
+    <Compile Include="AppUserService\Dto\AppUserExportDto.cs" />
+    <Compile Include="AppUserService\Dto\AppUserImportDto.cs" />
+    <Compile Include="AppUserService\Dto\AppUserSearchDto.cs" />
+    <Compile Include="AppUserService\Dto\NguoiDungVaiTroBO.cs" />
+    <Compile Include="AppUserService\Dto\NguoiDungPhongBanBO.cs" />
+    <Compile Include="AppUserService\Dto\UserDto.cs" />
+    <Compile Include="AppUserService\Dto\UserWebAppDto.cs" />
+    <Compile Include="AppUserService\IAppUserService.cs" />
+    <Compile Include="AppUserService\Dto\UserDichVuCongSearchDto.cs" />
+    <Compile Include="BlogService\BlogService.cs" />
+    <Compile Include="BlogService\Dto\BlogDto.cs" />
+    <Compile Include="BlogService\Dto\BlogExportDto.cs" />
+    <Compile Include="BlogService\Dto\BlogImportDto.cs" />
+    <Compile Include="BlogService\Dto\BlogSearchDto.cs" />
+    <Compile Include="BlogService\IBlogService.cs" />
+    <Compile Include="Common\ChartDto.cs" />
+    <Compile Include="Common\CheckModifyAttribute.cs" />
+    <Compile Include="Common\ColorAttribute.cs" />
+    <Compile Include="Common\Constant.cs" />
+    <Compile Include="Common\ConstantExtension.cs" />
+    <Compile Include="Common\EntityService.cs" />
+    <Compile Include="Common\IEntityService.cs" />
+    <Compile Include="Common\IMEntityService.cs" />
+    <Compile Include="Common\JsonResultBO.cs" />
+    <Compile Include="Common\MEntityService.cs" />
+    <Compile Include="Common\MongoDBCommon.cs" />
+    <Compile Include="Common\OCRProvider.cs" />
+    <Compile Include="Common\PageListResultBO.cs" />
+    <Compile Include="Common\PhanAnhDashboardDto.cs" />
+    <Compile Include="Common\ResponseAPIChart.cs" />
+    <Compile Include="Common\SearchAppWebDto.cs" />
+    <Compile Include="Common\SearchBase.cs" />
+    <Compile Include="Common\SearchWebsiteAppDislayDto.cs" />
+    <Compile Include="Common\WebsiteHomeSearchVM.cs" />
+    <Compile Include="Constant\TrangThaiConstant.cs" />
+    <Compile Include="DanhMucService\DanhMucService.cs" />
+    <Compile Include="DanhMucService\Dto\DanhMucDto.cs" />
+    <Compile Include="DanhMucService\Dto\DanhMucExportDto.cs" />
+    <Compile Include="DanhMucService\Dto\DanhMucImportDto.cs" />
+    <Compile Include="DanhMucService\Dto\DanhMucSearchDto.cs" />
+    <Compile Include="DanhMucService\IDanhMucService.cs" />
+    <Compile Include="DatBanService\DatBanService.cs" />
+    <Compile Include="DatBanService\Dto\DatBanDto.cs" />
+    <Compile Include="DatBanService\Dto\DatBanExportDto.cs" />
+    <Compile Include="DatBanService\Dto\DatBanImportDto.cs" />
+    <Compile Include="DatBanService\Dto\DatBanSearchDto.cs" />
+    <Compile Include="DatBanService\IDatBanService.cs" />
+    <Compile Include="LienHeService\Dto\LienHeDto.cs" />
+    <Compile Include="LienHeService\Dto\LienHeExportDto.cs" />
+    <Compile Include="LienHeService\Dto\LienHeImportDto.cs" />
+    <Compile Include="LienHeService\Dto\LienHeSearchDto.cs" />
+    <Compile Include="LienHeService\ILienHeService.cs" />
+    <Compile Include="LienHeService\LienHeService.cs" />
+    <Compile Include="NotificationService\Dto\NotificationDto.cs" />
+    <Compile Include="NotificationService\Dto\NotificationSearchDto.cs" />
+    <Compile Include="NotificationService\INotificationService.cs" />
+    <Compile Include="NotificationService\NotificationService.cs" />
+    <Compile Include="OrderDetailService\Dto\OrderDetailDto.cs" />
+    <Compile Include="OrderDetailService\Dto\OrderDetailExportDto.cs" />
+    <Compile Include="OrderDetailService\Dto\OrderDetailImportDto.cs" />
+    <Compile Include="OrderDetailService\Dto\OrderDetailSearchDto.cs" />
+    <Compile Include="OrderDetailService\IOrderDetailService.cs" />
+    <Compile Include="OrderDetailService\OrderDetailService.cs" />
+    <Compile Include="OrderService\Dto\OrderDto.cs" />
+    <Compile Include="OrderService\Dto\OrderExportDto.cs" />
+    <Compile Include="OrderService\Dto\OrderImportDto.cs" />
+    <Compile Include="OrderService\Dto\OrderSearchDto.cs" />
+    <Compile Include="OrderService\IOrderService.cs" />
+    <Compile Include="OrderService\OrderService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SanPhamService\Dto\SanPhamDto.cs" />
+    <Compile Include="SanPhamService\Dto\SanPhamExportDto.cs" />
+    <Compile Include="SanPhamService\Dto\SanPhamImportDto.cs" />
+    <Compile Include="SanPhamService\Dto\SanPhamSearchDto.cs" />
+    <Compile Include="SanPhamService\ISanPhamService.cs" />
+    <Compile Include="SanPhamService\SanPhamService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonHelper\CommonHelper.csproj">
+      <Project>{68e8b2e8-ed8b-4a15-a2bf-2561023c210a}</Project>
+      <Name>CommonHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{afc9d48b-d6fa-41e6-84bc-a43713b5e8b7}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repository\Repository.csproj">
+      <Project>{afc7d5ec-1324-49d5-b1e6-7239dc54220b}</Project>
+      <Name>Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets'))" />
+    <Error Condition="!Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets'))" />
+    <Error Condition="!Exists('..\packages\Tesseract.5.2.0\build\Tesseract.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Tesseract.5.2.0\build\Tesseract.targets'))" />
+    <Error Condition="!Exists('..\packages\bblanchon.PDFium.Win32.121.0.6110\build\net461\bblanchon.PDFium.Win32.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\bblanchon.PDFium.Win32.121.0.6110\build\net461\bblanchon.PDFium.Win32.targets'))" />
+    <Error Condition="!Exists('..\packages\SkiaSharp.NativeAssets.macOS.2.88.6\build\net462\SkiaSharp.NativeAssets.macOS.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SkiaSharp.NativeAssets.macOS.2.88.6\build\net462\SkiaSharp.NativeAssets.macOS.targets'))" />
+    <Error Condition="!Exists('..\packages\SkiaSharp.NativeAssets.Win32.2.88.6\build\net462\SkiaSharp.NativeAssets.Win32.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SkiaSharp.NativeAssets.Win32.2.88.6\build\net462\SkiaSharp.NativeAssets.Win32.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets" Condition="Exists('..\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets')" />
+  <Import Project="..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />
+  <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
+  <Import Project="..\packages\Tesseract.5.2.0\build\Tesseract.targets" Condition="Exists('..\packages\Tesseract.5.2.0\build\Tesseract.targets')" />
+  <Import Project="..\packages\bblanchon.PDFium.Win32.121.0.6110\build\net461\bblanchon.PDFium.Win32.targets" Condition="Exists('..\packages\bblanchon.PDFium.Win32.121.0.6110\build\net461\bblanchon.PDFium.Win32.targets')" />
+  <Import Project="..\packages\SkiaSharp.NativeAssets.macOS.2.88.6\build\net462\SkiaSharp.NativeAssets.macOS.targets" Condition="Exists('..\packages\SkiaSharp.NativeAssets.macOS.2.88.6\build\net462\SkiaSharp.NativeAssets.macOS.targets')" />
+  <Import Project="..\packages\SkiaSharp.NativeAssets.Win32.2.88.6\build\net462\SkiaSharp.NativeAssets.Win32.targets" Condition="Exists('..\packages\SkiaSharp.NativeAssets.Win32.2.88.6\build\net462\SkiaSharp.NativeAssets.Win32.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

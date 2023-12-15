@@ -1,0 +1,250 @@
+﻿@using Service.AppUserService.Dto
+@using Web.Models
+@{
+    var user = SessionManager.GetUserInfo() as Model.IdentityEntities.AppUser;
+    var isLogin = user != null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    @Html.Partial("_SEOPartial")
+    <script src="/Content/DVC/js/jquery.min.js"></script>
+    @Styles.Render("~/assets/appcss")
+    <title> @ViewBag.Title</title>
+
+    <link href="~/Content/css/css/bootstrap.css?v=1" rel="stylesheet" />
+    <link href="~/Content/css/css/font-awesome.min.css?v=1" rel="stylesheet" />
+    <link href="~/assets/css/gritter-ace.min.css?v=1" rel="stylesheet" />
+    <link rel="stylesheet" href="~/assets/css/bootstrap-duallistbox.min.css?v=1" />
+
+    <link href="~/Content/css/css/animate.css?v=1" rel="stylesheet" />
+    <link href="~/assets/css/jquery.gritter.min.css?v=1" rel="stylesheet" />
+    <link href="~/Content/fixed-element.css?v=1" rel="stylesheet" />
+    <link href="~/Content/ADashboard.css?v=1" rel="stylesheet" />
+    <link href="~/Content/Admin_respon.css?v=1" rel="stylesheet" />
+    <link href="~/Content/css/css/style-1.css?v=1" rel="stylesheet" />
+    <link href="~/Content/css/css/style.css?v=1" rel="stylesheet" />
+    <link href="~/ACE-Layout/Content/ACE/css/datepicker.min.css?v=1" rel="stylesheet" />
+    <link href="~/Content/backend.css?v=1" rel="stylesheet" />
+    <link href="~/Content/CongThongTin.css?v=3.1" rel="stylesheet" />
+    <link href="~/Content/Responsive-CongThongTin.css?v=0.0.2" rel="stylesheet" />
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/assets/js/jquery.bootstrap-duallistbox.min.js"></script>
+    <script src="~/Scripts/OldAutoNumeric/autoNumeric.js"></script>
+    <script src="~/assets/js/jquery.gritter.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/Common.js"></script>
+
+</head>
+<body>
+    <header>
+        <style>
+            .in {
+                display: block;
+            }
+
+            .collapse {
+                display: none;
+            }
+        </style>
+
+        <div class="container nopd">
+            <div class="col-sm-8 nopd">
+                <div class="ct-logo">
+                    <a href="/">
+                        <div class="text-logo">DTI</div>
+                    </a>
+                </div>
+                <div class="txt-web" id="Ten-Logo">
+                    <a href="/">
+                        <h2 class="h2-top">HỆ THỐNG ĐÁNH GIÁ MỨC ĐỘ</h2>
+                        <h2 class="h2-bt">
+                            CHUYỂN ĐỔI SỐ TP. HỒ CHÍ MINH
+                        </h2>
+                    </a>
+                </div>
+
+            </div>
+            <div class="col-sm-4 class-s-right">
+                <div id="menubar" class="content-menu pd0 hidden-lg hidden-md hidden-sm ">
+
+                    <nav class="navbar navbar-default class-nav" role="navigation">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#button-menu3">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse menu-bar" id="button-menu3" style="clear:both;">
+            <div class="container nopd">
+                <ul id="ul-id" class="nav navbar-nav menu-xs-bar">
+                    <li>
+                        <a href="/" title="">Trang chủ</a>
+                    </li>
+                    <li>
+                        <a href="/" title="">Kết quả chuyển đổi số</a>
+                    </li>
+                    <li>
+                        <a href="/home/baocaothongke" title="">Báo cáo thống kê</a>
+                    </li>
+                    <li>
+                        <a href="/home/tintuc" title="">Tin tức</a>
+                    </li>
+                    <li>
+                        <a href="/DashboardArea/Dashboard/Index">Đánh giá chuyển đổi số</a>
+                    </li>
+                    <li class="li-un-authen @(isLogin ? " hide": "" )">
+                        <a href="javascript:void(0)" onclick="removeclassModal()" data-toggle="modal" data-target="#login" title="Đăng nhập">Đăng nhập</a>
+                    </li>
+                </ul>
+
+                <ul id="ul-mobie" class="collapse nav navbar-nav menu-xs-bar">
+                    <li class=" boder-bt-white">
+                        <a href="/" title="">Trang chủ</a>
+                    </li>
+                    <li class="boder-bt-white">
+                        <a href="/" title="">Kết quả chuyển đổi số</a>
+                    </li>
+                    <li class="boder-bt-white">
+                        <a href="/home/baocaothongke" title="">Báo cáo thống kê</a>
+                    </li>
+                    <li class="boder-bt-white">
+                        <a href="/home/tintuc" title="">Tin tức</a>
+                    </li>
+                    <li class="boder-bt-white">
+                        <a href="/">Công cụ đánh giá mức độ chuyển đổi số</a>
+                    </li>
+                    <li class="li-un-authen @(isLogin ? " hide": "" )">
+                        <a href="javascript:void(0)" onclick="removeclassModal()" data-toggle="modal" data-target="#login" title="Đăng nhập">Đăng nhập</a>
+                    </li>
+                    <li class="li-authen  @(isLogin ? " ": " hide")">
+                        <a href="/DashboardArea/Dashboard/Index">Đánh giá CĐS</a>
+                    </li>
+                    <li class="li-authen  @(isLogin ? " ": " hide")">
+                        <a href="/AccountAdmin/LogOff">Đăng xuất</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="page-content-cong">
+        @RenderBody()
+    </div>
+
+    <footer class="footer-congtt">
+        <div class="container nopd ">
+            <div class="tieude-ft">Sở Thông tin và Truyền thông - Thành phố Hồ Chí Minh</div>
+            <div class="diachi-ft">Địa chỉ: 59 Lý Tự Trọng, P.Bến Nghé, Quận 1,TPHCM</div>
+            <div class="col-sm-12 nopd text-lienlac">Điện thoại: (028) 3520.2727 - (028)3520.2323</div>
+            <div class="col-sm-12 nopd text-lienlac">Fax: (028)3520.2424 - (028)3930.9498</div>
+            <div class="col-sm-12 nopd text-lienlac">Email: stttt@tphcm.gov.vn</div>
+        </div>
+    </footer>
+    <div id="back-to-top" class="back-to-top" data-toggle="tooltip" data-placement="left" title="Trở lên đầu trang">
+        <img style="width:40px" src="~/Content/ontop.png" />
+    </div>
+    <script>
+        function removeclassModal() {
+            $("#login").removeClass("hide");
+        }
+        function removeclassQuenPass() {
+            $("#QuenPass").removeClass("hide");
+        }
+        $("#SearchChuyenGiaInput").on('keyup', function (e) {
+            if (e.key === 'Enter' || e.keyCode === 13) {
+                SearchResultCDS();
+            }
+        });
+        function SearchResultCDS() {
+            var query = $("#SearchChuyenGiaInput").val();
+            query = encodeURIComponent(query);
+            if (query.length !== 0 && query !== "") {
+                window.location.replace(`/CongThongTin/SearchResultCDS?query=${query}`);
+            }
+        }
+        $("#back-to-top").click(function () { return $("body, html").animate({ scrollTop: 0 }, 400), !1 });
+
+
+        //Click ra ngoài thì ẩn menu
+        $("#menuMobile").click(function () {
+
+            $("#menu_child").toggleClass("addMenu");
+
+        });
+        //Click ra ngoài thì ẩn menu
+        $(document).click(function (event) {
+            if (!$(event.target).closest("#menuMobile").length) {
+                $("#menu_child").removeClass("addMenu");
+
+            }
+        });
+        $(document).ready(function () {
+            $("#ul-id li").each(function (index, element) {
+                var href = $(this).find("a").attr("href");
+                if (href != undefined) {
+                    href = href.replace("/", "");
+                    var currentUrl = window.location.pathname;
+                    if (currentUrl != undefined) {
+                        currentUrl = currentUrl.replace("/", "");
+                        if (href == currentUrl) {
+                            $("#ul-id li").removeClass("fix-max");
+                            $(this).addClass("fix-max");
+                        }
+                    }
+                }
+            })
+        })
+
+        $(document).ready(function () {
+            $("#ul-mobie li").each(function (index, element) {
+                var href = $(this).find("a").attr("href");
+                var currentUrl = window.location.pathname;
+                console.log(currentUrl);
+                if (href == currentUrl) {
+                    $("#ul-mobie li").removeClass("fix-max");
+                    $(this).addClass("fix-max");
+                }
+            })
+        })
+    </script>
+    <div id="modalDangKyTuVan" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+@Html.Partial("_PopupLogin", new LoginViewModel())
+@Html.Partial("_PopupQuenPass", new ForgotViewModel())
+<script src="~/assets/js/jquery-confirm.js"></script>
+<script>
+    function removeclassModal() {
+        $("#login").removeClass("hide");
+    }
+    function removeclassQuenPass() {
+        $("#QuenPass").removeClass("hide");
+    }
+</script>
+</html>

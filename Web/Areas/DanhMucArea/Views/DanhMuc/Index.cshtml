@@ -1,0 +1,162 @@
+@{
+    ViewBag.Title = "Danh mục sản phẩm";
+    Layout = "~/Views/Shared/_LayoutAce.cshtml";
+    ViewBag.ModuleName = "Quản lý Danh mục sản phẩm";
+    ViewBag.PageName = "Danh sách Danh mục sản phẩm";
+    ViewBag.ModuleCode = "DanhMuc_index";
+
+}
+@using Model.IdentityEntities;
+@using Model.Entities;
+@using Newtonsoft.Json;
+@using Service.Common;
+@using Service.DanhMucService.Dto;
+@model PageListResultBO<DanhMucDto>
+@{
+    var lstData = Html.Raw(JsonConvert.SerializeObject(Model.ListItem));
+}
+
+
+
+@section ActionBarRight{
+    <a href="#collapseDiv" class="btn btn-sm btn-primary" aria-controls="collapsePanel" data-toggle="collapse" role="button">
+        <i class="fa fa-search"></i> Tìm kiếm
+    </a>
+    <a href="javascript:void(0)" onclick="CreateAction('/DanhMucArea/DanhMuc/Create')" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Thêm mới</a>
+}
+@Html.Partial("_SearchPartial")
+
+<div id="tbl-DanhMuc" class="hntbl-cover table-scroll">
+    <div class="table-wrap">
+        <table class="hinet-table table table-striped table-hover" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th class="fixed-side">#</th>
+                    <th class="fixed-side">Thao tác</th>
+                    <th>Tên danh mục</th>
+                    <th>Mã danh mục</th>
+                    <th>Thứ tự</th>
+                    <th>Ghi chú</th>
+
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        var lstData = eval(@lstData);
+        var moduleTableSelector="#tbl-DanhMuc";
+        function pagefunction(){
+            var conf=[
+                {
+                    tdClass:"center width50 fixed-side",
+                    isSort:false,
+                    nameModel: "",
+                    isCounter:true,
+                    content: function (data) {
+                        return "<input type='checkbox'/>"
+                    }
+                },
+
+                   {
+                       isSort:false,
+                       nameModel:"",
+                       tdClass:"center fixed-side",
+                       content: function (data) {
+                           var result = `<div class="btn-group">
+                               <button data-toggle="dropdown" class="btn btn-xs btn-primary btn-white dropdown-toggle" aria-expanded="false">Thao tác<i class="ace-icon fa fa-angle-down icon-on-right"></i>
+                               </button>
+
+                               <ul class="dropdown-menu">`;
+
+                           result += "<li><a href='javascript:OpenModal(\"/DanhMucArea/DanhMuc/Detail/" + data.Id +"\")'    title = 'Chi tiết'><i class='fa fa-info-circle'> </i> Thông tin chi tiết</a> </li>";
+
+result += "<li><a href='javascript:void(0)' onclick='EditAction(\"/DanhMucArea/DanhMuc/Edit/" + data.Id + "\")'   title = 'Chỉnh sửa'><i class='glyphicon glyphicon-edit'> </i> Sửa thông tin</a> </li>";
+                           result += "<li><a href='javascript:void(0)' onclick='DeleteAction(\"/DanhMucArea/DanhMuc/Delete/" + data.Id + "\")'  title = 'Xóa'><i class=' glyphicon glyphicon-remove' style='color:red'> </i> Xóa</a></li>";
+                           result += "</ul></div>";
+                           return result;
+                       }
+                   },
+				{
+					isSort:true,
+					nameModel:'TenDanhMuc',
+					content: function (data) {
+					return data.TenDanhMuc
+				}
+				},
+				{
+					isSort:true,
+					nameModel:'MaDanhMuc',
+					content: function (data) {
+					return data.MaDanhMuc
+				}
+				},
+				{
+					isSort:true,
+					nameModel:'ThuTu',
+					content: function (data) {
+					return data.ThuTu
+				}
+				},
+				{
+					isSort:true,
+					nameModel:'GhiChu',
+					content: function (data) {
+					return data.GhiChu
+				}
+				},
+
+
+            ];
+
+
+            var getdatafunc=function(page,sortQuery,pageSize){
+                $.ajax({
+                    url: '/DanhMucArea/DanhMuc/getData',
+                    type: 'post',
+                    cache: false,
+                    data:{"indexPage":page,"sortQuery":sortQuery,"pageSize":pageSize},
+                    success: function (data) {
+                        $(moduleTableSelector).hinetTable("data",{
+                            pageSize:pageSize!=-1?pageSize:data.Count,
+                            pageIndex:page,
+                            pagecount: data.TotalPage,
+                            recordCount: data.Count,
+                            listItem: data.ListItem,});
+                    },
+                    error: function (err) {
+                        CommonJS.alert(xhr.responseText);
+                    }
+                });
+
+            }
+
+            var tblData=$("#tbl-DanhMuc").hinetTable("init",{
+                pageSizeList:{size:[20,50,100,-1],label:['20','50','100','Tất cả']},
+                pagecount: @Model.TotalPage,
+                recordCount: @Model.Count,
+                actionToolBar:'<a href=\"#collapseDiv\" aria-controls=\"collapsePanel\" data-toggle=\"collapse\" role=\"button\" class="btn btn-primary btn-xs"><i class="fa fa-search"></i> Tìm kiếm</a>',
+                getData:getdatafunc,
+                listItem:lstData,
+                config:conf
+            });
+
+        }
+
+        function AfterSussessActionAjaxform(){
+            $(moduleTableSelector).hinetTable("reload");
+        }
+        function AjaxSearchSuccess(rs) {
+            $(moduleTableSelector).hinetTable("data", {
+                pageIndex: 1,
+                pagecount: rs.TotalPage,
+                recordCount: rs.Count,
+                listItem: rs.ListItem,
+            });
+        }
+        pagefunction();
+    </script>
+}

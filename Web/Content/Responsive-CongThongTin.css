@@ -1,0 +1,1562 @@
+﻿@media only screen and (min-width: 992px) and (max-width:1199px) {
+    .TuDanhGia-CDS p {
+        font-size: 26px;
+        line-height: 38px;
+    }
+
+    .button-danhgia-cds {
+        width: 100%;
+        font-size: 20px;
+    }
+
+    .text-logo {
+        font-size: 60px;
+        line-height: 86px;
+    }
+
+    .ct-logo {
+        width: 20%;
+    }
+
+    .txt-web {
+        width: 80%;
+    }
+
+        .txt-web a h2 {
+            font-size: 23px;
+            line-height: 34px;
+        }
+
+    .h2-bt {
+        font-size: 24px !important;
+    }
+
+    .class-s-right {
+        padding: 25px 0 0 0;
+    }
+
+    .input-timkiem-top {
+        width: auto;
+    }
+
+    .menu-bar .navbar-nav > li > a {
+        font-size: 17px;
+        padding: 10px;
+    }
+
+    .bg-tracuu {
+        padding-top: 70px;
+        height: 600px;
+    }
+
+    .bg-form-tc {
+        padding: 20px 25px 25px;
+    }
+
+    .text-form-tc {
+        font-size: 27px;
+        margin-bottom: 20px;
+    }
+
+    .input-search-tc {
+        margin-bottom: 30px;
+        padding: 12px 10px !important;
+    }
+
+    .tracuu-left {
+        padding-top: 20px;
+    }
+
+    .text-cd-so {
+        font-size: 28px;
+    }
+
+    .text-xaydung {
+        font-size: 22px;
+    }
+
+    .tracuu-left ul li {
+        padding: 10px 0px;
+        font-size: 20px;
+    }
+
+    .benner-botton .col-sm-4 {
+        width: 30%;
+        padding: 0 !important;
+    }
+
+    .class-bg-dangky {
+        padding: 25px 0px 27px 15px;
+        float: right;
+        background-size: 100%;
+        width: 67%;
+    }
+
+    .input-search-dky {
+        width: 290px;
+        padding: 12px 10px !important;
+    }
+
+    .mini-trucot-left {
+        width: 70px;
+    }
+
+        .mini-trucot-left img {
+            margin-top: 23px;
+            width: 45px;
+        }
+
+    .text-trucot {
+        padding: 22px 0px;
+    }
+
+    .mini-trucot-right {
+        padding-top: 10px;
+    }
+
+    .class-trucot-left {
+        padding-left: 60px;
+    }
+
+    .tieude-trucot {
+        font-size: 34px;
+    }
+
+    .tieude-bochiso {
+        font-size: 42px;
+        line-height: 50px;
+        margin-top: 20px;
+        margin-bottom: 25px;
+    }
+
+    .trucot {
+        margin-top: 40px;
+    }
+
+    .big-img-bochiso div {
+        font-size: 22px;
+    }
+
+    /*    .padding-lt {
+        padding-left: 20px !important;
+        padding-top: 20px;
+    }*/
+
+}
+
+@media only screen and (min-width: 769px) and (max-width:991px) {
+    .ig-thumb-item-3 {
+        height: 150px;
+    }
+
+    .login-bdi .modal-dialog {
+        padding-top: 20px;
+        margin: 0 auto;
+    }
+
+    .big-img-bochiso div:nth-child(3) {
+        height: 60px;
+    }
+
+    .ct-logo {
+        width: 20%;
+    }
+
+    .txt-web {
+        width: 80%;
+    }
+
+    span.input-timkiem-top {
+        width: auto;
+    }
+
+    .gt-bochiso p {
+        font-size: 20px;
+    }
+
+    .TuDanhGia-CDS {
+        height: auto;
+        padding: 25px 20px;
+    }
+
+    .button-danhgia-cds {
+        font-size: 15px;
+        padding: 12px;
+        width: 100%;
+    }
+
+    .img-bg-css {
+        height: 290px !important;
+    }
+
+    .bg-right-cauchuyen {
+        height: 290px !important;
+        margin-top: 0;
+        padding: 30px;
+    }
+
+    .inner-cauchuyen {
+        height: auto !important;
+    }
+
+    .cauchuyen-cds .owl-nav {
+        bottom: 0;
+    }
+
+    .TuDanhGia-CDS .col-sm-8 {
+        margin-top: 10px;
+    }
+
+    .TuDanhGia-CDS p {
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .text-logo {
+        font-size: 48px;
+        line-height: 80px;
+        margin: 0;
+    }
+
+    .txt-web a h2 {
+        font-size: 19px;
+        line-height: 28px;
+    }
+
+    .h2-bt {
+        font-size: 20px !important;
+    }
+
+    .class-s-right {
+        padding: 25px 0 0 0;
+    }
+
+    .menu-bar .navbar-nav > li > a {
+        font-size: 12px;
+        padding: 10px 10px;
+    }
+
+    .big-img-bochiso p {
+        font-size: 20px;
+    }
+
+    .bg-tracuu {
+        padding-top: 70px;
+        height: 600px;
+    }
+
+    .bg-form-tc {
+        padding: 20px 25px 25px;
+    }
+
+    .text-form-tc {
+        font-size: 27px;
+        margin-bottom: 20px;
+    }
+
+    .input-search-tc {
+        margin-bottom: 30px;
+        padding: 12px 10px !important;
+    }
+
+    .tracuu-left {
+        padding-top: 20px;
+    }
+
+    .text-cd-so {
+        font-size: 28px;
+    }
+
+    .text-xaydung {
+        font-size: 22px;
+    }
+
+    .tracuu-left ul li {
+        padding: 10px 0px;
+        font-size: 20px;
+    }
+
+    .benner-botton .col-sm-4 {
+        width: 30%;
+        padding-right: 0 !important;
+    }
+
+    .class-bg-dangky {
+        padding: 18px 0px 18px 15px;
+        float: right;
+        background-size: 100%;
+        width: 67%;
+    }
+
+    .bg-right-cauchuyen .tieude-cauchuyen {
+        font-size: 22px;
+    }
+
+    .input-search-dky {
+        width: 200px;
+        padding: 10px !important;
+    }
+
+    .class-bg-dangky button {
+        width: auto;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .mini-trucot-left {
+        width: 70px;
+    }
+
+        .mini-trucot-left img {
+            margin-top: 23px;
+            width: 45px;
+        }
+
+    .text-trucot:nth-child(2) {
+        padding-top: 13px;
+    }
+
+    .text-trucot:nth-child(1) {
+        padding-top: 5px;
+    }
+
+    .text-trucot {
+        padding: 22px 0px;
+    }
+
+    .mini-trucot-right {
+        padding-top: 15px;
+    }
+
+    .class-trucot-left {
+        padding-left: 40px !important;
+    }
+
+    .tieude-trucot {
+        font-size: 34px;
+    }
+
+    .tieude-bochiso {
+        font-size: 38px;
+        margin-top: 20px;
+        margin-bottom: 25px;
+    }
+
+    .TuDanhGia-CDS {
+        background-size: inherit;
+    }
+
+    .tong-nd-list p {
+        -webkit-line-clamp: 8;
+    }
+
+    .bg-right-cauchuyen .noidung-cauchuyen {
+        -webkit-line-clamp: 8;
+    }
+
+    .trucot {
+        margin-top: 40px;
+    }
+
+    .big-img-bochiso div {
+        font-size: 23px;
+    }
+}
+
+@media only screen and (width:768px) {
+    .ig-thumb-item-3 {
+        height: 150px;
+    }
+
+    .detail-tintuc img {
+        height: auto !important;
+        width: 100% !important;
+    }
+
+    .show-danhgia-cds .tamthu {
+        width: auto;
+        float: left;
+    }
+
+    .show-danhgia-cds .title-gioithieu {
+        font-size: 23px;
+        line-height: 30px;
+        padding: 20px 0;
+    }
+
+    .quytrinh-detail .number {
+        display: block;
+    }
+
+    .quytrinh-detail .boxnumber {
+        height: auto;
+    }
+
+    .quytrinh-detail .numbercm {
+        width: 100% !important;
+    }
+
+    .big-img-bochiso div:nth-child(3) {
+        height: 60px;
+    }
+
+    .ct-logo {
+        width: 20%;
+    }
+
+    .txt-web {
+        width: 80%;
+    }
+
+    span.input-timkiem-top {
+        width: auto;
+    }
+
+    .gt-bochiso p {
+        font-size: 20px;
+    }
+
+    .TuDanhGia-CDS {
+        height: auto;
+        padding: 25px 20px;
+    }
+
+    .button-danhgia-cds {
+        font-size: 15px;
+        padding: 12px;
+        width: 100%;
+    }
+
+    .img-bg-css {
+        height: 290px !important;
+    }
+
+    .bg-right-cauchuyen {
+        height: 290px !important;
+        margin-top: 0;
+        padding: 30px;
+    }
+
+    .inner-cauchuyen {
+        height: auto !important;
+    }
+
+    .cauchuyen-cds .owl-nav {
+        bottom: 0;
+    }
+
+    .TuDanhGia-CDS .col-sm-8 {
+        margin-top: 10px;
+    }
+
+    .TuDanhGia-CDS p {
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .text-logo {
+        font-size: 48px;
+        line-height: 80px;
+        margin: 0;
+    }
+
+    .txt-web a h2 {
+        font-size: 19px;
+        line-height: 28px;
+    }
+
+    .h2-bt {
+        font-size: 20px !important;
+    }
+
+    .class-s-right {
+        padding: 25px 0 0 0;
+    }
+
+    .menu-bar .navbar-nav > li > a {
+        font-size: 12px;
+        padding: 10px 10px;
+    }
+
+    .big-img-bochiso p {
+        font-size: 20px;
+    }
+
+    .bg-tracuu {
+        padding-top: 70px;
+        height: 600px;
+    }
+
+    .bg-form-tc {
+        padding: 20px 25px 25px;
+    }
+
+    .text-form-tc {
+        font-size: 27px;
+        margin-bottom: 20px;
+    }
+
+    .input-search-tc {
+        margin-bottom: 30px;
+        padding: 12px 10px !important;
+    }
+
+    .tracuu-left {
+        padding-top: 20px;
+    }
+
+    .text-cd-so {
+        font-size: 28px;
+    }
+
+    .text-xaydung {
+        font-size: 22px;
+    }
+
+    .tracuu-left ul li {
+        padding: 10px 0px;
+        font-size: 20px;
+    }
+
+    .benner-botton .col-sm-4 {
+        width: 30%;
+        padding-right: 0 !important;
+    }
+
+    .class-bg-dangky {
+        padding: 18px 0px 18px 15px;
+        float: right;
+        background-size: 100%;
+        width: 67%;
+    }
+
+    .bg-right-cauchuyen .tieude-cauchuyen {
+        font-size: 22px;
+    }
+
+    .input-search-dky {
+        width: 200px;
+        padding: 10px !important;
+    }
+
+    .class-bg-dangky button {
+        width: auto;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .mini-trucot-left {
+        width: 70px;
+    }
+
+        .mini-trucot-left img {
+            margin-top: 23px;
+            width: 45px;
+        }
+
+    .text-trucot:nth-child(2) {
+        padding-top: 13px;
+    }
+
+    .text-trucot:nth-child(1) {
+        padding-top: 5px;
+    }
+
+    .text-trucot {
+        padding: 22px 0px;
+    }
+
+    .mini-trucot-right {
+        padding-top: 15px;
+    }
+
+    .class-trucot-left {
+        padding-left: 40px !important;
+    }
+
+    .tieude-trucot {
+        font-size: 34px;
+    }
+
+    .tieude-bochiso {
+        font-size: 38px;
+        margin-top: 20px;
+        margin-bottom: 25px;
+    }
+
+    .TuDanhGia-CDS {
+        background-size: inherit;
+    }
+
+    .tong-nd-list p {
+        -webkit-line-clamp: 8;
+    }
+
+    .bg-right-cauchuyen .noidung-cauchuyen {
+        -webkit-line-clamp: 8;
+    }
+
+    .trucot {
+        margin-top: 40px;
+    }
+
+    .big-img-bochiso div {
+        font-size: 23px;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width:767px) {
+    .detail-tintuc img {
+        height: auto !important;
+        width: 100% !important;
+    }
+
+    .show-danhgia-cds .tamthu {
+        width: auto;
+        float: left;
+    }
+
+    .show-danhgia-cds .title-gioithieu {
+        font-size: 23px;
+        line-height: 30px;
+        padding: 20px 0;
+    }
+
+    .quytrinh-detail .number {
+        display: block;
+    }
+
+    .quytrinh-detail .boxnumber {
+        height: auto;
+    }
+
+    .quytrinh-detail .numbercm {
+        width: 100% !important;
+    }
+
+    .login-bdi .modal-dialog {
+        padding-top: 20px;
+        margin: 0 auto;
+    }
+
+    .navbar-collapse.collapse {
+        padding: 0;
+    }
+
+    #ul-id {
+        display: none;
+    }
+
+    #ul-mobie {
+        display: block;
+    }
+
+    .navbar-collapse.collapse {
+        padding: 0 10px !important;
+    }
+
+    .menu-bar > div > ul > li.active > a {
+        padding-left: 15px;
+    }
+
+    .benner-botton .col-sm-4 {
+        padding: 0 !important;
+    }
+
+    .TuDanhGia-CDS {
+        height: auto;
+    }
+
+        .TuDanhGia-CDS p {
+            font-size: 20px;
+            line-height: 30px;
+        }
+
+        .TuDanhGia-CDS .col-sm-4 {
+            width: 100%;
+            float: left;
+            padding: 0 60px !important;
+        }
+
+        .TuDanhGia-CDS .col-sm-8 {
+            width: 100%;
+            float: left;
+            padding: 0 !important;
+        }
+
+    .button-danhgia-cds {
+        font-size: 22px;
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .gt-bochiso p {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    header {
+        padding-bottom: 0;
+    }
+
+    .txt-web {
+        width: auto;
+        padding: 8px 0px 0;
+    }
+
+    .ct-logo {
+        width: 100px;
+    }
+
+    .class-nav {
+        min-height: 34px;
+        float: left;
+        background: #ff6a00;
+        margin: 0;
+        border: 0;
+    }
+
+    .class-s-right .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+        background-color: #ff6a00;
+    }
+
+    .class-s-right .navbar-default .navbar-toggle .icon-bar {
+        background-color: white !important;
+    }
+
+    .class-s-right .navbar .navbar-toggle {
+        padding-top: 9px;
+        margin: 0;
+        border: 0;
+    }
+
+    .text-logo {
+        font-size: 46px;
+        line-height: 65px;
+        margin-top: 0;
+        padding-left: 2px
+    }
+
+    .txt-web a h2 {
+        line-height: 24px;
+    }
+
+    .h2-top {
+        font-size: 18px !important;
+    }
+
+    .h2-bt {
+        font-size: 19px !important;
+    }
+
+    .class-s-right {
+        padding: 8px 0;
+        width: 100%;
+        float: left;
+        background-color: #ff6a00;
+    }
+
+    .bg-right-cauchuyen {
+        padding: 30px;
+    }
+
+        .bg-right-cauchuyen .tieude-cauchuyen {
+            font-size: 22px;
+        }
+
+    .input-timkiem-top {
+        width: auto !important;
+    }
+
+    .inner-cauchuyen {
+        height: auto !important;
+    }
+
+    .cauchuyen-cds .owl-nav {
+        bottom: 0;
+    }
+
+
+
+    .bg-tracuu {
+        background-size: cover;
+        height: auto;
+        padding-top: 0;
+    }
+
+    .tracuu-left {
+        padding-right: 15px;
+        padding-top: 20px;
+        padding-left: 15px;
+        margin-bottom: 20px;
+    }
+
+    .text-cd-so {
+        font-size: 23px;
+    }
+
+    .text-xaydung {
+        font-size: 18px;
+    }
+
+    .tracuu-left ul {
+        padding-left: 15px;
+    }
+
+        .tracuu-left ul li {
+            padding: 5px 0px;
+            font-size: 14px;
+        }
+
+        .tracuu-left ul li {
+            list-style: none;
+            padding: 5px 0px;
+            font-size: 15px;
+        }
+
+    .tracuu-right {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-bottom: 20px;
+    }
+
+
+    .tieude-bochiso {
+        font-size: 28px;
+        margin-top: 20px;
+        margin-bottom: 15px;
+        line-height: 36px !important;
+    }
+
+    .big-img-bochiso {
+        margin-bottom: 30px;
+        padding: 0;
+    }
+
+    .class-bochiso {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .trucot {
+        margin-top: 10px;
+        padding: 0 15px;
+        margin-bottom: 0;
+    }
+
+    .img-trucot {
+        margin-bottom: 20px;
+    }
+
+    .class-trucot-left {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .tieude-trucot {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .mini-trucot-left {
+        width: 65px;
+    }
+
+    .muctieu-list {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+    }
+
+        .muctieu-list .tonglist:nth-child(1) {
+            padding: 0 !important;
+            margin-bottom: 20px;
+        }
+
+        .muctieu-list .tonglist:nth-child(2) {
+            padding: 0 !important;
+            margin-bottom: 20px;
+        }
+
+        .muctieu-list .tonglist:nth-child(3) {
+            padding: 0 !important;
+        }
+
+    .cauchuyen-cds {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .bg-big-pink {
+        background-size: cover;
+    }
+
+    .padding-lt {
+        padding-left: 0 !important;
+    }
+
+    .chuyengia-cds .col-sm-4 {
+        margin: 10px 0px;
+        width: 100%;
+        float: left;
+    }
+
+    .class-name-chuyengia {
+        font-size: 22px;
+    }
+
+    .name-cty-chuyengia {
+        font-size: 14px;
+    }
+
+    .mini-trucot {
+        padding-left: 10%;
+    }
+
+    .class-bg-dangky {
+        padding: 0;
+        height: 110px;
+        text-align: center;
+        background-image: url('Img_CongThongTin/benner-dangky.jpg');
+    }
+
+    .benner-botton img {
+        width: 90%;
+    }
+
+    .box-sd {
+        height: auto;
+    }
+
+    .benner-botton .col-sm-4 {
+        text-align: center;
+    }
+
+    .name-dangky {
+        display: block;
+        font-size: 20px;
+        padding-top: 10px;
+        margin: 10px 0;
+    }
+
+    .input-search-dky {
+        width: 280px;
+        margin-right: 10px;
+    }
+
+    .input-button-search {
+        height: 34px;
+    }
+
+    .input-timkiem-top > input {
+        padding: 7px 10px 6px;
+    }
+
+    .class-bg-dangky button {
+        width: 100px;
+        font-size: 14px;
+        padding: 7px;
+        margin: 0;
+    }
+
+    .input-search-dky {
+        padding: 6px 10px !important;
+    }
+
+    .footer-congtt .container {
+        width: auto !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width:480px) {
+
+    .accordion-item .accordion-item-tile {
+        width: 100%;
+        float: left;
+    }
+
+        .accordion-item .accordion-item-tile .accordion-item-tile-inner {
+            width: 100% !important;
+            display: table-caption !important;
+            max-width: 100%;
+            float: left;
+        }
+
+    .accordion-item {
+        width: 100%;
+        float: left;
+    }
+
+
+        .accordion-item .accordion-item-tile .accordion-item-tile-inner .accordion-item-tile-image {
+            max-width: 100%;
+            width: 100%;
+            float: left;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+    .page-content-cong .container {
+        padding: 0 !important;
+    }
+
+
+    .summary-baocao {
+        width: 100%;
+        float: left;
+        margin-top: 20px;
+        padding: 0;
+    }
+
+
+
+    .class-bcs-tong {
+        float: left;
+        padding: 0;
+        padding-top: 15px;
+    }
+
+    .tieude-ft, .diachi-ft, .text-lienlac {
+        font-size: 15px;
+    }
+
+
+    .accordion-item-tile-inner-title {
+        max-width: 100%;
+        float: left;
+    }
+
+
+    .buttom-center a.abottom {
+        margin-bottom: 10px !important;
+    }
+
+    .buttom-center a.atop {
+        margin-top: 10px !important;
+    }
+
+    div.chuyengia.border > div.title-page > div.container > h4 {
+        width: 299px;
+        margin: 0 auto;
+    }
+
+    .chuyengia .title-page p {
+        font-size: 19px;
+        width: 320px;
+        margin: 0 auto;
+    }
+
+    .chuyengia .title-page h2 {
+        font-size: 29px;
+        width: 320px;
+        line-height: 36px;
+        margin: 0 auto;
+    }
+
+    .diachi-ft {
+        width: 325px;
+        margin: 0 auto;
+    }
+
+    .gioithieu-css img {
+        height: auto !important;
+        width: 100% !important;
+    }
+
+    .report {
+        padding: 0 !important;
+    }
+
+    #FormDangKy .no-padding-left {
+        padding-right: 0 !important;
+    }
+
+    #FormDangKy .row.form .col-sm-12 {
+        padding: 0 !important;
+    }
+
+    #FormDangKy .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    #FormDangKy .title h1 {
+        width: 285px;
+        margin: 0 auto;
+    }
+
+    #FormDangKy #RegisterChuyenGiaForm .form-horizontal .form-group .col-sm-8 {
+        padding: 0 !important;
+    }
+
+    #FormDangKy #RegisterChuyenGiaForm .form-horizontal .form-group {
+        width: 100% !important;
+        float: left !important;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #FormDangKy #imgAnhDaiDien {
+        height: auto !important;
+        width: 100% !important;
+    }
+
+    .detail-tintuc img {
+        height: auto !important;
+        width: 100% !important;
+    }
+
+    .show-danhgia-cds .tamthu {
+        width: auto;
+        float: left;
+    }
+
+    .show-danhgia-cds .title-gioithieu {
+        font-size: 23px;
+        line-height: 30px;
+        padding: 20px 0;
+    }
+
+    .quytrinh-detail .number {
+        display: block;
+    }
+
+    .quytrinh-detail .boxnumber {
+        height: auto;
+    }
+
+    .quytrinh-detail .numbercm {
+        width: 100% !important;
+    }
+
+
+    .login-bdi .modal-dialog {
+        padding-top: 20px;
+        width: 320px !important;
+        margin: 0 auto;
+    }
+
+    .navbar-collapse.collapse {
+        padding: 0;
+    }
+
+    #ul-id {
+        display: none;
+    }
+
+    #ul-mobie {
+        display: block;
+    }
+
+    .tonglist img {
+        height: auto;
+    }
+
+    .box-sd {
+        height: auto;
+    }
+
+    .chitiet-bochiso table tr td, .chitiet-bochiso table tr td th {
+        padding: 5px !important;
+    }
+
+    .chitiet-bochiso table tr span {
+        font-size: 14px !important;
+    }
+
+    .chitiet-bochiso img {
+        height: auto !important;
+    }
+
+    .text-nd-trucot {
+        font-size: 17px;
+    }
+
+    .cauchuyen-cds .owl-nav {
+        bottom: 0;
+        padding: 30px 20px 20px 35px;
+    }
+
+    .bg-right-cauchuyen .tieude-cauchuyen {
+        font-size: 22px;
+    }
+
+    .bg-right-cauchuyen {
+        padding: 20px;
+        height: 300px;
+    }
+
+    .mini-trucot-left img {
+        margin-top: 25px;
+    }
+
+    .img-bg-css {
+        height: auto !important;
+    }
+
+    .inner-cauchuyen {
+        height: auto !important;
+    }
+
+    .TuDanhGia-CDS {
+        height: auto;
+    }
+
+        .TuDanhGia-CDS p {
+            font-size: 20px;
+            line-height: 30px;
+        }
+
+        .TuDanhGia-CDS .col-sm-4 {
+            width: 100%;
+            float: left;
+            padding: 0 15px !important;
+        }
+
+        .TuDanhGia-CDS .col-sm-8 {
+            width: 100%;
+            float: left;
+            padding: 0 !important;
+        }
+
+    .button-danhgia-cds {
+        font-size: 18px;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .gt-bochiso p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .benner-botton .col-sm-4 {
+        padding: 0 !important;
+    }
+
+    header {
+        padding-bottom: 0;
+    }
+
+    .menu-bar > div > ul > li.active > a {
+        padding-left: 15px;
+    }
+
+    .menu-bar .navbar-nav > li > a {
+        font-size: 14px;
+    }
+
+    .menu-bar .navbar-nav {
+        padding: 0 10px;
+    }
+
+    .txt-web {
+        width: 80%;
+        padding: 5px 0px 0;
+    }
+
+    .ct-logo {
+        width: 20%;
+    }
+
+    .class-nav {
+        min-height: 34px;
+        float: left;
+        background: #1f68ff;
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .class-s-right .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+        background-color: #1f68ff;
+    }
+
+    .navbar-default .navbar-toggle .icon-bar {
+        background-color: white !important;
+    }
+
+    .class-s-right .navbar .navbar-toggle {
+        padding-top: 9px;
+        border: none;
+        margin: 0;
+    }
+
+    .text-logo {
+        font-size: 30px;
+        line-height: 52px;
+        margin-top: 0;
+        padding-left: 2px
+    }
+
+    .txt-web a h2 {
+        line-height: 18px;
+        font-size: 15px !important;
+        margin-top: 3px !important;
+        color: #0038b0;
+    }
+
+
+
+
+    .h2-top {
+        font-size: 13px;
+    }
+
+    .h2-bt {
+        font-size: 15px;
+    }
+
+    .class-s-right {
+        padding: 8px 0;
+        width: 100%;
+        float: left;
+        background-color: #1f68ff;
+    }
+
+    .input-timkiem-top {
+        width: auto;
+    }
+
+    .bg-tracuu {
+        background-size: cover;
+        height: auto;
+        padding-top: 0;
+    }
+
+    .tracuu-left {
+        padding-right: 15px;
+        padding-top: 20px;
+        padding-left: 15px;
+        margin-bottom: 20px;
+    }
+
+    .text-cd-so {
+        font-size: 19px;
+    }
+
+    .text-xaydung {
+        font-size: 17px;
+    }
+
+    .tracuu-left ul {
+        padding-left: 15px;
+    }
+
+        .tracuu-left ul li {
+            padding: 5px 0px;
+            font-size: 14px;
+        }
+
+        .tracuu-left ul li {
+            list-style: none;
+            padding: 5px 0px;
+            font-size: 14px;
+        }
+
+    .tracuu-right {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-bottom: 20px;
+    }
+
+    .button-tc {
+        font-size: 16px;
+    }
+
+    .bg-form-tc {
+        padding: 15px;
+    }
+
+    .text-form-tc {
+        font-size: 24px;
+    }
+
+    .tieude-bochiso {
+        font-size: 24px;
+        margin-top: 20px;
+        margin-bottom: 15px;
+        line-height: 36px !important;
+    }
+
+    .big-img-bochiso {
+        margin-bottom: 30px;
+        padding: 0;
+    }
+
+    .trucot-dn-nho {
+        width: 100%;
+        border-radius: 0;
+        margin-right: 0;
+        margin-top: 10px;
+    }
+
+    .trucot-dn-lon {
+        width: 100%;
+        border-radius: 0;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .class-bochiso {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .trucot {
+        margin-top: 10px;
+        padding: 0 15px;
+        margin-bottom: 0;
+    }
+
+    .img-trucot {
+        margin-bottom: 20px;
+    }
+
+    .class-trucot-left {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .tieude-trucot {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .mini-trucot-left {
+        width: 60px;
+    }
+
+    .muctieu-list {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+    }
+
+        .muctieu-list .tonglist:nth-child(1) {
+            padding: 0 !important;
+            margin-bottom: 20px;
+        }
+
+        .muctieu-list .tonglist:nth-child(2) {
+            padding: 0 !important;
+            margin-bottom: 20px;
+        }
+
+        .muctieu-list .tonglist:nth-child(3) {
+            padding: 0 !important;
+        }
+
+    .cauchuyen-cds {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .bg-big-pink {
+        background-size: cover;
+    }
+
+    .padding-lt {
+        padding-left: 0 !important;
+    }
+
+    .chuyengia-cds .col-sm-4 {
+        margin: 10px 0px;
+        width: 100%;
+        float: left;
+    }
+
+    .class-name-chuyengia {
+        font-size: 22px;
+    }
+
+    .name-cty-chuyengia {
+        font-size: 14px;
+    }
+
+    .class-bg-dangky {
+        padding: 0;
+        height: 100px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .name-dangky {
+        display: block;
+        font-size: 18px;
+        padding-top: 10px;
+        margin: 10px 0;
+    }
+
+    .input-search-dky {
+        width: 200px;
+        margin-right: 10px;
+    }
+
+    .input-button-search {
+        height: 34px;
+    }
+
+    .input-timkiem-top > input {
+        padding: 7px 10px 6px;
+    }
+
+    .class-bg-dangky button {
+        width: 100px;
+        font-size: 14px;
+        padding: 5px 7px 9px;
+        margin: 0;
+    }
+
+    .input-search-dky {
+        padding: 6px 10px !important;
+    }
+
+    .footer-congtt .container {
+        width: auto !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    .title-top {
+        padding: 0 15px;
+    }
+
+    .tintuc-left {
+        padding-left: 15px !important;
+        padding-right: 0 15px !important;
+        width: 100%;
+        float: left;
+    }
+
+    .tintuc-right {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        width: 100%;
+        float: left;
+    }
+
+    .footer-congtt {
+        margin-top: 10px;
+    }
+
+    .bot-blog .phan-trang {
+        margin: 0 auto;
+    }
+
+    .bot-blog .item .content h3 {
+        padding-top: 10px;
+    }
+
+    .chitiet-bochiso {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    #modal_login {
+        width: 95%;
+    }
+}
+

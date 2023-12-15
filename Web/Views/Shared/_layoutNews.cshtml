@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="@ViewBag.Description">
+    @Html.Partial("~/Views/Shared/_SEOPartial.cshtml")
+    <title>@ViewBag.Title - CSDL Doanh nghiệp ICT</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/assets/EndUserCss")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/assets/EndUserjs")
+    @Scripts.Render("~/bundles/datepicker")
+    @Styles.Render("~/Content/datepicker")
+    <link href="~/Content/EndUser/css/styleHome.css" rel="stylesheet" />
+    <link href="~/Scripts/slick-1.8.1/slick/slick.css" rel="stylesheet" />
+    <link href="~/Scripts/slick-1.8.1/slick/slick-theme.css" rel="stylesheet" />
+    <script src="~/Scripts/slick-1.8.1/slick/slick.min.js"></script>
+    @RenderSection("HeadIncludes", required: false)
+</head>
+@using Service.AppUserService.Dto
+@using Service.Constant
+@using Microsoft.AspNet.Identity
+@using Service.CommonConfigurationService.DTO;
+@{
+    var userInfo = SessionManager.GetUserInfo() as Model.IdentityEntities.AppUser;
+    var CompanyInfomation = SessionManager.GetCompanyOWNInfo() as CompanyInfomationDto;
+}
+<body>
+
+
+    <div class="header-desk">
+        <div class="container BgWhite">
+            <div class="row">
+                <div class="header-desk-left col-sm-6">
+                    @*<div class="header-desk-left-1">
+                            <img src="~/Content/EndUser/img/quochuy-md.png" height="85" style="" alt="">
+                        </div>
+                        <div class="header-desk-left-2">
+                            <h3>ONLINE.GOV.VN</h3>
+                            <p>CỔNG THÔNG TIN QUẢN LÝ HOẠT ĐỘNG THƯƠNG MẠI ĐIỆN TỬ</p>
+                        </div>*@
+
+                    <a href="/"> <img src="~/Content/EndUser/img/logo-header-gov.png" /></a>
+                </div>
+                <div class="header-desk-right col-sm-6">
+                    @if (userInfo != null)
+                    {
+                        using (Html.BeginForm("LogOff", "Account", FormMethod.Get, new { id = "logoutForm", @class = "navbar-right" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <ul class="nav navbar-nav navbar-right rightTopmenu " style="width: 330px">
+                                <li id="NotiArea" class="purple dropdown-modal">
+                                    @{Html.RenderAction("ShowNotification", "EndUserNotification");}
+                                </li>
+                                <li class="name-short">
+                                    @Html.ActionLink("Xin chào " + userInfo.UserName + "!", "Index", "EndUserInfo", routeValues: null, htmlAttributes: new { title = "Manage" })
+                                </li>
+                                <li class="logoutButton"><a href="javascript:void" onclick="document.getElementById('logoutForm').submit()">Đăng xuất</a></li>
+                            </ul>
+
+                        }
+
+                    }
+                    else
+                    {
+                        using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "", role = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <div class="header-deks-right-box">
+
+                                <div class="header-deks-right-box-1">
+                                    <div class="header-login-acc">
+                                        <input type="text" name="UserName" value="" />
+                                        <p class="sub-input">
+                                            <input type="checkbox" name="" value="" style="margin-top:0;" /><span> Lưu đăng nhập</span>
+                                        </p>
+                                    </div>
+                                    <div class="header-login-pass">
+                                        <input type="password" name="Password" value="" />
+                                        <p class="sub-input">
+                                            <i class="fa fa-key" aria-hidden="true"></i><span> <a href="/account/ForgotPassword">Quên mật khẩu</a></span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <ul class="header-desk-right-box-2">
+                                    <li class="header-desk-login"><button type="submit">Đăng nhập</button></li>
+                                    <li class="header-desk-register"><a href="/Account/RegisterCompany">Đăng ký</a></li>
+                                </ul>
+
+                            </div>
+                        }
+
+                    }
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    @Html.Partial("_menuEnduserPartial")
+    <div class="container">
+        @{ Html.RenderAction("GetBanner", "Common", new { code = ViewBag.CodePageConstant });}
+    </div>
+    <div id="NoiDungChinh">
+        <div class="container BgWhite" id="containerBOX">
+            <div class="col-sm-8">
+                @RenderBody()
+            </div>
+            <div class="col-sm-4 partialNewsHome">
+                @{Html.RenderAction("GetDsTinMoi", "Common", new { type = NewsCategoryConstant.HomeDVC });}
+                @*@{Html.RenderAction("GetDsTinMoiType", "Common", new { type = NewsCategoryConstant.CanhBaoDVC });}*@
+                @{ Html.RenderAction("GetBannerTower", "Common", new { code = PageCodeBannerConstant.TrangChuDoc });}
+            </div>
+        </div>
+    </div>
+
+    <div class="scroll" onclick="scrolltop()">
+        <img src="~/Content/EndUser/img/back-to-top.png" width="50" alt="">
+    </div>
+    <div class="clearBoth"></div>
+
+    <div id="footer-wrapper" style="width: 100%">
+        <div class="container no-padding">
+            <div class="col-sm-12">
+                <div class="info-footer-gov">
+                    <div class="info-footer-gov-left">
+                        <img src="~/Content/EndUser/img/quochuy-md.png" />
+                    </div>
+                    <div class="info-footer-gov-right">
+                        <h4>
+                            Đơn vị chủ quản: Bộ Thông tin và Truyền thông
+                        </h4>
+                        <p>
+                            Đơn vị quản lý: Vụ công nghệ thông tin
+
+                        </p>
+                        <p>
+                            Địa chỉ: 18 Nguyễn Du - Hà Nội (Tòa nhà B, tầng 4)
+                        </p>
+                        <p>
+                            <span>
+                                Email: vanthucntt@mic.gov.vn
+                            </span>
+                            <span style="padding-left:12px;">
+                                Điện thoại: 024 3943 6404
+                            </span>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")*@
+    <script>
+        $().ready(function () {
+            $(".dropdown-toggle").mouseenter(function () {
+                $(this).find(".dropdown-menu").css("display", "block");
+            });
+            $(".dropdown-toggle").mouseleave(function () {
+                $(this).find(".dropdown-menu").css("display", "none");
+            });
+        });
+
+        $().ready(function () {
+            $(".xdl-f-upload-input").on("change", function (e) {
+                var value = $(this).val();
+                $(this).parent().find(".xdl-f-upload-content").html(value);
+            });
+        });
+    </script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

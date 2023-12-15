@@ -1,0 +1,66 @@
+﻿
+@model Web.Models.ForgotViewModel
+<div class="modal fade" id="QuenPass" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document" id="modal_login">
+        <div class="modal-content">
+            <div class="modal-header" style="padding: 15px; border-bottom: 1px solid #ffc107; min-height: 16.43px; background: #01c8cc; border-radius: 5px 5px 0px 0px;">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:red">&times;</button>
+                <h4 class="modal-title" id="exampleModalLabel" style="font-family: HelBold; font-size: 22px; text-transform: uppercase; text-align: center;"><center>Quên mật khẩu</center></h4>
+            </div>
+
+            <div class="modal-body">
+                @using (Ajax.BeginForm("LayMatKhauUserFe", "AccountAdmin", new { @area = "" }, new AjaxOptions()
+                {
+                    HttpMethod = "POST",
+                    OnFailure = "AjaxFormError",
+                    OnSuccess = "popUpResetPassSuccess",
+                }, new { id = "form--login-popup", @class = "session form-horizontal" }))
+                {
+                    @*@using (Html.BeginForm("LayMatKhauUserFe", "AccountAdmin",
+                        new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post,
+                        new { id = "FormLogin1", @class = "session form-horizontal", role = "form" }))
+                    {*@
+                        @Html.AntiForgeryToken()
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            <label class="col-md-12 control-label login-form-label">Email của tài khoản</label>
+                            <div class="col-md-12 login-form-input-container">
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control login-form-input login-form-text", @autofocus = "autofocus", @placeholder = "Nhập địa chỉ mail" })
+                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <input type="submit" value="Lấy mật khẩu" class="btn btn-default" id="LoginBtn" style="margin-bottom: 15px;" />
+                        </div>
+
+                        <!--<div class="form-group">
+                <center>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">Đăng nhập</button>-->
+                        @* <a href="javascript:void(0)" onclick="removeclassModal()" data-toggle="modal" data-target="#login" title="Đăng nhập">Đăng nhập</a>*@
+                        <!--</center>
+            </div>-->
+
+                    }
+
+                </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jqueryval")
+<script>
+    var popUpResetPassSuccess = function (result) {
+        if (!result.Status) {
+            NotiError("Lỗi lấy lại mật khẩu","Thông tin lấy mật khẩu sai");
+        } else {
+            NotiSuccess("Thông báo","Đổi mật khẩu thành công");
+            setTimeout(function () {
+                location.reload()
+            }, 500)
+        }
+    }
+</script>
