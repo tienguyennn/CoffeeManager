@@ -463,7 +463,7 @@ namespace Web.Controllers
             return View();
         }
 
-
+        [AllowAnonymous]
         public ActionResult InitAccount()
         {
             var context = new HinetContext();
